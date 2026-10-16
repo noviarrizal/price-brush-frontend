@@ -1,0 +1,10 @@
+.DS_Store
+.env
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# Third-party reference images for design research (local only, never commit)
+/docs/design/research/refs/

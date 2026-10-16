@@ -1,0 +1,32 @@
+# Opportunities: pain points scored (v0.1)
+
+Date: 16/10/2026 · Author: strategist
+
+**How it's scored**
+
+- **Frequency** (from evidence): H = repeated across several sources, M = one strong thread or one autocomplete cluster, L = a single mention.
+- **Fit**: does solving it help a UK decorator pay us?
+- **Effort**: founder hours, all estimates.
+- **Placement**: MVP / post-MVP / content only.
+
+Reddit numbers are comment counts at fetch time (`../seo/data/reddit-sample-2026-10-16.md`).
+
+| # | Pain point | Frequency (evidence) | Fit | Effort | Placement | Note |
+|---|---|---|---|---|---|---|
+| 1 | Doing the maths for paint, coats and days by hand; quoting at night | **H**: deepest autocomplete cluster (`../seo/data/paint.csv`); trade modifiers "labour", "multiple rooms", "price"; PRD §1; VoxTrade sells the same pain | High | Already in scope (F1 + memo 001) | **MVP** | The core of memo 002 |
+| 2 | Mist coat / new plaster (extra coat, drying time) | **H** for DIY: most of the 14 r/DIYUK paint posts; "Mist coat failed" (83); autocomplete in `extra-paint-tech.csv` | Medium (homeowners ask; decorators need it priced right) | ~1 h | **MVP (switch) + content** | Memo 003. The FAQ is already in the calculator brief |
+| 3 | Late payers / chasing invoices | **M**: r/smallbusinessuk (40), generic business, not trade-specific; persona Sophie (hypothesis) | Medium–High (retention, not acquisition) | ~2 h for a WhatsApp reminder; 10 h+ for automated email | **MVP-lite (P1 button) + content**; automation post-MVP | Memo 003. The Late Payment Act covers business clients only |
+| 4 | Underpricing / not knowing the true day rate | **M**: r/smallbusinessuk (92, generic service business); MSE and Decorators Forum threads (qualitative); `pricing.csv` decorator-intent phrases | High | 0 extra (days × day rate in memo 001); ~4 h later for a "true day rate" tool | **Content now (pricing guide, Dec)**; tool post-MVP | Hourly-rate tools are also a Sleepless Tradesman link magnet |
+| 5 | Per-user fees, sales calls, hard-to-cancel billing | **M**: Tradify reviews (expensive with staff; sales calls); Powered Now 1-star reviews (charged after cancelling, auto-renew) | High (switching reason) | 0 (pricing model + F12) | **MVP (messaging)** | Supporting claim 3 in `positioning.md` |
+| 6 | No signal on site / offline | **M**: Tradify review "I would give Tradify 5 stars if I could use it off line"; PRD §2 context | High | Already P1 (offline drafts + PWA) | **MVP (P1)**, keep it there | Say "works without signal" only when it does |
+| 7 | App crashes / unreliable | **M**: Powered Now 2025 1-star reviews; Tradify "constant issues with the phone app" | Medium | Quality, not a feature | **MVP (quality bar)** | Don't claim it; just don't crash |
+| 8 | Homeowners doubting a day rate or a one-day quote | **M**: r/HomeImprovementUK "Tradesman day rate and quoting other work" (45); r/DIYUK "Painting hallway" (23) | Medium (quote clarity helps decorators win jobs) | ~1 h: optional "What's included / drying time" note on quotes | **Post-MVP** feature; **content** now (day-rate guide explains both sides) | |
+| 9 | VAT confusion (threshold, non-registered invoices) | **M–H** for small business generally: r/smallbusinessuk VAT threshold threads (83, 79); r/UKPersonalFinance "Non VAT registered…" (11) | Medium | Already in F7 (VAT optional) | **Content only** (VAT guide P1; invoice FAQ) | No tax advice in the product |
+| 10 | Starting out as a sole trader (first invoices) | **L–M**: r/smallbusinessuk "Trades, how did you start?" (31, a gas engineer); "best software for invoices…" (29) | Medium (new starters use templates) | 0 | **Content only** (start-a-business guide, P2) | |
+| 11 | Making Tax Digital fear | **M**: Fixxa leads with it; `mtd-tax.csv` | Low until 2027 | n/a | **Content only, Jan 2027** | MTD onboarding paused until early 2027 (constraint) |
+
+## What we don't know yet (and the cheapest way to find out)
+
+- **Whether decorators (not DIYers) use the calculator.** Track "Turn this into a quote" clicks (memo 001).
+- **Whether late payment matters to *decorators*.** The evidence is generic. Count reminder-button taps after launch (memo 003), and ask in the feedback form on sign-up (£0).
+- **r/uktrades and decorator Facebook groups** returned nothing or need a login. Read them only when posting for feedback (`../seo/link-building.md` §4).

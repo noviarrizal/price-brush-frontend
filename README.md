@@ -27,7 +27,20 @@ PriceBrush adalah web app (PWA, mobile-first) untuk painter & decorator di UK: j
 
 ## Rencana stack ($0)
 
-React + Vite + TypeScript · Cloudflare Pages (`pricebrush.pages.dev`) · Supabase (auth Google, database) · react-pdf · Cloudflare Web Analytics + Google Search Console.
+React + Vite + TypeScript + Tailwind CSS (pnpm) · Cloudflare Pages (`pricebrush.pages.dev`) · Supabase (auth Google, database) · react-pdf · Cloudflare Web Analytics + Google Search Console.
+
+## Development
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:5173
+pnpm typecheck
+pnpm build      # output statis di build/client (siap untuk Cloudflare Pages)
+pnpm preview    # cek hasil build secara lokal
+```
+
+- Framework: React Router v8 (framework mode) dengan `ssr: false`. Halaman publik di-prerender jadi HTML (lihat `react-router.config.ts`), halaman app memakai `__spa-fallback.html`.
+- Vite sengaja dikunci di v7. Vite 8 (Rolldown) gagal build route React Router di Windows ("os error 123"). Cek lagi setelah ada perbaikan upstream.
 
 ## Roadmap
 
@@ -39,5 +52,5 @@ React + Vite + TypeScript · Cloudflare Pages (`pricebrush.pages.dev`) · Supaba
 ## Dokumen
 
 - PRD lengkap: [`docs/PRD.md`](docs/PRD.md)
-- Versi online dengan diagram & mock-up: https://claude.ai/code/artifact/714b73e1-c4ed-44e9-b84e-4f11fb13d56f
+- Diagram alur & mock-up: [`docs/assets/`](docs/assets/)
 - Backend: repo `price-brush-backend`

@@ -1,6 +1,6 @@
 # PriceBrush — PRD, UX & User Flow (v0.1)
 
-Tanggal: 14 Oktober 2026 · Versi online (dengan diagram & mock-up): https://claude.ai/code/artifact/714b73e1-c4ed-44e9-b84e-4f11fb13d56f
+Tanggal: 14 Oktober 2026 · Gambar diagram & mock-up: [`docs/assets/`](assets/)
 
 ---
 
@@ -88,6 +88,8 @@ MVP hanya melayani satu pekerjaan: quote dari HP, lalu jadikan invoice. Semua ya
 
 Semua user masuk lewat tool gratis dari Google, lalu dibawa ke satu momen "aha": quote pertama yang terkirim. Paywall baru muncul setelah user merasakan manfaatnya.
 
+![Alur utama PriceBrush](assets/user-flow.png)
+
 ```mermaid
 flowchart LR
     A[Google search<br/>SEO keywords] --> B[Free tool<br/>calculator, PDF]
@@ -171,7 +173,7 @@ Aplikasi dirancang untuk satu tangan, di lokasi kerja, dengan sinyal lemah. Satu
 
 **Prinsip desain:**
 
-1. Mobile-first di lebar 360 px; desktop cukup tampilan yang sama di tengah layar.
+1. Mobile-first di lebar 360 px, **tapi desktop adalah pengalaman kelas satu** (diputuskan 15 Okt 2026): banyak tukang menyelesaikan quote dan invoice di rumah pakai laptop, dan halaman SEO juga banyak dibuka dari desktop. Layar utama (Quotes, Review/edit quote, Invoice, Settings, landing, kalkulator) punya layout desktop sendiri di ≥ 1024 px, misalnya daftar + detail berdampingan, editor quote dengan preview dokumen di samping, dan dukungan keyboard. Input suara tetap ada di desktop (mikrofon laptop), dengan mengetik sebagai alternatif yang setara.
 2. Area tap minimal 48 px; tombol utama selalu di bawah, dalam jangkauan jempol.
 3. Teks minimal 16 px, kontras tinggi (WCAG AA): dipakai di luar ruangan.
 4. Satu aksi utama per layar, warna aksen hanya untuk aksi itu.
@@ -198,7 +200,11 @@ Aplikasi dirancang untuk satu tangan, di lokasi kerja, dengan sinyal lemah. Satu
 - Tanda AI: "Check this — we estimated the wall area."
 - Batas Free: "You've used 5 free documents this month. Go Pro for £9/month — cancel anytime."
 
-**Mock-up 3 layar inti** (gambar lengkap ada di versi online; angka hanya contoh):
+**Mock-up 3 layar inti** (angka hanya contoh):
+
+![Mock-up 3 layar inti](assets/mockup-3-screens.png)
+
+Versi teks:
 
 ```text
 1 · New quote            2 · Review quote               3 · Client view (public link)
@@ -233,7 +239,7 @@ Satu harga flat tanpa biaya per user, ditambah penawaran Founding Member untuk m
 - Biaya AI per quote diperkirakan jauh di bawah £0,01, jadi paket seumur hidup tetap aman secara margin.
 - Watermark di paket Free sekaligus jadi kanal marketing: klien si tukang ikut melihat nama PriceBrush.
 - Pembeli Founding Member diminta feedback dan satu review di Capterra atau Trustpilot.
-- **Open question:** Founding Member tetap £49 seumur hidup, atau £39/tahun dengan harga terkunci?
+- **Diputuskan (15 Okt 2026):** Founding Member £49 sekali bayar, seumur hidup, 50 orang.
 
 ---
 
@@ -260,7 +266,7 @@ Seluruh MVP berjalan di free tier, dengan biaya Rp0 sampai pembayaran pertama.
 
 | Lapisan | Pilihan | Biaya |
 | --- | --- | --- |
-| Frontend & halaman SEO | React + Vite + TypeScript, PWA | $0 |
+| Frontend & halaman SEO | React + Vite + TypeScript + Tailwind CSS, PWA, pnpm | $0 |
 | Hosting | Cloudflare Pages (pricebrush.pages.dev) | $0 |
 | API kecil & kunci rahasia | Cloudflare Workers | $0 (free tier) |
 | Database, auth Google, simpan logo | Supabase free tier | $0 |
@@ -307,4 +313,12 @@ timeline
 - [ ] Pilih LLM penyusun quote setelah uji 20 deskripsi pekerjaan sungguhan
 - [ ] Tampilkan harga termasuk atau belum termasuk VAT di halaman paket?
 - [ ] Kapan perlu perwakilan UK GDPR (Article 27)? Cek setelah ada revenue
-- [ ] Backend MVP: Cloudflare Worker (TypeScript) dulu lalu Go di Q1 2027, atau Go dari awal?
+
+**Keputusan 15 Okt 2026:**
+
+- URL halaman publik mengikuti rencana SEO: `/paint-calculator`, `/decorating-quote-template`, `/decorating-invoice-template` (detail di `docs/seo/keyword-map.md`).
+- Domain belum dibeli (founder menabung dulu). Launch di `pricebrush.pages.dev`, lalu pindah domain dengan redirect 301 + change of address di Search Console.
+- Penulis/About page: **Arif Noviarrizal**, developer independen. Tidak ada kredensial atau latar belakang yang dikarang.
+- Cek SEO manual dikerjakan agent SEO; yang butuh akun Google founder (Keyword Planner) diganti data Search Console setelah launch.
+- Data quote yang dianonimkan dan diagregasi boleh dipakai untuk konten/data story. Ini **wajib dicantumkan di terms & privacy policy** sebelum checkout dibuka.
+- [x] Backend MVP: Cloudflare Workers (TypeScript) dulu, Go di Q1 2027 (diputuskan 15 Okt 2026)
