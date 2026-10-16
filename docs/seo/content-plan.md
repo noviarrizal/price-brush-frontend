@@ -10,9 +10,9 @@ Every page: draft (SEO agent) → founder review (30–60 min) → developer bui
 |---|---|---|---|---|
 | **15–18 Oct** (Thu–Sun) | 1 Free tools | URLs approved 16/10 (`/paint-calculator`, `/decorating-quote-template`, `/decorating-invoice-template`); dev starts tech foundations (`technical-seo.md` §1–3); About page with author line "Arif Noviarrizal — independent developer building PriceBrush" | 30 min | URLs frozen ✔ |
 | **19–25 Oct** | 1 | `/paint-calculator` copy (brief ready) + build; Google Search Console property verified; Cloudflare Web Analytics on; message 5 decorators to sanity-check the 45 m²/day default | 2–3 h | Calculator live on `pages.dev` |
-| **26–31 Oct** | 1 — **gate: pages indexed** | `/decorating-quote-template`, `/decorating-invoice-template`, home, `/about`; `sitemap.xml` submitted; "Request indexing" for the 5 URLs | 3 h | 5 public pages live + submitted |
+| **26–31 Oct** | 1 — **gate: pages indexed** | `/decorating-quote-template` (with "Turn this into a quote" pre-fill from the calculator), home, `/about`; `sitemap.xml` submitted; "Request indexing" for the 4 URLs. Cut order if behind on 28/10: CEO decision #1 | 3 h | 4 public pages live + submitted |
 | **2–8 Nov** | 2 Paid MVP build | Guide: `/guides/how-to-price-a-painting-job` (+ `/guides` hub) | 1 h review | Published |
-| **9–15 Nov** | 2 | Guide: `/guides/decorator-day-rate` (every figure sourced) | 1 h | Published |
+| **9–15 Nov** | 2 | `/decorating-invoice-template` live **14/11/2026** (moved from 31/10, CEO decision #1; reuses the quote PDF) + added to sitemap, "Request indexing"; guide: `/guides/decorator-day-rate` (every figure sourced) | 1.5 h | Invoice template live + submitted; guide published |
 | **16–22 Nov** | 2 | Guide: `/guides/do-decorators-charge-vat`; `/pricing`, `/privacy`, `/terms` live (needed before checkout) | 1.5 h | 12 public pages (≥ 10 KPI) |
 | **23–30 Nov** | 3 Launch | Directory listings + Product Hunt + Indie Hackers (`link-building.md`); 2–3 genuinely helpful forum answers | 3 h | Listings live |
 | **1–14 Dec** | 4 Founding offer | **GSC review #1** (`measurement.md`): record query impressions as the first real volume data (§4); fix titles with low CTR; first 2 room pages (hall stairs and landing, bedroom); start the paint-coverage data project (PR) | 2 h | Review logged |

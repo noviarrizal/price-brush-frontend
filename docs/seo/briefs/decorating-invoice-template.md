@@ -1,14 +1,14 @@
-# Brief — `/decorating-invoice-template` (P0, live by 31/10/2026)
+# Brief — `/decorating-invoice-template` (P0, live by 14/11/2026 — moved from 31/10, CEO decision #1, accepted 17/10/2026; reuses the quote template PDF)
 
 Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Cluster C · Not yet in `../../design/screens.md` (ask design for a P4 screen; it can reuse the P3 quote template layout) · Product link: PRD F9 (quote → invoice, INV-0001, due in 14 days).
 
 ## 1. Search intent
 
-- **Who searches:** decorators who've **finished a job and need to get paid** — today. High urgency, high relevance to PriceBrush's "quote → invoice in one tap".
+- **Who searches:** decorators who've **finished a job and need to get paid** — today. High urgency, high relevance to PriceBrush's promise **"When it's accepted, it's an invoice."**
 - **What they want:** a correct UK invoice (number, dates, bank details, VAT only if registered) as a PDF or Word file, fast, free, without registering.
 - **What ranks now:** InvoiceSimple decorators' invoice page (US-framed, blocks bots), GenieAI (UK legal-template upsell), InvoiceQuick / Enerpize / Online Invoices (generic multi-format), Jobber painting invoice generator (US), AutoInvoice (Irish, **email gate**). Generic UK invoice queries ("invoice template uk", "sole trader invoice template") are owned by SumUp, Sage, Bytestart, Billdu — don't chase those.
 - **v0.2 — UK proxy SERP (`../data/serp-ddg-uk-2026-10-16.md`):** InvoiceJob ranks #1 for "painting and decorating invoice template uk" and is strong: no sign-up, PDF built in the browser, live preview, bank details, VAT rates including reverse charge, UTR field, £29 one-off premium. Its gaps: **no FAQs**, ~800 words, generic across ~22 trades, no quote → invoice. Others: InvoiceAdept (CIS & VAT guide), TradeTally, an Etsy template, TapTax, InvoiceKoi. Difficulty **Medium (crowded)** — match InvoiceJob's tool basics and beat it on decorator specifics, content and the quote → invoice path.
-- **Our angle:** the only page built for UK **painters and decorators** specifically, with the legal checklist from GOV.UK, a worked decorator example, VAT/CIS explained in plain English, and a one-tap path from the quote.
+- **Our angle:** the only page built for UK **painters and decorators** specifically, with the legal checklist from GOV.UK, a worked decorator example, VAT/CIS explained in plain English, and a direct path from the quote ("Start from my quote").
 
 ## 2. Must-haves to beat the current top 3
 
@@ -17,7 +17,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 | Requirement | Why |
 |---|---|
 | Same generator engine as the quote page, document type = invoice; **no login, nothing stored on a server** | Reuse code; PRD privacy |
-| **"Start from my quote"**: if a quote was made on `/decorating-quote-template` in this browser, offer to copy its lines | Mirrors the product's one-tap promise |
+| **"Start from my quote"**: if a quote was made on `/decorating-quote-template` in this browser, offer to copy its lines | Mirrors the product promise "When it's accepted, it's an invoice." |
 | **Invoice number** INV-0001 (editable, remembered + incremented in `localStorage`) | GOV.UK: unique identification number |
 | **Invoice date** and **supply date / date work finished** (DD/MM/YYYY) | GOV.UK: both required |
 | **Due date**: default 14 days (PRD), options 7/14/30 days or "on receipt" | Common UK terms |
@@ -37,7 +37,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 2. **What must a UK invoice include?** (H2) — from GOV.UK "Invoices: what they must include": unique number · your name/business name and address · client's name and address · clear description · supply date · invoice date · amount(s) · VAT amount if applicable · total owed; sole traders add their own name and any business name (and an address for legal documents if using a business name). Link GOV.UK. ~200 words.
 3. **If you're VAT registered** (H2) — table of the extra fields on a full VAT invoice (HMRC VAT Notice 700/21: your VAT registration number, time of supply (tax point), for each line the rate of VAT and amount excluding VAT, total excluding VAT, total VAT). Mention simplified invoices for supplies up to £250. Link HMRC. ~200 words.
 4. **How to write an invoice for a painting and decorating job** (H2, exact autocomplete question) — 6 steps: copy the agreed quote lines · add anything extra agreed in writing · subtract the deposit · set the due date · add bank details and reference · send the same day (WhatsApp/email). ~250 words.
-5. **Getting paid on time** (H2) — late payers are a top money topic in r/smallbusinessuk ("How does everyone handle clients who pay late?", 40 comments, v0.2 sample). Practical: send on completion day; state the due date, not "30 days" vaguely; polite reminder at due date + 1 day; for **business clients only**, the Late Payment of Commercial Debts (Interest) Act 1998 lets you claim statutory interest and fixed compensation (link GOV.UK "Late commercial payments"). Do not imply it applies to homeowners. ~200 words.
+5. **Getting paid on time** (H2) — late payers are a top money topic in r/smallbusinessuk ("How does everyone handle clients who pay late?", 40 comments, v0.2 sample). Practical: send on completion day; state the due date, not "30 days" vaguely; polite reminder at due date + 1 day; for **business clients only**, the Late Payment of Commercial Debts (Interest) Act 1998 lets you claim statutory interest and fixed compensation (link GOV.UK "Late commercial payments"). Do not imply it applies to homeowners. **Evidence lines (cite exactly, CEO decision #4):** "68% of tradespeople are chasing at least one late payment — Direct Line business insurance research, reported 15/01/2026 (sample size not published)", linking [Scottish Financial News](https://www.scottishfinancialnews.com/articles/two-thirds-of-tradespeople-left-chasing-late-payments-research-finds) (the original Direct Line release now redirects and can't be opened); and "45% of painters and decorators put being paid late in their top five bugbears — Tradefix Direct survey, n = 150 UK trades, 2024" (source per `../../strategy/decisions/004-verification-results.md`). Never round these up or drop the labels. ~200 words.
 6. **FAQ** (H2) — 40–80-word answers:
    - How do I write an invoice for painting and decorating work?
    - What should be on an invoice in the UK?
@@ -47,8 +47,8 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
    - How long does a client have to pay an invoice in the UK? *(whatever you agreed; for business-to-business with no agreement, 30 days by default under the late payment rules — link)*
    - I'm not VAT registered but the client's purchase order shows VAT — what do I put on the invoice? *(v0.2 — real r/UKPersonalFinance thread: you can't charge VAT if not registered; invoice the net amount and tell the client; link GOV.UK)*
    - I work for a builder under CIS — what changes? *(the contractor deducts CIS from labour (20% if you're registered, 30% if not) — show labour and materials separately; if you're VAT registered, the domestic reverse charge may apply — link GOV.UK; this tool doesn't calculate CIS yet)*
-   - Can I turn my quote into an invoice? *(yes — "Start from my quote"; in the PriceBrush app it's one tap)*
-7. **Next step** — card: "Quotes and invoices in one place, sent on WhatsApp — try PriceBrush free".
+   - Can I turn my quote into an invoice? *(yes — "Start from my quote" copies the lines. In the PriceBrush app: when it's accepted, it's an invoice.)*
+7. **Next step** — card (after the MVP): "Quotes and invoices in one place, sent on WhatsApp. When it's accepted, it's an invoice. Start a free quote". Before the MVP: "Price a room free" → `/paint-calculator`.
 
 ### 2.3 Copy rules
 
@@ -69,8 +69,11 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 
 ## 5. CTA to sign-up
 
-- After download: **"Next job, send the quote and the invoice from your phone in one tap. Free for 5 documents a month."**
-- Beside the form: "Got a quote in PriceBrush? It becomes this invoice in one tap."
+*(Updated 17/10/2026, CEO decisions #2 and #4. This page goes live 14/11, before accounts exist, ~22/11.)*
+
+- **14/11 until the app is live:** after download, inline card **"Price a room free"** → `/paint-calculator`, plus "Start with a quote" → `/decorating-quote-template`. No sign-up CTA.
+- **After the MVP:** after download, **"Start a free quote"** → sign-in, caption "When it's accepted, it's an invoice. Free for 5 documents a month. No per-user fees." Beside the form: "Quote in PriceBrush, and when it's accepted, it's an invoice."
+- Copy bans: no "one tap" for quote → invoice, no "60 seconds", never "cheaper"/"cheapest" (use **"No per-user fees"**).
 - Don't gate the download.
 
 ## 6. Internal links

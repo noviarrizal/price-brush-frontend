@@ -6,7 +6,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 
 - **Who searches:** mostly **decorators** (sole traders, new starters, people moving off Word) — this is the buyer. Some homeowners look for "what should a painting quote include" to compare quotes.
 - **What they want:** a **ready, professional-looking UK quote** they can fill in fast and send today — in the format they know (PDF, or Word/Google Docs). Many phrases end in "word", "excel", "pdf", "free download" (`quotes.csv`), so a **downloadable blank** matters as well as the online generator.
-- **v0.2 — UK proxy SERP (`../data/serp-ddg-uk-2026-10-16.md`):** the top 10 for "painting and decorating quote template uk" is **entirely small UK quoting-SaaS pages**, mostly from 2026 (TradeQuoteAI ×2, Quotient, QuoteSmith, TradeTally, Love Invoicing, QuoteCraft, QuoteRocket, TheTradePack, QuickPrice). TradeQuoteAI's page (read 16/10) has 9 sections, copy-paste wording and an itemised bedroom example, but no author, no cancellation rights and no download. QuoteRocket already claims "Make a Quote in 60 Seconds" — our 60-second promise needs proof on the page (show the generator, not the slogan). Difficulty now **Medium**.
+- **v0.2 — UK proxy SERP (`../data/serp-ddg-uk-2026-10-16.md`):** the top 10 for "painting and decorating quote template uk" is **entirely small UK quoting-SaaS pages**, mostly from 2026 (TradeQuoteAI ×2, Quotient, QuoteSmith, TradeTally, Love Invoicing, QuoteCraft, QuoteRocket, TheTradePack, QuickPrice). TradeQuoteAI's page (read 16/10) has 9 sections, copy-paste wording and an itemised bedroom example, but no author, no cancellation rights and no download. QuoteRocket already claims "Make a Quote in 60 Seconds" — **we don't use "60 seconds" at all** (dropped 17/10/2026, CEO decision #2); show the generator, not a slogan. Difficulty now **Medium**.
 - **What ranks now (v0.1, WebSearch):** thin template mirrors (inv24.uk: Word download, ~30 words), US SaaS template pages (PandaDoc, Jobber, Joist, InvoiceOwl, Skynova, Jotform), a UK SaaS page (QuoteCraft). None we could read offers a no-sign-up UK generator with VAT handling, a worked UK example and decorator-specific fields. Spam mirrors on .ac.uk/.gov domains also appear in WebSearch — low quality, beatable on usefulness, but they show the SERP is messy.
 
 ## 2. Must-haves to beat the current top 3
@@ -19,7 +19,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 | **Your business:** name, phone, email, address; logo optional (stays in browser); VAT number shown only if "I'm VAT registered" | UK sole traders mostly not VAT registered (PRD persona Dave) |
 | **Client:** name, job address (and billing address if different) | Standard |
 | **Quote details:** quote number (Q-0001, editable), date (DD/MM/YYYY), **valid until** (default 30 days), short job description | UK conventions; PRD mock-up "Valid for 30 days" |
-| **Line items:** description + amount (qty × rate optional); **"+ Add line"**; quick-add chips for common decorator lines: "Walls, 2 coats", "Ceiling, 2 coats", "Woodwork (skirting, doors, frames)", "Prep: fill and sand", "Wallpaper removal", "Paint and materials" | Saves typing; mirrors how decorators itemise (research: prep and materials often itemised separately) |
+| **Line items:** description + amount (qty × rate optional); **"+ Add line"**; quick-add chips for common decorator lines: "Walls, 2 coats", "Ceiling, 2 coats", "Woodwork (skirting, doors, frames)", "Prep: fill and sand", "Mist coat (new plaster)", "Wallpaper removal", "Paint and materials" | Saves typing; mirrors how decorators itemise (research: prep and materials often itemised separately) |
 | **Supply and apply / labour only** toggle → prints "Price includes paint and materials" or "Labour only — client supplies paint" | Answers "do painting quotes include paint" (`quotes.csv`) |
 | **VAT toggle:** off by default; on = 20% line + VAT number | UK VAT; threshold £90,000 (GOV.UK) |
 | **Terms block** with editable defaults: deposit (none / %), payment due on completion or within 14 days, what's included/excluded, furniture moving, protection of floors, "Prices are fixed unless the agreed work changes" | What a UK quote should state (see §2.2) |
@@ -53,9 +53,11 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
    - How long should a decorating quote be valid for? *(commonly 30 days; your choice — state it)*
    - Do I need to add VAT to my quote? *(only if VAT registered; £90,000 threshold; link to `/guides/do-decorators-charge-vat`)*
    - Do I have to give my client a right to cancel? *(If the contract is agreed in the client's home and is over £42, the Consumer Contracts Regulations 2013 normally give a 14-day cancellation right and require written notice; if they ask you to start sooner they pay for work done. Link Business Companion / legislation.gov.uk. "This is general information, not legal advice.")*
+   - Should a decorator take a deposit? *(added 17/10/2026, CEO decision #4. Draft: "Many do, especially on bigger jobs or when you buy materials up front. In Direct Line's research with UK tradespeople, 39% said they take half up front and 46% ask for proof of funds. Put the deposit amount and when it's due in the quote's terms, e.g. '30% deposit on acceptance, balance on completion.' If the client has a right to cancel (see below), a deposit normally has to be refunded if they cancel in time." Cite exactly: "Direct Line business insurance research, reported 15/01/2026 (sample size not published)" linking [Scottish Financial News](https://www.scottishfinancialnews.com/articles/two-thirds-of-tradespeople-left-chasing-late-payments-research-finds) — the original Direct Line release now redirects and can't be opened. Late Payment Act interest applies to **business clients only**; don't mention it for homeowners. The template already has a deposit field in the terms block; a deposit line in the app is post-MVP, so don't promise it.)*
+   - Should I charge for a mist coat on new plaster? *(added 17/10/2026, CEO decision #3. Yes — it's an extra coat, extra paint and usually an extra visit while it dries. Put it on its own line ("Mist coat on new plaster, X m²") so the client sees why the price is higher; the "Mist coat (new plaster)" chip adds it, and the paint calculator's "New plaster? Add a mist coat" switch carries it across with litres and drying time. Link `/paint-calculator`.)*
    - Can I send a quote on WhatsApp? *(yes — PDF or link; get the client's "yes" in writing)*
    - Is this template really free? *(yes, PDF with a small "Made with PriceBrush" mark; no sign-up; nothing stored)*
-6. **Next step: when the job's done** — link card to `/decorating-invoice-template` ("Turn this quote into an invoice") and the app CTA ("In PriceBrush that's one tap").
+6. **Next step: when the job's done** — link card to `/decorating-invoice-template` ("Turn this quote into an invoice") — the invoice page goes live 14/11/2026, so until then show the card without the link, or hide it. App line (after the MVP only): **"In PriceBrush: when it's accepted, it's an invoice."**
 
 ### 2.3 Copy rules
 
@@ -76,8 +78,11 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 
 ## 5. CTA to sign-up
 
-- After download (toast/modal-free inline card): **"Next time, just say the job. PriceBrush writes the lines for you — free for 5 documents a month."** → sign-in.
-- Persistent secondary card beside the form (desktop) / after the totals (mobile): "Skip the typing: say the job and we'll fill this in" (design copy).
+*(Updated 17/10/2026, CEO decisions #2 and #4.)*
+
+- **31/10 until the app is live (~22/11):** no accounts exist, so no sign-up CTA. After download, inline card: **"Price a room free"** → `/paint-calculator` ("Work out coats, litres, days and labour from your day rate, then bring it back here").
+- **After the MVP:** after-download card: **"Start a free quote"** → sign-in, caption "Free for 5 documents a month. No per-user fees." Secondary card beside the form (desktop) / after the totals (mobile): "Room sizes in. Priced quote out." Voice copy ("say the job") only once voice works in the live app.
+- Copy bans: no "60 seconds", no "one tap" invoice claim (use **"When it's accepted, it's an invoice."**), never "cheaper"/"cheapest" (use **"No per-user fees"**).
 - Never block the download behind sign-up.
 
 ## 6. Internal links
@@ -88,6 +93,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 ## 7. E-E-A-T signals (true ones only)
 
 - Cite **GOV.UK** (VAT threshold), **legislation.gov.uk / Business Companion** (cancellation rules), **Citizens Advice** (quote vs estimate) — official sources, linked.
+- Survey figures (deposit FAQ): cite as "Direct Line business insurance research, reported 15/01/2026 (sample size not published)" + the Scottish Financial News link — a secondary source, so say "reported", never "Direct Line found in a survey of N".
 - "Last reviewed: [date]" on the legal/VAT bits; review each April (VAT/MTD changes).
 - Real About page (author: **Arif Noviarrizal, independent developer building PriceBrush** — nothing more until he adds it); no fake testimonials ("Used by 1,000s of decorators") — none exist yet.
 - Things the top-ranking competitors lack and we can truthfully add: cancellation-rights section (Consumer Contracts Regulations), quote-vs-estimate explanation, a named author, and a working blank download.

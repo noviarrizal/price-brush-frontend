@@ -1,5 +1,29 @@
 # SEO changelog
 
+## v0.3 — 17/10/2026
+
+The founder accepted all 10 CEO decisions (`../ceo/decisions-2026-10-17.md`, 17/10/2026). This version applies only the edits that memo gives to [SEO]: #1 (invoice date), #2, #4 and #6. No new research.
+
+**`keyword-map.md`**
+
+1. Home (#2): H1 is now **"Room sizes in. Priced quote out."**, with a keyword line ("Quote and invoice app for UK painters and decorators"), the sub, and the CTA "Price a room free" → `/paint-calculator` until the app is live, then "Start a free quote". There are two meta descriptions: one for 31/10 (142 chars, no app claims) and one for after the MVP (154 chars). Both were counted with a script. "60 seconds" and the "one tap" invoice claim are gone. A late-Nov 5-second re-test is noted.
+2. `/decorating-invoice-template` goes live on **14/11/2026** instead of 31/10 (#1).
+3. `/pricing` (#6): the meta description now says "incl. VAT" (152 chars). I added a price rule: always incl. VAT, never "+ VAT"; comparisons include Queezy, are dated and sourced, and never say "cheaper".
+4. The invoice page's CTA anchor is now "When it's accepted, it's an invoice."
+
+**Briefs**
+
+- `paint-calculator.md`: before the MVP there is no sign-up CTA. The primary action is "Turn this into a quote", and pages that link to the calculator use "Price a room free". After the MVP, add "Start a free quote". The mist-coat switch is now named "New plaster? Add a mist coat", and there is a new FAQ explaining how it is counted. Added copy bans.
+- `decorating-quote-template.md`: added a **deposit FAQ** (Direct Line 39% take half up front / 46% ask for proof of funds, cited as "reported 15/01/2026 (sample size not published)" with the Scottish Financial News link), a **mist-coat FAQ** and a "Mist coat (new plaster)" chip. The CTA follows #2. The next-step card says "when it's accepted, it's an invoice" and hides the invoice link until 14/11. "60 seconds" is dropped.
+- `decorating-invoice-template.md`: the live date is now 14/11. Every "one tap" line is replaced with "When it's accepted, it's an invoice." The "Getting paid on time" section cites Direct Line 68% (same citation format) and Tradefix 45% (n = 150, 2024). The CTA follows #2. It says "No per-user fees" and never "cheaper".
+
+**Why:** voice ships only in the Nov MVP, so the H1 and CTAs have to be provable on 31/10. Competitors already use "60 seconds". The Direct Line date was checked by the CEO (it is a secondary source). Polar charges UK buyers inclusive of VAT.
+
+**Follow-up conflict fixes (the coordinator approved them on 17/10/2026):**
+- `content-plan.md`: the invoice template is no longer in the 26–31 Oct row, so that row now covers 4 URLs and points to the decision #1 cut order. It moves to the 9–15 Nov row, going live **14/11/2026** with a sitemap update and "Request indexing" (1.5 h). The 12-page total by 22/11 doesn't change.
+- `keyword-research.md` (painter and decorator quote template row): "60 seconds" is now marked as QuoteRocket's and TradeQuoteAI's claim, which PriceBrush no longer uses (decision #2).
+- `briefs/paint-calculator.md`: the price label is now **"Your price at your day rate"** (decision #1), with the caption "Check prep, access and woodwork before you quote." The output row, formula, worked example and intro now use the same wording.
+
 ## v0.2 — 16/10/2026
 
 Founder decisions applied + the checks the founder won't do were done (or ruled out).

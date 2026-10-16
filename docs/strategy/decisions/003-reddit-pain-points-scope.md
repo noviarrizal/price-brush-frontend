@@ -1,6 +1,8 @@
 # 003 — Late payers, underpricing, mist coat: MVP, post-MVP, or content only?
 
-Date: 16/10/2026 · Author: strategist · **Status: Proposed**
+Date: 16/10/2026 · Author: strategist · **Status: Accepted (17/10/2026, with changes per docs/ceo/decisions-2026-10-17.md)**
+
+CEO change: mist-coat switch is **must-have (P0)**; Overdue + WhatsApp reminder is **nice-to-have (P1), cut first** if the build is behind on 14 Nov; Reddit = homeowner channel only, 0 decorator-acquisition hours. See CEO #3.
 
 ## Question
 

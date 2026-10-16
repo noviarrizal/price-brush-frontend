@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=1280">
-<title>PriceBrush: quote any decorating job in 60 seconds (desktop landing, prototype v0.2)</title>
+<title>PriceBrush: Room sizes in. Priced quote out. (desktop landing, prototype v0.3)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&display=swap" rel="stylesheet">
@@ -312,7 +312,7 @@ footer a{color:var(--pb-ink);font-weight:600}
 </svg>
 <!--pb-icons:end-->
 <div class="site">
-  <div class="proto-bar" role="region" aria-label="Prototype controls"><b>v0.2</b> Landing (desktop ≥ 1024 px) <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button></div>
+  <div class="proto-bar" role="region" aria-label="Prototype controls"><b>v0.3</b> Landing (desktop ≥ 1024 px) <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button></div>
   <header class="wrap nav">
     <a class="wordmark" href="#"><span class="tile"><span>£</span></span>PriceBrush</a>
     <span style="flex:1"></span>
@@ -328,12 +328,12 @@ footer a{color:var(--pb-ink);font-weight:600}
     <div class="wrap">
       <div>
         <div class="eyebrow"><i></i>The quote and invoice app for UK painters and decorators</div>
-        <h1 class="display">Quote any decorating job in 60&nbsp;seconds. Just say it.</h1>
-        <p class="sub">No per-user fees. No sales calls. Cancel in one tap.</p>
+        <h1 class="display">Room sizes in. Priced quote&nbsp;out.</h1>
+        <p class="sub">Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators.</p>
         <div class="cta">
-          <a class="btn btn-primary btn-lg" href="#" style="font-size:20px;min-height:60px;padding:0 28px"><svg class="ico"><use href="#i-mic"/></svg>Try it free — say a job</a>
+          <a class="btn btn-primary btn-lg" href="#" style="font-size:20px;min-height:60px;padding:0 28px"><svg class="ico"><use href="#i-calc"/></svg>Price a room free</a>
         </div>
-        <p class="note">Free for 5 documents a month. No card needed. Works on your phone and your laptop.</p>
+        <p class="note">No sign-up. No per-user fees. No sales calls. Works on your phone and your laptop.</p>
       </div>
       <div class="stage" aria-label="PriceBrush on a phone and as a finished quote">
         <div class="paper">
@@ -347,11 +347,14 @@ footer a{color:var(--pb-ink);font-weight:600}
           <div style="margin-top:12px;color:#46524B">Valid for 30 days.</div>
         </div>
         <div class="phone"><div class="scr">
-          <div style="font-size:12px;font-weight:600;color:#46524B;align-self:stretch;display:flex;justify-content:space-between"><span>New quote</span><span>Saved</span></div>
-          <div class="q">Describe the job like you'd tell a mate.</div>
-          <div class="mic"><svg class="ico" style="width:38px;height:38px;color:#14201A"><use href="#i-mic"/></svg></div>
-          <div style="font-weight:700">Tap to talk</div>
-          <div class="tr">“Living room and hallway, walls and ceiling, two coats, magnolia. Client is Mrs Patel, 12 Oak Road.”</div>
+          <div style="font-size:12px;font-weight:600;color:#46524B;align-self:stretch;display:flex;justify-content:space-between"><span>Paint calculator</span><span>2 rooms</span></div>
+          <div class="tr" style="margin-top:12px;align-self:stretch"><b>Living room</b> 4.6 × 3.8 × 2.4 m · walls + ceiling · 2 coats</div>
+          <div class="tr" style="margin-top:6px;align-self:stretch"><b>Hallway</b> 4 × 1.4 × 2.4 m · walls · 2 coats</div>
+          <div style="margin-top:18px;font-size:12px;font-weight:600;color:#46524B">You need</div>
+          <div class="q" style="font-size:26px;line-height:28px">15 litres</div>
+          <div style="margin-top:14px;font-size:12px;font-weight:600;color:#46524B">Your price at your day rate</div>
+          <div class="q" style="font-size:26px;line-height:28px">£615</div>
+          <div style="margin-top:auto;align-self:stretch;background:#F4C430;border:2px solid #14201A;box-shadow:0 2px 0 #14201A;border-radius:10px;padding:10px 12px;font-weight:700;font-size:13px;color:#14201A">Turn this into a quote</div>
         </div></div>
       </div>
     </div>
@@ -359,11 +362,11 @@ footer a{color:var(--pb-ink);font-weight:600}
 
   <section class="band">
     <div class="wrap">
-      <h2 class="h1">You talk. We write the quote.</h2>
+      <h2 class="h1">Every number shown. Every line yours.</h2>
       <div class="steps">
-        <div class="step"><div class="n">1</div><h3 class="title">Say the job</h3><p>Rooms, surfaces, coats, colour and the client's name. On site on your phone, or at home on the laptop.</p></div>
-        <div class="step"><div class="n">2</div><h3 class="title">Check the lines</h3><p>Every line is priced from your day rate. Anything we had to guess says “check this”. Change any number with a tap.</p></div>
-        <div class="step"><div class="n">3</div><h3 class="title">Send it on WhatsApp</h3><p>Your client gets a tidy link with your name on it and can accept it there. One tap turns it into an invoice.</p></div>
+        <div class="step"><div class="n">1</div><h3 class="title">Put in the rooms</h3><p>Sizes, surfaces and coats. On site on your phone, or at home on the laptop.</p></div>
+        <div class="step"><div class="n">2</div><h3 class="title">Check the lines</h3><p>One line per room and surface, priced from your day rate, with the working shown. Anything we had to guess says “check this”.</p></div>
+        <div class="step"><div class="n">3</div><h3 class="title">Send it on WhatsApp</h3><p>Your client gets a tidy link with your name on it and can accept it there. When it's accepted, it's an invoice.</p></div>
       </div>
     </div>
   </section>
@@ -413,7 +416,7 @@ footer a{color:var(--pb-ink);font-weight:600}
         <details open><summary>What if I've got no signal?</summary><p>Record or type anyway. It's saved on your phone and we'll build the quote as soon as you're back online.</p></details>
         <details open><summary>Do I need to be VAT registered?</summary><p>No. Turn VAT on in Settings when you register and we'll add 20% and your VAT number.</p></details>
         <details><summary>Can my client accept online?</summary><p>Yes. They open the link, tap “Accept quote” and type their name. You get told straight away.</p></details>
-        <details><summary>How do I cancel?</summary><p>Settings → Plan → Cancel. One tap. No phone call.</p></details>
+        <details><summary>How do I cancel?</summary><p>Settings → Plan → Cancel plan. One tap, no phone call. You keep Pro until the end of the period you paid for, and you can undo it until then.</p></details>
       </div>
     </div>
   </section>

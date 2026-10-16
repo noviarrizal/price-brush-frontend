@@ -1,12 +1,12 @@
-# PriceBrush — PRD, UX & User Flow (v0.1)
+# PriceBrush — PRD, UX & User Flow (v0.2)
 
-Tanggal: 14 Oktober 2026 · Gambar diagram & mock-up: [`docs/assets/`](assets/)
+Tanggal: 14 Oktober 2026 · Diperbarui: 17 Oktober 2026 (keputusan CEO, lihat `docs/ceo/decisions-2026-10-17.md`) · Gambar diagram & mock-up: [`docs/assets/`](assets/)
 
 ---
 
 ## 1. Ringkasan produk
 
-PriceBrush membantu decorator solo di UK membuat penawaran (quote) profesional dalam 60 detik dari HP, lalu menjadikannya invoice dengan satu tap. Target bisnis: 1–5 pelanggan berbayar pertama (total £40–250) sebelum 31 Desember 2026.
+PriceBrush membantu decorator solo di UK membuat penawaran (quote) profesional dengan hitungan khas decorator (ruangan → lapisan → liter cat → hari kerja → harga dari day rate sendiri), dari HP maupun laptop, lalu menjadikannya invoice begitu quote diterima. Target bisnis: 1–5 pelanggan berbayar pertama (total £40–250) sebelum 31 Desember 2026.
 
 **Masalah** (dari riset review app dan Reddit UK):
 
@@ -19,9 +19,11 @@ PriceBrush membantu decorator solo di UK membuat penawaran (quote) profesional d
 
 **Target user:** painter & decorator di UK, kerja sendiri atau berdua, mayoritas kerja dari HP.
 
-**Positioning:** "The fastest way for UK decorators to quote. No per-user fees. No sales calls. Cancel in one tap."
+**Positioning (17 Okt 2026):** "The UK decorator's quote app that does the maths: rooms to paint, days and price. No per-user fees. No sales calls. Cancel in one tap."
 
-**Alternatif yang kita lawan:** Word/Excel dan WhatsApp, Tradify, Powered Now, Joist, Invoice2go, dan app AI quote generik (Fixxa, TradeQuoteAI, VoxTrade).
+**Pembeda utama:** hitungan decorator yang terlihat dan bisa dicek di dalam quote (m², lapisan, liter, hari, upah dari day rate), dan bisa dicoba di kalkulator gratis sebelum daftar. Klaim "60 seconds" dan "quote → invoice in one tap" **tidak dipakai** karena sudah dimiliki kompetitor (QuoteRocket, TradeQuoteAI).
+
+**Alternatif yang kita lawan:** Word/Excel dan WhatsApp, Tradify, Powered Now, Joist, Invoice2go, Jobber, app khusus decorator (Queezy £8,99, PainterPal, Paint Manager), tool quote/invoice gratis (QuoteRocket, InvoiceJob), dan app AI quote (Fixxa, TradeQuoteAI, VoxTrade, Kvota, Sleepless Tradesman). Detail: `docs/strategy/competitors.md`.
 
 ---
 
@@ -58,22 +60,24 @@ MVP hanya melayani satu pekerjaan: quote dari HP, lalu jadikan invoice. Semua ya
 
 | Fitur | Prioritas | Catatan |
 | --- | --- | --- |
-| Kalkulator cat & biaya (tool SEO gratis) | P0 | Tanpa login, jalan di browser |
-| Generator quote gratis (tool SEO) | P0 | Tanpa login, PDF ber-watermark |
+| Kalkulator cat & biaya (tool SEO gratis) — beberapa ruangan, dinding/plafon/kayu, day rate → hari → upah → harga, opsi mist coat, tombol "Turn this into a quote" | P0 | Tanpa login, jalan di browser. Andalan launch 31 Okt |
+| Generator quote gratis (tool SEO) | P0 | Tanpa login, PDF ber-watermark, bisa diisi otomatis dari kalkulator. Live 31 Okt |
+| Generator invoice gratis (tool SEO) | P0 | Tanpa login, memakai ulang PDF quote. Live 14 Nov |
 | Login dengan Google | P0 | Tanpa email sendiri: belum punya domain |
 | Profil bisnis (nama, logo, alamat, VAT number opsional) | P0 | Sekali isi saat onboarding |
 | Quote dari suara atau teks dengan AI | P0 | Hasil selalu bisa diedit per baris |
 | Editor quote (baris item, VAT, diskon, catatan) | P0 | |
 | Bagikan quote: link publik + PDF | P0 | Tombol share WhatsApp |
 | Ubah quote menjadi invoice | P0 | Satu tap, nomor invoice otomatis |
-| Daftar quote & invoice dengan status | P0 | Draft, Sent, Accepted, Paid |
+| Daftar quote & invoice dengan status | P0 | Draft, Sent, Accepted, Overdue, Paid |
+| Invoice Overdue + tombol "Send a reminder" via WhatsApp | P1 | Teks sopan yang sudah terisi; **dipotong duluan** kalau jadwal telat |
 | Batas paket Free + checkout Pro (Polar) | P0 | |
 | Klien menekan "Accept quote" di link | P1 | Status otomatis jadi Accepted |
 | Price book (day rate, harga cat per liter) | P1 | Dipakai AI saat menghitung |
 | Simpan draft saat offline + install PWA | P1 | |
 | Duplikasi quote | P1 | |
 
-**Di luar scope MVP (masuk Q1 2027 atau nanti):** app native iOS/Android, backend Go, MTD/HMRC, menerima pembayaran kartu dari klien, multi-user, CIS, jadwal kerja, pembukuan, integrasi akuntansi, profesi selain decorator.
+**Di luar scope MVP (masuk Q1 2027 atau nanti):** baris deposit/DP saat quote diterima, reminder pembayaran otomatis, warna brand sendiri untuk Pro (dengan cek kontras otomatis), app native iOS/Android, backend Go, MTD/HMRC, menerima pembayaran kartu dari klien, multi-user, CIS, jadwal kerja, pembukuan, integrasi akuntansi, profesi selain decorator.
 
 **Prinsip produk:**
 
@@ -108,7 +112,7 @@ flowchart LR
 1. User mencari "painting quote template UK" atau "how much paint for a room" dan mendarat di halaman tool.
 2. Isi ukuran ruangan atau baris item, lalu lihat hasil langsung (liter cat, hari kerja, total).
 3. Download PDF ber-watermark "Made with PriceBrush".
-4. Ajakan di samping hasil: "Quote by voice in 60 seconds — try free" membawa ke Flow B.
+4. Tombol utama di hasil: **"Turn this into a quote"** membuka `/decorating-quote-template` yang sudah terisi, satu baris per ruangan dan permukaan beserta hitungannya (contoh: "Living room walls · 2 coats · 38 m² · 0.8 day — £160.00"). Setelah MVP berbayar live, ada ajakan lanjutan ke Flow B.
 
 **Flow B — Daftar & onboarding (target di bawah 90 detik)**
 
@@ -151,7 +155,7 @@ Setiap fitur P0 dianggap selesai hanya jika semua acceptance criteria di bawah l
 
 | ID | Requirement | Acceptance criteria |
 | --- | --- | --- |
-| F1 | Kalkulator cat | Input panjang × lebar × tinggi ruangan, jumlah pintu/jendela, jumlah lapis. Output liter cat (asumsi 12 m²/liter, bisa diubah), estimasi hari kerja, total harga. Hasil muncul tanpa reload |
+| F1 | Kalkulator cat | Input panjang × lebar × tinggi per ruangan, jumlah pintu/jendela, jumlah lapis; "+ Add another room"; switch dinding / plafon / kayu; switch "New plaster? Add a mist coat" (tambah satu lapis sebagai baris sendiri). Output liter cat (default 12 m²/liter, bisa diubah) dibulatkan ke ukuran kaleng, hari kerja, upah dari day rate, dan total berlabel "Your price at your day rate". Hasil muncul tanpa reload. Tombol "Turn this into a quote" mengisi F2 |
 | F2 | Generator quote gratis | Isi baris item dan data bisnis tanpa login, download PDF format UK (£, VAT opsional, tanggal DD/MM/YYYY) dengan watermark |
 | F3 | Login Google | Login berhasil dalam 2 tap. Sesi bertahan 30 hari |
 | F4 | Profil bisnis | Nama dan kota wajib; logo (PNG/JPG maks 1 MB), alamat, VAT number, detail bank opsional. Muncul di semua PDF |
@@ -160,9 +164,9 @@ Setiap fitur P0 dianggap selesai hanya jika semua acceptance criteria di bawah l
 | F7 | Editor quote | Tambah, hapus, ubah baris; subtotal, VAT 20% (jika terdaftar), total terhitung otomatis. Autosave tiap perubahan |
 | F8 | Bagikan | Link publik unik (tidak bisa ditebak) + PDF. Tombol WhatsApp membuka chat dengan teks dan link terisi |
 | F9 | Quote ke invoice | Satu tap membuat invoice dengan baris yang sama, nomor berurutan (INV-0001), jatuh tempo default 14 hari |
-| F10 | Daftar dokumen | Filter status Draft, Sent, Accepted, Paid. Cari nama klien |
+| F10 | Daftar dokumen | Filter status Draft, Sent, Accepted, Overdue, Paid. Cari nama klien. (P1) Invoice Overdue punya tombol "Send a reminder" yang membuka WhatsApp dengan teks sopan terisi |
 | F11 | Batas Free | Maksimal 5 dokumen per bulan kalender, watermark di PDF dan link. Dokumen ke-6 memunculkan layar upgrade |
-| F12 | Checkout Pro | Checkout Polar; webhook mengaktifkan Pro dalam 1 menit atau kurang. Cancel dari halaman akun dalam satu tap |
+| F12 | Checkout Pro | Checkout Polar (pajak di-set **Inclusive**); webhook mengaktifkan Pro dalam 1 menit atau kurang. Cancel = satu tap (berlaku di akhir periode), lalu toast "Cancelled. You keep Pro until DD/MM/YYYY. [Undo]" dan tombol "Resume Pro" sampai tanggal itu. Tanpa penawaran retensi. Kalau Undo ternyata > ~1 jam kerja tambahan, ganti semua klaim jadi "Cancel in two taps. No phone call." |
 | F13 | Export & hapus data | Export semua quote/invoice ke CSV. Hapus akun menghapus seluruh data |
 
 ---
@@ -194,8 +198,13 @@ Aplikasi dirancang untuk satu tangan, di lokasi kerja, dengan sinyal lemah. Satu
 
 **Copy kunci:**
 
-- Landing: "Quote any decorating job in 60 seconds. Just say it."
-- Sub: "No per-user fees. No sales calls. Cancel in one tap."
+- Baris kecil di atas headline: "Quote and invoice app for UK painters and decorators"
+- Landing H1: **"Room sizes in. Priced quote out."** (dipakai sampai fitur suara live; diuji ulang vs "Say the rooms. Get a priced quote." akhir November)
+- Sub: "Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators."
+- CTA sebelum MVP: "Price a room free" → `/paint-calculator`. Setelah MVP: "Start a free quote".
+- Pengganti klaim "quote → invoice in one tap": "When it's accepted, it's an invoice."
+- Janji: "No per-user fees. No sales calls. Cancel in one tap." (jangan pernah "cheaper"/"cheapest"; Queezy £8,99)
+- WhatsApp: logo resmi tanpa modifikasi + kata "WhatsApp", tidak dipakai sebagai kata kerja ("Message Dave on WhatsApp"), tanpa klaim partner; pakai ikon chat biasa kalau logo tidak bisa dipakai utuh di tombol kuning.
 - Layar New quote: "Describe the job like you'd tell a mate."
 - Tanda AI: "Check this — we estimated the wall area."
 - Batas Free: "You've used 5 free documents this month. Go Pro for £9/month — cancel anytime."
@@ -231,11 +240,11 @@ Satu harga flat tanpa biaya per user, ditambah penawaran Founding Member untuk m
 | Paket | Harga | Isi |
 | --- | --- | --- |
 | Free | £0 | 5 dokumen (quote + invoice) per bulan, watermark "Made with PriceBrush", semua fitur AI |
-| Pro bulanan | £9/bulan | Dokumen tanpa batas, tanpa watermark, logo sendiri, price book |
-| Pro tahunan | £79/tahun | Sama dengan Pro, hemat ~27% |
+| Pro bulanan | £9/bulan incl. VAT | Dokumen tanpa batas, tanpa watermark, logo sendiri (warna brand menyusul), price book |
+| Pro tahunan | £79/tahun incl. VAT | Sama dengan Pro, hemat ~27% |
 | Founding Member | £49 sekali bayar, seumur hidup | Pro selamanya, terbatas 50 orang, berlaku sampai 31 Jan 2027 |
 
-- Pembayaran lewat Polar sebagai merchant of record: mereka yang memungut dan menyetor VAT UK.
+- Pembayaran lewat Polar sebagai merchant of record: mereka yang memungut dan menyetor VAT UK. Harga ditampilkan **termasuk VAT**; di dashboard Polar pajak di-set **Inclusive** (bukan Location-based). Estimasi bersih: ~£6,50 dari £9, ~£37 dari £49 (fee 5% + 50¢ + 1,5% kartu non-US).
 - Biaya AI per quote diperkirakan jauh di bawah £0,01, jadi paket seumur hidup tetap aman secara margin.
 - Watermark di paket Free sekaligus jadi kanal marketing: klien si tukang ikut melihat nama PriceBrush.
 - Pembeli Founding Member diminta feedback dan satu review di Capterra atau Trustpilot.
@@ -283,14 +292,14 @@ Backend Go masuk Q1 2027 untuk fitur MTD dan sinkronisasi, bukan untuk MVP.
 
 ## 9. Metrik sukses, kriteria stop & timeline
 
-Ukuran sukses pertama: minimal 1 pembayaran sebelum 31 Desember 2026.
+Ukuran sukses pertama: minimal 1 pembayaran sebelum 31 Desember 2026. Target lain di bawah adalah estimasi (diubah 17 Okt 2026) dan diganti dengan angka nyata di **checkpoint 15 Des 2026**. Pembayaran pertama kemungkinan besar datang dari minggu launch (direktori, forum, Product Hunt) dan penawaran Founding Member, bukan dari SEO saja.
 
 | Metrik | Target 31 Des 2026 | Cara ukur |
 | --- | --- | --- |
 | Halaman terindeks Google | ≥ 10 | Search Console |
-| Pengguna tool gratis | ≥ 200 | Cloudflare Analytics |
-| Akun terdaftar | ≥ 30 | Database (Neon) |
-| Aktivasi: quote pertama terkirim dalam 24 jam | ≥ 40% dari akun | Event "quote_sent" |
+| Pemakaian tool gratis (`calc_used` + `pdf_downloaded`) | ≥ 500 | Event counter anonim |
+| Akun terdaftar (dengan `signup_source`) | ≥ 10 | Database (Neon) |
+| Aktivasi: quote pertama terkirim dalam 24 jam | ≥ 4 akun (≈ 40%) | Event "quote_sent" |
 | Pembayaran (Founding/Pro) | ≥ 1 (ideal 5) | Dashboard Polar |
 
 **Kriteria stop atau pivot (evaluasi 30 April 2027):** jika trafik organik tidak naik selama 3 bulan berturut-turut dan pembayaran masih di bawah 5, hentikan atau ganti arah. Jika ada akun aktif tapi tidak ada yang bayar, uji ulang harga dan paket.
@@ -300,7 +309,7 @@ Ukuran sukses pertama: minimal 1 pembayaran sebelum 31 Desember 2026.
 ```mermaid
 timeline
     title PriceBrush — Okt 2026 sampai Jan 2027
-    14–31 Okt : 1 Free tools live : Kalkulator cat, free quote PDF : Gate — pages indexed
+    14–31 Okt : 1 Free tools live : Kalkulator cat + template quote (31 Okt), template invoice (14 Nov) : Gate — pages indexed
     1–21 Nov : 2 Paid MVP : Voice quote, invoice, Polar checkout : Gate — 10 users tried it
     22–30 Nov : 3 Launch : Directories, forums, Product Hunt : Gate — checkout live
     1 Des–31 Jan : 4 Founding offer : £49 lifetime, first 50 only : Gate — first payment by 31 Dec
@@ -312,7 +321,10 @@ timeline
 - [ ] Cek trademark "PriceBrush" di UK IPO sebelum beli domain
 - [ ] Daftar Polar dan pastikan payout ke Indonesia berjalan sebelum checkout dibuka
 - [ ] Pilih LLM penyusun quote setelah uji 20 deskripsi pekerjaan sungguhan
-- [ ] Tampilkan harga termasuk atau belum termasuk VAT di halaman paket?
+- [x] Harga ditampilkan termasuk VAT; Polar di-set Inclusive (diputuskan 17 Okt 2026)
+- [ ] Cek di dashboard Polar: pembeli UK yang terdaftar VAT bisa dapat VAT invoice?
+- [ ] Cek saat daftar Polar: Stripe Connect Express Indonesia menerima tipe bisnis "individual"? (cadangan: Lemon Squeezy)
+- [ ] Tentukan auth Google + file storage (Neon tidak punya keduanya) — di system design Lead
 - [ ] Kapan perlu perwakilan UK GDPR (Article 27)? Cek setelah ada revenue
 
 **Keputusan 15 Okt 2026:**
@@ -323,3 +335,17 @@ timeline
 - Cek SEO manual dikerjakan agent SEO; yang butuh akun Google founder (Keyword Planner) diganti data Search Console setelah launch.
 - Data quote yang dianonimkan dan diagregasi boleh dipakai untuk konten/data story. Ini **wajib dicantumkan di terms & privacy policy** sebelum checkout dibuka.
 - [x] Backend MVP: Cloudflare Workers (TypeScript) dulu, Go di Q1 2027 (diputuskan 15 Okt 2026)
+
+**Keputusan 17 Okt 2026** (founder menyetujui semua rekomendasi CEO di `docs/ceo/decisions-2026-10-17.md`):
+
+1. Launch 31 Okt: kalkulator (beberapa ruangan + upah/harga) + template quote dengan pengisian otomatis yang sudah jalan; template invoice 14 Nov. Urutan potong kalau telat (dicek 28 Okt): (1) kalkulator 1 ruangan + liter + hari + harga, (2) template quote + PDF, (3) isi otomatis kalkulator → quote, (4) beberapa ruangan, (5) switch dinding/plafon/kayu, (6) mist coat. Nomor 1–4 wajib 31 Okt.
+2. Headline "Room sizes in. Priced quote out." sampai fitur suara live; pembeda = hitungan decorator yang terlihat. Positioning §1 diperbarui.
+3. Mist coat P0; reminder WhatsApp P1 (dipotong duluan); Reddit = channel pemilik rumah saja, 0 jam untuk cari decorator di sana.
+4. Perbandingan harga publik wajib menyertakan Queezy, bertanggal dan bersumber; klaim "No per-user fees", tidak pernah "cheaper". Survei Direct Line dikutip sebagai laporan 15/01/2026 (ukuran sampel tidak dipublikasikan).
+5. Arah desain "Coachline" disetujui.
+6. Harga incl. VAT; Polar di-set Inclusive.
+7. Cancel = satu tap + Undo + "Resume Pro" (lihat F12).
+8. Tombol Accept di halaman klien kuning untuk MVP; warna sendiri jadi bagian Pro nanti.
+9. WhatsApp: logo resmi sesuai aturan Meta, atau ikon chat biasa sebagai cadangan.
+10. Target §9 diganti (≥ 500 pemakaian tool, ≥ 10 akun, ≥ 4 aktif, ≥ 1 pembayaran) dengan checkpoint 15 Des 2026.
+- Database: **Neon** (bukan Supabase); auth Google dan file storage masih harus dipilih.

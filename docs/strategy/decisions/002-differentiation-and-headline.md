@@ -1,6 +1,8 @@
 # 002 — Sharpest difference, and should the headline change?
 
-Date: 16/10/2026 · Author: strategist · **Status: Proposed**
+Date: 16/10/2026 · Author: strategist · **Status: Accepted (17/10/2026, with changes per docs/ceo/decisions-2026-10-17.md)**
+
+CEO change: differentiator (visible decorator maths) kept, but the H1 is **"Room sizes in. Priced quote out."** until voice ships; re-test against "Say the rooms. Get a priced quote." with 5+ decorators in late Nov. "60 seconds" dropped; use "When it's accepted, it's an invoice." See CEO #2.
 
 ## Question
 

@@ -1,6 +1,6 @@
-# PriceBrush — Keyword map (v0.2)
+# PriceBrush — Keyword map (v0.3)
 
-Date: 15/10/2026 · Updated 16/10/2026 · Evidence for every keyword: `keyword-research.md` · Specs for meta tags: `technical-seo.md`
+Date: 15/10/2026 · Updated 17/10/2026 (CEO decisions #1, #2, #4, #6) · Evidence for every keyword: `keyword-research.md` · Specs for meta tags: `technical-seo.md`
 
 Rules: one primary keyword per URL; a keyword listed as secondary on one page must not be primary (or secondary) on another. Slugs are short, lowercase, hyphenated, UK spelling. Title ≤ 60 characters, meta description ≤ 155 characters (lengths checked with a script; counted below). Host shown as `https://pricebrush.pages.dev` until the domain move.
 
@@ -13,7 +13,7 @@ Rules: one primary keyword per URL; a keyword listed as secondary on one page mu
 | `/` | quote app for painters and decorators | P0 | 31/10/2026 |
 | `/paint-calculator` | paint calculator (UK) | P0 | 31/10/2026 |
 | `/decorating-quote-template` | painting and decorating quote template (UK) | P0 | 31/10/2026 |
-| `/decorating-invoice-template` | painting and decorating invoice template (UK) | P0 | 31/10/2026 |
+| `/decorating-invoice-template` | painting and decorating invoice template (UK) | P0 | 14/11/2026 (moved from 31/10, CEO decision #1) |
 | `/pricing` | (brand) PriceBrush pricing | P0 | 21/11/2026 |
 | `/about` · `/privacy` · `/terms` | (trust pages, no target) | P0 | 31/10 (about) · 21/11 (privacy, terms — needed before checkout) |
 | `/guides` | (hub) decorating business guides | P1 | 09/11/2026 |
@@ -32,8 +32,13 @@ Rules: one primary keyword per URL; a keyword listed as secondary on one page mu
 - **Primary:** quote app for painters and decorators
 - **Secondary:** quoting app for painters · app for painters and decorators · tradesman quote app · voice quote app · invoice app for decorators
 - **Title (49):** PriceBrush: Quote & Invoice App for UK Decorators
-- **Meta description (152):** Say the job, get an itemised quote in 60 seconds, send it on WhatsApp, turn it into an invoice in one tap. Free for 5 documents a month. No sales calls.
-- **H1:** Quote any decorating job in 60 seconds. Just say it. *(PRD copy; keyword sits in the subheading: "The quote and invoice app for UK painters and decorators.")*
+- **Meta description, 31/10 until the app is live (142):** Coats, litres, days and labour worked out from your day rate, with every number shown. Made for UK painters and decorators. Price a room free.
+- **Meta description, once the MVP is live (~22/11) (154):** Coats, litres, days and labour worked out from your day rate, every number shown. Free for 5 quotes or invoices a month. No per-user fees. No sales calls.
+- **Keyword line (above the H1, small):** Quote and invoice app for UK painters and decorators
+- **H1:** Room sizes in. Priced quote out. *(CEO decision #2, accepted 17/10/2026 — provable on 31/10 because voice ships only in the Nov MVP. Re-test against "Say the rooms. Get a priced quote." in late Nov with a 5-second test; swap only if that wins.)*
+- **Sub:** Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators.
+- **CTA:** until the app is live: "Price a room free" → `/paint-calculator`. After the MVP: "Start a free quote".
+- **Copy bans (decision #2/#4):** no "60 seconds" (QuoteRocket and TradeQuoteAI already use it), no "quote → invoice in one tap" (use **"When it's accepted, it's an invoice."**), never "cheaper"/"cheapest" (use **"No per-user fees"**).
 - **Links out:** /paint-calculator · /decorating-quote-template · /decorating-invoice-template · /pricing · /guides
 - **Links in:** every page (logo + footer), every tool CTA
 
@@ -57,22 +62,23 @@ Rules: one primary keyword per URL; a keyword listed as secondary on one page mu
 - **Links out:** /decorating-invoice-template ("job done? make the invoice") · /paint-calculator ("work out the paint first") · /guides/how-to-price-a-painting-job · / (CTA)
 - **Links in:** / · /paint-calculator · /decorating-invoice-template · pricing guides · footer
 
-### `/decorating-invoice-template` — Invoice template / generator (P0, brief: `briefs/decorating-invoice-template.md`)
+### `/decorating-invoice-template` — Invoice template / generator (P0, live 14/11/2026, brief: `briefs/decorating-invoice-template.md`)
 
 - **Primary:** painting and decorating invoice template (UK)
 - **Secondary:** decorating invoice template uk · painter and decorator invoice template · painting invoice generator · painting and decorating invoice example uk · how to write an invoice for painting and decorating · what should be on an invoice uk (section, not chased)
 - **Title (59):** Free Painting & Decorating Invoice Template UK | PriceBrush
 - **Meta description (145):** Make a UK painting and decorating invoice in your browser: invoice number, due date, bank details, VAT if registered. Download a PDF. No sign-up.
 - **H1:** Free painting and decorating invoice template (UK)
-- **Links out:** /decorating-quote-template ("start with a quote") · /guides/do-decorators-charge-vat · / (CTA "turn quotes into invoices in one tap")
+- **Links out:** /decorating-quote-template ("start with a quote") · /guides/do-decorators-charge-vat · / (CTA "When it's accepted, it's an invoice.")
 - **Links in:** / · /decorating-quote-template · VAT and MTD guides · footer
 
 ### `/pricing`
 
 - **Primary:** (brand) PriceBrush pricing — no generic keyword (don't compete with Tradify-pricing queries yet)
 - **Title (51):** PriceBrush Pricing: Free, Pro £9/month, No Per-User
-- **Meta description (144):** Free for 5 quotes or invoices a month. Pro is £9 a month or £79 a year. Founding Member £49 once, for life. No per-user fees. Cancel in one tap.
+- **Meta description (152):** Free for 5 quotes or invoices a month. Pro £9 a month or £79 a year, incl. VAT. Founding Member £49 once, for life. No per-user fees. Cancel in one tap.
 - **H1:** Simple pricing. No per-user fees.
+- **Price rule (CEO decision #6, accepted 17/10/2026):** all prices are shown **including VAT** ("£9 a month, incl. VAT"); Polar tax behaviour set to Inclusive. Never "+ VAT". Any comparison with competitors must include Queezy, be dated and sourced, and never say "cheaper"/"cheapest" (decision #4).
 - **Links out:** / · /paint-calculator · /decorating-quote-template · Links in: header, footer, home
 
 ### `/guides/how-to-price-a-painting-job` (P1)

@@ -297,6 +297,19 @@ details.adv[open] summary::after{content:"\2212"}
 .cta .btn-primary{border-color:#14181F;box-shadow:0 3px 0 #0A0E14}
 .how ol{padding-left:20px;margin:8px 0 0}
 .how li{margin:6px 0}
+.rooms > * + *{margin-top:12px}
+.room{border:1px solid var(--pb-line);margin:0;min-width:0}
+.room-head{display:flex;gap:8px;align-items:center}
+.room-name{font-weight:700;font-size:18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.switch.mist{align-items:flex-start;padding:8px 0}
+.switch.mist input{margin-top:2px}
+.work{list-style:none;margin:6px 0 0;padding:0}
+.work li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--pb-line)}
+.work li strong{display:block}
+.work li .m{display:block;font-size:14px;line-height:20px;color:var(--pb-ink-2)}
+.work li b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.yourprice{margin-top:4px;padding:12px;border-radius:10px;background:var(--pb-surface-2)}
 .how code{font-family:inherit;font-weight:700;font-variant-numeric:tabular-nums}
 </style>
 </head>
@@ -352,9 +365,9 @@ details.adv[open] summary::after{content:"\2212"}
 
 <div class="app">
   <div class="proto-bar" role="region" aria-label="Prototype controls">
-    <b>v0.2</b> Paint calculator
+    <b>v0.3</b> Paint calculator
     <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button>
-    <select aria-label="State" onchange="setState(this.value)"><option value="filled">Filled</option><option value="empty">Empty</option><option value="error">Error</option></select>
+    <select aria-label="State" onchange="setState(this.value)"><option value="filled">Two rooms</option><option value="empty">Empty</option><option value="error">Error</option></select>
     <a href="_overview.html">All screens</a>
   </div>
 
@@ -370,69 +383,66 @@ details.adv[open] summary::after{content:"\2212"}
     <main class="page">
       <div>
         <h1 class="h1">Paint calculator: how much paint do I need?</h1>
-        <p class="caption" style="margin:6px 0 0;font-size:16px;line-height:24px">Litres and tins for walls and ceilings, room by room. Decorators: add your day rate to see days and a rough price. Free, no sign-up, nothing stored.</p>
+        <p class="caption" style="margin:6px 0 0;font-size:16px;line-height:24px">Litres and tins for walls and ceilings, room by room. Decorators: add your day rate to see days and your price. Free, no sign-up, nothing stored.</p>
       </div>
 
-      <form class="card form" id="calc" onsubmit="return false" novalidate>
-        <div class="title">Room size</div>
-        <div class="grid3">
-          <div id="f-l"><label class="label" for="l">Length</label><div class="unit"><input class="input" id="l" inputmode="decimal" value="4"><span>m</span></div></div>
-          <div id="f-w"><label class="label" for="w">Width</label><div class="unit"><input class="input" id="w" inputmode="decimal" value="3.5"><span>m</span></div></div>
-          <div id="f-h"><label class="label" for="h">Height</label><div class="unit"><input class="input" id="h" inputmode="decimal" value="2.4"><span>m</span></div></div>
-        </div>
-        <div id="err" class="error-msg" hidden role="alert"><svg class="ico ico-sm"><use href="#i-alert"/></svg><span></span></div>
-        <div class="grid2">
-          <div><span class="label" id="doors-l">Doors</span><div class="stepper" role="group" aria-labelledby="doors-l"><button type="button" aria-label="One fewer door" onclick="step('doors',-1)">−</button><output id="doors">1</output><button type="button" aria-label="One more door" onclick="step('doors',1)">+</button></div></div>
-          <div><span class="label" id="win-l">Windows</span><div class="stepper" role="group" aria-labelledby="win-l"><button type="button" aria-label="One fewer window" onclick="step('windows',-1)">−</button><output id="windows">1</output><button type="button" aria-label="One more window" onclick="step('windows',1)">+</button></div></div>
-        </div>
-        <fieldset style="border:0;padding:0;margin-top:16px"><legend class="label">Coats</legend>
-          <div class="seg">
-            <label><input type="radio" name="coats" value="1"><span>1</span></label>
-            <label><input type="radio" name="coats" value="2" checked><span>2</span></label>
-            <label><input type="radio" name="coats" value="3"><span>3</span></label>
-          </div>
-        </fieldset>
-        <label class="switch">Include the ceiling<input type="checkbox" id="ceil"></label>
-        <details class="adv">
-          <summary>Your rates and paint</summary>
+      <form id="calc" onsubmit="return false" novalidate>
+        <div id="rooms" class="rooms"></div>
+        <button type="button" class="btn btn-secondary btn-block" style="margin-top:12px" onclick="addRoom()"><svg class="ico ico-sm"><use href="#i-plus"/></svg> Add another room</button>
+
+        <div class="card form" style="margin-top:16px">
+          <div class="title">Your day rate</div>
           <div class="grid2">
-            <div><label class="label" for="cov">Coverage</label><div class="unit"><input class="input" id="cov" inputmode="decimal" value="12"><span>m²/L</span></div></div>
-            <div><label class="label" for="spare">Spare</label><div class="unit"><input class="input" id="spare" inputmode="decimal" value="10"><span>%</span></div></div>
             <div><label class="label" for="rate">Day rate</label><div class="unit pre"><input class="input" id="rate" inputmode="decimal" value="200"><span>£</span></div></div>
-            <div><label class="label" for="ppl">Paint per litre</label><div class="unit pre"><input class="input" id="ppl" inputmode="decimal" value="5"><span>£</span></div></div>
+            <div><label class="label" for="speed">m² a day</label><div class="unit"><input class="input" id="speed" inputmode="decimal" value="40"><span>m²</span></div></div>
           </div>
-          <div style="margin-top:12px"><label class="label" for="speed">Your speed (m² a day, each coat counts)</label><div class="unit"><input class="input" id="speed" inputmode="decimal" value="40"><span>m²</span></div></div>
-          <p class="hint">Coverage is on the tin — use that if it's different.</p>
-        </details>
+          <p class="hint" style="margin-top:6px">Each coat counts towards your m² a day. 40 is our starting guess — change it to yours.</p>
+          <details class="adv">
+            <summary>Paint and spare</summary>
+            <div class="grid2">
+              <div><label class="label" for="cov">Coverage</label><div class="unit"><input class="input" id="cov" inputmode="decimal" value="12"><span>m²/L</span></div></div>
+              <div><label class="label" for="spare">Spare</label><div class="unit"><input class="input" id="spare" inputmode="decimal" value="10"><span>%</span></div></div>
+              <div><label class="label" for="ppl">Paint per litre</label><div class="unit pre"><input class="input" id="ppl" inputmode="decimal" value="5"><span>£</span></div></div>
+            </div>
+            <p class="hint">Coverage is on the tin — use that if it's different.</p>
+          </details>
+        </div>
       </form>
 
       <section class="card result" id="result" aria-live="polite" aria-labelledby="res-h">
         <div class="caption" id="res-h" style="font-weight:600">You need</div>
-        <div class="money-xl" id="litres">6 litres</div>
-        <div style="font-weight:600;margin-top:2px" id="tins">Buy 1 × 5 L + 1 × 2.5 L</div>
+        <div class="money-xl" id="litres">—</div>
+        <div style="font-weight:600;margin-top:2px" id="tins">—</div>
+        <div class="caption" style="font-weight:600;margin-top:16px">The working</div>
+        <ul class="work" id="work"></ul>
         <dl class="rows">
-          <div><dt>Area to paint</dt><dd id="area">32.7 m²</dd></div>
-          <div><dt>Time on the job</dt><dd id="days">About 2 days</dd></div>
-          <div><dt>Rough price</dt><dd id="price">£438</dd></div>
+          <div><dt>Time on the job</dt><dd id="days">—</dd></div>
         </dl>
-        <p class="caption" id="price-split" style="margin:4px 0 0">Labour £400 + paint £38</p>
+        <div class="yourprice">
+          <div class="caption" style="font-weight:600;color:inherit">Your price at your day rate</div>
+          <div class="money-xl" id="price">—</div>
+          <p class="caption" id="price-split" style="margin:2px 0 0">—</p>
+        </div>
         <button type="button" class="btn btn-secondary btn-block" style="margin-top:12px" onclick="copyResult()"><svg class="ico ico-sm"><use href="#i-copy"/></svg> Copy result</button>
       </section>
 
       <section class="card cta" aria-labelledby="cta-h">
         <h2 id="cta-h" class="title">Pricing a job like this?</h2>
-        <p>Say the job out loud and we'll turn it into a proper quote you can send on WhatsApp.</p>
-        <a class="btn btn-primary btn-lg btn-block" href="new-quote.html"><svg class="ico" style="stroke-width:2.25"><use href="#i-mic"/></svg> Quote by voice in 60 seconds — try free</a>
+        <p>We'll put every room on a quote, one line per surface, with the working shown. Change any line, then download the PDF.</p>
+        <a class="btn btn-primary btn-lg btn-block" href="decorating-quote-template.html"><svg class="ico"><use href="#i-file"/></svg> Turn this into a quote</a>
+        <p class="caption" style="margin:10px 0 0;color:var(--pb-on-brand-2)">Free. No sign-up. Nothing you type leaves this browser.</p>
       </section>
 
       <section class="how" aria-labelledby="how-h">
         <h2 id="how-h" class="h2">How we work it out</h2>
         <ol id="how">
-          <li>Walls: 2 × (length + width) × height.</li>
+          <li>Walls: 2 × (length + width) × height, for each room.</li>
           <li>Take off 1.8 m² per door and 1.5 m² per window.</li>
           <li>Add the ceiling (length × width) if ticked.</li>
+          <li>New plaster? The mist coat is one extra coat on its own line, plus time for it to dry.</li>
           <li>Multiply by coats, divide by coverage (12 m² per litre is typical for emulsion — check your tin).</li>
           <li>Add 10% spare and round up to real tin sizes (10 L, 5 L, 2.5 L).</li>
+          <li>Days = m² painted ÷ your m² a day. Your price = days × your day rate + paint.</li>
         </ol>
         <p class="caption">No tape measure? A 4 × 4 m room usually needs about 5 litres for two coats on the walls.</p>
       </section>
@@ -446,60 +456,92 @@ function pbTheme(){var d=document.documentElement.classList.toggle('dark');try{l
 function pbLabel(){var d=document.documentElement.classList.contains('dark');document.querySelectorAll('[data-theme-label]').forEach(function(e){e.textContent=d?'Dark':'Light';});}
 pbLabel();
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},4000);}
-var counts={doors:1,windows:1};
-function step(k,d){counts[k]=Math.max(0,Math.min(20,counts[k]+d));document.getElementById(k).textContent=counts[k];calc();}
-function num(id){var v=document.getElementById(id).value.trim().replace(',','.');return v===''?NaN:parseFloat(v);}
+var MIST_DRY=0.5; // assumption: the mist coat adds half a day of drying to "time on the job" (not charged as labour)
+var rooms=[
+  {name:'Living room',l:'4',w:'3.5',h:'2.4',doors:1,windows:1,coats:2,ceil:true,mist:false},
+  {name:'Hallway',l:'4',w:'1.2',h:'2.4',doors:3,windows:0,coats:2,ceil:false,mist:true}
+];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function roomHTML(r,i){
+  var n=i+1,id='r'+i;
+  return '<fieldset class="card form room" data-i="'+i+'">'+
+  '<div class="room-head"><label class="sr" for="'+id+'n">Room '+n+' name</label><input class="input room-name" id="'+id+'n" data-k="name" value="'+esc(r.name)+'" placeholder="Room '+n+'">'+
+  (rooms.length>1?'<button type="button" class="btn btn-ghost" onclick="removeRoom('+i+')" aria-label="Remove '+esc(r.name||('room '+n))+'"><svg class="ico ico-sm"><use href="#i-trash"/></svg>Remove</button>':'')+'</div>'+
+  '<div class="grid3" style="margin-top:12px">'+
+   '<div class="f" data-f="l"><label class="label" for="'+id+'l">Length</label><div class="unit"><input class="input" id="'+id+'l" data-k="l" inputmode="decimal" value="'+r.l+'"><span>m</span></div></div>'+
+   '<div class="f" data-f="w"><label class="label" for="'+id+'w">Width</label><div class="unit"><input class="input" id="'+id+'w" data-k="w" inputmode="decimal" value="'+r.w+'"><span>m</span></div></div>'+
+   '<div class="f" data-f="h"><label class="label" for="'+id+'h">Height</label><div class="unit"><input class="input" id="'+id+'h" data-k="h" inputmode="decimal" value="'+r.h+'"><span>m</span></div></div>'+
+  '</div><div class="error-msg" hidden role="alert"><svg class="ico ico-sm"><use href="#i-alert"/></svg><span></span></div>'+
+  '<div class="grid2">'+
+   '<div><span class="label" id="'+id+'dl">Doors</span><div class="stepper" role="group" aria-labelledby="'+id+'dl"><button type="button" aria-label="One fewer door" onclick="step('+i+',\'doors\',-1)">−</button><output>'+r.doors+'</output><button type="button" aria-label="One more door" onclick="step('+i+',\'doors\',1)">+</button></div></div>'+
+   '<div><span class="label" id="'+id+'wl">Windows</span><div class="stepper" role="group" aria-labelledby="'+id+'wl"><button type="button" aria-label="One fewer window" onclick="step('+i+',\'windows\',-1)">−</button><output>'+r.windows+'</output><button type="button" aria-label="One more window" onclick="step('+i+',\'windows\',1)">+</button></div></div>'+
+  '</div>'+
+  '<div style="margin-top:16px"><span class="label" id="'+id+'cl">Coats</span><div class="seg" role="radiogroup" aria-labelledby="'+id+'cl">'+[1,2,3].map(function(c){return '<label><input type="radio" name="'+id+'c" data-k="coats" value="'+c+'"'+(r.coats===c?' checked':'')+'><span>'+c+'</span></label>';}).join('')+'</div></div>'+
+  '<label class="switch">Include the ceiling<input type="checkbox" data-k="ceil"'+(r.ceil?' checked':'')+'></label>'+
+  '<label class="switch mist"><span>New plaster? Add a mist coat<span class="hint" style="display:block;font-weight:400;margin-top:2px">One extra watered-down coat and drying time, on its own line.</span></span><input type="checkbox" data-k="mist"'+(r.mist?' checked':'')+'></label>'+
+  '</fieldset>';
+}
+function render(){document.getElementById('rooms').innerHTML=rooms.map(roomHTML).join('');calc();}
+function addRoom(){rooms.push({name:'',l:'',w:'',h:'2.4',doors:1,windows:1,coats:2,ceil:false,mist:false});render();var ins=document.querySelectorAll('.room-name');ins[ins.length-1].focus();}
+function removeRoom(i){var nm=rooms[i].name||('Room '+(i+1));rooms.splice(i,1);render();toast(nm+' removed');}
+function step(i,k,d){rooms[i][k]=Math.max(0,Math.min(20,rooms[i][k]+d));render();}
+document.getElementById('rooms').addEventListener('input',function(e){var el=e.target,k=el.getAttribute('data-k');if(!k)return;var i=+el.closest('.room').getAttribute('data-i');
+  rooms[i][k]=el.type==='checkbox'?el.checked:(k==='coats'?+el.value:el.value);calc();});
+function num(v){v=String(v).trim().replace(',','.');return v===''?NaN:parseFloat(v);}
+function g(id){return num(document.getElementById(id).value);}
 function fmt(n,dp){return n.toLocaleString('en-GB',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
-function tinsFor(need){ // smallest total volume that covers the need, then fewest tins
-  var best=null;
+function d1(n){return Math.round(n*10)/10;}
+function dayStr(d){return fmt(d,d%1?1:0)+(d===1?' day':' days');}
+function tinsFor(need){var best=null;
   for(var a=0;a<=Math.ceil(need/10)+1;a++)for(var b=0;b<=2;b++)for(var c=0;c<=2;c++){
     var v=a*10+b*5+c*2.5;if(v+1e-9<need)continue;var n=a+b+c;
     if(!best||v<best.v-1e-9||(Math.abs(v-best.v)<1e-9&&n<best.n))best={v:v,n:n,a:a,b:b,c:c};}
-  return best;
-}
+  return best;}
 function calc(){
-  var L=num('l'),W=num('w'),H=num('h'),coats=+document.querySelector('[name=coats]:checked').value;
-  var cov=num('cov')||12,spare=isNaN(num('spare'))?10:num('spare'),rate=num('rate')||0,ppl=num('ppl')||0,speed=num('speed')||40;
-  var res=document.getElementById('result'),err=document.getElementById('err');
-  ['f-l','f-w','f-h'].forEach(function(f){document.getElementById(f).classList.remove('has-error');});
-  err.hidden=true;
-  var bad=[['f-l',L,'Length'],['f-w',W,'Width'],['f-h',H,'Height']].filter(function(x){return isNaN(x[1])||x[1]<=0;});
-  if(bad.length){
-    var allEmpty=[L,W,H].every(function(x){return isNaN(x);});
-    res.classList.add('empty');
-    document.getElementById('litres').textContent='Enter the room size to see litres';
-    ['tins','area','days','price','price-split'].forEach(function(id){document.getElementById(id).textContent='—';});
-    if(!allEmpty){bad.forEach(function(x){document.getElementById(x[0]).classList.add('has-error');});
-      err.querySelector('span').textContent=bad[0][2]+' must be more than 0, like '+(bad[0][2]==='Height'?'2.4':'3.5')+'.';err.hidden=false;}
-    return;
-  }
+  var cov=g('cov')||12,spare=isNaN(g('spare'))?10:g('spare'),rate=g('rate')||0,ppl=g('ppl')||0,speed=g('speed')||40;
+  var lines=[],coated=0,days=0,dry=0,ok=0,cards=document.querySelectorAll('.room');
+  rooms.forEach(function(r,i){
+    var card=cards[i],err=card.querySelector('.error-msg'),L=num(r.l),W=num(r.w),H=num(r.h),nm=r.name||('Room '+(i+1));
+    card.querySelectorAll('.f').forEach(function(f){f.classList.remove('has-error');});err.hidden=true;
+    var bad=[['l',L,'Length'],['w',W,'Width'],['h',H,'Height']].filter(function(x){return isNaN(x[1])||x[1]<=0;});
+    if(bad.length){if(![L,W,H].every(isNaN)){bad.forEach(function(x){card.querySelector('[data-f='+x[0]+']').classList.add('has-error');});
+      err.querySelector('span').textContent=bad[0][2]+' must be more than 0, like '+(bad[0][2]==='Height'?'2.4':'3.5')+'.';err.hidden=false;}return;}
+    ok++;
+    var walls=Math.max(0,2*(L+W)*H-r.doors*1.8-r.windows*1.5),ceil=r.ceil?L*W:0;
+    function add(title,area,coats,label){var d=d1(area*coats/speed);coated+=area*coats;days+=d;
+      lines.push({t:title,m:label+' · '+fmt(area,1)+' m² · '+dayStr(d),p:d*rate});}
+    var cl=r.coats+(r.coats===1?' coat':' coats');
+    add(nm+' walls',walls,r.coats,cl);
+    if(ceil)add(nm+' ceiling',ceil,r.coats,cl);
+    if(r.mist){add(nm+' mist coat',walls+ceil,1,'new plaster · 1 coat + drying');dry+=MIST_DRY;}
+  });
+  var res=document.getElementById('result');
+  if(!ok){res.classList.add('empty');document.getElementById('litres').textContent='Enter a room size to see litres';
+    ['tins','days','price','price-split'].forEach(function(id){document.getElementById(id).textContent='—';});document.getElementById('work').innerHTML='';return;}
   res.classList.remove('empty');
-  var walls=Math.max(0,2*(L+W)*H-counts.doors*1.8-counts.windows*1.5);
-  var ceil=document.getElementById('ceil').checked?L*W:0;
-  var area=walls+ceil,coated=area*coats;
-  var litres=coated/cov*(1+spare/100);
-  var t=tinsFor(litres),parts=[];
+  var litres=coated/cov*(1+spare/100),t=tinsFor(litres),parts=[];
   if(t.a)parts.push(t.a+' × 10 L');if(t.b)parts.push(t.b+' × 5 L');if(t.c)parts.push(t.c+' × 2.5 L');
-  var days=Math.max(0.5,Math.ceil(coated/speed*2)/2);
-  var labour=days*rate,paint=t.v*ppl;
-  document.getElementById('litres').textContent=fmt(Math.ceil(litres*2)/2,litres%1?1:0).replace(/\.0$/,'')+' litres';
+  var labour=days*rate,paint=t.v*ppl,onjob=Math.ceil((days+dry)*2)/2,lit=Math.ceil(litres*2)/2;
+  document.getElementById('litres').textContent=fmt(lit,lit%1?1:0)+' litres';
   document.getElementById('tins').textContent='Buy '+parts.join(' + ');
-  document.getElementById('area').textContent=fmt(area,1)+' m²';
-  document.getElementById('days').textContent='About '+fmt(days,days%1?1:0)+(days===1?' day':' days');
+  document.getElementById('work').innerHTML=lines.map(function(l){return '<li><span><strong>'+esc(l.t)+'</strong><span class="m">'+l.m+'</span></span><b>£'+fmt(l.p,2)+'</b></li>';}).join('')+
+    '<li><span><strong>Paint</strong><span class="m">'+parts.join(' + ')+' at £'+fmt(ppl,ppl%1?2:0)+' a litre</span></span><b>£'+fmt(paint,2)+'</b></li>';
+  document.getElementById('days').textContent='About '+dayStr(onjob)+(dry?', incl. drying':'');
   document.getElementById('price').textContent='£'+fmt(Math.round(labour+paint));
-  document.getElementById('price-split').textContent='Labour £'+fmt(Math.round(labour))+' + paint £'+fmt(Math.round(paint));
-  if(L>30||W>30)toast("That's a big room — double-check the numbers.");
+  document.getElementById('price-split').textContent='Labour £'+fmt(Math.round(labour))+' ('+dayStr(d1(days))+' at £'+fmt(rate)+' a day) + paint £'+fmt(Math.round(paint));
+  rooms.forEach(function(r){if(num(r.l)>30||num(r.w)>30)toast("That's a big room — double-check the numbers.");});
 }
+['rate','speed','cov','spare','ppl'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
 function copyResult(){
-  var txt=document.getElementById('litres').textContent+' — '+document.getElementById('tins').textContent+'. '+document.getElementById('area').textContent+', '+document.getElementById('days').textContent.toLowerCase()+'.';
+  var txt=document.getElementById('litres').textContent+' — '+document.getElementById('tins').textContent+'. '+document.getElementById('days').textContent+'. Your price '+document.getElementById('price').textContent+'.';
   if(navigator.clipboard)navigator.clipboard.writeText(txt).catch(function(){});toast('Result copied');
 }
-document.getElementById('calc').addEventListener('input',calc);
 function setState(s){
-  var set=function(a,b,c){document.getElementById('l').value=a;document.getElementById('w').value=b;document.getElementById('h').value=c;};
-  if(s==='empty')set('','','');else if(s==='error')set('4','3.5','0');else set('4','3.5','2.4');calc();
+  if(s==='empty')rooms=[{name:'',l:'',w:'',h:'',doors:1,windows:1,coats:2,ceil:false,mist:false}];
+  else if(s==='error')rooms[0].h='0';
+  render();
 }
-if(window.PB_STATE)setState(window.PB_STATE);else calc();
+if(window.PB_STATE)setState(window.PB_STATE);else render();
 </script>
 </body>
 </html>

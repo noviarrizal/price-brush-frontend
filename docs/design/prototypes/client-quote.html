@@ -212,7 +212,7 @@ html.shot .desk{margin:0}
 .biz{display:flex;gap:12px;align-items:center}
 .mono{width:52px;height:52px;border-radius:10px;background:var(--pb-ink);color:var(--pb-bg);display:grid;place-items:center;font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:22px;flex:none}
 .biz strong{display:block;font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:24px;line-height:28px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.contact{display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px}
 .summary{background:var(--pb-surface);border:2px solid var(--pb-ink);border-radius:16px;padding:16px}
 .summary .top{display:flex;justify-content:space-between;align-items:baseline}
 .summary .money-xl{font-size:44px;line-height:48px;margin:6px 0 2px}
@@ -276,7 +276,7 @@ html.shot .desk{margin:0}
 <!--pb-icons:end-->
 <div class="app">
   <div class="proto-bar" role="region" aria-label="Prototype controls">
-    <b>v0.2</b> Client quote page
+    <b>v0.3</b> Client quote page
     <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button>
     <select id="state-pick" aria-label="State" onchange="setState(this.value)">
       <option value="open">Open</option><option value="sheet">Accept sheet</option><option value="accepted">Accepted</option><option value="expired">Expired</option><option value="revoked">Link revoked</option>
@@ -292,7 +292,7 @@ html.shot .desk{margin:0}
         </div>
         <div class="contact">
           <a class="btn btn-secondary" href="tel:07700900123"><svg class="ico ico-sm"><use href="#i-phone"/></svg>Call Dave</a>
-          <a class="btn btn-secondary" href="#"><svg class="ico ico-sm"><use href="#i-msg"/></svg>WhatsApp</a>
+          <!-- Icon: generic chat bubble until the official WhatsApp glyph is in the repo (design-system.md 6.1) --><a class="btn btn-secondary" href="#"><svg class="ico ico-sm"><use href="#i-msg"/></svg>Message Dave on WhatsApp</a>
         </div>
       </header>
 

@@ -1,6 +1,8 @@
-# Positioning (v0.1, proposed: depends on memo 002)
+# Positioning (v0.2, memo 002 accepted with changes 17/10/2026)
 
-Date: 16/10/2026 · Author: strategist · Evidence: `competitors.md`, `decisions/002-differentiation-and-headline.md`
+Date: 16/10/2026, updated 17/10/2026 · Author: strategist · Evidence: `competitors.md`, `decisions/002-differentiation-and-headline.md`
+
+> **17/10/2026:** per `../ceo/decisions-2026-10-17.md` #2, the live H1 is **"Room sizes in. Priced quote out."** until voice ships (late Nov re-test against the headline below). Claim 3 now leads with "No per-user fees"; never say "cheaper" or "cheapest" (CEO #4).
 
 ## Who we are for
 
@@ -29,7 +31,7 @@ Solo or two-person **UK painters and decorators** who price by the room and the 
 - **Supporting claims:**
   1. **Maths you can check.** "See every litre, coat and day before you send it." (Proof: the free calculator.)
   2. **Quote to invoice, same job.** "Send on WhatsApp. When it's accepted, it's an invoice." (Avoid "one tap / one click"; see below.)
-  3. **Fair, flat price.** "£9 a month. No per-user fees. No sales calls. Cancel in one tap." (Counters Tradify per-user pricing and sales calls, and Powered Now's billing complaints.)
+  3. **No per-user fees.** "£9 a month, incl. VAT. No per-user fees. No sales calls. Cancel in one tap." (Counters Tradify per-user pricing and sales calls, and Powered Now's billing complaints.)
 
 **Alternative headlines** (use if the founder prefers not to lead with voice):
 

@@ -1,6 +1,8 @@
 # 001 — SEO bet for the 31 Oct launch: lead with the paint calculator
 
-Date: 16/10/2026 · Author: strategist · **Status: Proposed**
+Date: 16/10/2026 · Author: strategist · **Status: Accepted (17/10/2026, with changes per docs/ceo/decisions-2026-10-17.md)**
+
+CEO change: 31 Oct ships `/paint-calculator` (multi-room + day rate → labour/price, "Your price at your day rate") plus `/decorating-quote-template` with a working "Turn this into a quote" pre-fill; invoice template 14 Nov; fixed cut order (items 1–4 must ship 31 Oct, walls/ceiling/woodwork switches and mist coat may follow the next week). See CEO #1.
 
 ## Question
 

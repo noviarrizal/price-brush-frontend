@@ -357,7 +357,7 @@ footer a{color:var(--pb-ink);min-height:48px;display:inline-flex;align-items:cen
 
 <div class="app">
   <div class="proto-bar" role="region" aria-label="Prototype controls">
-    <b>v0.2</b> Landing
+    <b>v0.3</b> Landing
     <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button>
     <a href="_overview.html">All screens</a>
   </div>
@@ -374,23 +374,23 @@ footer a{color:var(--pb-ink);min-height:48px;display:inline-flex;align-items:cen
     <main>
       <section class="hero" aria-labelledby="hero-h">
         <p class="eyebrow">The quote and invoice app for UK painters and decorators</p>
-        <h1 id="hero-h" class="display">Quote any decorating job in 60 seconds. Just say it.</h1>
-        <p class="sub body-lg">No per-user fees. No sales calls. Cancel in one tap.</p>
-        <a id="hero-cta" class="btn btn-primary btn-lg btn-block" href="new-quote.html">
-          <svg class="ico" style="stroke-width:2.25"><use href="#i-mic"/></svg> Try it free — say a job
+        <h1 id="hero-h" class="display">Room sizes in. Priced quote out.</h1>
+        <p class="sub body-lg">Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators.</p>
+        <a id="hero-cta" class="btn btn-primary btn-lg btn-block" href="paint-calculator.html">
+          <svg class="ico"><use href="#i-calc"/></svg> Price a room free
         </a>
-        <p class="caption">Free for 5 documents a month. No card needed.</p>
+        <p class="caption">No sign-up. No per-user fees. No sales calls.</p>
       </section>
 
       <section class="block" aria-labelledby="demo-h">
-        <h2 id="demo-h" class="h2">You talk. We write the quote.</h2>
-        <p class="caption" style="margin-top:6px">Dave, standing in Mrs Patel's hallway:</p>
-        <p class="demo-said">Living room and hallway, walls and ceiling, two coats, magnolia, fill some cracks. Client is Mrs Patel, 12 Oak Road.</p>
+        <h2 id="demo-h" class="h2">Every number shown. Every line yours.</h2>
+        <p class="caption" style="margin-top:6px">Dave's rooms for Mrs Patel, 12 Oak Road:</p>
+        <p class="demo-said">Living room 4.6 × 3.8 m, hallway 4 × 1.4 m, 2.4 m high. Walls and ceiling, two coats, magnolia.</p>
         <div class="arrow"><svg class="ico"><use href="#i-down"/></svg></div>
         <div class="lines" role="table" aria-label="Example quote">
           <div class="line" role="row"><div class="desc" role="cell"><strong>Living room — walls</strong><span class="detail">36 m² · 2 coats · 1.1 days</span></div><div class="amt" role="cell">£220.00</div></div>
           <div class="line" role="row"><div class="desc" role="cell"><strong>Living room — ceiling</strong><span class="detail">16 m² · 2 coats · 0.7 days</span></div><div class="amt" role="cell">£140.00</div></div>
-          <div class="line is-check" role="row"><div class="desc" role="cell"><strong>Hallway — walls</strong><span class="detail">≈ 24 m² · 2 coats · 0.8 days</span><span class="check-note"><svg class="ico ico-sm"><use href="#i-eye"/></svg>Check this — we estimated the wall area.</span></div><div class="amt" role="cell">£160.00</div></div>
+          <div class="line is-check" role="row"><div class="desc" role="cell"><strong>Hallway — walls</strong><span class="detail">≈ 24 m² · 2 coats · 0.8 days</span><span class="check-note"><svg class="ico ico-sm"><use href="#i-eye"/></svg>Check this — we guessed 3 doors.</span></div><div class="amt" role="cell">£160.00</div></div>
           <div class="line" role="row"><div class="desc" role="cell"><strong>Paint &amp; materials</strong><span class="detail">Magnolia emulsion 15 L, filler</span></div><div class="amt" role="cell">£95.00</div></div>
           <div class="total"><strong>Total</strong><span class="money">£615.00</span></div>
         </div>
@@ -400,9 +400,9 @@ footer a{color:var(--pb-ink);min-height:48px;display:inline-flex;align-items:cen
       <section class="block" aria-labelledby="how-h">
         <h2 id="how-h" class="h2">How it works</h2>
         <ol class="steps">
-          <li><div><strong>Say the job</strong><span class="caption">Rooms, surfaces, coats, colour, client. Up to 2 minutes. Or type it.</span></div></li>
-          <li><div><strong>Check the lines</strong><span class="caption">Tap any price to change it. Your day rate does the maths.</span></div></li>
-          <li><div><strong>Send it on WhatsApp</strong><span class="caption">Your client gets a tidy link with your name on it. One tap turns it into an invoice.</span></div></li>
+          <li><div><strong>Put in the rooms</strong><span class="caption">Sizes, surfaces, coats. Your day rate does the maths.</span></div></li>
+          <li><div><strong>Check the lines</strong><span class="caption">One line per room and surface, with the working shown. Tap any price to change it.</span></div></li>
+          <li><div><strong>Send it on WhatsApp</strong><span class="caption">Your client gets a tidy quote with your name on it. When it's accepted, it's an invoice.</span></div></li>
         </ol>
       </section>
 
@@ -456,7 +456,7 @@ footer a{color:var(--pb-ink);min-height:48px;display:inline-flex;align-items:cen
         <details><summary>Do I need to be VAT registered?</summary><p>No. If you are, add your VAT number and we'll add 20% VAT to your quotes.</p></details>
         <details><summary>Can my client accept online?</summary><p>Yes. They open the link on their phone, tap "Accept quote" and type their name. You get told straight away.</p></details>
         <details><summary>What if I've got no signal?</summary><p>Everything saves on your phone first and syncs when you're back online. You won't lose a quote.</p></details>
-        <details><summary>How do I cancel?</summary><p>Settings, Plan, Cancel. One tap. No phone call.</p></details>
+        <details><summary>How do I cancel?</summary><p>Settings, Plan, Cancel plan. One tap, no phone call. You keep Pro until the end of the period you paid for, and you can undo it until then.</p></details>
       </section>
     </main>
 
@@ -468,7 +468,7 @@ footer a{color:var(--pb-ink);min-height:48px;display:inline-flex;align-items:cen
 
   <!-- Same single primary action, pinned in thumb reach once the hero button scrolls away -->
   <div id="sticky-cta" class="action-bar hide" aria-hidden="true">
-    <a class="btn btn-primary btn-lg btn-block" href="new-quote.html" tabindex="-1"><svg class="ico" style="stroke-width:2.25"><use href="#i-mic"/></svg> Try it free — say a job</a>
+    <a class="btn btn-primary btn-lg btn-block" href="paint-calculator.html" tabindex="-1"><svg class="ico"><use href="#i-calc"/></svg> Price a room free</a>
   </div>
 </div>
 
