@@ -27,7 +27,7 @@ PriceBrush adalah web app (PWA, mobile-first) untuk painter & decorator di UK: j
 
 ## Rencana stack ($0)
 
-React + Vite + TypeScript + Tailwind CSS (pnpm) · Cloudflare Pages (`pricebrush.pages.dev`) · Supabase (auth Google, database) · react-pdf · Cloudflare Web Analytics + Google Search Console.
+React + Vite + TypeScript + Tailwind CSS (pnpm) · Cloudflare Pages (`pricebrush.pages.dev`) · Neon (Postgres; auth & file storage to be chosen) · react-pdf · Cloudflare Web Analytics + Google Search Console.
 
 ## Development
 

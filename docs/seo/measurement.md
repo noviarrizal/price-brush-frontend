@@ -30,7 +30,7 @@ Cloudflare Web Analytics has no custom events, so add a tiny Cloudflare Worker e
 | `quote_prefilled` | "Turn this into a quote" used |
 | `cta_signup_click` | any sign-up CTA on a public page (`p` = page) |
 
-Sign-ups themselves: Supabase auth count (PRD). Attribution: store the **first landing path** in `sessionStorage` and send it with the sign-up (e.g. `signup_source=/paint-calculator`) — no cookie needed.
+Sign-ups themselves: account count in the database (Neon; auth provider to be chosen). Attribution: store the **first landing path** in `sessionStorage` and send it with the sign-up (e.g. `signup_source=/paint-calculator`) — no cookie needed.
 
 ## 2. KPIs
 
@@ -38,7 +38,7 @@ Sign-ups themselves: Supabase auth count (PRD). Attribution: store the **first l
 |---|---|---|---|
 | Pages indexed | **≥ 10** | GSC → Pages → Indexed | Canonical public URLs indexed (12 planned by 22 Nov) |
 | Free-tool users | **≥ 200** | event counter | Sum of `calc_used` + `pdf_downloaded` page views (approximation of users — we don't track individuals; say so when reporting) |
-| Registered accounts | **≥ 30** | Supabase | All sign-ups; split by `signup_source` |
+| Registered accounts | **≥ 30** | Database (Neon) | All sign-ups; split by `signup_source` |
 | Activation | ≥ 40% send a quote in 24 h | event `quote_sent` (product) | — |
 | First payment | ≥ 1 | Polar | — |
 

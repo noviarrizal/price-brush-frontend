@@ -269,7 +269,8 @@ Seluruh MVP berjalan di free tier, dengan biaya Rp0 sampai pembayaran pertama.
 | Frontend & halaman SEO | React + Vite + TypeScript + Tailwind CSS, PWA, pnpm | $0 |
 | Hosting | Cloudflare Pages (pricebrush.pages.dev) | $0 |
 | API kecil & kunci rahasia | Cloudflare Workers | $0 (free tier) |
-| Database, auth Google, simpan logo | Supabase free tier | $0 |
+| Database | Neon (serverless Postgres) free tier | $0 |
+| Login Google & simpan logo | Belum dipilih: Neon cuma database, jadi auth dan file storage perlu solusi terpisah (ditentukan di system design Lead) | $0 |
 | Suara ke teks | Groq Whisper free tier; cadangan kredit Deepgram | $0 |
 | AI penyusun quote | LLM murah via API (free tier atau kredit awal) | $0 di awal |
 | PDF | Dibuat di browser (react-pdf) | $0 |
@@ -288,7 +289,7 @@ Ukuran sukses pertama: minimal 1 pembayaran sebelum 31 Desember 2026.
 | --- | --- | --- |
 | Halaman terindeks Google | ≥ 10 | Search Console |
 | Pengguna tool gratis | ≥ 200 | Cloudflare Analytics |
-| Akun terdaftar | ≥ 30 | Supabase |
+| Akun terdaftar | ≥ 30 | Database (Neon) |
 | Aktivasi: quote pertama terkirim dalam 24 jam | ≥ 40% dari akun | Event "quote_sent" |
 | Pembayaran (Founding/Pro) | ≥ 1 (ideal 5) | Dashboard Polar |
 
