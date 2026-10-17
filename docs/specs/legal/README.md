@@ -8,6 +8,8 @@ Prepared 18/10/2026 by the main assistant. Status: **draft, to be proofread by A
 - legislation.gov.uk publishes Schedule 3 **only as images**: the web page, the "made" PDF and the AKN data all show it that way. The three official images are kept in `source/` (`uksi_20133134_en_sld_001–003.jpg`), downloaded 18/10/2026.
 - The text files here came from those images through Windows OCR (en-GB), then were corrected by hand against the images.
 - **Amendment check:** the only amendment to Schedule 3 is Part A note 5(b), where "£" replaces "EUR" (SI 2018/1326, in force 31/12/2020). Note 5 is about goods, so these files don't use it.
+  - *Added 18/10/2026:* the Schedule 3 page lists the 5(b) currency amendment, in force 31/12/2020 (CEO checked 18/10; SI number not re-checked by the CEO). The lead re-opened the page on 18/10/2026: it shows the change as made by S.I. 2018/1326 (regs 1(3) and 8(4)) and says the text is up to date with changes in force on or before 17/10/2026. It also lists two prospective changes from the DMCC Act 2024 s.279 (to regs 7 and 27), not yet in force; these don't change the Schedule 3 wording.
+  - *T18 status (18/10/2026):* deferred, target live Sun 06/12 (`../cancellation-option.md`). The proofread below moves to the T18 build week.
 - Licence: Crown copyright, reused under the Open Government Licence v3.0. Attribution line for the page/PDF: "Contains public sector information licensed under the Open Government Licence v3.0."
 
 ## Files

@@ -80,3 +80,7 @@ Recommended (founder to sign off):
 ## 18/10/2026 — founder sign-off on `decisions-2026-10-18-channels.md`
 
 - Accepted: domain (Rp100k, buy 23/10), groups-only Facebook profile, no ads in 2026, one YouTube video 25/11 (no ID verification), early P&D News note in the week of 02/11, and an admin question on 15/11. Details are in the memo's "Founder sign-off" section.
+
+## 18/10/2026 — founder sign-off on `decisions-2026-10-18-t18.md`
+
+- All 4 questions: yes. The PRD block was applied by the main assistant, so L5 skips the PRD.

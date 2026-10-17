@@ -1,5 +1,26 @@
 # Design CHANGELOG
 
+## v0.3.3 — 18/10/2026
+
+Applies CEO memo `../ceo/decisions-2026-10-18-t18.md` §3 (founder signed off 18/10/2026), prompt U1. Only P1 Landing and the shared "All public pages" line changed. No other screen was touched.
+
+- **Keyword line above the H1 (`screens.md` P1, both landing prototypes):** before the app is live it reads "Free paint and quote tools for UK painters and decorators". After the MVP it reads "Quote and invoice app for UK painters and decorators", swapped on the same day as the title and meta description. Why: SEO decided this in `../seo/keyword-map.md` "`/` — Home" (17/10). The old line named an app that won't exist until ~22/11, which breaks the P1 truth rule. This closes v0.3.2's "until SEO decides" note.
+- **Desktop header before the app (`screens.md` P1, `desktop-landing.html`):** the header now shows "Paint calculator · Quote template" only. The "Pricing" link is gone. Invoice template joins on 14/11 and Pricing on 21/11. Why: `/pricing/` isn't live until 21/11, and plan T9 says no link may lead to a 404. The plan cards stay on the page.
+- **"All public pages" (`screens.md`):** this line now says header and footer links appear only when the page is live, with a table of the date each link appears. The dates come from `keyword-map.md` and plan T9.
+- **Footers (both landing prototypes), same rule:** the footers now show only Paint calculator · Quote template · About. Pricing, Guides, Privacy and Terms were taken out, because none of them is live on 31/10. This matches plan T9. The phone footer caption "PriceBrush · pricebrush.pages.dev · Built for UK decorators." is now the spec line "pricebrush.pages.dev · Made for UK decorators.". The founder's request named only the two points above. I fixed the footers too because the new "live pages only" line would otherwise contradict the prototypes.
+- `screens.md` is now v0.3.3. The prototype bars show v0.3.3.
+
+**Re-rendered and checked (light + dark; opened every PNG: nothing cut on the right or bottom, £ and — render correctly, dark is really dark):**
+
+| Image | Size |
+|---|---|
+| `images/landing-light.png` / `-dark.png` | 720 × 7216 (was 7360: the footer is one line now) |
+| `images/desktop-landing-light.png` / `-dark.png` | 2560 × 5880 (1280 px at 2x, unchanged) |
+| `images/_overview-light.png` / `-dark.png` | 3200 × 5560 |
+| `images/_overview-desktop-light.png` / `-dark.png` | 3200 × 3880 |
+
+**Not re-rendered:** the board and other screens (unchanged). I checked the other public prototypes for the same rule but didn't change them (out of scope): `paint-calculator.html:380` and `decorating-invoice-template.html:288` still show a "Log in" header link, which shouldn't appear before the MVP. That's for the next design pass.
+
 ## v0.3.2 — 18/10/2026
 
 Founder accepted all of `../ceo/decisions-2026-10-18.md` (18/10/2026). Only the edits marked [UI/UX] were applied.

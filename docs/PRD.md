@@ -389,3 +389,10 @@ timeline
 - Harapan realistis sampai 31/12: 0–3 Founding Member, paling mungkin 0–1. Checkpoint 15/12 dan review 30/04/2027 tetap.
 - Gajian founder: 23/10 bulan ini, lalu tiap tanggal 25. Tidak ada pengeluaran sebelum tanggal gajian.
 - Kompetitor baru: Paint Manager (launch 05/06/2026, gratis 5 quote pertama, £19,99–£39,99/bulan). Copy paket gratis kita selalu pakai "a month".
+
+**Keputusan founder 18 Okt 2026 — T18 opsi cancel (jawaban atas `docs/ceo/decisions-2026-10-18-t18.md`):**
+
+- T18 tidak masuk 31/10. Yang rilis 31/10: perbaikan kalimat FAQ + link ke formulir resmi Schedule 3 (T4). Tidak ada teks hukum di PDF. Target T18 live **paling lambat Minggu 06/12**. Bisa lebih cepat (bareng template invoice 14/11) hanya kalau cek 08/11 menunjukkan jalur pembayaran MVP aman dan masih ada sisa ≥ 4 jam agent.
+- Teks resmi versi jasa (Note 1(a)) hanya cocok untuk quote "Labour only". "Supply and apply" (decorator menyediakan cat) = sales contract (reg 5). Untuk quote supply-and-apply, PDF hanya memuat teks resmi kalau ada sumber resmi yang membahas pekerjaan dekorasi; kalau tidak, cukup link ke formulir resmi. PriceBrush sendiri tidak menjual cat: yang jadi trader adalah decorator.
+- Urutan tambahan sebelum 31/10: T6b → T16; T18 keluar. Kalau minggu 18–24/10 kepenuhan, setup Polar dan akun Product Hunt boleh geser ke Minggu 25/10; submit Polar tetap 01/11.
+- Pilihan "on by default" untuk opsi cancel dicek ulang oleh lead di spec v0.2 (Business Companion: quote yang ditinggal lalu diterima belakangan = on-premises, tanpa hak cancel menurut hukum). Founder menyetujui hasilnya.

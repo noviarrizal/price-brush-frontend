@@ -1,6 +1,6 @@
 # Spec — "right to cancel" option on the quote template (plan T18) (v0.1)
 
-Date: 17/10/2026 · Owner: pricebrush-lead · Status: **draft. The labour-only part can be built; the supply-and-apply part waits for a founder decision (§8)** · Implements: CEO memo `../ceo/decisions-2026-10-18.md` R4 (accepted, PRD "Keputusan 18 Okt 2026" R4) · Plan: `../plan/2026-10-17-launch-31-oct.md` T18 · Legal text: `legal/` (`legal/README.md` explains the source, the OCR, the amendment check and the note choices)
+Date: 17/10/2026 · **Updated 18/10/2026** · Owner: pricebrush-lead · Status: **Deferred (CEO 18/10 T18 memo, `../ceo/decisions-2026-10-18-t18.md`, founder yes to all 4; PRD "Keputusan founder 18 Okt 2026 — T18 opsi cancel"). v0.2 needed before build; target live Sun 06/12.** Don't build from v0.1. v0.2 is written with the November plan (see "v0.2 to-do" below) · Implements: CEO memo `../ceo/decisions-2026-10-18.md` R4 (accepted, PRD "Keputusan 18 Okt 2026" R4), corrected by the T18 memo decisions 1 and 4a · Plan: `../plan/2026-10-17-launch-31-oct.md` "Out of scope" (T18 left that plan on 18/10; the build goes into the November plan) · Legal text: `legal/` (`legal/README.md` explains the source, the OCR, the amendment check and the note choices)
 
 Not legal advice. Labels: **[fact]** = sourced · **[estimate]** · **[opinion]** · **not verified**.
 
@@ -15,7 +15,26 @@ Not legal advice. Labels: **[fact]** = sourced · **[estimate]** · **[opinion]*
 | Text source | `legal/ccr-schedule-3-part-a-services.txt` and `legal/ccr-schedule-3-part-b.txt`, imported **as they are**. The app replaces only `{{TRADER_DETAILS}}` |
 | Where it's shown | **The PDF only** (page 2). The web page shows the switch, a hint and a link to the official Schedule 3 (§5) |
 | Effort | **About 2–2.5 h [estimate], so a little over 2 h.** Supply and apply as well: about 4 h plus a legal choice (§8) |
-| My recommendation | **Move T18 to November** and build both job types together. Ship the T4 FAQ fix plus a link to the official form for 31/10. This is the fallback the CEO memo itself names in R4 "Change my mind" (§8) |
+| My recommendation (17/10) | **Move T18 to November** and build both job types together. Ship the T4 FAQ fix plus a link to the official form for 31/10. This is the fallback the CEO memo itself names in R4 "Change my mind" (§8) |
+| **Decided 18/10** | Not before 31/10 (not even labour-only). On 31/10 only the T4 FAQ fix and the Schedule 3 link ship. T18 live **by Sun 06/12** (build week 01–06/12); earlier, with the invoice template on 14/11, only if the lead's 08/11 check shows the payment path on track with ≥ 4 agent h spare. Supply-and-apply: official wording only if an official source covers decorating, else a link only. "On by default" reopened (v0.2 to-do 1) |
+
+## v0.2 to-do (before any build; written with the November plan)
+
+v0.2 must settle these. Nothing below is decided yet unless it says so. Sources were checked by the lead on 18/10/2026 where marked.
+
+1. **On-premises quotes and the switch default (§4.4, §6, §7 A8).**
+   - [fact, checked by the lead 18/10/2026] [Business Companion, off-premises sales](https://www.businesscompanion.info/en/quick-guides/consumer-contracts/consumer-contracts-off-premises-sales) (reviewed Feb 2025), section "What do the Regulations cover?": a trader who visits, leaves a quote (or sends one later) and is accepted later has made an **on-premises** contract, which carries no statutory cancellation right. It is off-premises only if the consumer agrees straight after the visit. A later visit where the contract is agreed on the spot is off-premises.
+   - Many decorator quotes are left at the home and accepted later [opinion; no data]. For those, adding the model text may give the client a 14-day right the law didn't require [opinion; **not verified** that it becomes a contract term]. That is a cost to the decorator.
+   - **Re-check "on by default"** (CEO R4 said on; the T18 memo reopens it; founder yes 18/10, he signs off the lead's answer). Options to compare in v0.2: default off; or ask "Did you agree the job in the client's home?" and show the option only on yes; or keep on with a hint. The lead proposes one with evidence.
+   - Rewrite the §6 line struck below.
+2. **Reg 28(3)(c) for supply-and-apply jobs.** How the "goods inseparably mixed" exception works for a mixed job where the decorator supplies and applies the paint ([reg 28](https://www.legislation.gov.uk/uksi/2013/3134/regulation/28)). **Not verified** today.
+3. **The supply-and-apply rule (decided 18/10, founder yes).** PriceBrush adds sales-contract wording only if an official source (DBT/BIS, CMA, Trading Standards / Business Companion, Citizens Advice) or a trade body template covers decorating. Otherwise supply-and-apply quotes get the §4.4 line with the official-form link and nothing more. v0.2 records which sources were searched and the result. If none, §8's second Part A file is dropped and T18 stays ~2–2.5 h [estimate]. (Founder's note, 18/10: PriceBrush doesn't sell paint; the trader is the decorator.)
+4. **Start-date copy for supply jobs.** Hint and FAQ wording on when the 14 days start for supply-and-apply jobs ([reg 30](https://www.legislation.gov.uk/uksi/2013/3134/regulation/30): from the goods arriving). Any FAQ change must be mirrored in `../seo/briefs/decorating-quote-template.md` (SEO's doc) and checked by the founder. No FAQ change before 31/10.
+5. **Build-week items, as in v0.1:** the founder's 10-minute proofread of `legal/README.md` moves to the T18 build week (T18 memo 4c); the `.gitattributes` `eol=lf` rule (§4.1); hyphenation off (§4.5).
+6. **Lead's own clean-ups for v0.2** (found while applying the T18 memo, 18/10):
+   - §3 cites the BIS guidance as "section B, paras 3–4"; the T18 memo cites "Section A para 3" and "para 4". I could not open the PDF's text today (**not verified**), so v0.2 re-checks the section letter.
+   - `legal/README.md` still gives the old reason for leaving out Note 5 ("paint applied to walls isn't returnable goods"); §3 replaced it. v0.2 updates the README's wording at the same time as the proofread.
+   - The pending reg 27(3A) (DMCC Act 2024 s.279(6)) is about subscription contracts and doesn't affect one-off decorating jobs (T18 memo, section 1). The Schedule 3 page also lists a pending reg 7(4A) from the same section; v0.2 confirms it doesn't matter either (**not verified** today).
 
 ## 2. What I checked (17/10/2026)
 
@@ -44,7 +63,7 @@ Sources:
 | 2 | Placeholder, filled with name, geographical address and, where available, phone and email | **Confirmed.** Note 2 needs the name and the geographical address, so the option needs both before it adds anything (§4.3). Phone and email are added when filled in. We have no fax field |
 | 3 | Left out (no online form) | **Confirmed** |
 | 4 | Left out (sales contracts only) | **Confirmed for labour-only.** It may apply to supply-and-apply (§8) |
-| 5 | Left out: "paint applied to walls isn't returnable goods" | **Confirmed for labour-only, because no goods are supplied. The README's reason is changed.** Paint the decorator supplies is goods under reg 5. Whether applied paint can still be handed back is a question for [reg 28(3)(c)](https://www.legislation.gov.uk/uksi/2013/3134/regulation/28) (the right to cancel stops once goods are inseparably mixed with other items after delivery). That rule decides whether the right still exists; it doesn't decide which notes the instructions need. Before the job starts, which is when most cancellations happen [opinion], the client may hold no paint at all. Either way, supply-and-apply needs its own Note 1, 4 and 5 choices (§8). The amendment to Note 5(b) (EUR → £, SI 2018/1326) is recorded in the README; I did **not** verify it, and it matters only for the supply-and-apply text |
+| 5 | Left out: "paint applied to walls isn't returnable goods" | **Confirmed for labour-only, because no goods are supplied. The README's reason is changed.** Paint the decorator supplies is goods under reg 5. Whether applied paint can still be handed back is a question for [reg 28(3)(c)](https://www.legislation.gov.uk/uksi/2013/3134/regulation/28) (the right to cancel stops once goods are inseparably mixed with other items after delivery). That rule decides whether the right still exists; it doesn't decide which notes the instructions need. Before the job starts, which is when most cancellations happen [opinion], the client may hold no paint at all. Either way, supply-and-apply needs its own Note 1, 4 and 5 choices (§8). The amendment to Note 5(b) (EUR → £, SI 2018/1326) is recorded in the README; I did **not** verify it on 17/10 (**checked 18/10**: the Schedule 3 page lists it, see `legal/README.md`), and it matters only for the supply-and-apply text |
 | 6 | Included, service wording | **Confirmed.** It matches the [reg 36](https://www.legislation.gov.uk/uksi/2013/3134/regulation/36) payment rule |
 | Goods paragraphs kept unchanged | The model wording, including the delivery and goods lines | **Confirmed.** The completion notes only fill the bracketed slots and don't tell you to delete paragraphs. Paragraph (c) covers the "no goods supplied" case |
 | Part B | `[*]` kept; only the trader slot is a placeholder | **Confirmed** |
@@ -89,7 +108,7 @@ Sources:
 
 ### 4.4 Draft, form and handover
 
-- `QuoteDraft` gets `includeCancellationInfo: boolean` and stays `version: 1`, because the change only adds a field. `createEmptyDraft()` sets it to `true` (CEO R4: on by default). `loadQuoteDraft` fills a missing value with `true`, so drafts saved before T18 still load.
+- `QuoteDraft` gets `includeCancellationInfo: boolean` and stays `version: 1`, because the change only adds a field. `createEmptyDraft()` sets it to `true` (CEO R4: on by default). `loadQuoteDraft` fills a missing value with `true`, so drafts saved before T18 still load. **Reopened 18/10: the default (here and in `loadQuoteDraft`) is decided in v0.2, to-do 1.**
 - **Switch** (`SwitchField`, `app/components/form-fields.tsx`) in the quote settings, next to "Supply and apply / Labour only":
   - It shows **only when `materialsBasis === "labourOnly"`**.
   - Copy, proposed by me (UI/UX may adjust it in `screens.md` P3):
@@ -123,7 +142,7 @@ Sources:
 ## 6. Out of scope (v0.1)
 
 - Supply-and-apply wording (§8).
-- Distance-contract specifics (a quote left with the client and accepted later by phone or email). The same model instructions apply, and the FAQ covers it.
+- Distance-contract specifics (a quote left with the client and accepted later by phone or email). ~~The same model instructions apply, and the FAQ covers it.~~ **Struck 18/10, pending v0.2 (to-do 1):** Business Companion says a quote left at the home and accepted later is an **on-premises** contract with no statutory cancellation right, so the model instructions don't simply "apply". The "distance-contract" label is also doubtful here: a distance contract needs exclusive use of distance communication up to the moment of agreement ([reg 5](https://www.legislation.gov.uk/uksi/2013/3134/regulation/5)), and a home visit came first [opinion, from the definitions].
 - The £42 threshold logic: the switch is the decorator's choice.
 - An online cancellation form (Note 3).
 - The invoice template (14/11) uses its own rule.
@@ -161,7 +180,7 @@ Sources:
   - `grep -rF "$(sed -n 3p app/content/legal/ccr-schedule-3-part-a-services.txt)" build/client --include=*.html` finds nothing.
   - The route's first-load JS is the same size as before ±1 KB.
 - **A8 · UI:**
-  - The switch appears only for "Labour only" and defaults to on.
+  - The switch appears only for "Labour only" and defaults to on (**default reopened 18/10, v0.2 to-do 1**).
   - Its state survives a reload and a calculator handover.
   - Old drafts without the field load with it on.
   - Tap target ≥ 48 px, hints announced, focus visible.
@@ -180,7 +199,9 @@ To cover the default job type we need a **second Part A file**, prepared the sam
 
 These are the decorator's own business terms, so the app would need one or two extra questions, or a fixed generous default such as "we collect, at our cost" [opinion]. Effort: about **1.5 h** more build, about 0.5 h of text preparation and checking, and a 10-minute founder proofread [estimate]. With the labour-only work that's about **4 h** in total.
 
-**Options:**
+**Decided 18/10** (CEO T18 memo decision 1, founder yes): option 1 in spirit, with two changes. The date is **live by Sun 06/12** (build week 01–06/12), not "November". And the second Part A file above is built **only if** an official source covers supply-and-apply decorating (v0.2 to-do 3); otherwise supply-and-apply quotes get the official-form link only. Option 2 was rejected (deploy week is the wrong time for new legal text). The options are kept below for the record.
+
+**Options (17/10):**
 
 1. **Move T18 (both job types) to November.** Ship only the T4 FAQ fix with a link to the official form on 31/10. **Recommended**: it's CEO R4's own fallback, T18 is already cut-order #4, and a labour-only option helps few users.
 2. Build the labour-only part before 31/10 (2–2.5 h) **only if** Block D is merged by Tue 27/10 with hours left, and add supply-and-apply in November.
