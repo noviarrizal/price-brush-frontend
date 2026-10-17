@@ -31,7 +31,7 @@ Keyword map entry: `../keyword-map.md` · Evidence: `../keyword-research.md` Clu
 
 ### 2.2 Sections below the tool (in this order)
 
-1. **Example: a painting and decorating quote (UK)** — render the example as an image *and* as HTML text (so Google can read it). Use the PRD example, clearly labelled "Example — prices are illustrative":
+1. **Example: a painting and decorating quote (UK)** — render the example as an image *and* as HTML text (so Google can read it). Clearly labelled "Example — prices are illustrative". *Built 17/10/2026 with the paint engine's numbers instead of the table below (spec `../../specs/paint-calculator.md` T5: living room walls £380, ceiling £180, hallway walls £200, paint £105 → **£865**; with VAT £173 → **£1,038**), so the example matches the calculator and the landing page. The old PRD table is kept for reference:*
 
    | Line | Amount |
    |---|---|

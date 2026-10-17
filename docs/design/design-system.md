@@ -18,6 +18,8 @@ Code mirror of every token and component below: `tools/pb-base.css` (inlined int
 | Proud of the trade | Brush, roller and paint-drip clip-art (research #54, #56) |
 | Honest about money ("cancel in one tap") | Dark patterns, hidden fees, sales calls |
 
+**The recognisable mark is the set, not green alone:** cream paper + gold coachline + yellow primary. PainterPal uses a similar coach green (`#17492b`), so never rely on the green by itself, and keep brand green away from the WhatsApp button (CEO #5).
+
 **Voice:** short sentences, trade words ("job", "day rate", "two coats", "check this"). Say "we estimated", never "AI magic". British spelling. **Sentence case** everywhere, including headings and buttons (all-caps condensed is Powered Now's look, research #5).
 
 ## 2. Logo (wordmark first)
@@ -123,6 +125,17 @@ The **A4 document / PDF stays ink on white in both themes** (prints cheaply; mat
 
 **Brand green is kept out of status.** Accepted uses `ok-fg` (brighter green) + check icon + the word, so it never reads as "brand".
 
+### 3.4 Decorator colours on client pages (post-MVP, Pro)
+
+MVP: the client page's "Accept quote" is always `accent` yellow with `on-accent` ink (10.22:1) (CEO #8). Post-MVP, "your logo and colours" is one Pro item. A decorator's colour may replace `accent` on their client pages and PDF only if it passes automatically, checked when they save it:
+
+| Check | Minimum | If it fails |
+|---|---|---|
+| Label (`on-accent` ink or white, whichever is higher) on the colour | 4.5:1 | Fall back to `accent` yellow + `on-accent` |
+| Colour against the page background (`bg`, both themes), or add the 2 px `accent-edge` border as in light theme | 3:1 non-text | Keep the colour, add the ink edge |
+
+The settings preview shows the result ("We'll use yellow for the button because your colour is hard to read on it."). The decorator's colour is never used for status chips, "check this" or errors.
+
 ## 4. Typography
 
 - **Display / money:** Archivo (Google Fonts, SIL OFL), variable `wdth 62–125`, `wght 500–800`, used at **87.5 % width** (semi-condensed, less "all-caps poster" than v0.1's 75–80 %). One latin-subset woff2, self-hosted, `font-display: swap`, preload on SEO pages. *Estimate* 35–60 KB (assumption, measure at build). Fallback `"Arial Narrow", system-ui`.
@@ -200,7 +213,7 @@ Source: Meta's WhatsApp brand page, read by the CEO advisor on 17/10/2026 ([meta
 |---|---|---|
 | Press | 80 ms ease-out | Primary moves down 2 px, plate shadow → 0 |
 | Sheet in / out | 240 / 200 ms `cubic-bezier(.2,.8,.2,1)` | From bottom (phone); desktop uses centred dialog, fade 160 ms |
-| Toast | 200 ms in; success hides after 4 s; errors stay | |
+| Toast | 200 ms in; success hides after 4 s; toasts with Undo stay 6 s; errors stay | |
 | Mic pulse | 1.4 s loop | Ring 1 → 1.35, fades |
 | Processing | Bar + step text, changes ≤ every 3 s | > 15 s: "Taking longer than usual — your words are saved." |
 | `prefers-reduced-motion` | Pulse → static ring; sheets fade only | Mandatory |
@@ -359,7 +372,7 @@ Phone: `surface`, `lg` top corners, `e2`, handle 36 × 4, title + 48 px close, m
 
 ### 9.9 Toast
 
-Inverted (`ink` fill, `bg` text), `md`, 16 px; action as underlined text ≥ 48 px; success 4 s, errors persist (`role="alert"`). Phone: above the pinned bar. Desktop: bottom-left of the work area. **Undo toasts for money** ("Cancelled. You keep Pro until 15/11/2026. [Undo]") stay 10 s or until dismissed; the same action stays available afterwards as "Resume Pro" in Settings (`screens.md` A11).
+Inverted (`ink` fill, `bg` text), `md`, 16 px; action as underlined text ≥ 48 px; success 4 s, toasts with an action ("Line removed · Undo") 6 s; **Undo toasts for money** ("Cancelled. You keep Pro until 15/11/2026. [Undo]") stay 10 s or until dismissed, and the same action stays available afterwards as "Resume Pro" in Settings (`screens.md` A11); errors persist (`role="alert"`). Phone: above the pinned bar. Desktop: bottom-left of the work area.
 
 ### 9.10 Empty state
 
@@ -367,7 +380,7 @@ No illustration. `h2` + one line + one button. "No quotes yet" / "Your first one
 
 ### 9.11 Paywall card
 
-Header "You've used 5 free documents this month." · compare by task (Documents a month 5 / Unlimited · PriceBrush mark Yes / None · Your logo — / Yes · Price book — / Yes) · radio cards 64 px (Monthly £9 "£9 a month, incl. VAT · cancel any time" · Yearly £79 "£79 a year, incl. VAT · £6.58 a month · save £29" · Founding Member £49 once "£49 once, incl. VAT" "37 of 50 left · ends 31/01/2027") · terms above the button ("You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap in Settings."; decision #6, Polar tax set to Inclusive) · primary "Continue to checkout" · ghost "Not now — stay on Free". States: loading, error, sold out, success.
+Header "You've used 5 free documents this month." · compare by task (Documents a month 5 / Unlimited · PriceBrush mark Yes / None · Your logo — / Yes · Price book — / Yes) · radio cards 64 px (Monthly £9 "£9 a month, incl. VAT · cancel any time" · Yearly £79 "£79 a year, incl. VAT · £6.58 a month · save £29" · Founding Member £49 once "£49 once, incl. VAT" "37 of 50 left · ends 31/01/2027") · trust line "Secure checkout by Polar. No per-user fees. No sales calls. All prices include VAT." · terms above the button ("You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap in Settings."; decision #6, Polar tax set to Inclusive) · prices are always incl. VAT, never "+ VAT" · primary "Continue to checkout" · ghost "Not now — stay on Free". States: loading, error, sold out, success.
 
 ### 9.12 Quote / invoice document (client page + PDF)
 

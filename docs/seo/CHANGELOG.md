@@ -1,5 +1,13 @@
 # SEO changelog
 
+## v0.3.2 — 17/10/2026
+
+`/decorating-quote-template` built (cut-order step 2). The example quote uses the paint engine's numbers (£865 / £1,038 with VAT) instead of the PRD's £615 table, so all pages agree; the brief notes this. **Not built yet** from brief §2.1/§2.2: the cancellation-notice paragraph on the PDF (needs careful legal wording), terms defaults, logo, blank .docx / Google Docs / printable PDF downloads, image version of the example, desktop WYSIWYG. Facts re-checked 17/10: VAT threshold £90,000 (secondary sources; links go to GOV.UK), Consumer Contracts Regulations 2013 £42 off-premises exemption and 14-day cancellation (legislation.gov.uk reg. 27(3), 29).
+
+## v0.3.1 — 17/10/2026
+
+`briefs/paint-calculator.md` §2.1 brought in line with the engine spec (`../specs/paint-calculator.md`, founder signed off D1–D6): tins 10 / 5 / 2.5 L per paint (no 1 L), speed default 40 m²/day, labour = sum of 0.1-day lines (½-day rounding only on "Time on the job"), worked example now **£535** (was £560), door/window FAQ answer no longer promises editable sizes. `content-plan.md`: decorator sanity check is now on the 40 m²/day default.
+
 ## v0.3 — 17/10/2026
 
 The founder accepted all 10 CEO decisions (`../ceo/decisions-2026-10-17.md`, 17/10/2026). This version applies only the edits that memo gives to [SEO]: #1 (invoice date), #2, #4 and #6. No new research.

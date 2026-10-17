@@ -27,6 +27,8 @@ Solo or two-person UK painters and decorators who price by the room and the day,
 | "Measure the rooms. Get the price right." | If testing shows decorators respond to the underpricing pain more than to speed or the maths |
 | "Say the rooms. Get a priced quote." | Voice-section heading once voice is live. As the H1 only if decorators prefer it in a 5-second test (it is close to Fixxa's "Say the job in a voice note") |
 
+**Re-test (CEO #2):** in late Nov, once voice works, show both heroes ("Room sizes in. Priced quote out." vs "Say the rooms. Get a priced quote.") to 5+ decorators in a 5-second test. Swap only if "Say the rooms" wins, or if home-page CTR in GSC is below 0.5% after 200+ impressions.
+
 **Competitor check (17/10/2026):** the full table is in `answers-2026-10-17.md` Q2. My H1 phrases weren't found anywhere. Google UK itself was not verified (CAPTCHA).
 
 ## Value props (in this order)
@@ -45,9 +47,15 @@ Solo or two-person UK painters and decorators who price by the room and the day,
 | OK now | Only once measured | Never |
 |---|---|---|
 | Worked example matching the Dulux rule of thumb | Median time to first quote ("about X minutes") | "60 seconds", "in minutes, not hours" (QuoteRocket, TradeQuoteAI, Queezy) |
-| "No per-user fees" (verified against Tradify, Powered Now, Jobber) | Hours saved per week | "Cheapest" (Queezy £8.99) |
+| "No per-user fees" (verified against Tradify, Powered Now, Jobber) | Hours saved per week | "Cheapest" or "cheaper" (Queezy £8.99) |
 | "Works on Android and iPhone, nothing to install" | Number of decorators using it | Ratings or testimonials before real ones exist |
 | "Free for 5 quotes or invoices a month" | Quote acceptance rates | "MTD-ready", "HMRC-recognised", "official WhatsApp partner" |
+
+**Comparison and citation rules (CEO #4):**
+
+- Every public price comparison includes Queezy (£8.99), is dated and is sourced. Powered Now: cite the App Store GB price (verified) or leave it out.
+- Late payment: "Direct Line business insurance research, reported 15/01/2026 (sample size not published)", linking the Scottish Financial News article (the original Direct Line URL now redirects to aviva.com). Tradefix: "n = 150, 2024".
+- Deposit line in the product: post-MVP. A deposit FAQ on the quote template: yes.
 
 ## Objection handling (FAQ copy, UK English)
 

@@ -1,15 +1,115 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* Design tokens: docs/design/design-system.md §3 and §8 (Coachline, approved 17/10/2026).
+   Semantic variables flip in dark mode, so components never need `dark:` variants. */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --pb-bg: #F6F3EC; --pb-surface: #FFFFFF; --pb-surface-2: #ECE7DC;
+  --pb-ink: #14201A; --pb-ink-2: #46524B; --pb-ink-3: #59645D;
+  --pb-line: #DCD5C6; --pb-line-strong: #78807A;
+  --pb-brand: #1E3D2E; --pb-on-brand: #F7F1DE; --pb-on-brand-2: #E6DFC9; --pb-coachline: #B8892B;
+  --pb-accent: #F4C430; --pb-accent-pressed: #E0AE14; --pb-on-accent: #14201A; --pb-accent-edge: #14201A;
+  --pb-check-fg: #1D4BAF; --pb-check-bg: #EAF0FC; --pb-check-line: #3D6BD6;
+  --pb-danger-fg: #B42318; --pb-danger-bg: #FDECEA;
+  --pb-ok-fg: #17643A; --pb-ok-bg: #DDF0E3;
+  --pb-sent-fg: #24456E; --pb-sent-bg: #E4EBF4;
+  --pb-draft-fg: #46524B; --pb-draft-bg: #E9E4D9;
+  --pb-focus: #1D4BAF; --pb-desk: #E4DED1;
+  color-scheme: light;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+/* Dark palette, used for an explicit `.dark` class or the system setting (unless `.light` is set). */
+.dark {
+  --pb-bg: #0D1411; --pb-surface: #151E19; --pb-surface-2: #1E2923;
+  --pb-ink: #F3EFE4; --pb-ink-2: #B8C2BB; --pb-ink-3: #9CA79F;
+  --pb-line: #29352F; --pb-line-strong: #74817A;
+  --pb-brand: #1E3D2E; --pb-on-brand: #F7F1DE; --pb-on-brand-2: #E6DFC9; --pb-coachline: #D9B25A;
+  --pb-accent: #F4C430; --pb-accent-pressed: #E0AE14; --pb-on-accent: #14201A; --pb-accent-edge: #F4C430;
+  --pb-check-fg: #9DBBFF; --pb-check-bg: #16213A; --pb-check-line: #6690F0;
+  --pb-danger-fg: #FF9A90; --pb-danger-bg: #2E1716;
+  --pb-ok-fg: #86D9A0; --pb-ok-bg: #12271A;
+  --pb-sent-fg: #AFC6EA; --pb-sent-bg: #1A2638;
+  --pb-draft-fg: #B8C2BB; --pb-draft-bg: #222C27;
+  --pb-focus: #9DBBFF; --pb-desk: #070B09;
+  color-scheme: dark;
+}
 
-  @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --pb-bg: #0D1411; --pb-surface: #151E19; --pb-surface-2: #1E2923;
+    --pb-ink: #F3EFE4; --pb-ink-2: #B8C2BB; --pb-ink-3: #9CA79F;
+    --pb-line: #29352F; --pb-line-strong: #74817A;
+    --pb-brand: #1E3D2E; --pb-on-brand: #F7F1DE; --pb-on-brand-2: #E6DFC9; --pb-coachline: #D9B25A;
+    --pb-accent: #F4C430; --pb-accent-pressed: #E0AE14; --pb-on-accent: #14201A; --pb-accent-edge: #F4C430;
+    --pb-check-fg: #9DBBFF; --pb-check-bg: #16213A; --pb-check-line: #6690F0;
+    --pb-danger-fg: #FF9A90; --pb-danger-bg: #2E1716;
+    --pb-ok-fg: #86D9A0; --pb-ok-bg: #12271A;
+    --pb-sent-fg: #AFC6EA; --pb-sent-bg: #1A2638;
+    --pb-draft-fg: #B8C2BB; --pb-draft-bg: #222C27;
+    --pb-focus: #9DBBFF; --pb-desk: #070B09;
     color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--pb-bg);            --color-surface: var(--pb-surface);   --color-surface-2: var(--pb-surface-2);
+  --color-ink: var(--pb-ink);          --color-ink-2: var(--pb-ink-2);       --color-ink-3: var(--pb-ink-3);
+  --color-line: var(--pb-line);        --color-line-strong: var(--pb-line-strong);
+  --color-brand: var(--pb-brand);      --color-on-brand: var(--pb-on-brand); --color-on-brand-2: var(--pb-on-brand-2);
+  --color-coachline: var(--pb-coachline);
+  --color-accent: var(--pb-accent);    --color-accent-pressed: var(--pb-accent-pressed);
+  --color-on-accent: var(--pb-on-accent); --color-accent-edge: var(--pb-accent-edge);
+  --color-check-fg: var(--pb-check-fg); --color-check-bg: var(--pb-check-bg); --color-check-line: var(--pb-check-line);
+  --color-danger-fg: var(--pb-danger-fg); --color-danger-bg: var(--pb-danger-bg);
+  --color-ok-fg: var(--pb-ok-fg);      --color-ok-bg: var(--pb-ok-bg);
+  --color-sent-fg: var(--pb-sent-fg);  --color-sent-bg: var(--pb-sent-bg);
+  --color-draft-fg: var(--pb-draft-fg); --color-draft-bg: var(--pb-draft-bg);
+  --color-focus: var(--pb-focus);      --color-desk: var(--pb-desk);
+  --color-paper: #FFFFFF;              --color-paper-ink: #14201A;   /* PDF/A4: fixed in both themes */
+}
+
+@theme {
+  /* Archivo isn't self-hosted yet (design-system §4); until then the fallback stack is used. */
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --text-display: 2.75rem;  --text-display--line-height: 2.875rem;
+  --text-h1: 1.875rem;      --text-h1--line-height: 2.125rem;
+  --text-h2: 1.5rem;        --text-h2--line-height: 1.75rem;
+  --text-title: 1.25rem;    --text-title--line-height: 1.625rem;
+  --text-money-xl: 2.25rem; --text-money-xl--line-height: 2.5rem;
+  --text-body-lg: 1.125rem; --text-body-lg--line-height: 1.625rem;
+  --text-body: 1rem;        --text-body--line-height: 1.5rem;
+  --text-caption: 0.875rem; --text-caption--line-height: 1.25rem;
+
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px;
+
+  --shadow-plate: 0 2px 0 var(--pb-accent-edge);
+  --shadow-sheet: 0 -8px 24px rgb(13 20 17 / 0.14);
+  --shadow-paper: 0 1px 0 #CFC8B8, 0 12px 24px rgb(13 20 17 / 0.10);
+
+  --ease-sheet: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --breakpoint-desk: 64rem; /* 1024 px: desktop layouts */
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--pb-bg);
+    color: var(--pb-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--pb-focus);
+    outline-offset: 2px;
   }
 }

@@ -5,5 +5,5 @@ export default {
   ssr: false,
   // Public SEO pages are prerendered to HTML at build time.
   // App routes (login, quotes) stay client-rendered via the SPA fallback.
-  prerender: ["/"],
+  prerender: ["/", "/paint-calculator", "/decorating-quote-template"],
 } satisfies Config;

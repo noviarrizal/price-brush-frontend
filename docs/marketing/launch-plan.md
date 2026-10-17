@@ -46,7 +46,7 @@ Gate: checkout live (PRD §9). If checkout isn't live on Sun 22 Nov, **move the 
 ### Pre-post checklist (tick all on 21 Nov)
 
 - [ ] Each feature named in the post works live on a phone today. Delete any line that doesn't.
-- [ ] Defaults in the post match the live calculator (from `../seo/briefs/paint-calculator.md`: 12 m²/L, 45 m²/day, £200 day rate, half-day rounding).
+- [ ] Defaults in the post match the live calculator (from `../specs/paint-calculator.md`, signed off 17/10/2026: 12 m²/L, 40 m² a day, £200 day rate, £6/L paint; labour charged per line, time on the job rounded up to ½ day as information only).
 - [ ] Prices match `/pricing`: Free 5 quotes or invoices a month; Pro £9 a month incl. VAT.
 - [ ] Group rules read; permission recorded if needed; links allowed.
 - [ ] None of "60 seconds", "cheapest", "AI-powered", "one tap to invoice", ratings, user counts.
@@ -74,8 +74,8 @@ If the group only admits decorators and says no, accept it. Don't reapply with a
 >
 > The defaults are my best guesses. This is where I'd value your experience:
 > 1. 12 m² per litre for emulsion. Fair for trade matt on a normal wall?
-> 2. 45 m² painted per day. What do you actually get through on walls, and on ceilings?
-> 3. It rounds up to the nearest half day. Is that how you'd price it?
+> 2. 40 m² painted per day (each coat counts). What do you actually get through on walls, and on ceilings?
+> 3. It prices each room and surface by the fraction of a day it takes, and shows the total time rounded up to half a day. Would you round your price up instead?
 > 4. New plaster adds a mist coat as its own line. Is that how you'd show it to a client?
 >
 > So nobody's surprised: it's free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT, with no per-user fees.
@@ -140,6 +140,33 @@ Source: PRD §7 (decided 15/10/2026: £49 one-off, lifetime, 50 places, ends 31 
 
 **Strongest argument against the offer:** "lifetime" plus a possible stop on 30/04/2027 could feel like a bait to the first 50 buyers. It also caps revenue from the keenest users at about £37 net each (CEO memo #6). **Mitigation:** the 60-day notice and CSV export line (F13 export exists in the PRD). **Founder decision (17/10/2026): no refund guarantee.** The "£49 back if PriceBrush closes before 31/01/2028" line is NOT used: net receipt is ~£37 per sale and Polar keeps its fee on refunds, so each full refund would cost the founder ~£12 out of pocket (worst case 50 × £49 = £2,450) while he has no funds. The promise stays: 60 days' notice + CSV export.
 **What would change my mind:** 0 Founding sales after launch week and the December email, with ≥ 4 activated users. That points to the offer or the audience, not the price. Ask the activated users what stops them before changing anything.
+
+## Launch week, 23–30 Nov (draft)
+
+Goal: get the first decorators into the app before checkout matters, and start the Founding Member clock. Everything is written in advance in the 15–22 Nov slot, so launch week is mostly posting and replying (about 3 h).
+
+| Day | Action | Done when |
+|---|---|---|
+| Mon 23/11 | Free listings batch 1 from `../seo/link-building.md` §1 (Capterra/GetApp basic and the others there), same master text | Each listing logged in the register |
+| Tue 24/11 | **Product Hunt** (a weekday). Founder comment posted at launch, replies the same day | Live; comments answered |
+| Wed 25/11 | **The Decorators Forum** update post (text below), only in the section its rules allow | Post live |
+| Thu 26/11 | Factual new-product note to *Painting & Decorating News*; disclosed launch post on UK Business Forums where allowed | Sent / posted |
+| Fri 27/11 | Listings batch 2; reply to every forum comment in writing | All replied |
+| 28–30/11 | Fix the top 3 issues people raised; note them in the forum thread | Thread updated |
+
+**Forum post text (The Decorators Forum, draft)**
+
+> **Title:** I built a free paint calculator and quote app for decorators — the app part is live now
+>
+> Hi all, I'm Arif and I'm building PriceBrush. A few weeks ago I posted the free paint calculator here and some of you told me what was wrong with the defaults — thank you, I changed [X and Y].
+>
+> The app is now live. You put in the rooms (or say them), it works out coats, litres and days from your own day rate, and you get a quote with one line per room and surface, with the working shown. You can change every line. You send it on WhatsApp as a link or a PDF, and when it's accepted, it's an invoice.
+>
+> Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT, the same for one decorator or five. No sales calls, cancel in one tap. The first 50 people can get Founding Member, £49 once for Pro for life.
+>
+> I'd really like to hear what doesn't fit how you price jobs. I'll answer everything here.
+
+Rules for the post: say "I'm building PriceBrush" (done in line 1), no "what's your biggest headache?", no fake numbers, no comparison without Queezy + date + source, and fill in "[X and Y]" with the real changes or delete that sentence.
 
 ## Rules that hold every week
 
