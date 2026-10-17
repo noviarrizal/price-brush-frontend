@@ -94,9 +94,9 @@ Notes:
 
 > I'm Arif, an independent developer. UK painters and decorators price by the room and the day, then often type the quote in Word or a WhatsApp message. PriceBrush turns room sizes into coats, litres, days and a price at the decorator's own day rate, shows every number, and sends the quote as a WhatsApp link the client can accept. When it's accepted, it's an invoice. Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT. I'd love feedback on the calculator defaults.
 
-## Founding Member offer copy (£49 lifetime, 50 places, until 31/01/2027)
+## Founding Member offer copy (£49 once, 50 places, until 31/01/2027)
 
-Source: PRD §7 (decided 15/10/2026: £49 one-off, lifetime, 50 places, ends 31 Jan 2027). Pro contents from the PRD §7 Pro row.
+Source: PRD §7 (decided 15/10/2026: £49 one-off, 50 places, ends 31 Jan 2027; worded "Pro for as long as PriceBrush runs" with no refund guarantee, decided 17/10/2026). Pro contents from the PRD §7 Pro row.
 
 **`/pricing` card**
 

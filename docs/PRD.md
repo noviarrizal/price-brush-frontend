@@ -312,7 +312,7 @@ timeline
     14–31 Okt : 1 Free tools live : Kalkulator cat + template quote (31 Okt), template invoice (14 Nov) : Gate — pages indexed
     1–21 Nov : 2 Paid MVP : Voice quote, invoice, Polar checkout : Gate — 10 users tried it
     22–30 Nov : 3 Launch : Directories, forums, Product Hunt : Gate — checkout live
-    1 Des–31 Jan : 4 Founding offer : £49 lifetime, first 50 only : Gate — first payment by 31 Dec
+    1 Des–31 Jan : 4 Founding offer : £49 sekali bayar, first 50 only : Gate — first payment by 31 Dec
 ```
 
 **Pertanyaan terbuka:**

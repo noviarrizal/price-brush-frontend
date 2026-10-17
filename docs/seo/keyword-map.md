@@ -76,7 +76,7 @@ Rules: one primary keyword per URL; a keyword listed as secondary on one page mu
 
 - **Primary:** (brand) PriceBrush pricing — no generic keyword (don't compete with Tradify-pricing queries yet)
 - **Title (51):** PriceBrush Pricing: Free, Pro £9/month, No Per-User
-- **Meta description (152):** Free for 5 quotes or invoices a month. Pro £9 a month or £79 a year, incl. VAT. Founding Member £49 once, for life. No per-user fees. Cancel in one tap.
+- **Meta description (142):** Free for 5 quotes or invoices a month. Pro £9 a month or £79 a year, incl. VAT. Founding Member £49 once. No per-user fees. Cancel in one tap.
 - **H1:** Simple pricing. No per-user fees.
 - **Price rule (CEO decision #6, accepted 17/10/2026):** all prices are shown **including VAT** ("£9 a month, incl. VAT"); Polar tax behaviour set to Inclusive. Never "+ VAT". Any comparison with competitors must include Queezy, be dated and sourced, and never say "cheaper"/"cheapest" (decision #4).
 - **Links out:** / · /paint-calculator · /decorating-quote-template · Links in: header, footer, home

@@ -154,7 +154,7 @@ Google status (be realistic): **FAQ rich results are limited to well-known gover
      {"@type":"Offer","name":"Free","price":"0","priceCurrency":"GBP"},
      {"@type":"Offer","name":"Pro monthly","price":"9","priceCurrency":"GBP"},
      {"@type":"Offer","name":"Pro yearly","price":"79","priceCurrency":"GBP"},
-     {"@type":"Offer","name":"Founding Member (lifetime)","price":"49","priceCurrency":"GBP"}]}
+     {"@type":"Offer","name":"Founding Member (one-off payment)","price":"49","priceCurrency":"GBP"}]}
 ]
 ```
 

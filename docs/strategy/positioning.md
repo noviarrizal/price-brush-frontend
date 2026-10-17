@@ -20,7 +20,7 @@ Solo or two-person **UK painters and decorators** who price by the room and the 
 | Results match published rules of thumb (Dulux: ~5 L for a 4 × 4 m room) | Worked example on the calculator page | 31/10/2026 |
 | One path from calculator to quote to invoice | "Turn this into a quote" button (memo 001) | 31/10 (template); full flow late Nov |
 | Works on a 360 px Android and on a laptop, nothing to install | Any page | 31/10/2026 |
-| Price on the page: £9/month flat, £49 lifetime founding offer, no per-user fees | `/pricing` | Before checkout opens |
+| Price on the page: £9/month flat, £49 once Founding Member offer ("Pro for as long as PriceBrush runs"; no refund guarantee, decided 17/10/2026), no per-user fees | `/pricing` | Before checkout opens |
 | Cancel in one tap | Account page (F12) | Before checkout opens |
 | *Not yet provable:* "60 seconds", "saves 3–4 hours a week" | Measure with the event counter before claiming | Earliest Dec 2026 |
 

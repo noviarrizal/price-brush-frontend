@@ -1,5 +1,10 @@
 # Design CHANGELOG
 
+## v0.3.1 — 18/10/2026
+
+- Founding Member copy no longer promises "for life" / "for ever" / "lifetime" (founder: no refund guarantee, 17/10/2026; PRD §7): now "Pro for as long as PriceBrush runs" and "Everything in Pro, no monthly fee" (landing, desktop landing, paywall, board). Free plan caption "for ever" → "no card needed". Desktop Pro price "£9 /month" → "£9 a month".
+- Re-rendered: `landing`, `paywall`, `desktop-landing`, `design-system`, `_overview`, `_overview-desktop` (light + dark), checked.
+
 ## v0.3 — 17/10/2026
 
 Direction **"Coachline" — approved by the founder 17/10/2026** (`../ceo/decisions-2026-10-17.md` #5, all 10 decisions accepted). Only the memo's design edits were applied (#2, #3, #5, #7, #8, #9). Scope kept small on purpose.
