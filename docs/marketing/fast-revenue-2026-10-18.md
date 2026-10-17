@@ -11,6 +11,15 @@ Author: marketing lead · Status: **Accepted with changes (CEO 18/10 revenue, ro
 >   - Line D goes on the **quote template** post-download card only (the invoice template too from 14/11), with the deletion line (CEO #8).
 >
 > The current dated plan is `launch-plan.md` v0.4.
+>
+> **Status note 18/10/2026 (v0.5, founder sign-off):** the current plan is `launch-plan.md` **v0.5**; where this memo differs, v0.5 wins.
+> - **Facebook is back, for groups only:** one conditional post on Thu 26/11 (`facebook-check-2026-10-18.md`).
+> - **Video:** one YouTube video on 25/11. No TikTok.
+> - **Screwfix** answers start in December.
+> - **P&D News** gets an extra note in the week of 02/11.
+> - **No ads.**
+> - **Address:** pricebrush.co.uk (pages.dev if the domain slips).
+> - Struck rows below stay struck. The notes in brackets show what replaced them.
 
 Inputs read: `../PRD.md` §7, §9 and the decisions log (15 and 17 Oct, Founding with no refund guarantee), `../ceo/decisions-2026-10-18.md` (P1: no Founding card or "X of 50" before checkout works; P4: near-zero traffic in week 1; P7: hours only just fit), `messaging.md` v0.2, `funnel.md` v0.2, `launch-plan.md` v0.2, `../seo/keyword-map.md`, `../seo/data/quotes.csv`.
 
@@ -123,12 +132,12 @@ All numbers are **[estimates]**. No benchmark is verified. They are starting gue
 
 | Channel | Fit | Visits, 31/10–31/12 | Decorator share | Buyers |
 |---|---|---|---|---|
-| ~~**Facebook group post**~~ | **Cancelled 18/10/2026: the founder has no Facebook account** | 0 | — | 0 |
+| ~~**Facebook group post**~~ | **Cancelled 18/10/2026: the founder has no Facebook account** (v0.5: re-added as one conditional group post on 26/11, 0–150 visits, 0–1 buyers, `facebook-check-2026-10-18.md` A7) | 0 | — | 0 |
 | **"Tell me" list (D)** | Warmest | 0–15 emails | Very high | 0–3 |
 | **P&D News note** (23/11) | Decorator trade press; it ran PaintPilot's launch on 05/10/2026 | 0–100 (traffic unknown) | High | 0–1 |
 | Product Hunt (24/11) | Weak: few UK decorators [opinion] | 50–300 | Low | 0–1 |
 | Free directories (23/11 →) | Slow, durable; AlternativeTo's free queue may never be reviewed | 0–50 | Medium | 0–1 |
-| Faceless video ×4 (YouTube full-length + Short, TikTok) | Decorators watch YouTube; a new channel's reach is unknown | 0–100 | Medium | 0–1 |
+| Faceless video ×4 (YouTube full-length + Short, TikTok) (v0.5: one YouTube video, no TikTok, no clickable links) | Decorators watch YouTube; a new channel's reach is unknown | 0–100 | Medium | 0–1 |
 | Screwfix answers (no links) | UK DIY + trades; promotion banned | 0–20 | Low–medium | 0 |
 | Watermark `?ref=wm` | Seen mostly by **homeowners** (the decorator's clients) | 0–20 | Low | 0 |
 | SEO | Months, not weeks (CEO P4) | 0–100 | 20–40% | 0–1 |
@@ -191,8 +200,8 @@ Two prerequisites come first, because they are the real gate on any money:
 | Sun 22/11 evening | Send the one promised email to everyone on the "tell me" list, then delete the list | 0.25 |
 | Mon 23/11 | P&D News note + free listings batch 1 (`?ref=pdn`, `?ref=dir-<name>`) | 0.75 |
 | Tue 24/11 | Product Hunt + maker comment; written replies | 0.75 |
-| Wed 25/11 | Video #3 live: YouTube full-length + Short, TikTok (`?ref=yt`, `?ref=tt`); replaces the cancelled FB post | 0.5 |
-| Thu 26/11 | Screwfix answers only (no launch post, no link) | 0.25 |
+| Wed 25/11 | Video #3 live: YouTube full-length + Short, TikTok (`?ref=yt`, `?ref=tt`); replaces the cancelled FB post (v0.5: the one YouTube video, no TikTok) | 0.5 |
+| Thu 26/11 | Screwfix answers only (no launch post, no link) (v0.5: replaced by the conditional Facebook group post; Screwfix starts in December) | 0.25 |
 | Fri 27/11 – Sat 28/11 | Replies only; tally by ref tag | 0.5 |
 | **Total** | | **~6.5 h** over 2 weeks (fits 8–10 h/week next to the MVP) |
 
@@ -200,7 +209,7 @@ Two prerequisites come first, because they are the real gate on any money:
 
 > Subject: PriceBrush is open
 >
-> Hi, you asked me to tell you when the PriceBrush app opened. It's open today: https://pricebrush.pages.dev/?ref=list
+> Hi, you asked me to tell you when the PriceBrush app opened. It's open today: https://pricebrush.pages.dev/?ref=list *(v0.5: use the final text in `launch-plan.md`, with pricebrush.co.uk)*
 >
 > Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT. The launch price: the first 50 decorators can get Pro for as long as PriceBrush runs for £49 once, incl. VAT, until 31/01/2027. {n} places are left.
 >

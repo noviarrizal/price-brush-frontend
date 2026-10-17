@@ -5,7 +5,7 @@ Last updated: 17/10/2026 · Owner: pricebrush-lead
 ## Definition of Done (every task)
 
 - [ ] Acceptance criteria from `docs/PRD.md` / the spec / the plan are met and ticked in the handoff.
-- [ ] `pnpm install --frozen-lockfile` exits 0 (it currently doesn't; see `stack-notes.md`). `pnpm typecheck`, `pnpm test` and `pnpm build` pass with no new warnings. New public pages appear in the prerender output.
+- [ ] `pnpm install --frozen-lockfile` exits 0 (it does since `4fa1f5e`; a new dependency with a build script needs an `allowBuilds` entry in `pnpm-workspace.yaml`, see `stack-notes.md`). `pnpm typecheck`, `pnpm test` and `pnpm build` pass with no new warnings. New public pages appear in the prerender output.
 - [ ] Non-trivial logic (paint maths, prices, VAT, money parsing, limits, storage formats) has Vitest tests next to the file.
 - [ ] Visual check at 360 px and 1440 px, light **and dark**, against the design PNGs and `screens.md` copy.
 - [ ] Accessibility: labels, visible focus, keyboard path, contrast AA in **both themes** (including fixed "paper" surfaces such as example tables and A4 previews, which must use the fixed `paper-*` tokens, never theme tokens), tap targets ≥ 48 px.

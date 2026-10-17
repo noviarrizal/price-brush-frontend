@@ -1,103 +1,169 @@
-# Launch plan to the first payment, 31/12/2026 (v0.4.1)
+# Launch plan to the first payment, 31/12/2026 (v0.5)
 
-Date: 17/10/2026 · Updated 18/10/2026 (v0.4.1: Facebook-groups steps added, **pending founder + CEO**) · Author: marketing lead · Status: **proposed; the founder decides**. Inputs accepted so far: CEO memos `../ceo/decisions-2026-10-17.md`, `../ceo/decisions-2026-10-18.md`, and rows 1–9 of `../ceo/decisions-2026-10-18-revenue.md`.
+Date: 17/10/2026 · Updated 18/10/2026 (v0.5) · Author: marketing lead · Status: **Accepted. Founder sign-off 18/10/2026.** Sources: `../ceo/decisions-2026-10-18-channels.md` (including "Founder sign-off"), `facebook-check-2026-10-18.md`, `channels-and-ads-2026-10-18.md`, CEO memos `../ceo/decisions-2026-10-17.md`, `../ceo/decisions-2026-10-18.md`, rows 1–9 of `../ceo/decisions-2026-10-18-revenue.md`, and PRD "Keputusan founder 18 Okt 2026" (both blocks).
 
-Channels that fit an introverted solo founder:
-- SEO and free tools
-- free listings
-- trade press (P&D News)
-- faceless screen-recorded videos
-- written answers where the rules allow
-- the watermark
+**Address.** Every link in this plan and in `copy/` uses **pricebrush.co.uk** (bought Fri 23/10, live Sat 31/10).
+- If the domain isn't in the 31/10 build (go/no-go Wed 28/10), the site stays on **pricebrush.pages.dev** and moves on Sun 08/11, but only if the lead says the move takes ≤ 1 h.
+- If it hasn't moved by Sun 15/11, it stays on pricebrush.pages.dev for the rest of 2026.
+- In both cases, read every "pricebrush.co.uk" here and in `copy/` as "pricebrush.pages.dev". Marketing swaps the text in the copy files on the day.
 
-**No Facebook** (the founder has no account and won't make one, 18/10/2026). **Update 18/10/2026:** the founder is now willing to create one. `facebook-check-2026-10-18.md` recommends a personal profile for **groups only** (no Page, no Meta ads); those steps are in "Facebook groups (pending founder + CEO)" below and change nothing else until accepted. No ads (`channels-and-ads-2026-10-18.md` recommends £0; the Rp500,000 ceiling stays unspent unless the founder decides otherwise). No cold outreach, no calls, no face on camera.
+**Channels in 2026**
 
-Marketing hours are **on top of** the SEO content hours in `../seo/content-plan.md` and fit inside the founder's 8–10 h/week [estimate].
+| In | Out (decided) |
+|---|---|
+| SEO and the free tools; the watermark (`?ref=wm`) | **Ads of any kind** (£0 in 2026; the ~Rp400k left of the allowance stays unspent) |
+| The "tell me when it opens" list (line D) | **TikTok and Instagram** |
+| **Painting & Decorating News**: an early note (week of 02/11) and the launch note (23/11) | A Facebook **Page**, Meta ads, DMs to group members |
+| Free listings: Capterra, SaaSHub, AlternativeTo | UK Business Forums post, r/smallbusinessuk, Nextdoor, LinkedIn, X, Indie Hackers |
+| **Product Hunt** (Tue 24/11) | Videos #1, #2 and #4 (cut by the CEO; one video only) |
+| **One faceless YouTube video** (Wed 25/11) | Screwfix before December |
+| **Facebook groups**: personal profile, groups only, at most one post (Thu 26/11) and only with permission | Cold outreach, calls, a face on camera |
+| Screwfix Community answers, no links, **from December** | |
 
-## What changed in v0.4.1 (18/10/2026)
+Marketing hours are **on top of** the SEO content hours in `../seo/content-plan.md`. Rows marked *admin* come from the CEO memos. Their hours are listed so the week adds up, but they are not marketing work.
 
-- New section "Facebook groups (pending founder + CEO)": personal profile for groups only, a conditional single post on Thu 26/11, stop rules, ≈ 3 h to 31/12. **No Meta ads** (`facebook-check-2026-10-18.md` B). Nothing else in this plan changes. The CEO's proposed v0.5 edits (`../ceo/decisions-2026-10-18-channels.md`) are not applied here yet.
+## What changed in v0.5 (18/10/2026)
 
-## What changed in v0.4 (18/10/2026)
+- CEO channel edits merged:
+  - PDN note #1 in the week of 02/11.
+  - The YouTube channel only (no TikTok), created by 08/11; one video on 25/11, with the address shown as text.
+  - Videos #1, #2 and #4 cut.
+  - Screwfix moved to December.
+  - The 15/12 video rule changed.
+- Facebook groups merged as **accepted** (founder 18/10): personal profile, 5 join requests 20–24/10, an admin question on 15/11 only if the rules are silent, one conditional post on Thu 26/11, and stop rules.
+- Domain merged: pricebrush.co.uk from 31/10, with the 08/11 fallback and the 15/11 freeze.
+- Removed: every "pending" marker, the "no Facebook" lines, TikTok, the ad test and the 07/11 domain decision.
+- Paste-ready copy is now in `copy/` (P&D News note #1, Facebook join answers, admin message and post, Facebook profile set-up). The YouTube script is due about 15/11.
+- **New, measurement:** a typed address carries no `?ref=` tag. P&D News prints bare domains, and YouTube links aren't clickable on a new channel. So P&D News is counted by **referrer**, and YouTube needs a short path (proposed below, lead decides).
 
-- **Every Facebook step is cancelled:** joining the group, the membership answer, the admin message and the 25/11 group post. Evidence and the replacement channels are in `channels-and-ads-2026-10-18.md`.
-- **The UK Business Forums launch post is dropped.** Its terms ban "unsolicited or unauthorised advertising or promotional material" ([terms](https://www.ukbusinessforums.co.uk/help/terms/)), and per-section rules are not verified.
-- **New:** the P&D News note moves to Mon 23/11. Faceless video on YouTube (full-length + Short) and TikTok. Screwfix Community "Painters' Talk": written answers only, no PriceBrush links.
-- **Accepted CEO revenue edits applied:**
-  - The checkout is tested with a **100% discount code**, never a real card (#4).
-  - "Tell me when it opens" line D, then one email on 22/11 (#8).
-  - The list is kept out of the December sign-up email.
+## Week by week, 18/10 – 31/12/2026
 
-## Plan by week
+Owner "Arif" = founder hands-on. Agents (pricebrush-lead, pricebrush-frontend) are started by Arif. "Marketing" = this agent (0 founder hours). Hours are founder hours [estimate].
 
-| Dates | Phase | Marketing actions | Channel | Founder h | Done when |
-|---|---|---|---|---|---|
-| 18–24 Oct | Copy frozen | Messaging accepted (`messaging.md` v0.2). **Create the Product Hunt personal account now** with pricebrush.app@gmail.com and finish its onboarding ("Newly created accounts must complete the onboarding process before gaining access to post", [PH help](https://help.producthunt.com/en/articles/479557-how-to-post-a-product)). Don't post anything | — | 0.25 | Done; PH onboarding finished |
-| 25–31 Oct | Free tools live **Sat 31 Oct** | Check the watermark text + `?ref=wm`, the OG image and the "Turn this into a quote" hand-over; submit the sitemap in GSC. Page views counting (Cloudflare Web Analytics); events from 08/11 (counter Worker, CEO 18/10 P4). **No Founding Member copy anywhere on the site** (CEO 18/10 P1). Line D (CEO revenue #8) goes on the quote template's post-download card only if T13 passed with time left, otherwise in the first week of November. Keep the "tell me" list in a local file | SEO, watermark, line D | 1 | Calculator + quote template live, page views counting |
-| 1–7 Nov | MVP build | **If the founder says yes:** create a YouTube channel and a TikTok account with pricebrush.app@gmail.com (logo avatar, no face). **Video #1:** "How much paint for a 4 × 4 m room, and what to charge at £200 a day". Record it once in landscape for YouTube (2–3 min, screen + text) and cut a 30–45 s vertical version for the Short and TikTok. Description link on YouTube full-length only (Shorts links aren't clickable) | Video | 1.5 | Video live on both |
-| 8–14 Nov | Invoice template **Sat 14 Nov** | **Video #2:** "Pricing a mist coat on new plaster". Register on Screwfix Community, read the [usage rules](https://community.screwfix.com/threads/forum-usage-rules.139187/) and [moderation policy](https://community.screwfix.com/threads/moderation-policy.139188/), and answer 1–2 Painters' Talk questions **with no links**. **Sat 07/11:** decide the domain (`channels-and-ads-2026-10-18.md` B5, 3 conditions) together with the Option C go/no-go | Video, forum answers | 1.5 | Video live; answers posted; domain yes/no recorded |
-| 15–21 Nov | Checkout ready | Prepare the Founding copy (below) for `/pricing` and the paywall, **hidden until checkout works** (CEO 18/10 P1). Write one listing text (50 / 160 / 500 words) + 4 screenshots. Finalise the P&D News note (`channels-and-ads-2026-10-18.md` A4). Record **video #3** "Room sizes to a WhatsApp quote" on the working app (staging is fine; publish only after the gate). Draft the "tell me" email. Tick the pre-post checklist on 21/11 | — | 1.75 | Copy in place, video #3 recorded, checklist ticked |
-| **22–30 Nov** | **Launch week** | See the day-by-day plan below | List, P&D News, listings, PH, video | 3.75 | Every item logged in the link-building register |
-| 1–14 Dec | Founding offer | One plain-text email from the founder's mailbox to each **sign-up** (text below). **Check PECR soft opt-in first: not verified.** People on the "tell me" list are **not** emailed again: they asked for one email only, and their addresses were deleted on 22/11. **Video #4:** "Pricing a hall, stairs and landing". Screwfix answers, 0.25 h | Email to sign-ups, video, forum answers | 1.75 | Every sign-up emailed |
-| 15/12 | **Checkpoint** | Fill the KPI table in `funnel.md` with real rates; apply "If it's not working" | — | 0.5 | Decision written down |
-| 15–31 Dec | Founding offer | In-app banner for Free users (text below). Screwfix answers, 0.25 h. KPI check on 31/12 | In-app, forum answers | 0.75 | KPI table filled |
+| Date | Item | Owner | Arif h | Copy / done when |
+|---|---|---|---|---|
+| **Week 1 · Sun 18 – Sat 24 Oct** | | | | |
+| Sun 18/10 | Create the Facebook personal profile: everyday name, non-face photo, bio, privacy settings, two-factor authentication | Arif | 0.3 | `copy/facebook-profile.md`; 2FA on, recovery codes saved |
+| Tue 20 – Sat 24/10 | Request to join 5 groups, in order: Painter & Decorator's Community UK, Trade Decorator Forum, Decorators Forum, painter and decorator UK only, The Brush Wizards Network. Never reapply if declined | Arif | 0.25 | `copy/facebook-join-answers.md` §1; 5 requests sent |
+| Fri 23/10 (payday) | *Admin:* UK IPO search ("pricebrush", "price brush", classes 9 and 42). If clear: buy pricebrush.co.uk on Cloudflare. **Stop** if it's > Rp120k or asks for a UK address. Then run /pb-lead prompt L4 | Arif; pricebrush-lead | 0.9 | CEO channels memo, next actions #2, #3, #5 |
+| By Sat 24/10 | Product Hunt personal account (pricebrush.app@gmail.com) + onboarding. Post nothing | Arif | 0.25 | Onboarding finished |
+| By Sat 24/10 | *Admin:* Polar organisation, Inclusive tax, ID + payout; write down the "individual" result | Arif | 1 | CEO revenue #3 |
+| This week | v0.5 plan, `funnel.md`, `copy/` files | Marketing | 0 | This file |
+| | **Week 1 total** | | **0.8 marketing + 1.9 admin** | |
+| **Week 2 · Sun 25 – Sat 31 Oct (free tools live)** | | | | |
+| Sun 25 – Sat 31/10 | For each group that accepts: read the pinned rules and the last ~20 posts; fill the local rules log (one row per group, local file only) | Arif | 0.33 | Log columns in `facebook-check-2026-10-18.md` A5 |
+| Wed 28/10 | *Admin:* go/no-go. Is the domain in the build? If not, pages.dev on 31/10 | Arif | (in go/no-go) | Decision written down |
+| Thu 29 – Sat 31/10 | *Admin:* F1–F3 deploy, with the domain steps if bought | Arif + pricebrush-lead | +0.25 | Lead's plan |
+| Fri 30/10 | Re-check `copy/pdnews-early-note.md` against the staging site: features, defaults, address | Marketing | 0 | Note marked final |
+| Sat 31/10 | Free tools live. Check the watermark text and its `?ref=wm` link on the live host, the OG image, the calculator → quote hand-over; submit the sitemap in GSC. Line D only if T13 passed with time left, otherwise in the first week of November. **No Founding copy on the site** | Arif | 1 | Calculator + quote template live; page views counting |
+| Sat 31/10 (after F2) | Optional: add the website to the Facebook profile details | Arif | 0.05 | `copy/facebook-profile.md` §4 |
+| | **Week 2 total** | | **1.4 marketing + 0.25 admin** | |
+| **Week 3 · Sun 01 – Sat 07 Nov (MVP build)** | | | | |
+| Sun 01/11 | *Admin:* Polar Submit, with the licence-key question | Arif | 0.5 | CEO revenue #3 |
+| **Tue 03/11** (window Mon 02 – Fri 06/11) | **P&D News note #1** (free calculator) through the Submit News form. Send only after F2 passed **and** line D is live. If line D slips, send on the day it goes live, by Fri 13/11 at the latest | Arif | 0.5 | `copy/pdnews-early-note.md`; form sent, date logged in `../seo/link-building.md` register |
+| Any day, by Sun 08/11 | Create the YouTube channel: pricebrush.app@gmail.com, logo avatar, no face. Settings → Channel → Feature eligibility: write down what's on. **No ID verification** | Arif | 0.1 | Channel exists (≥ 2 weeks of history by 25/11) |
+| Sat 07/11 | *Admin:* Option C go/no-go; optional 10-minute Etsy check | Arif | 0.4 | CEO revenue #7, #9 |
+| Optional | Facebook: read ≤ 15 min, phone only. At most one maths or software comment, disclosed, no links | Arif | 0–0.25 | Skip it if the build is tight; nothing breaks |
+| | **Week 3 total** | | **0.6 marketing (+0.25 optional) + 0.9 admin** | |
+| **Week 4 · Sun 08 – Sat 14 Nov (invoice template 14/11)** | | | | |
+| Sun 08/11 | *Admin, only if the domain wasn't in the 31/10 build:* move per `../seo/technical-seo.md` §9, only if the lead says ≤ 1 h | Arif + pricebrush-lead | 0.5 | 301s checked |
+| Sat 14/11 | Invoice template live; line D on its post-download card as well (CEO revenue #8) | pricebrush-frontend | 0 | Lead's plan |
+| Optional | Facebook reading, as in week 3 | Arif | 0–0.25 | — |
+| | **Week 4 total** | | **0 marketing (+0.25 optional) + 0–0.5 admin** | |
+| **Week 5 · Sun 15 – Sat 21 Nov (checkout ready)** | | | | |
+| Sun 15/11 | **Only if** the best-fit group's rules are silent on promotion: one written message to one admin. If the rules ban it, do nothing | Arif | 0.1 | `copy/facebook-join-answers.md` §2 |
+| Sun 15/11 | Domain not moved by today → stays pages.dev for 2026; swap the address in every copy file | Marketing | 0 | — |
+| ~Sun 15/11 | Write the click-by-click video script and on-screen text from the real app UI | Marketing | 0 | `copy/youtube-video-script.md` |
+| Mon 16/11 | Founding copy (below) into `/pricing` and the paywall, **hidden** until the 22/11 gate (ask pricebrush-frontend) | Arif | 0.25 | Copy in place, not visible |
+| Tue 17/11 | One listing text (50 / 160 / 500 words, marketing drafts it) + 4 screenshots | Arif | 0.5 | Saved locally |
+| Wed 18 – Thu 19/11 | Record the one video on the working app (Xbox Game Bar `Win + Alt + R`, or OBS), edit in Clipchamp, upload as **Scheduled** for Wed 25/11 | Arif | 0.75 | Scheduled on YouTube |
+| Fri 20/11 | Has PDN published note #1? Count visits (referrer `paintinganddecoratingnews.co.uk` + `?ref=pdn1`). If not published, note #2 goes to Lucy's email on 23/11 instead of the form | Arif | 0.05 | One line in the register |
+| Sat 21/11 | Product Hunt draft (not published) + pre-post checklist below, including the Facebook conditions | Arif | 0.3 | Checklist ticked |
+| By Sat 21/11 | Final PDN note #2 and "tell me" email with the live address and the live feature list | Marketing | 0 | — |
+| | **Week 5 total** | | **1.95 marketing** | |
+| **Launch · Sun 22 – Mon 30 Nov** (gate below) | | | | |
+| Sun 22/11 | **Gate:** Founding and Pro checkout tested with a **100% discount code**, then webhooks, "X of 50 left", VAT shown incl., "Cancel plan" + Undo on a test Pro plan. Only then show the Founding card. Evening: the **one** "tell me" email (below), then delete the list | Arif | 0.75 | `?ref=list` |
+| Mon 23/11 | **PDN note #2** (launch text from `channels-and-ads-2026-10-18.md` A4, finalised 21/11) + free listings: Capterra basic, SaaSHub, AlternativeTo (free queue; never pay). Log each in `../seo/link-building.md` §1b | Arif | 0.75 | `?ref=pdn`, `?ref=dir-<name>` |
+| Tue 24/11 | **Product Hunt** launch (the day starts 08:01 UK = 15:01 WIB). Maker comment (below). No upvote asks. Written replies, cap 1 h | Arif | 0.75 | `?ref=ph` |
+| Wed 25/11 | **The one YouTube video** goes public. The address is on screen for the whole video and in the description as plain text. Optional: the same clip as a vertical Short, only if the crop takes ≤ 10 min | Arif | 0.5 | `/video` path if built (see Measurement), otherwise YouTube Studio views |
+| **Thu 26/11** 12:00–13:00 UK (19:00–20:00 WIB) | **Facebook:** one post in one group, **only if** all 5 conditions in "Facebook rules" hold. Free calculator first, no £49 offer | Arif | 0.33 | `copy/facebook-join-answers.md` §3; `?ref=fb-<code>` |
+| Thu 26 – Sat 28/11 | Facebook written replies | Arif | 0.5 | — |
+| Fri 27/11 | Replies: PH, YouTube comments, pricebrush.app@gmail.com | Arif | 0.25 | — |
+| Sat 28 – Mon 30/11 | Feedback into the backlog; tally the week: visits by ref tag and referrer, accounts, `quote_sent`, Founding sales; 5 lines in the register | Arif | 0.5 | Register filled |
+| | **Launch total** | | **4.33 marketing** | |
+| **Tue 01 – Sun 06 Dec** | | | | |
+| By Fri 04/12 | One plain-text email from the founder's mailbox to each **sign-up** (below). **Check PECR soft opt-in first: not verified.** The "tell me" list isn't emailed again (deleted 22/11) | Arif | 0.5 | Every sign-up emailed |
+| This week | Screwfix Community: register (neutral username, no "Screwfix"), read the [usage rules](https://community.screwfix.com/threads/forum-usage-rules.139187/) and [moderation policy](https://community.screwfix.com/threads/moderation-policy.139188/), answer 1–2 Painters' Talk questions. **No PriceBrush links** | Arif | 0.25 | Answers posted |
+| This week | Facebook: reading ≤ 15 min | Arif | 0.15 | — |
+| | **Week total** | | **0.9** | |
+| **Mon 07 – Sun 13 Dec** | | | | |
+| Mon 07/12 | PDN note #2 not published by today → don't resend; those hours go to SEO pages | Arif | 0.05 | — |
+| This week | Facebook: **one** follow-up comment under the original post ("you told me X, I changed it"), only if the post was welcomed and something did change | Arif | 0.33 | `copy/facebook-join-answers.md` §5 |
+| This week | Screwfix answers (0.25) + Facebook reading (0.15) | Arif | 0.4 | — |
+| | **Week total** | | **0.78** | |
+| **Mon 14 – Sun 20 Dec** | | | | |
+| **Tue 15/12** | **Checkpoint:** fill the KPI table in `funnel.md` with real rates; apply "If it's not working" (below), including the Facebook and video stop rules | Arif | 0.5 | Decision written down |
+| From Tue 15/12 | In-app banner for Free users (below); ask pricebrush-frontend | Arif | 0.1 | Banner live |
+| Sun 20/12 | Only if there are sign-ups but 0 payments: email the activated users asking what stops them | Arif | 0.25 | — |
+| This week | Screwfix answers + Facebook reading (if not stopped) | Arif | 0.4 | — |
+| | **Week total** | | **1.25** | |
+| **Mon 21 – Sun 27 Dec** | Screwfix answers + Facebook reading (optional over Christmas) | Arif | 0.4 | — |
+| **Mon 28 – Thu 31 Dec** | Thu 31/12: KPI check; write the result in the register | Arif | 0.25 | KPI table filled |
 
-**Total:** about 13 h over 11 weeks [estimate]. No single week goes above 1.75 h except launch week (3.75 h, when the MVP build is done).
+**Totals [estimate]:**
+- About **12.6 founder hours** of marketing over 11 weeks, plus up to 0.5 h of optional Facebook reading.
+- About **3.5 h of admin** (domain, Polar, go/no-go) counted in the CEO memos.
+- **Build weeks 1–14 Nov: 0.6 h** of marketing. 15–21 Nov: 1.95 h, which is the CEO's 1.75 h plus 0.2 h for Facebook.
+- Launch: 4.33 h. No other week goes above 1.95 h.
 
-## Launch week, day by day (22–30 Nov 2026)
+**Payday:** the only planned spend is the domain on Fri 23/10 (≤ Rp120k). The 25/11 and 25/12 paydays carry no marketing spend.
 
-Gate: checkout live (PRD §9). If checkout isn't live on Sun 22 Nov, **move the whole week** (at most to Sun 06/12, CEO revenue #7). Don't launch half: a launch without a way to pay wastes the one-off attention.
+## Launch gate
 
-| Day | Action | ref tag | Founder h |
-|---|---|---|---|
-| Sun 22 Nov | **Gate check:** test the Founding and Pro checkout with a **100% discount code** (Polar warns real-card tests can block the card or account; CEO revenue #4). Then check the webhooks, the "X of 50 left" count, VAT shown as included, and "Cancel plan" + Undo on a test Pro plan. **Only then** show the Founding card. In the evening, send the **one** "tell me" email (text below) to everyone on the list, then delete the list | `?ref=list` | 0.75 |
-| Mon 23 Nov | **P&D News note** through the "Submit News" form on [their contact page](https://www.paintinganddecoratingnews.co.uk/contact-us/) (exact text in `channels-and-ads-2026-10-18.md` A4). **Free listings**: Capterra basic, SaaSHub, and AlternativeTo (free queue, don't expect it to go live; never pay), all with the one listing text. Log each in `../seo/link-building.md` §1b | `?ref=pdn`, `?ref=dir-<name>` | 0.75 |
-| Tue 24 Nov | **Product Hunt** launch. Maker comment (below). Don't ask for upvotes (against PH rules); ask people to try it. Reply in writing through the day | `?ref=ph` | 0.75 |
-| Wed 25 Nov | **Video #3** live: YouTube full-length (link in the first description line), the Short, and TikTok (link in bio, or the plain text `pricebrush.pages.dev` if bio links aren't allowed) | `?ref=yt`, `?ref=tt` | 0.5 |
-| Thu 26 Nov | Screwfix Painters' Talk: answer questions only. **No launch post and no PriceBrush link** (their rules ban promotion) | — | 0.25 |
-| Fri 27 Nov | Replies: PH, YouTube comments, emails to pricebrush.app@gmail.com | — | 0.25 |
-| Sat 28 – Sun 29 Nov | Put the feedback into the backlog | — | 0.25 |
-| Mon 30 Nov | Tally the week: visits per ref tag, accounts, `quote_sent`, Founding sales. Write 5 lines in the register | — | 0.25 |
+Checkout must be live (PRD §9). If it isn't live on Sun 22/11, **move the whole launch block** by the same number of days, at most to Sun 06/12 (CEO revenue #7). The Facebook post moves with it and keeps its 5 conditions. Don't launch half: a launch without a way to pay wastes the one-off attention.
 
-If the domain was bought (decision 07/11), every link above uses the new domain with the same ref tags.
+## Facebook rules (accepted 18/10/2026)
 
-## Facebook groups (pending founder + CEO)
+Source: `facebook-check-2026-10-18.md` A2–A6. Rp0. Personal profile only: **no Page, no Meta ads, no DMs to members, no friend requests to strangers.** Links only where the rules allow them.
 
-Source and exact copy: `facebook-check-2026-10-18.md` (A5, A6). Rp0. **No Page, no Meta ads, no DMs to members, no links unless the rules allow them.** Nothing here applies until the founder and CEO accept it.
+**The 26/11 post happens only if all of these hold:**
+1. The group's rules allow it, or an admin said yes in writing.
+2. Arif has been a member for ≥ 3 weeks, and the account is ≥ 4 weeks old.
+3. The 22/11 checkout gate has passed.
+4. Every feature named is live on a phone that day.
+5. One group only.
 
-| When | Action | ref tag | Founder h |
-|---|---|---|---|
-| Sun 18 – Tue 20/10 | Create the personal profile: real name, non-face photo, the exact bio, two-factor authentication on | — | 0.25 |
-| Tue 20 – Sat 24/10 | Request to join 5 groups (Painter & Decorator's Community UK, Trade Decorator Forum, Decorators Forum, painter and decorator UK only, The Brush Wizards Network) with the exact honest answers. Don't reapply if declined | — | 0.25 |
-| 25 – 31/10 | Read each accepting group's rules; fill the local rules log (one row per group) | — | 0.33 |
-| 1 – 21/11 (build) | **0 required.** Optional ≤ 15 min/week on the phone: read; at most one maths or software comment a week, disclosed, no links, no posts | — | 0–0.25/week |
-| Sun 15/11 | Only if the best-fit group's rules are silent: one written question to one admin (exact text in the memo) | — | 0.1 |
-| Sat 21/11 | Add to the pre-post checklist: the rules or the admin allow one post; account ≥ 4 weeks old; member ≥ 3 weeks. If any fails: no post | — | 0.1 |
-| **Thu 26/11** (launch week) | **One** post in **one** group, 12:00–13:00 UK, exact copy from the memo; free calculator first; no Founding offer in the post | `?ref=fb-<group>` | 0.33 |
-| Thu 26 – Sat 28/11 | Written replies | — | 0.5 |
-| December | ≤ 15 min/week reading; one "you told me X, I changed it" comment under the original post, only if it was welcomed | — | ~0.75 total |
+If any condition fails: **no post, and no workaround**. That means no "mods delete if not allowed", no link in a comment to dodge a filter, and no Page.
 
 **Stop rules:**
-- **21/11:** no group has said yes → no post; reading only.
-- **Post removed or the admin objects** → no repost anywhere.
-- **15/12:** < 10 visits from `?ref=fb-*` → stop everything except reading.
+- **Sat 21/11:** no group has said yes → no post; the account is for reading only.
+- **Post removed, or the admin objects** → reply "Sorry, understood", and never repost anywhere.
+- **Tue 15/12:** < 10 visits from `?ref=fb-*` → stop everything except reading.
 - **Any account warning** → stop.
 
-**Hours if accepted:** ≈ 3 h to 31/12. Launch week rises from 3.75 h to ≈ 4.6 h; build weeks are unchanged (optional minutes only).
+## Pre-post checklist (tick all on Sat 21/11)
 
-### Pre-post checklist (tick all on 21 Nov)
+- [ ] Each feature named in PDN note #2, the video, the PH post and the Facebook post works live on a phone today. Delete any line that doesn't.
+- [ ] The defaults in every text match the live calculator (`../specs/paint-calculator.md`, signed off 17/10/2026): 12 m²/L, 40 m² a day, £200 day rate, £6/L paint; labour charged per line; time on the job rounded up to ½ day, shown as information only.
+- [ ] Prices match `/pricing`: Free for 5 quotes or invoices **a month**; Pro £9 a month incl. VAT; Founding £49 once incl. VAT, 50 places, until 31/01/2027.
+- [ ] Every address is the live host (pricebrush.co.uk, or pricebrush.pages.dev if the domain slipped).
+- [ ] Rules re-read today for Product Hunt and for the Facebook group (its rule, or the admin's written yes, saved in the rules log).
+- [ ] Facebook conditions 1–5 above.
+- [ ] None of "60 seconds", "in minutes", "cheapest", "AI-powered", "one tap to invoice", "free forever", "built for painters & decorators", ratings or user counts.
 
-- [ ] Each feature named in the P&D note, the video and the PH post works live on a phone today. Delete any line that doesn't.
-- [ ] Defaults in every text match the live calculator (from `../specs/paint-calculator.md`, signed off 17/10/2026): 12 m²/L, 40 m² a day, £200 day rate, £6/L paint; labour charged per line; time on the job rounded up to ½ day as information only.
-- [ ] Prices match `/pricing`: Free 5 quotes or invoices a month; Pro £9 a month incl. VAT; Founding £49 once incl. VAT, 50 places, until 31/01/2027.
-- [ ] Rules re-read on the day for Product Hunt, Screwfix and r/DIYUK.
-- [ ] None of "60 seconds", "cheapest", "AI-powered", "one tap to invoice", ratings or user counts.
+## Measurement notes (new in v0.5)
 
-### "Tell me" email (exact, Sun 22 Nov evening, once, plain text)
+- **P&D News prints bare domains.** In three recent items, the only outbound link was the plain homepage: PaintPilot → `www.paintpilot.app`, TradeUnited → `tradeunited.co.uk`, the PDA → a full URL to its own page ([PaintPilot](https://www.paintinganddecoratingnews.co.uk/decorating-products/painter-decorator-launches-paintpilot/), [TradeUnited](https://www.paintinganddecoratingnews.co.uk/decorating-industry/tradeunited-launches-benefits-platform-for-tradespeople/), [Chesterfield](https://www.paintinganddecoratingnews.co.uk/decorating-industry/chesterfield-decorator-champions-paint-green-scheme/), checked 17/10). Expect `?ref=pdn1` / `?ref=pdn` to be stripped. **Count PDN by the referrer** `paintinganddecoratingnews.co.uk` in Cloudflare Web Analytics, plus the ref tag if it survives.
+- **YouTube.** On a new channel without advanced features, description links aren't clickable ([YouTube Help](https://support.google.com/youtube/answer/9890437?hl=en-GB), re-checked 17/10). The founder chose no ID verification, so viewers will type the address, and a typed address carries no ref tag. **Proposal (lead decides, ≤ 0.25 h of engineer time, before 25/11):** a short path **`pricebrush.co.uk/video`** that does a 302 to `/paint-calculator/?ref=yt`, shown on screen. Without it, count the video by YouTube Studio views only.
+- **Facebook.** If links are allowed, use `https://pricebrush.co.uk/paint-calculator/?ref=fb-<code>`. If the group bans links, the address goes in as plain text, and visits show as direct or as `facebook.com` referrers.
+
+## Copy used in launch week (exact)
+
+### "Tell me" email (Sun 22/11 evening, once, plain text)
 
 > Subject: PriceBrush is open
 >
-> Hi, you asked me to tell you when the PriceBrush app opened. It's open today: https://pricebrush.pages.dev/?ref=list
+> Hi, you asked me to tell you when the PriceBrush app opened. It's open today: https://pricebrush.co.uk/?ref=list
 >
 > Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT. The launch price: the first 50 decorators can get Pro for as long as PriceBrush runs for £49 once, incl. VAT, until 31/01/2027. {n} places are left.
 >
@@ -105,9 +171,19 @@ Source and exact copy: `facebook-check-2026-10-18.md` (A5, A6). Rp0. **No Page, 
 >
 > Arif
 
-### Product Hunt maker comment (exact)
+### Product Hunt maker comment
 
 > I'm Arif, an independent developer. UK painters and decorators price by the room and the day, then often type the quote in Word or a WhatsApp message. PriceBrush turns room sizes into coats, litres, days and a price at the decorator's own day rate, shows every number, and sends the quote as a WhatsApp link the client can accept. When it's accepted, it's an invoice. Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT. I'd love feedback on the calculator defaults.
+
+PH note: Product Hunt already lists a free UK paint calculator ("Paint Calculator by Loom & Glow: Stop guessing how much paint your room needs", [PH](https://www.producthunt.com/products/paint-calculator-by-loom-glow), seen 17/10; its launch date isn't verified). So the PH tagline should lead with **quote at your day rate**, not "free paint calculator". The tagline is drafted on 21/11.
+
+### PDN note #2 (Mon 23/11)
+
+The text is in `channels-and-ads-2026-10-18.md` A4. On 21/11 marketing will:
+- swap the address to pricebrush.co.uk;
+- check "opened on 22/11/2026" against the real date;
+- add the ceiling and mist-coat line only if T16 is live;
+- make sure its headline differs from note #1.
 
 ## Founding Member offer copy (£49 once, 50 places, until 31/01/2027)
 
@@ -137,7 +213,7 @@ Source: PRD §7 (decided 15/10/2026: £49 one-off, 50 places, ends 31 Jan 2027; 
 
 > Founding Member: £49 once, Pro for as long as PriceBrush runs. {n} of 50 left. Ends 31/01/2027. [ See the offer ]
 
-**Sign-up email (1–14 Dec, plain text, from the founder; sign-ups only, not the "tell me" list)**
+**Sign-up email (1–4 Dec, plain text, from the founder; sign-ups only, not the "tell me" list)**
 
 > Subject: Thanks for trying PriceBrush
 >
@@ -152,41 +228,50 @@ Source: PRD §7 (decided 15/10/2026: £49 one-off, 50 places, ends 31 Jan 2027; 
 **When it's sold out:** "All 50 Founding places have gone. Thank you." **After 31/01/2027:** remove it everywhere.
 
 **Rules:**
-- **When it can appear:** no Founding Member card, copy or "X of 50 places" on the site (home, pricing, paywall, banner) until checkout works and the 22 Nov gate test (100% discount code) has passed (CEO 18/10 P1 and revenue #4, accepted).
+- **When it can appear:** no Founding Member card, copy or "X of 50 places" anywhere on the site (home, pricing, paywall, banner) until checkout works and the 22/11 gate test (100% discount code) has passed (CEO 18/10 P1 and revenue #4). It also stays out of PDN note #1 and the Facebook post.
 - **The count:** {n} always comes from real Polar orders, updated by hand. Never round it, start it below 50 or invent it.
 - **The deadline:** **don't extend it.** "Ends 31/01/2027" has to be true, or it is fake urgency.
 - **"Lifetime":** always write it as "for as long as PriceBrush runs", because the PRD has a stop-or-pivot review on 30/04/2027.
 
 **Strongest argument against the offer:** "lifetime" plus a possible stop on 30/04/2027 could feel like bait to the first 50 buyers. It also caps revenue from the keenest users at about £37 net each.
 
-**Mitigation:** the 60-day notice and the CSV export (F13). **Founder decision (17/10/2026): no refund guarantee.** Net receipt is ~£37 per sale and Polar keeps its fee on refunds, so each full refund would cost ~£12 out of pocket.
+**Mitigation:** the 60-day notice and the CSV export (F13). There is no refund guarantee (founder, 17/10/2026). Net receipt is ~£37 per sale and Polar keeps its fee on refunds, so each full refund would cost ~£12 out of pocket.
 
 **What would change my mind:** 0 Founding sales after launch week and the December email, with ≥ 4 activated users. That points to the offer or the audience, not the price. Ask the activated users what stops them before changing anything.
 
 ## Rules that hold every week
 
-- **In any community:** say "I'm building PriceBrush", answer the actual question, and link only when the link is the answer and the rules allow it. No surveys and no "what's your biggest headache?" (memo 004).
-- **Screwfix Community:** answers only, **no PriceBrush links in 2026**. Its moderation policy says "The forum is not the place to promote your company, product or website", and a first post linking to a company "will be treated with suspicion". No "Screwfix" in the username.
+- **In any community:** say "I build PriceBrush, so I'm biased", answer the actual question, and link only when the link is the answer and the rules allow it. No surveys, and no "what's your biggest headache?" (memo 004). Never pretend to be a decorator, and never give trade-technique advice: maths (m², litres, tins) and software only.
+- **Facebook:** groups only, with the profile's bio as the disclosure. No DMs to members. At most one written question to one admin. One post in 2026.
+- **Screwfix Community (from December):** answers only, **no PriceBrush links in 2026**. Its moderation policy says "The forum is not the place to promote your company, product or website", and a first post linking to a company "will be treated with suspicion". No "Screwfix" in the username.
 - **Reddit:** homeowner paint and mist-coat answers only (r/DIYUK, which has "No YouTube links" and "No Spam" rules), never for finding decorators. r/uktrades doesn't exist (checked 17/10/2026).
-- **Videos:** useful pricing content first, one link in the YouTube description, no face, same numbers as the live calculator.
+- **Video:** one video in 2026. Useful pricing content first, no face, the address on screen as text, and the same numbers as the live calculator.
 - **The Decorators Forum:** never say "as seen on" or "recommended by The Decorators Forum" (their terms).
-- **Honesty:** no numbers we can't prove (see `messaging.md`). No fake reviews. Never tie an incentive to a rating.
+- **Honesty:** no numbers we can't prove (`messaging.md`). No fake reviews. Never tie an incentive to a rating. The free plan is always "5 quotes or invoices **a month**" (Paint Manager's free tier is "first five quotes", so "a month" is what keeps us distinct and accurate).
 
-## If it's not working (decide on 15/12)
+## If it's not working
 
-| Signal | Change |
-|---|---|
-| < 2% "Turn this into a quote" and < 5% rooms added | Move December's hours to the quote template and the day-rate guide (memo 001) |
-| Listings bring visits but no sign-ups | Rewrite the hero (try alternative 1 in `messaging.md`) |
-| P&D News hasn't published by 07/12 | Don't resend. Put those hours into SEO pages |
-| < 100 total views across videos #1–#4 | Stop videos. Move the hours to the quote-template and day-rate SEO pages |
-| Sign-ups but 0 payments by 20/12 | Email the activated users asking what stops them. Don't cut the price below £9 (Queezy is £8.99) |
+| When | Signal | Change |
+|---|---|---|
+| Fri 20/11 | PDN note #1 not published | Send note #2 to Lucy's email (ldixon@lyricalcomms.com) instead of the form, and expect less from it |
+| Fri 20/11 | Note #1 published but brought < 20 visits (referrer + `?ref=pdn1`) | PDN's real reach is small. The launch rests on the list and Product Hunt; December hours go to SEO pages |
+| Sat 21/11 | No Facebook group has said yes | No post; reading only |
+| Mon 07/12 | PDN note #2 not published | Don't resend. Those hours go to SEO pages |
+| Tue 15/12 | < 2% "Turn this into a quote" and < 5% rooms added | December hours go to the quote template and the day-rate guide (memo 001) |
+| Tue 15/12 | Listings bring visits but no sign-ups | Rewrite the hero (alternative 1 in `messaging.md`) |
+| Tue 15/12 | **< 100 views on the one video** | No more videos in 2026. If ≥ 300 views: videos #2–#4 in January 2027 (CEO (b)). TikTok stays out of 2026 either way (founder sign-off) |
+| Tue 15/12 | < 10 visits from `?ref=fb-*` | Stop all Facebook activity except reading |
+| Tue 15/12 | **< 4 activated users** | December hours go to SEO pages plus one PDN data story from anonymised calculator use, only if the privacy text allows it (PRD 15/10). Not to Facebook or new features |
+| Sun 20/12 | Sign-ups but 0 payments | Email the activated users asking what stops them. Don't cut the price below £9 (Queezy is £8.99) |
+| Mon 30/11 | < 50 decorator visits across all ref tags and referrers | The channel problem is real: bring the pivot discussion forward to 15/01/2027, as a discussion only (CEO (f)). The 30/04/2027 review date stays |
 
 ## What to change elsewhere (proposed, not applied)
 
-- `../seo/link-building.md`: there are Decorators Forum, Screwfix, r/uktrades, UKBF and AlternativeTo changes, and launch week becomes **22–30 Nov**. Full list in `channels-and-ads-2026-10-18.md`, "What to change elsewhere". [SEO]
-- `../seo/briefs/paint-calculator.md` line 100: cite the half-day rule as the MSE forum thread, not "Decorators Forum", unless a Decorators Forum source is found and linked. [SEO]
-- `../ceo/decisions-2026-10-18-revenue.md` row 10: mark it cancelled (no Facebook account). [CEO]
-- PRD §9: change the launch-channel wording (see `channels-and-ads-2026-10-18.md`). [pricebrush-lead]
-
-**Founder decision 18/10/2026:** the "Facebook groups" section and the CEO's channel changes (`../ceo/decisions-2026-10-18-channels.md`) are accepted. Still to do: merge the CEO's proposed v0.5 edits into this plan. Also needed: a click-by-click video script for Arif (he has never made a video), plus the P&D News note text for the week of 02/11.
+| Doc | Change | Owner |
+|---|---|---|
+| `docs/plan/` (launch 31/10 or the 1–21 Nov MVP plan) | Add the `/video` short path: 302 to `/paint-calculator/?ref=yt`, live before 25/11, not in the sitemap, ≤ 0.25 h. Lead to confirm `_redirects` behaviour with the trailing-slash rule | pricebrush-lead |
+| `../seo/measurement.md` | Count PDN by referrer `paintinganddecoratingnews.co.uk` as well as `?ref=pdn1`/`?ref=pdn`, since PDN prints bare domains | SEO |
+| `../seo/link-building.md` | Register rows: PDN #1 (02–06/11), PDN #2 (23/11), PH (24/11), YouTube (25/11), Facebook (26/11, conditional), Screwfix from December; the Facebook rows in §4 replaced by the group table in `facebook-check-2026-10-18.md` A1; launch week 22–30 Nov; the other edits listed in `channels-and-ads-2026-10-18.md` | SEO |
+| `../seo/briefs/paint-calculator.md` line 100 | Cite the half-day rule as the MSE forum thread, not "Decorators Forum", unless a Decorators Forum source is found and linked | SEO |
+| `../strategy/competitors.md` | Add PaintPilot, Paint Manager (rows proposed in `channels-and-ads-2026-10-18.md` and `facebook-check-2026-10-18.md`), and **Loom & Glow** (free UK paint calculator listed on Product Hunt; homeowner-facing; litres and tins, not labour; checked 17/10) | Strategist |
+| `../ceo/decisions-2026-10-18-channels.md` | The (a) table gains the Thu 26/11 Facebook row; the (f) "Honest note" becomes "re-added 18/10 as groups only" | CEO |

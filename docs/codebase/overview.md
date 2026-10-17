@@ -1,6 +1,6 @@
 # Codebase overview — price-brush-frontend
 
-Last updated: 17/10/2026 · Owner: pricebrush-lead · Describes the code as it is now (plans live in `docs/plan/`).
+Last updated: 17/10/2026 (late: install fix in the repo, `docs/specs/legal/`) · Owner: pricebrush-lead · Describes the code as it is now (plans live in `docs/plan/`).
 
 ## What this repo does
 
@@ -17,7 +17,8 @@ Web app (PWA planned) and public SEO pages for PriceBrush. **Current state (main
 | TypeScript | 5.9.3 | `strict: true`, path alias `~/*` → `app/*` (via `vite-tsconfig-paths`) |
 | @react-pdf/renderer | 4.9.0 | Quote PDF in the browser; loaded only on "Download PDF" |
 | Vitest | 5.0.5 | Unit tests; dev only |
-| Package manager | pnpm | |
+| Package manager | pnpm 12.9.1 (local) | Build-script approvals in `pnpm-workspace.yaml` (`allowBuilds`). Pages needs `PNPM_VERSION=12.9.1` (plan F1) |
+| Node.js | 22.23.2 | Pinned in `.nvmrc` (commit `4fa1f5e`) |
 
 Runtime dependencies `@react-router/node` and `isbot` are kept because the default server entry uses them while prerendering at build time.
 
@@ -25,7 +26,7 @@ Runtime dependencies `@react-router/node` and `isbot` are kept because the defau
 
 | Command | What it does |
 | --- | --- |
-| `pnpm install` | Install dependencies. With pnpm 12, `pnpm install --frozen-lockfile` currently **exits 1** (`ERR_PNPM_IGNORED_BUILDS`, esbuild) although `node_modules` is complete; needs an `allowBuilds` entry in `pnpm-workspace.yaml` before CI/Pages (see `stack-notes.md`) |
+| `pnpm install` | Install dependencies. `pnpm install --frozen-lockfile` **exits 0** since commit `4fa1f5e` (`pnpm-workspace.yaml` sets `allowBuilds: { esbuild: false }`; checked by the lead on a clean clone of `69c92a7`, 17/10/2026; see `stack-notes.md`) |
 | `pnpm dev` | Dev server at http://localhost:5173 |
 | `pnpm typecheck` | `react-router typegen && tsc` |
 | `pnpm test` | Vitest unit tests (`app/**/*.test.{ts,tsx}`, config `vitest.config.ts`): 7 files, 69 tests on 17/10/2026, including one that renders a real PDF |
@@ -44,5 +45,5 @@ None yet.
 
 ## Other folders
 
-- `docs/` — PRD (`PRD.md`), design (`design/`), SEO (`seo/`), strategy (`strategy/`), plans, reviews and these codebase docs. `docs/design/research/refs/` is git-ignored (third-party reference images).
+- `docs/` — PRD (`PRD.md`), design (`design/`), SEO (`seo/`), strategy (`strategy/`), plans, reviews and these codebase docs. `docs/specs/` holds the lead's specs: `paint-calculator.md` (engine + handover), `cancellation-option.md` (T18, draft) and `legal/` (CCR 2013 Schedule 3 text files prepared for T18, with the official images in `legal/source/`; not used by the app yet). `.txt` files in `docs/specs/legal/` have LF endings; there is no `.gitattributes` yet and this machine has `core.autocrlf=true` (see `stack-notes.md`). `docs/design/research/refs/` is git-ignored (third-party reference images).
 - `.agents/skills/react-router/` — React Router agent skill shipped with the template (reference material for coding agents).

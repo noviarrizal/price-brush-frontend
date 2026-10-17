@@ -15,21 +15,27 @@ Last checked: 17/10/2026 (`pnpm outdated`, `pnpm audit`, lockfile) · Owner: pri
 | vitest | 5.0.5 | 5.0.5 | Own `vitest.config.ts` (no React Router plugin). Docs: https://vitest.dev |
 | typescript | 5.9.3 | 7.0.2 | TS 7 is a new major (native compiler). `@react-router/dev` 8.4 lists `^5.1 \|\| ^6 \|\| ^7` as peer range. Don't upgrade mid-milestone; evaluate after the MVP |
 | @types/node | 22.20.5 | 26.6.5 | Keep aligned with the Node version we run (Node 22 locally) |
-| Node.js | 22.23.2 (local) | — | The Cloudflare Pages build image v3 defaults to 22.16.0. Pin it with `NODE_VERSION` or `.nvmrc` (see "Cloudflare Pages" below) |
-| pnpm | 12.9.1 (local) | — | The Pages build image v3 defaults to **10.11.1**. Pin it with `PNPM_VERSION`. See "pnpm build scripts" below |
+| Node.js | 22.23.2 (local, `.nvmrc`) | — | The Cloudflare Pages build image v3 defaults to 22.16.0. Pinned with `.nvmrc` (in the repo since `4fa1f5e`). Also set `NODE_VERSION` in the Pages project (plan F1) (see "Cloudflare Pages" below) |
+| pnpm | 12.9.1 (local) | — | The Pages build image v3 defaults to **10.11.1**. Pin it with `PNPM_VERSION`. `pnpm-workspace.yaml` (`allowBuilds`) is in the repo since `4fa1f5e`. See "pnpm build scripts" below |
 | wrangler (not a dependency) | — | 4.151.1 (17/10/2026) | Used only through `pnpm dlx wrangler pages dev build/client` to emulate Pages locally in reviews |
 
-## pnpm build scripts (checked 17/10/2026)
+## pnpm build scripts (checked 17/10/2026; fixed in the repo)
 
-`pnpm install --frozen-lockfile` **exits with code 1** (`ERR_PNPM_IGNORED_BUILDS: Ignored build scripts: esbuild@0.28.2`). `node_modules` is still complete and `typecheck`/`test`/`build` all pass, but CI or a Cloudflare Pages build will stop at the install step. The cause is `strictDepBuilds`, which defaults to `true`: "an install exits with a non-zero code if any dependency has unreviewed build scripts". The fix is an `allowBuilds` map in `pnpm-workspace.yaml` (added v10.26.0). `onlyBuiltDependencies` was removed in v11. Source: https://pnpm.io/settings/build
+**In the repo since commit `4fa1f5e`** (plan T1, done): `pnpm-workspace.yaml` contains `allowBuilds: { esbuild: false }`, and `.nvmrc` pins Node `22.23.2`. **Checked 17/10/2026 (late)** on a clean clone of `main` at `69c92a7` (`%TEMP%\pricebrush-t1-check`): `pnpm install --frozen-lockfile` **exits 0** on pnpm 12.9.1, and `typecheck`, `test` (69/69) and `build` pass.
 
-```yaml
-# pnpm-workspace.yaml (recommended — not added yet)
-allowBuilds:
-  esbuild: false   # the platform binary comes from the optional dependency; builds pass without the postinstall
-```
+Background: without that file the install exited 1 (`ERR_PNPM_IGNORED_BUILDS: Ignored build scripts: esbuild@0.28.2`), because `strictDepBuilds` defaults to `true`: "an install exits with a non-zero code if any dependency has unreviewed build scripts". `allowBuilds` was added in pnpm v10.26.0. `onlyBuiltDependencies` was removed in v11. `esbuild: false` is safe: its postinstall only checks the binary, which comes from the `@esbuild/*` optional dependency. Source: https://pnpm.io/settings/build. If a new dependency with a build script is added, the install fails again until it gets an `allowBuilds` entry. That's intended: review it, then add `true` or `false`.
 
-Verified 17/10/2026 in a throwaway copy (`%TEMP%\pricebrush-spike-launch`): with that file in place, `pnpm install --frozen-lockfile` exits 0 on pnpm 12.9.1. Still not in the repo; it's task T1 in `docs/plan/2026-10-17-launch-31-oct.md`.
+## Line endings (checked 17/10/2026)
+
+This machine has `core.autocrlf=true` (system config `C:/Program Files/Git/etc/gitconfig`). The repo has **no `.gitattributes`**, so text files are LF in the index and CRLF in the Windows working tree, while Cloudflare Pages builds on Linux with LF. That doesn't matter for code. It **does** matter for text that is shown exactly as stored, such as the CCR Schedule 3 files for T18. The T18 spec (`docs/specs/cancellation-option.md` §4.1) adds `.gitattributes` with `eol=lf` for them. Docs: https://git-scm.com/docs/gitattributes
+
+## Vite `?raw` imports (checked 17/10/2026, Vite 7.3.7)
+
+"Assets can be imported as strings using the `?raw` suffix" (https://v7.vite.dev/guide/assets). The TypeScript types come from `vite/client`, already in `tsconfig.json` `types`. In a temp-clone spike, a `?raw` import works in Vitest 5 with our `vitest.config.ts`, and the string matches the file's bytes. Not used in the app yet; planned for T18.
+
+## @react-pdf/renderer hyphenation (checked 17/10/2026, v4 docs)
+
+react-pdf hyphenates English words by default (`hyphenationPenalty` 600 for non-justified text). `Font.registerHyphenationCallback((word) => [word])` disables it (https://react-pdf.org/fonts). `quote-pdf.tsx` doesn't set it today. T18 requires it, so legal text is never split with inserted hyphens.
 
 ## Cloudflare Pages (checked 17/10/2026; no Pages project exists yet)
 

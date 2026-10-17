@@ -1,5 +1,69 @@
 # Marketing changelog
 
+## v0.7 — 18/10/2026
+
+Founder request: merge the signed-off decisions into one launch plan, and write the copy to paste in the next few weeks. Only `docs/marketing/` was touched. Nothing was posted, joined, signed up for, sent, uploaded or committed.
+
+**Changed**
+
+- `launch-plan.md` → **v0.5, Accepted**:
+  - One week-by-week table from 18/10 to 31/12, with a date, owner and founder hours for every item. Admin rows from the CEO memos are marked.
+  - Merged: the CEO channel edits, the Facebook groups plan as accepted, and pricebrush.co.uk from 31/10 (pages.dev fallback 08/11, frozen if not moved by 15/11).
+  - Removed: "pending" markers, the "no Facebook" lines, TikTok, the ad test, videos #1/#2/#4 and the 07/11 domain decision. Screwfix moved to December.
+  - New "If it's not working" rows: PDN #1 by 20/11; the one video < 100 views by 15/12; Facebook < 10 visits; < 4 activated → SEO pages + PDN data story; < 50 decorator visits by 30/11.
+  - About 12.6 founder hours of marketing to 31/12; 0.6 h in 1–14 Nov; 1.95 h in 15–21 Nov; 4.33 h in launch week.
+- `funnel.md` → v0.4:
+  - Tag table: `list`, `pdn1`, `pdn`, `ph`, `yt`, `fb-<code>` (5 group codes), `dir-<name>`, `wm`, each with a referrer fallback.
+  - `tt`, `ukbf`, `gads` and `meta` dropped.
+  - Watermark link on pricebrush.co.uk via `SITE_URL`.
+- `fast-revenue-2026-10-18.md`: short status notes only (v0.5 wins; Facebook re-added as groups only; one video; no TikTok; Screwfix from December).
+- `channels-and-ads-2026-10-18.md`: CEO's marketing edits:
+  - Status set to "Accepted with changes".
+  - YouTube description links "only with advanced features".
+  - PDN figures and "Editorial: always free of charge" added.
+  - The domain date set to 23/10.
+- `facebook-check-2026-10-18.md`: status set to Accepted; the copy files supersede A6.
+
+**Added (`copy/`)**
+
+- `pdnews-early-note.md`: field-by-field form copy, headline "PriceBrush launches free paint and labour calculator for decorators", a news text of 218–235 words, one image suggestion, reply snippets, and the competitor/autocomplete check.
+- `facebook-join-answers.md`: join answers, the 15/11 admin message (73 words), the 26/11 post (link and no-link versions, no £49), reply patterns and the December follow-up.
+- `facebook-profile.md`: name, no-face photo, a 91-character bio, privacy settings and 2FA steps, all from Meta Help Centre pages.
+- `README.md`: an index by date, plus the note that the YouTube script is written around 15/11.
+
+**New evidence (checked 17/10/2026)**
+
+- **The PDN Submit News form:**
+  - Fields: First and Last name (required), Email and Confirm Email (required), Phone, Website, "Your news or message" (required), reCAPTCHA.
+  - **There is no file upload.**
+- **PDN house style** (4 items by Lucy Dixon):
+  - "X launches Y" headlines and a third-person lede.
+  - One "Name, Founder of X, said:" quote and a closing "live now at" line.
+  - **Only bare domains are linked**, so `?ref=` tags will probably be lost. Count PDN by referrer.
+- **Competitor wording to avoid:**
+  - less.co.uk: "Painting & Decorating Cost Calculator".
+  - Loom & Glow (a free UK paint calculator on Product Hunt): "Stop guessing how much paint your room needs", "exact litres", "no email wall".
+  - Paint Manager: "quotes in minutes".
+  - No competitor uses "paint and labour calculator".
+- **Google UK autocomplete:** "paint and labour calculator" → "paint labour calculator"; "painter and decorator calculator" → "painting and decorating calculator".
+- **Meta Help Centre, rendered:**
+  - Names rule; sign-up fields.
+  - Profile picture and Intro are always public.
+  - Friend-request options (Everyone / Friends of friends).
+  - Email/phone suggestions default to "Possible connections".
+  - Profile lock is only in some countries.
+  - Public vs private group visibility.
+  - 2FA path via Accounts Centre → Password and security, with three methods and 10 recovery codes.
+- **YouTube Help, re-checked:** clickable links are an "Advanced" feature, gained through channel history or ID verification.
+
+**Not verified:**
+- Bio character limit (third-party says 101).
+- Exact labels for "friends list" visibility and adding a website.
+- Whether a new Facebook account needs a phone or selfie check.
+- Whether PDN keeps `?ref=` links, and their lead time.
+- Loom & Glow's launch date.
+- PECR soft opt-in for the December sign-up email (unchanged).
+
 ## v0.6 — 18/10/2026
 
 Founder request: he's now willing to create a Facebook account. Is it worth it for UK decorator groups (free) and for Meta ads (≤ ~Rp400k, after payday)? Only `docs/marketing/` was touched. Nothing was posted, joined, signed up for, bought, sent or committed.

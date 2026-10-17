@@ -1,6 +1,6 @@
-# Funnel (v0.3)
+# Funnel (v0.4)
 
-Date: 17/10/2026 · Updated 18/10/2026 (ref tags, "tell me" step) · Author: marketing lead · Status: **targets Accepted 17/10/2026** (`../ceo/decisions-2026-10-17.md` #10) · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
+Date: 17/10/2026 · Updated 18/10/2026 (v0.4: ref tags for the accepted channels, referrer fallback, pricebrush.co.uk) · Author: marketing lead · Status: **targets Accepted 17/10/2026** (`../ceo/decisions-2026-10-17.md` #10) · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
 
 ## Goal and leading indicators to 31/12/2026 (accepted)
 
@@ -14,7 +14,7 @@ Date: 17/10/2026 · Updated 18/10/2026 (ref tags, "tell me" step) · Author: mar
 
 **Checkpoint 15/12/2026:** replace every step estimate below with the real rate, then decide using "If it's not working" in `launch-plan.md`. The payment goal and the 30/04/2027 stop-or-pivot review do not move.
 
-The first payment will most likely come from launch week (22–30 Nov: the "tell me" email, P&D News, listings, Product Hunt, video) and the Founding Member offer, not from SEO alone. The Facebook group post was cancelled on 18/10/2026 (the founder has no Facebook account), so launch week has no decorator-dense community post. See `channels-and-ads-2026-10-18.md`.
+The first payment will most likely come from launch week and the Founding Member offer, not from SEO alone. Launch week (22–30 Nov) is: the "tell me" email, P&D News note #2 + listings, Product Hunt, the one YouTube video, and one conditional Facebook group post on 26/11. P&D News note #1 (week of 02/11) feeds the "tell me" list before launch. Dates and owners: `launch-plan.md` v0.5.
 
 All step targets below are **[estimates]** I set as starting guesses. There is no data yet and no benchmark source I could verify.
 
@@ -46,10 +46,27 @@ All step targets below are **[estimates]** I set as starting guesses. There is n
 - **Anonymous event counter** (Worker; no IP or user ID). Existing events: `calc_used`, `calc_room_added`, `pdf_downloaded`, `quote_prefilled`, `cta_signup_click`. **Proposed new events:** `paywall_shown`, `checkout_started`, `reminder_tapped`, `mist_coat_on`.
 - **Database:** account count by `signup_source` (first landing path, `sessionStorage`), `quote_sent`, `invoice_created`.
 - **Polar dashboard:** orders by plan (Monthly / Yearly / Founding). The Founding "X of 50 left" count comes from here, updated by hand, never estimated.
-- **Launch-week referrers:** add `?ref=list` ("tell me" email), `?ref=pdn` (P&D News), `?ref=ph` (Product Hunt), `?ref=yt` (YouTube full-length description), `?ref=tt` (TikTok bio), `?ref=dir-<name>` (listings) to every link we place, so Cloudflare shows which channel worked. (`?ref=fb-df` and `?ref=ukbf` were dropped 18/10/2026.) Shorts links aren't clickable, so Shorts traffic shows up as channel-page or direct visits. No personal data in the parameter.
+- **Channel tags (v0.4).** Every link we place carries one `?ref=` value, so Cloudflare shows which channel worked. No personal data goes in the parameter.
+
+  | Tag | Channel | Where it goes | Fallback if the tag is lost |
+  |---|---|---|---|
+  | `list` | "Tell me" email, 22/11 | `https://pricebrush.co.uk/?ref=list` | — |
+  | `pdn1` | P&D News note #1, week of 02/11 | Website field of the Submit News form | Referrer `paintinganddecoratingnews.co.uk` from 02/11 to 22/11 |
+  | `pdn` | P&D News note #2, 23/11 | Same | Same referrer from 23/11 |
+  | `ph` | Product Hunt, 24/11 | PH product link | Referrer `producthunt.com` |
+  | `yt` | The one YouTube video, 25/11 | Only via the proposed short path `pricebrush.co.uk/video` (302 to `/paint-calculator/?ref=yt`) | YouTube Studio views (a typed address has no tag) |
+  | `fb-<code>` | Facebook group post, 26/11 (conditional) | Post link, only if the rules allow links | Referrer `facebook.com` / direct |
+  | `dir-<name>` | Listings (`dir-capterra`, `dir-saashub`, `dir-alternativeto`) | Listing website field | Referrer |
+  | `wm` | Watermark on free PDFs and client pages | `https://pricebrush.co.uk/?ref=wm` | — |
+
+  Facebook group codes: `fb-pdcuk` (Painter & Decorator's Community UK), `fb-tdf` (Trade Decorator Forum), `fb-df` (Decorators Forum), `fb-pduk` (painter and decorator UK only), `fb-bwn` (The Brush Wizards Network).
+
+  Dropped: `tt` (no TikTok in 2026), `ukbf`, `gads`, `meta` (no ads in 2026).
+
+  **Why the fallbacks matter:** P&D News prints bare domains (three of three recent items link only the homepage), and new YouTube channels have no clickable links. Many PDN and YouTube visits will arrive without a tag, so read the referrer column too. If the domain slipped, every address above is `pricebrush.pages.dev`.
 - **Google Search Console:** impressions, CTR and position per page.
 - **Routine:** every Monday, 15 minutes. Copy the week's numbers into one local spreadsheet with one row per step and compare with the targets above. Nothing gets uploaded.
 
 ## Watermark link (the free referral loop)
 
-Free PDFs and client pages carry "Made with PriceBrush". Link it to `https://pricebrush.pages.dev/?ref=wm` (no personal data) so step 8 is countable. Copy: **"Made with PriceBrush: free quote tools for decorators"**.
+Free PDFs and client pages carry "Made with PriceBrush". Link it to `https://pricebrush.co.uk/?ref=wm` through `SITE_URL` (`https://pricebrush.pages.dev/?ref=wm` if the domain slipped), with no personal data, so step 8 is countable. Copy: **"Made with PriceBrush: free quote tools for decorators"**.
