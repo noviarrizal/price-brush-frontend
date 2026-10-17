@@ -1,5 +1,13 @@
 # Marketing changelog
 
+## v0.2 — 17/10/2026
+
+The founder accepted all 10 CEO decisions (`../ceo/decisions-2026-10-17.md`). This version applies the edits the memo gives to [marketing] (next action #9). No new research.
+
+- `messaging.md` → **Accepted**. Added the late-Nov 5-second re-test (#2), the comparison and citation rules: Queezy always included, never "cheaper", Direct Line "reported 15/01/2026 (sample size not published)" (#4). "Cancel in one tap" is now accepted with the Undo flow, with the two-taps fallback rule (#7).
+- `funnel.md` → **Accepted**. PRD KPI targets replaced (#10): ≥ 500 tool uses, ≥ 10 accounts, ≥ 4 activated, ≥ 1 payment; checkpoint 15/12.
+- `launch-plan.md` → **Accepted**. 17–23 Oct row marked done; forum defaults line now says 40 m²/day (matches the calculator prototype; the lead's spec decides). **New: launch-week plan 23–30 Nov** with a day-by-day table and a draft forum post for The Decorators Forum.
+
 ## v0.1 — 17/10/2026
 
 First marketing round. Everything is proposed; the founder decides. No other docs or code were edited.

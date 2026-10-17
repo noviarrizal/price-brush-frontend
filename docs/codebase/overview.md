@@ -1,10 +1,10 @@
 # Codebase overview — price-brush-frontend
 
-Last updated: 16/10/2026 · Owner: pricebrush-lead · Describes the code as it is now (plans live in `docs/plan/`).
+Last updated: 17/10/2026 · Owner: pricebrush-lead · Describes the code as it is now (plans live in `docs/plan/`).
 
 ## What this repo does
 
-Web app (PWA planned) and public SEO pages for PriceBrush. **Current state: scaffold only** — one placeholder home page ("PriceBrush — coming soon"). No features from PRD F1–F13 are implemented yet.
+Web app (PWA planned) and public SEO pages for PriceBrush. **Current state:** placeholder home page + `/paint-calculator` at cut-order step 1 (one room: litres, tins, days, "Your price at your day rate"), built on the paint & labour engine in `app/lib/paint/` (spec `docs/specs/paint-calculator.md`), and `/decorating-quote-template` at step 2 (PRD F2: form → PDF in the browser, autosave). Nothing else from PRD F1–F13 yet.
 
 ## Stack (versions from `pnpm-lock.yaml`)
 
@@ -26,10 +26,11 @@ Runtime dependencies `@react-router/node` and `isbot` are kept because the defau
 | `pnpm install` | Install dependencies |
 | `pnpm dev` | Dev server at http://localhost:5173 |
 | `pnpm typecheck` | `react-router typegen && tsc` |
-| `pnpm build` | Builds to `build/client`; prerenders `/` to `build/client/index.html` and writes `build/client/__spa-fallback.html` |
-| `pnpm preview` | Serves `build/client` locally |
+| `pnpm test` | Vitest unit tests (`app/**/*.test.ts`) |
+| `pnpm build` | Builds to `build/client`; prerenders `/`, `/paint-calculator` and `/decorating-quote-template` (as `<path>/index.html`) and writes `build/client/__spa-fallback.html` |
+| `pnpm preview` | Serves `build/client` locally. Open `/paint-calculator/` and `/decorating-quote-template/` **with** the slash: without it, `vite preview` serves the home page's HTML (see `architecture.md` note) |
 
-No test runner, linter or formatter is configured yet.
+No linter or formatter is configured yet.
 
 ## Deploy
 

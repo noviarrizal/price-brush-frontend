@@ -334,7 +334,7 @@ html.shot .proto-bar{display:none}
 
 <div class="app">
   <div class="proto-bar" role="region" aria-label="Prototype controls">
-    <b>v0.2</b> Paywall
+    <b>v0.3</b> Paywall
     <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button>
     <select id="state-pick" aria-label="State" onchange="setState(this.value)"><option value="monthly">Monthly picked</option><option value="yearly">Yearly picked</option><option value="founding">Founding picked</option><option value="soldout">Founding sold out</option><option value="loading">Opening checkout</option><option value="error">Checkout error</option><option value="success">Back from checkout</option></select>
     <a href="_overview.html">All screens</a>
@@ -346,7 +346,7 @@ html.shot .proto-bar{display:none}
       <main class="page">
         <h1 class="h2">You've used 5 free documents this month.</h1>
         <div class="meter" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-        <p style="margin:12px 0 0">Go Pro for £9/month — cancel anytime.</p>
+        <p style="margin:12px 0 0">Go Pro for £9 a month, incl. VAT — cancel anytime.</p>
 
         <table class="compare">
           <thead><tr><th scope="col"><span class="sr" style="position:absolute;left:-9999px">Feature</span></th><th scope="col">Free</th><th scope="col">Pro</th></tr></thead>
@@ -365,13 +365,13 @@ html.shot .proto-bar{display:none}
           <label class="plan" id="p-founding"><input type="radio" name="plan" value="founding"><span class="radio"></span><span class="what"><strong>Founding Member</strong><span class="caption">Pro for life, pay once</span><br><span class="tag" id="f-tag">37 of 50 left · ends 31/01/2027</span></span><span class="price">£49 <small>once</small></span></label>
         </fieldset>
 
-        <div class="trust"><svg class="ico ico-sm"><use href="#i-lock"/></svg><span>Secure checkout by Polar. No per-user fees. No sales calls. Prices include VAT where it applies <em>(wording TBC)</em>.</span></div>
+        <div class="trust"><svg class="ico ico-sm"><use href="#i-lock"/></svg><span>Secure checkout by Polar. No per-user fees. No sales calls. All prices incl. VAT.</span></div>
         <p class="caption" style="margin-top:12px">Your free documents reset on 01/11/2026.</p>
       </main>
     </div>
     <div class="action-bar">
       <div class="err" id="err" hidden><svg class="ico"><use href="#i-alert"/></svg><span>Checkout didn't open. Check your signal and try again.</span></div>
-      <p class="terms" id="terms">You'll pay £9 today, then £9 every month. Cancel in one tap in Settings.</p>
+      <p class="terms" id="terms">You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap in Settings.</p>
       <button class="btn btn-primary btn-lg btn-block" id="go" onclick="setState('loading')">Continue to checkout</button>
       <a class="btn btn-ghost btn-block" href="quotes.html" style="margin-top:4px">Not now — stay on Free</a>
     </div>
@@ -391,9 +391,9 @@ html.shot .proto-bar{display:none}
 function pbTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('pb-theme',d?'dark':'light');}catch(e){}pbLabel();}
 function pbLabel(){var d=document.documentElement.classList.contains('dark');document.querySelectorAll('[data-theme-label]').forEach(function(e){e.textContent=d?'Dark':'Light';});}
 pbLabel();
-var TERMS={monthly:"You'll pay £9 today, then £9 every month. Cancel in one tap in Settings.",
-  yearly:"You'll pay £79 today, then £79 every year on 15/10. Cancel in one tap in Settings.",
-  founding:"You'll pay £49 once. No renewals, ever. Pro for as long as PriceBrush runs."};
+var TERMS={monthly:"You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap in Settings.",
+  yearly:"You'll pay £79 today (incl. VAT), then £79 every year on 15/10. Cancel in one tap in Settings.",
+  founding:"You'll pay £49 once (incl. VAT). No renewals, ever. Pro for as long as PriceBrush runs."};
 document.querySelectorAll('[name=plan]').forEach(function(r){r.addEventListener('change',function(){document.getElementById('terms').textContent=TERMS[r.value];});});
 function pick(v){var r=document.querySelector('[name=plan][value='+v+']');r.checked=true;document.getElementById('terms').textContent=TERMS[v];}
 var shot=document.documentElement.classList.contains('shot');

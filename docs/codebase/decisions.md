@@ -1,6 +1,6 @@
 # Technical decisions (ADR log) — price-brush-frontend
 
-Last updated: 16/10/2026 · Owner: pricebrush-lead
+Last updated: 17/10/2026 · Owner: pricebrush-lead
 
 | Date | Decision | Why | Alternatives considered |
 | --- | --- | --- | --- |
@@ -10,3 +10,7 @@ Last updated: 16/10/2026 · Owner: pricebrush-lead
 | 15/10/2026 | Tailwind CSS v4, pnpm | Founder's choice; fast mobile-first styling | CSS Modules; npm/bun |
 | 15/10/2026 | System font stack (Google Fonts link removed from template) | Fewer requests, better LCP | Inter via Google Fonts |
 | 15/10/2026 | Backend MVP on Cloudflare Workers (separate repo), Go from Q1 2027 | £0, fastest path to first payment | Go from day one |
+| 17/10/2026 | Vitest 5 for unit tests, own `vitest.config.ts` | Paint maths and prices must have tests (`quality.md`); Vitest reuses Vite 7 and TypeScript with no extra build; a separate config keeps the React Router plugin out of tests. Dev-only, not shipped | Jest (second transform pipeline), node:test (no TS without a loader) |
+| 17/10/2026 | Pure business logic in `app/lib/<area>/` (first: `app/lib/paint/`), no React or DOM | Same engine for the calculator, the quote template and later the app; easy to test | Logic inside route components |
+| 17/10/2026 | PDFs with `@react-pdf/renderer` 4, loaded only on "Download PDF" (dynamic import) | PRD stack choice; JSX layout matches the rest of the code; selectable text; runs in the browser so nothing is uploaded. The chunk is 1.24 MB (453 kB gzip) and triggers Vite's 500 kB warning — accepted because it never loads with the page; revisit (pdf-lib or a trimmed build) if first-download time on 4G is too slow | pdf-lib (smaller, but manual layout), jsPDF, server-side PDF (needs a backend and uploads client data) |
+| 17/10/2026 | Paint & labour engine follows `docs/specs/paint-calculator.md` (D1–D6 signed off 17/10/2026) | One source of truth for the maths; the page's worked example is calculated by the engine, so copy and tool can't disagree | Formulas written separately in the SEO brief and the prototype (they had drifted) |

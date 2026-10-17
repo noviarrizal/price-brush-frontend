@@ -1,6 +1,6 @@
-# Funnel (v0.1)
+# Funnel (v0.2)
 
-Date: 17/10/2026 · Author: marketing lead · Status: proposed · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
+Date: 17/10/2026 · Author: marketing lead · Status: **Accepted (17/10/2026, with changes per `../ceo/decisions-2026-10-17.md` #10)** · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
 
 All targets are **[estimates]** I set as starting guesses. There is no data yet and no benchmark source I could verify. Replace them with real rates after the first month.
 
@@ -25,7 +25,17 @@ All targets are **[estimates]** I set as starting guesses. There is no data yet 
 
 Also, sign-up only exists from about 22/11, and a new `pages.dev` site usually ranks slowly [opinion]. **The first payment depends on launch week (listings, Product Hunt, forum posts) and the Founding Member offer, more than on SEO.**
 
-**Proposed (not applied):** keep "≥ 1 payment" as the goal, and change the PRD KPIs to "≥ 500 tool uses, ≥ 10 accounts, ≥ 4 activated". Or keep 30 accounts and accept that SEO alone won't deliver it by 31/12.
+**Applied (CEO #10, 17/10/2026; also in PRD §9):** the only hard goal stays **≥ 1 payment by 31/12 (ideal 5)**. The leading indicators become:
+
+| Metric | Target 31/12 [estimate] |
+|---|---|
+| Pages indexed | ≥ 10 |
+| Tool uses (`calc_used` + `pdf_downloaded`) | ≥ 500 |
+| Accounts (any source, by `signup_source`) | ≥ 10 |
+| Activated (quote sent in 24 h) | ≥ 4 (≈ 40%) |
+| Payments | ≥ 1 (ideal 5) |
+
+**Checkpoint 15/12:** replace the step targets above with the real rates from the first weeks. The payment goal and the 30/04/2027 kill rule do not move. The first payment will most likely come from launch week (directories, forums, Product Hunt) and the Founding Member offer, not from SEO alone.
 
 ## How to measure at £0
 

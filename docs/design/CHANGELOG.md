@@ -1,5 +1,30 @@
 # Design CHANGELOG
 
+## v0.3 — 17/10/2026
+
+The founder accepted all 10 CEO decisions (`../ceo/decisions-2026-10-17.md`). This version applies the edits that memo gives to [UI/UX]: #1, #2, #3, #5, #6, #7, #8, #9. Direction **"Coachline" is approved**. The prototype edits were started in the 00:57 commit; this round finishes the specs and the remaining copy.
+
+**Prototypes**
+
+- `landing.html` + `desktop-landing.html` (#2): H1 "Room sizes in. Priced quote out.", new sub, primary "Price a room free" → paint calculator, "Every number shown. Every line yours." demo with room sizes, 3 steps ending "When it's accepted, it's an invoice.", cancel FAQ with Undo. Desktop hero mock now shows the calculator. No "60 seconds", no voice CTA.
+- `paint-calculator.html` (#1, #3): rooms as cards with "+ Add another room" / Remove, day rate + m² a day, "The working" (one line per room and surface), "Your price at your day rate", "New plaster? Add a mist coat" switch (own line + ½ day drying, not charged), primary "Turn this into a quote".
+- `client-quote.html` (#9): full-width "Message Dave on WhatsApp" with the generic bubble (fallback until the official pack is in the repo).
+- `paywall.html` (#6): "£9 a month, incl. VAT", terms "(incl. VAT)" for all three plans, trust line "All prices incl. VAT." (was "wording TBC").
+- `decorating-invoice-template.html` (#2): the "one tap" invoice claim is replaced by "When it's accepted, it's an invoice."
+
+**Specs**
+
+- `screens.md` → v0.3: status table; P1 hero/CTA/FAQ and the late-Nov re-test; P2 multi-room, mist coat, maths, 31 Oct cut order; P3 pre-fill from the calculator + deposit / mist-coat FAQ; P4 live 14/11; P5 incl. VAT + comparison rules (#4); A9 overdue reminder text (P1, cut first); A10 incl. VAT; A11 cancel = one tap + Undo toast + "Resume Pro" with failure states (no confirm dialog); C1 WhatsApp label + yellow Accept.
+- `design-system.md` → v0.3, approved: "the set is the mark" rule (§1), §3.4 decorator colours with automatic contrast fallback to yellow (post-MVP Pro), §6.1 WhatsApp rules from Meta's brand page + generic-bubble fallback, toast with Undo stays 6 s, paywall incl. VAT.
+
+**Not done / known issues**
+
+- **Images not re-rendered.** `images/*.png` are still v0.2. `tools/screenshot.ps1` / `render.ps1` are Windows-only; re-render on the Windows laptop (or port them to a headless-Chrome script).
+- **Fixed after the engine spec was signed off (`../specs/paint-calculator.md`, D1–D6):** the landing mock (phone + desktop) now shows the spec's T5 numbers (2 rooms → 13.9 litres → **£865**, was £615); the calculator prototype now uses £6/L, 40 m²/day, tins per paint (walls / ceiling / mist coat), areas rounded to 0.1 m² and ½ day mist-coat drying once per job. Checked in headless Chrome: default rooms → 14.0 litres, 3.8 days, £865.00.
+- Woodwork switch (cut-order item 5) is not in the prototype yet. `decorating-quote-template.html` (P3) is not built; the calculator links to it.
+- Settings (A11 cancel / Resume) has a spec but no prototype.
+- Official WhatsApp brand pack: not downloaded yet (founder action).
+
 ## v0.2 — 16/10/2026
 
 Direction **"Coachline" — proposed, pending founder review** (not approved yet). Builds on v0.2-checkpoint below; scope trimmed at the founder's request to finish quickly.

@@ -20,24 +20,24 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 | **Add another room** → job total (litres, tins, days, £) | "paint calculator multiple rooms" — none of the tools read do this |
 | Walls and ceiling in **one** result, shown separately (ceiling paint is often a different product) | "paint calculator walls and ceiling" — TradeCalculator needs two tools |
 | **"New plaster? Add a mist coat"** switch (decision #3; #6 in the 31/10 cut order, required in the Nov app) adds a mist coat (shown as an extra coat, with a one-line explanation, and a link to the FAQ on mixing and drying) | "how many coats of paint after mist coat", "how many coats does new plaster need" (`extra-paint-tech.csv`); mist-coat problems are the most common paint topic in r/DIYUK (v0.2 Reddit sample) |
-| Advanced (collapsed): coverage m²/L (default **12**, "check your tin"), spare % (default 10), door area (1.8 m²), window area (1.5 m²), **day rate** (£200), **painted m² per day** (default 45 — *assumption, validate with 5 decorators*), paint £ per litre (£6 — *assumption*) | Trade inputs nobody else has; all editable = honest |
-| Output, live without reload: **"You need 9 litres"**, **tins to buy** using UK sizes (walls/ceiling emulsion: 10 L, 5 L, 2.5 L, 1 L), net wall area, ceiling area, **days**, **labour £ + paint £ = "Your price at your day rate"** | Litres + tins answers DIY; days + £ answers trade |
+| Advanced (collapsed): coverage m²/L (default **12**, "check your tin"), spare % (default 10), door area (1.8 m²), window area (1.5 m²), **day rate** (£200), **painted m² per day** (default 40 — *assumption, validate with 5 decorators*; spec D4), paint £ per litre (£6 — *assumption*) | Trade inputs nobody else has; all editable = honest |
+| Output, live without reload: **"You need 9 litres"**, **tins to buy** using trade sizes 10 L, 5 L, 2.5 L, listed separately for walls, ceiling and mist coat (spec D2, D3), net wall area, ceiling area, **days**, **labour £ + paint £ = "Your price at your day rate"** | Litres + tins answers DIY; days + £ answers trade |
 | **Show the working** under the result ("32.7 m² walls × 2 coats ÷ 12 m²/L = 5.5 L, + 10% spare = 6.0 L") | Accuracy is a trust gap (Sleepless Tradesman's headline and breakdown disagree). Never show numbers that disagree |
 | **Copy result** and **Share** (Web Share API → WhatsApp) with a URL that encodes only the room numbers (`?r=4x3.5x2.4,d1,w1,c2`) | Decorators send it to clients/merchants = free distribution. Canonical stays `/paint-calculator` |
 | **"Turn this into a quote"** button: hands the rooms and totals to `/decorating-quote-template` via `localStorage` (no server) and pre-fills lines | Converts a calculator user into a template user, then sign-up |
 | Empty/invalid states as in design `screens.md` | Avoids nonsense results |
 | Works with JS off: the prerendered HTML must contain the H1, intro, method, table and FAQs; the tool can hydrate | Google reads content without waiting; also LCP |
 
-**Formulas (put in code exactly so the page and the "working" match):**
+**Formulas** — *superseded 17/10/2026 by `../../specs/paint-calculator.md` (founder signed off D1–D6). The engine spec is the source of truth; the summary below is kept in line with it.*
 
-- Wall area per room = 2 × (length + width) × height − doors × door area − windows × window area (floor at 0).
-- Ceiling area = length × width.
-- Litres = (wall area × wall coats + ceiling area × ceiling coats) ÷ coverage × (1 + spare%). Round to 0.1 L for display.
-- Tins: list combinations of 10/5/2.5/1 L that are ≥ litres; take the one with the least spare paint, **but** if another option has ≤ 1 L more spare and fewer tins, take that one. Show one line, e.g. "Buy: 1 × 10 L" or "Buy: 1 × 5 L + 1 × 1 L".
-- Days = (wall area × coats + ceiling area × coats) ÷ m² per day, round up to the nearest half day ("if a job takes more than ½ a day, you need a whole day" is a real trade rule — MSE forum thread, see research §4; offer it as the default rounding).
-- Price = days × day rate + litres bought × £/L. Label it **"Your price at your day rate"** (CEO decision #1, accepted 17/10/2026), with the caption **"Check prep, access and woodwork before you quote."**
+- Wall area per room = 2 × (length + width) × height − doors × 1.8 m² − windows × 1.5 m² (floor at 0), rounded to 0.1 m².
+- Ceiling area = length × width, rounded to 0.1 m².
+- Litres, per paint (walls / ceiling / mist coat) = coated m² ÷ coverage × (1 + spare%). Shown **rounded up** to 0.1 L.
+- Tins, per paint: combinations of 10/5/2.5 L that are ≥ litres; among those within 1 L of the least spare, take the fewest tins. Show e.g. "Buy: Walls 1 × 5 L + 1 × 2.5 L · Ceiling 1 × 5 L".
+- Days per line (room × surface) = m² × coats ÷ m² per day, rounded to 0.1 day. Labour = sum of the lines × day rate, so the lines always add up to the price. "Time on the job" = labour days (+ ½ day drying once if there's a mist coat), rounded **up** to the nearest half day — shown, not charged (the MSE "more than ½ a day means a whole day" rule lives here; a "round my price up" switch may come later).
+- Price = labour + tins bought × £/L. Label it **"Your price at your day rate"** (CEO decision #1, accepted 17/10/2026), with the caption **"Check prep, access and woodwork before you quote."**
 
-**Worked example to show on the page (numbers must match the tool):** bedroom 4 m × 3.5 m × 2.4 m, 1 door, 1 window, 2 coats, walls + ceiling, 12 m²/L, 10% spare → walls 32.7 m², ceiling 14.0 m² → (32.7 × 2 + 14.0 × 2) ÷ 12 × 1.1 = **8.6 L** → buy **1 × 10 L** (least-waste option 5 + 2.5 + 1 + 1 L = 9.5 L is within 1 L but needs 4 tins) → 93.4 m² ÷ 45 = 2.1 days → **2.5 days** at £200 = £500 labour + 10 L × £6 = £60 paint → **your price at your day rate: £560**. (Day rate, speed and £/L are example defaults, not market claims.)
+**Worked example to show on the page (numbers must match the tool; spec test T1):** bedroom 4 m × 3.5 m × 2.4 m, 1 door, 1 window, 2 coats, walls + ceiling, 12 m²/L, 10% spare → walls 32.7 m², ceiling 14.0 m² → walls 32.7 × 2 ÷ 12 × 1.1 = 6.0 L, ceiling 14.0 × 2 ÷ 12 × 1.1 = 2.6 L → **8.6 L** → buy walls **1 × 5 L + 1 × 2.5 L**, ceiling **1 × 5 L** → walls 65.4 m² ÷ 40 = 1.6 days, ceiling 28 m² ÷ 40 = 0.7 days → 2.3 days at £200 = £460 labour + 12.5 L × £6 = £75 paint → **your price at your day rate: £535** (time on the job: about 2.5 days). (Day rate, speed and £/L are example defaults, not market claims.)
 
 ### 2.2 Sections below the tool (in this order)
 
@@ -57,7 +57,7 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
    - Why did my mist coat go powdery? *(v0.2 — real r/DIYUK thread, 83 comments: usually too much water or the wrong emulsion; follow the tin's dilution and use a contract/trade matt without vinyl — check manufacturer guidance before writing the final answer)*
    - How long should I leave new plaster before painting? *(dry through and evenly coloured; follow plasterer/manufacturer guidance — r/DIYUK "Painting hallway" thread)*
    - Should I buy 2.5 L or 5 L tins?
-   - Do I need to take off doors and windows? *(yes; we use 1.8 m² and 1.5 m², change them in Advanced)*
+   - Do I need to take off doors and windows? *(yes; we take off 1.8 m² per door and 1.5 m² per window. Editable sizes may come later — spec §13)*
 6. **Short sources line**: "Coverage figures: manufacturers' data sheets (links). Defaults last checked: [date]."
 
 ### 2.3 Copy rules

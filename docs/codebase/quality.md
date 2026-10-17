@@ -26,7 +26,7 @@ Last updated: 16/10/2026 · Owner: pricebrush-lead · Starter version; the lead 
 | Tool | Purpose | Status |
 | --- | --- | --- |
 | TypeScript strict + `react-router typegen` | Types | Configured |
-| Vitest | Unit tests for calculations and utilities | Recommended — not configured |
+| Vitest | Unit tests for calculations and utilities | Configured (17/10/2026): `pnpm test`, `vitest.config.ts` |
 | ESLint (or Biome) + Prettier | Lint and formatting | Recommended — not configured |
 | Playwright | Smoke test of key pages/flows | Recommended later — not configured |
 | Lighthouse (local, `pnpm dlx lighthouse`) | Performance/SEO/a11y scores | Run during reviews |

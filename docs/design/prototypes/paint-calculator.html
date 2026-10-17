@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Paint Calculator UK: How Much Paint Do I Need? | PriceBrush (prototype v0.2)</title>
+<title>Paint Calculator UK: How Much Paint Do I Need? | PriceBrush (prototype v0.3)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&display=swap" rel="stylesheet">
@@ -402,7 +402,7 @@ details.adv[open] summary::after{content:"\2212"}
             <div class="grid2">
               <div><label class="label" for="cov">Coverage</label><div class="unit"><input class="input" id="cov" inputmode="decimal" value="12"><span>m²/L</span></div></div>
               <div><label class="label" for="spare">Spare</label><div class="unit"><input class="input" id="spare" inputmode="decimal" value="10"><span>%</span></div></div>
-              <div><label class="label" for="ppl">Paint per litre</label><div class="unit pre"><input class="input" id="ppl" inputmode="decimal" value="5"><span>£</span></div></div>
+              <div><label class="label" for="ppl">Paint per litre</label><div class="unit pre"><input class="input" id="ppl" inputmode="decimal" value="6"><span>£</span></div></div>
             </div>
             <p class="hint">Coverage is on the tin — use that if it's different.</p>
           </details>
@@ -441,8 +441,8 @@ details.adv[open] summary::after{content:"\2212"}
           <li>Add the ceiling (length × width) if ticked.</li>
           <li>New plaster? The mist coat is one extra coat on its own line, plus time for it to dry.</li>
           <li>Multiply by coats, divide by coverage (12 m² per litre is typical for emulsion — check your tin).</li>
-          <li>Add 10% spare and round up to real tin sizes (10 L, 5 L, 2.5 L).</li>
-          <li>Days = m² painted ÷ your m² a day. Your price = days × your day rate + paint.</li>
+          <li>Add 10% spare and round up to real tin sizes (10 L, 5 L, 2.5 L), separately for walls, ceilings and the mist coat.</li>
+          <li>Days = m² painted ÷ your m² a day, for each line. Your price = days × your day rate + the tins you buy.</li>
         </ol>
         <p class="caption">No tape measure? A 4 × 4 m room usually needs about 5 litres for two coats on the walls.</p>
       </section>
@@ -456,7 +456,7 @@ function pbTheme(){var d=document.documentElement.classList.toggle('dark');try{l
 function pbLabel(){var d=document.documentElement.classList.contains('dark');document.querySelectorAll('[data-theme-label]').forEach(function(e){e.textContent=d?'Dark':'Light';});}
 pbLabel();
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},4000);}
-var MIST_DRY=0.5; // assumption: the mist coat adds half a day of drying to "time on the job" (not charged as labour)
+var MIST_DRY=0.5; // assumption (spec D6): the mist coat adds half a day of drying to "time on the job", once per job, not charged as labour
 var rooms=[
   {name:'Living room',l:'4',w:'3.5',h:'2.4',doors:1,windows:1,coats:2,ceil:true,mist:false},
   {name:'Hallway',l:'4',w:'1.2',h:'2.4',doors:3,windows:0,coats:2,ceil:false,mist:true}
@@ -492,14 +492,20 @@ function g(id){return num(document.getElementById(id).value);}
 function fmt(n,dp){return n.toLocaleString('en-GB',{minimumFractionDigits:dp||0,maximumFractionDigits:dp||0});}
 function d1(n){return Math.round(n*10)/10;}
 function dayStr(d){return fmt(d,d%1?1:0)+(d===1?' day':' days');}
-function tinsFor(need){var best=null;
-  for(var a=0;a<=Math.ceil(need/10)+1;a++)for(var b=0;b<=2;b++)for(var c=0;c<=2;c++){
-    var v=a*10+b*5+c*2.5;if(v+1e-9<need)continue;var n=a+b+c;
-    if(!best||v<best.v-1e-9||(Math.abs(v-best.v)<1e-9&&n<best.n))best={v:v,n:n,a:a,b:b,c:c};}
+// Maths follows docs/specs/paint-calculator.md (§4 steps, §5 tins). Areas are rounded to 0.1 m² before use.
+function r1(n){return Math.round(n*10+Number.EPSILON)/10;}
+function up1(n){return Math.ceil(n*10-1e-9)/10;}
+function tinsFor(need){if(need<=0)return {v:0,n:0,parts:[]};
+  var sizes=[10,5,2.5],max=Math.ceil(need/2.5)+1,all=[];
+  for(var a=0;a<=max;a++)for(var b=0;b<=max;b++)for(var c=0;c<=max;c++){
+    var v=a*10+b*5+c*2.5;if(v+1e-9<need)continue;all.push({v:v,n:a+b+c,counts:[a,b,c],spare:v-need});}
+  var least=Math.min.apply(null,all.map(function(x){return x.spare;}));
+  var best=all.filter(function(x){return x.spare<=least+1+1e-9;}).sort(function(x,y){return x.n-y.n||x.spare-y.spare;})[0];
+  best.parts=sizes.map(function(s,k){return best.counts[k]?best.counts[k]+' × '+s+' L':'';}).filter(Boolean);
   return best;}
 function calc(){
-  var cov=g('cov')||12,spare=isNaN(g('spare'))?10:g('spare'),rate=g('rate')||0,ppl=g('ppl')||0,speed=g('speed')||40;
-  var lines=[],coated=0,days=0,dry=0,ok=0,cards=document.querySelectorAll('.room');
+  var cov=g('cov')||12,spare=isNaN(g('spare'))?10:g('spare'),rate=g('rate')||0,ppl=isNaN(g('ppl'))?6:g('ppl'),speed=g('speed')||40;
+  var lines=[],groups={walls:0,ceiling:0,mist:0},days=0,anyMist=false,ok=0,cards=document.querySelectorAll('.room');
   rooms.forEach(function(r,i){
     var card=cards[i],err=card.querySelector('.error-msg'),L=num(r.l),W=num(r.w),H=num(r.h),nm=r.name||('Room '+(i+1));
     card.querySelectorAll('.f').forEach(function(f){f.classList.remove('has-error');});err.hidden=true;
@@ -507,29 +513,32 @@ function calc(){
     if(bad.length){if(![L,W,H].every(isNaN)){bad.forEach(function(x){card.querySelector('[data-f='+x[0]+']').classList.add('has-error');});
       err.querySelector('span').textContent=bad[0][2]+' must be more than 0, like '+(bad[0][2]==='Height'?'2.4':'3.5')+'.';err.hidden=false;}return;}
     ok++;
-    var walls=Math.max(0,2*(L+W)*H-r.doors*1.8-r.windows*1.5),ceil=r.ceil?L*W:0;
-    function add(title,area,coats,label){var d=d1(area*coats/speed);coated+=area*coats;days+=d;
-      lines.push({t:title,m:label+' · '+fmt(area,1)+' m² · '+dayStr(d),p:d*rate});}
+    var walls=r1(Math.max(0,2*(L+W)*H-r.doors*1.8-r.windows*1.5)),ceil=r.ceil?r1(L*W):0;
+    function add(group,title,area,coats,label){if(area<=0)return;var d=Math.max(0.1,r1(area*coats/speed));groups[group]+=area*coats;days+=d;
+      lines.push({t:title,m:label+' · '+fmt(area,1)+' m² · '+dayStr(d),p:Math.round(d*rate*100)/100});}
     var cl=r.coats+(r.coats===1?' coat':' coats');
-    add(nm+' walls',walls,r.coats,cl);
-    if(ceil)add(nm+' ceiling',ceil,r.coats,cl);
-    if(r.mist){add(nm+' mist coat',walls+ceil,1,'new plaster · 1 coat + drying');dry+=MIST_DRY;}
+    add('walls',nm+' walls',walls,r.coats,cl);
+    add('ceiling',nm+' ceiling',ceil,r.coats,cl);
+    if(r.mist){anyMist=true;add('mist',nm+' mist coat',r1(walls+ceil),1,'New plaster · 1 coat');}
   });
   var res=document.getElementById('result');
   if(!ok){res.classList.add('empty');document.getElementById('litres').textContent='Enter a room size to see litres';
     ['tins','days','price','price-split'].forEach(function(id){document.getElementById(id).textContent='—';});document.getElementById('work').innerHTML='';return;}
   res.classList.remove('empty');
-  var litres=coated/cov*(1+spare/100),t=tinsFor(litres),parts=[];
-  if(t.a)parts.push(t.a+' × 10 L');if(t.b)parts.push(t.b+' × 5 L');if(t.c)parts.push(t.c+' × 2.5 L');
-  var labour=days*rate,paint=t.v*ppl,onjob=Math.ceil((days+dry)*2)/2,lit=Math.ceil(litres*2)/2;
-  document.getElementById('litres').textContent=fmt(lit,lit%1?1:0)+' litres';
-  document.getElementById('tins').textContent='Buy '+parts.join(' + ');
+  var names={walls:'Walls',ceiling:'Ceiling',mist:'Mist coat'},shown=0,paint=0,buy=[];
+  Object.keys(groups).forEach(function(k){if(groups[k]<=0)return;var need=groups[k]/cov*(1+spare/100),t=tinsFor(need);
+    shown+=up1(need);paint+=t.v*ppl;buy.push(names[k]+' '+t.parts.join(' + '));});
+  days=r1(days);
+  var labour=lines.reduce(function(s,l){return s+l.p;},0),onjob=Math.ceil((days+(anyMist?MIST_DRY:0))*2)/2;
+  shown=r1(shown);
+  document.getElementById('litres').textContent=fmt(shown,1)+' litres';
+  document.getElementById('tins').textContent='Buy: '+buy.join(' · ');
   document.getElementById('work').innerHTML=lines.map(function(l){return '<li><span><strong>'+esc(l.t)+'</strong><span class="m">'+l.m+'</span></span><b>£'+fmt(l.p,2)+'</b></li>';}).join('')+
-    '<li><span><strong>Paint</strong><span class="m">'+parts.join(' + ')+' at £'+fmt(ppl,ppl%1?2:0)+' a litre</span></span><b>£'+fmt(paint,2)+'</b></li>';
-  document.getElementById('days').textContent='About '+dayStr(onjob)+(dry?', incl. drying':'');
-  document.getElementById('price').textContent='£'+fmt(Math.round(labour+paint));
-  document.getElementById('price-split').textContent='Labour £'+fmt(Math.round(labour))+' ('+dayStr(d1(days))+' at £'+fmt(rate)+' a day) + paint £'+fmt(Math.round(paint));
-  rooms.forEach(function(r){if(num(r.l)>30||num(r.w)>30)toast("That's a big room — double-check the numbers.");});
+    '<li><span><strong>Paint</strong><span class="m">'+buy.join(' · ')+' · £'+fmt(ppl,2)+' a litre</span></span><b>£'+fmt(paint,2)+'</b></li>';
+  document.getElementById('days').textContent='About '+dayStr(onjob)+(anyMist?', incl. drying':'');
+  document.getElementById('price').textContent='£'+fmt(labour+paint,2);
+  document.getElementById('price-split').textContent='Labour £'+fmt(labour,2)+' ('+dayStr(days)+' at £'+fmt(rate)+' a day) + paint £'+fmt(paint,2);
+  rooms.forEach(function(r){if(num(r.l)>30||num(r.w)>30||num(r.h)>30)toast("That's a big room — double-check the numbers.");});
 }
 ['rate','speed','cov','spare','ppl'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
 function copyResult(){
