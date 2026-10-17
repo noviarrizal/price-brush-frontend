@@ -4,7 +4,7 @@ Last updated: 17/10/2026 · Owner: pricebrush-lead · Describes the code as it i
 
 ## What this repo does
 
-Web app (PWA planned) and public SEO pages for PriceBrush. **Current state:** placeholder home page + `/paint-calculator` at cut-order step 1 (one room: litres, tins, days, "Your price at your day rate"), built on the paint & labour engine in `app/lib/paint/` (spec `docs/specs/paint-calculator.md`), and `/decorating-quote-template` at step 2 (PRD F2: form → PDF in the browser, autosave). Nothing else from PRD F1–F13 yet.
+Web app (PWA planned) and public SEO pages for PriceBrush. **Current state:** placeholder home page + `/paint-calculator` at cut-order step 1 (one room: litres, tins, days, "Your price at your day rate"), built on the paint & labour engine in `app/lib/paint/` (spec `docs/specs/paint-calculator.md`), and `/decorating-quote-template` at steps 2–3 (PRD F2: form → PDF in the browser, autosave, pre-filled from the calculator's "Turn this into a quote"). Nothing else from PRD F1–F13 yet.
 
 ## Stack (versions from `pnpm-lock.yaml`)
 

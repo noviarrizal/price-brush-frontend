@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 
+import { QuoteCtaCard } from "~/components/paint-calculator/quote-cta-card";
 import { RoomCard } from "~/components/paint-calculator/room-card";
 import { ResultCard } from "~/components/paint-calculator/result-card";
 import { SettingsCard } from "~/components/paint-calculator/settings-card";
@@ -10,14 +12,16 @@ import { DEFAULT_SETTINGS_FIELDS, createRoomFields, readSettings, toRoomInput } 
 import type { RoomFields, SettingsFields } from "~/lib/paint/form";
 import { formatPence } from "~/lib/numbers";
 import { formatDays, formatLitres, formatTins, resultSummaryText } from "~/lib/paint/format";
+import { buildHandover, writeHandover } from "~/lib/paint/handover";
 import type { CalculatorSettings, RoomInput } from "~/lib/paint/types";
 import { SITE_URL, seo } from "~/seo/meta";
 import type { Route } from "./+types/paint-calculator";
 
-// /paint-calculator — cut-order step 1 (CEO decision #1): one room, litres, tins, days and
-// "Your price at your day rate". Copy: docs/design/screens.md P2 · SEO: docs/seo/keyword-map.md.
+// /paint-calculator — cut-order steps 1 and 3 (CEO decision #1): one room, litres, tins, days,
+// "Your price at your day rate", and "Turn this into a quote" (hand-over, spec §10). Copy: docs/design/screens.md P2 · SEO: docs/seo/keyword-map.md.
 
 const PAGE_PATH = "/paint-calculator";
+const QUOTE_TEMPLATE_PATH = "/decorating-quote-template";
 const TITLE = "Paint Calculator UK: How Much Paint Do I Need? | PriceBrush";
 const DESCRIPTION =
   "Work out litres and tins for walls and ceilings, room by room. Decorators: add your day rate to see days and a rough price, then turn it into a quote.";
@@ -82,7 +86,10 @@ export default function PaintCalculator() {
   useEffect(() => () => clearTimeout(toastTimer.current), []);
 
   const activeSettings = settingsReading.settings ?? lastValidSettings;
-  const result = useMemo(() => calculateJob([toRoomInput(room)], activeSettings), [room, activeSettings]);
+  const roomInputs = useMemo(() => [toRoomInput(room)], [room]);
+  const result = useMemo(() => calculateJob(roomInputs, activeSettings), [roomInputs, activeSettings]);
+  const isStale = settingsReading.settings === null;
+  const navigate = useNavigate();
   const roomIssues = result.issues.filter((issue) => issue.roomId === room.id);
 
   const showToast = (message: string) => {
@@ -90,6 +97,19 @@ export default function PaintCalculator() {
     clearTimeout(toastTimer.current);
     toastTimer.current = setTimeout(() => setToastMessage(""), TOAST_MILLISECONDS);
   };
+
+  const turnIntoQuote = () => {
+    if (result.status !== "ok" || isStale) return;
+    // If storage is blocked (private mode) the template simply opens empty.
+    writeHandover(window.localStorage, buildHandover(roomInputs, activeSettings, result, new Date()));
+    navigate(QUOTE_TEMPLATE_PATH);
+  };
+
+  const quoteDisabledReason = isStale
+    ? "Fix the settings above first"
+    : result.status === "empty"
+      ? "Enter a room size first"
+      : null;
 
   const copyResult = async () => {
     const text = resultSummaryText(result, `${SITE_URL.replace("https://", "")}${PAGE_PATH}`);
@@ -120,13 +140,9 @@ export default function PaintCalculator() {
             <RoomCard room={room} roomNumber={1} issues={roomIssues} onChange={setRoom} />
             <SettingsCard fields={settingsFields} errors={settingsReading.errors} onChange={setSettingsFields} />
           </form>
-          <div className="desk:sticky desk:top-4">
-            <ResultCard
-              result={result}
-              settings={activeSettings}
-              isStale={settingsReading.settings === null}
-              onCopy={copyResult}
-            />
+          <div className="grid gap-4 desk:sticky desk:top-4">
+            <ResultCard result={result} settings={activeSettings} isStale={isStale} onCopy={copyResult} />
+            <QuoteCtaCard onTurnIntoQuote={turnIntoQuote} disabledReason={quoteDisabledReason} />
           </div>
         </div>
 

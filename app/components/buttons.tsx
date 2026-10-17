@@ -9,9 +9,11 @@ interface PrimaryButtonProps {
   disabledReason?: string | null;
   isBusy?: boolean;
   busyLabel?: string;
+  /** On a coach-green card the reason text switches to cream so it stays readable. */
+  isOnBrand?: boolean;
 }
 
-export function PrimaryButton({ children, onClick, disabledReason, isBusy = false, busyLabel }: PrimaryButtonProps) {
+export function PrimaryButton({ children, onClick, disabledReason, isBusy = false, busyLabel, isOnBrand = false }: PrimaryButtonProps) {
   const isDisabled = Boolean(disabledReason);
   const reasonId = "primary-action-reason";
   return (
@@ -31,7 +33,7 @@ export function PrimaryButton({ children, onClick, disabledReason, isBusy = fals
         {isBusy ? busyLabel : children}
       </button>
       {isDisabled && (
-        <p id={reasonId} className="mt-1.5 text-center text-caption font-semibold text-ink-2">
+        <p id={reasonId} className={`mt-1.5 text-center text-caption font-semibold ${isOnBrand ? "text-on-brand-2" : "text-ink-2"}`}>
           {disabledReason}
         </p>
       )}

@@ -7,12 +7,15 @@ import { LineItems } from "~/components/quote-template/line-items";
 import { QuoteTemplateGuide } from "~/components/quote-template/quote-template-guide";
 import { SiteHeader } from "~/components/site-header";
 import { formatPence } from "~/lib/numbers";
+import { takeHandover } from "~/lib/paint/handover";
 import { formatUkDate, isIsoDate, todayIsoDate, addDaysToIsoDate } from "~/lib/quote/dates";
 import {
   VALID_FOR_DAY_OPTIONS,
   VAT_RATE_PERCENT,
   buildQuoteDocument,
   createEmptyDraft,
+  handoverBannerText,
+  linesFromHandover,
   quoteFileName,
   type MaterialsBasis,
   type QuoteDraft,
@@ -21,8 +24,8 @@ import { clearQuoteDraft, loadQuoteDraft, saveQuoteDraft } from "~/lib/quote/sto
 import { SITE_URL, seo } from "~/seo/meta";
 import type { Route } from "./+types/decorating-quote-template";
 
-// /decorating-quote-template — cut-order step 2 (CEO decision #1): free quote form → PDF made in
-// the browser. Copy: docs/design/screens.md P3/P4 · SEO: docs/seo/briefs/decorating-quote-template.md.
+// /decorating-quote-template — cut-order steps 2 and 3 (CEO decision #1): free quote form → PDF
+// made in the browser, pre-filled when the user arrives from "Turn this into a quote" (spec §10). Copy: docs/design/screens.md P3/P4 · SEO: docs/seo/briefs/decorating-quote-template.md.
 // Never uses the word "invoice" in the title or H1 (cannibalisation rule).
 
 const PAGE_PATH = "/decorating-quote-template";
@@ -80,15 +83,34 @@ export default function DecoratingQuoteTemplate() {
   const [isMakingPdf, setIsMakingPdf] = useState(false);
   const [hasDownloaded, setHasDownloaded] = useState(false);
   const [toast, setToast] = useState<ToastState | null>(null);
+  const [handoverBanner, setHandoverBanner] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const lineCounter = useRef(1);
+  // React's StrictMode runs effects twice in development. The hand-over is read once and then
+  // deleted, so a second restore would wipe the lines it just added.
+  const hasStartedRestore = useRef(false);
 
   useEffect(() => {
+    if (hasStartedRestore.current) return;
+    hasStartedRestore.current = true;
     const savedDraft = loadQuoteDraft(window.localStorage);
-    const startingDraft = savedDraft ?? createEmptyDraft();
-    setDraft(isIsoDate(startingDraft.quoteDate) ? startingDraft : { ...startingDraft, quoteDate: todayIsoDate() });
-    lineCounter.current = startingDraft.lines.length + 1;
+    const restoredDraft = savedDraft ?? createEmptyDraft();
+    const datedDraft = isIsoDate(restoredDraft.quoteDate) ? restoredDraft : { ...restoredDraft, quoteDate: todayIsoDate() };
+    lineCounter.current = datedDraft.lines.length + 1;
+
+    // Arriving from the calculator: its lines replace the old ones (it's a new job), the decorator's
+    // own details stay, and Undo brings the old lines back.
+    const handover = takeHandover(window.localStorage, new Date());
+    if (handover) {
+      const hadLines = datedDraft.lines.some((line) => line.description.trim() !== "" || line.amount.trim() !== "");
+      setDraft({ ...datedDraft, lines: linesFromHandover(handover, createLineId) });
+      setHandoverBanner(handoverBannerText(handover.rooms.length));
+      if (hadLines) showToast({ message: "Your earlier lines were replaced", undo: () => setDraft(datedDraft) });
+    } else {
+      setDraft(datedDraft);
+    }
     setHasRestored(true);
+    // Runs once after hydration; the helpers it calls only use refs and state setters.
   }, []);
 
   useEffect(() => {
@@ -130,6 +152,7 @@ export default function DecoratingQuoteTemplate() {
     clearQuoteDraft(window.localStorage);
     setDraft({ ...createEmptyDraft(), quoteDate: todayIsoDate(), lines: [{ id: createLineId(), description: "", detail: "", amount: "" }] });
     setHasDownloaded(false);
+    setHandoverBanner(null);
     showToast({ message: "Form cleared", undo: () => setDraft(previousDraft) });
   };
 
@@ -210,6 +233,11 @@ export default function DecoratingQuoteTemplate() {
           </FormSection>
 
           <FormSection title="The work">
+            {handoverBanner && (
+              <p role="status" className="rounded-md border-l-4 border-check-line bg-check-bg px-3 py-2.5 font-semibold text-check-fg">
+                {handoverBanner}
+              </p>
+            )}
             <LineItems
               lines={draft.lines}
               lineIssues={quoteCheck.lineIssues}

@@ -241,7 +241,7 @@ FAQ check (brief §2.2): "What area does 5 litres cover?" → 5 × 12 = **60 m²
 
 No server, no account. The data stays in the browser (CEO #1, brief §2.1).
 
-- **Trigger:** "Turn this into a quote" (only when `status === "ok"`). Fires `quote_prefilled`, then navigates to `/decorating-quote-template`.
+- **Trigger:** "Turn this into a quote" (only when `status === "ok"` and the settings are valid; otherwise the button is disabled with "Enter a room size first" / "Fix the settings above first"). Fires `quote_prefilled` (once the counter Worker exists), then navigates to `/decorating-quote-template`.
 - **Storage:** `localStorage` key `pricebrush.calculatorHandover`. It holds room sizes and prices only, never client details. It is read once: the template deletes the key after importing it. It is ignored if older than 24 h.
 
 ```ts
@@ -260,9 +260,10 @@ export interface CalculatorHandover {
 }
 ```
 
-- **Template behaviour** (P3): one quote line per labour line in the same order (room by room: walls, ceiling, mist coat), then one "Paint" line. Banner: "We brought over 2 rooms from the paint calculator. Check the lines, then add the client." Every line stays editable. The template's own autosave (IndexedDB, PRD) takes over from then on.
+- **Template behaviour** (P3): one quote line per labour line in the same order (room by room: walls, ceiling, mist coat), then one "Paint" line. **If the template already holds lines** (autosaved earlier job), the calculator's lines replace them, the decorator's business details, quote number and settings stay, and a toast "Your earlier lines were replaced · Undo" (6 s) brings the old lines back. *(Added 17/10/2026 while building step 3.)* Banner: "We brought over 2 rooms from the paint calculator. Check the lines, then add the client." Every line stays editable. The template's own autosave (IndexedDB, PRD) takes over from then on.
 - **Bad or old data** (wrong `version`, JSON error, > 24 h): ignore it silently, delete the key, and open an empty template. No error is shown, because the user can still type the quote.
-- **Test cases:** T5 → 3 labour lines + 1 paint line, total £865.00 equals the calculator total · reload after import → no duplicate lines · `version: 2` → empty template.
+- **Test cases:** T5 → 3 labour lines + 1 paint line, total £865.00 equals the calculator total · reload after import → no duplicate lines · `version: 2` → empty template. *(Implemented 17/10/2026: `app/lib/paint/handover.test.ts`.)*
+- **Implementation note:** React StrictMode runs effects twice in development; the template guards its one-time restore with a ref, because the hand-over key is deleted on first read.
 
 ## 11. Events (anonymous counter, `../seo/measurement.md`)
 

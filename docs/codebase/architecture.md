@@ -15,10 +15,10 @@ Last updated: 17/10/2026 · Owner: pricebrush-lead
 | `app/components/quote-template/` | `LineItems`, `QuoteTemplateGuide` (example from the paint engine, checklist, steps, quote vs estimate, FAQ), `quote-pdf.tsx` (A4 PDF, lazy-loaded) |
 | `app/components/buttons.tsx` | `PrimaryButton` (yellow, disabled state explains why), `SecondaryButton`, `GhostButton` |
 | `app/lib/numbers.ts` | `parseDecimal`, `parsePoundsToPence`, `formatPence` (shared) |
-| `app/lib/paint/` | Paint & labour engine (pure TS): `types`, `defaults`, `rounding`, `tins`, `calculate`, `format`, `parse`, `form` (typed text → engine input, settings validation). Tests next to each file |
+| `app/lib/paint/` | Paint & labour engine (pure TS): `types`, `defaults`, `rounding`, `tins`, `calculate`, `format`, `form` (typed text → engine input, settings validation), `handover` (calculator → quote template via `localStorage` key `pricebrush.calculatorHandover`, read once, 24 h max). Tests next to each file |
 | `app/components/form-fields.tsx` | `MeasureField` (decimal input with unit), `TextField`, `Stepper`, `ChoiceGroup`, `Card` |
 | `app/components/site-header.tsx` | Public-page header with the logo tile |
-| `app/components/paint-calculator/` | `RoomCard`, `SettingsCard`, `ResultCard` |
+| `app/components/paint-calculator/` | `RoomCard`, `SettingsCard`, `ResultCard`, `QuoteCtaCard` ("Turn this into a quote") |
 | `app/seo/meta.ts` | `seo()` helper: title, description, canonical, OG, optional JSON-LD (`docs/seo/technical-seo.md` §2) |
 | `app/app.css` | Tailwind entry + Coachline tokens from `docs/design/design-system.md` §8 (light, `.dark`, and `prefers-color-scheme` unless `.light`) |
 | `public/favicon.ico` | Template favicon (to be replaced) |
@@ -38,7 +38,7 @@ Note: without a static `404.html` on Cloudflare Pages, unknown URLs would return
 
 ## Data flow
 
-No backend calls, auth or analytics yet. The calculator keeps everything in React state (nothing stored). The quote template autosaves its draft to `localStorage` only and builds the PDF in the browser; events (`calc_used` etc.) wait for the counter Worker.
+No backend calls, auth or analytics yet. The calculator keeps everything in React state (nothing stored). The quote template autosaves its draft to `localStorage` only and builds the PDF in the browser. "Turn this into a quote" writes a one-time hand-over to `localStorage` and navigates client-side; the template reads and deletes it after hydration (spec §10); events (`calc_used` etc.) wait for the counter Worker.
 
 **Trailing slash:** `vite preview` returns the home page's HTML for `/paint-calculator` and the right page for `/paint-calculator/`. Cloudflare Pages' behaviour must be checked on the first deploy (`docs/seo/technical-seo.md` §2.1); the canonical may need the slash. The backend contract will be documented in `price-brush-backend/docs/codebase/architecture.md` when endpoints exist.
 

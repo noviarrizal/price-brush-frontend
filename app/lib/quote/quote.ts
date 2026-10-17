@@ -1,4 +1,5 @@
 import { parsePoundsToPence } from "~/lib/numbers";
+import type { CalculatorHandover } from "~/lib/paint/handover";
 
 import { addDaysToIsoDate, isIsoDate } from "./dates";
 
@@ -190,4 +191,27 @@ function trimValues<Shape extends Record<string, string>>(values: Shape): Shape 
 export function quoteFileName(document: Pick<QuoteDocument, "quoteNumber" | "client">): string {
   const parts = ["Quote", document.quoteNumber, document.client.name].filter((part) => part !== "");
   return `${parts.join(" ").replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").trim()}.pdf`;
+}
+
+/** Pence → what a person would type: 38000 → "380.00". */
+export function penceToPoundsText(amountPence: number): string {
+  return (amountPence / 100).toFixed(2);
+}
+
+/**
+ * Quote lines from the paint calculator hand-over (spec §10): same order, the working as the
+ * detail, every line still editable.
+ */
+export function linesFromHandover(handover: CalculatorHandover, createLineId: () => string): QuoteLineFields[] {
+  return handover.lines.map((line) => ({
+    id: createLineId(),
+    description: line.title,
+    detail: line.detail,
+    amount: penceToPoundsText(line.amountPence),
+  }));
+}
+
+/** "We brought over 2 rooms from the paint calculator." */
+export function handoverBannerText(roomCount: number): string {
+  return `We brought over ${roomCount} ${roomCount === 1 ? "room" : "rooms"} from the paint calculator. Check the lines, then add the client.`;
 }
