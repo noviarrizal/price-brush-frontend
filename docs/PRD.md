@@ -242,7 +242,7 @@ Satu harga flat tanpa biaya per user, ditambah penawaran Founding Member untuk m
 | Free | £0 | 5 dokumen (quote + invoice) per bulan, watermark "Made with PriceBrush", semua fitur AI |
 | Pro bulanan | £9/bulan incl. VAT | Dokumen tanpa batas, tanpa watermark, logo sendiri (warna brand menyusul), price book |
 | Pro tahunan | £79/tahun incl. VAT | Sama dengan Pro, hemat ~27% |
-| Founding Member | £49 sekali bayar, seumur hidup | Pro selamanya, terbatas 50 orang, berlaku sampai 31 Jan 2027 |
+| Founding Member | £49 sekali bayar incl. VAT | "Pro for as long as PriceBrush runs", terbatas 50 orang, berlaku sampai 31 Jan 2027. Kalau PriceBrush tutup: pemberitahuan 60 hari + export CSV |
 
 - Pembayaran lewat Polar sebagai merchant of record: mereka yang memungut dan menyetor VAT UK. Harga ditampilkan **termasuk VAT**; di dashboard Polar pajak di-set **Inclusive** (bukan Location-based). Estimasi bersih: ~£6,50 dari £9, ~£37 dari £49 (fee 5% + 50¢ + 1,5% kartu non-US).
 - Biaya AI per quote diperkirakan jauh di bawah £0,01, jadi paket seumur hidup tetap aman secara margin.
@@ -349,3 +349,4 @@ timeline
 9. WhatsApp: logo resmi sesuai aturan Meta, atau ikon chat biasa sebagai cadangan.
 10. Target §9 diganti (≥ 500 pemakaian tool, ≥ 10 akun, ≥ 4 aktif, ≥ 1 pembayaran) dengan checkpoint 15 Des 2026.
 - Database: **Neon** (bukan Supabase); auth Google dan file storage masih harus dipilih.
+- Founding Member **tanpa jaminan refund** kalau PriceBrush tutup (founder, 17 Okt 2026): yang dijanjikan cuma pemberitahuan 60 hari + export CSV. Alasan: bersih ~£37 per penjualan dan fee Polar tidak kembali saat refund, jadi refund penuh = rugi ~£12 per orang (terburuk £2.450).

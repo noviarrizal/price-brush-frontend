@@ -303,8 +303,8 @@ table.ct td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600
   <div class="bhead">
     <div>
       <div class="wordmark" style="font-size:30px"><span class="tile" style="width:44px;height:44px;border-radius:11px"><span style="font-size:28px">£</span></span>PriceBrush</div>
-      <h1 class="h1" style="margin-top:14px">Design system v0.2 — “Coachline”</h1>
-      <p class="muted" style="margin-top:6px">Proposed, pending founder review · 16/10/2026 · <span id="tn"></span> theme · tokens mirror <code>design-system.md</code> §3 and <code>tools/pb-base.css</code></p>
+      <h1 class="h1" style="margin-top:14px">Design system v0.3 — “Coachline”</h1>
+      <p class="muted" style="margin-top:6px">Approved by the founder 17/10/2026 · <span id="tn"></span> theme · tokens mirror <code>design-system.md</code> §3 and <code>tools/pb-base.css</code></p>
     </div>
     <div class="row" style="flex-direction:column;align-items:flex-end;gap:10px">
       <button class="btn btn-secondary" id="sw" onclick="var d=document.documentElement.classList.contains('dark');location.search='?theme='+(d?'light':'dark')">Switch theme</button>
@@ -436,6 +436,7 @@ table.ct td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600
       <p class="lbl">Hidden during recording and inside task flows. Desktop uses the coach-green sidebar instead.</p>
       <h2 class="h2" style="font-size:26px;margin:24px 0 12px">Toast</h2>
       <div class="toast-demo"><span>Line removed</span><button>Undo</button></div>
+      <div class="toast-demo" style="margin-top:10px"><span>Cancelled. You keep Pro until 15/11/2026.</span><button>Undo</button></div>
       <div class="toast-demo" style="margin-top:10px;background:var(--pb-danger-fg);color:var(--pb-surface)"><span>Couldn't make the link.</span><button>Retry</button></div>
       <p class="lbl">Success hides after 4 s · errors stay until dismissed</p>
     </div>
@@ -446,6 +447,7 @@ table.ct td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600
         <div class="sheet-head"><h3 class="title" style="flex:1">Send Q-0012 to Mrs Patel</h3><span class="icon-btn"><svg class="ico"><use href="#i-x"/></svg></span></div>
         <button class="btn btn-primary btn-lg btn-block"><svg class="ico"><use href="#i-msg"/></svg>Send on WhatsApp</button>
         <button class="btn btn-secondary btn-block" style="margin-top:8px"><svg class="ico ico-sm"><use href="#i-link"/></svg>Copy link</button>
+        <p class="lbl" style="margin-top:10px">WhatsApp: the word always sits beside the icon, never used as a verb. Generic bubble shown until the official glyph is checked unmodified on yellow (<code>design-system.md</code> §6.1).</p>
       </div>
       <h2 class="h2" style="font-size:26px;margin:24px 0 12px">Empty state</h2>
       <div class="tile-box" style="text-align:center;padding:24px 16px"><h3 class="h2" style="font-size:22px">No quotes yet</h3><p class="muted" style="margin:6px 0 14px">Your first one takes about a minute.</p><button class="btn btn-secondary">Start a quote</button></div>
@@ -455,11 +457,11 @@ table.ct td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600
       <div class="tile-box">
         <h3 class="title" style="color:var(--pb-ink);font-family:var(--font-display);font-size:20px">You've used 5 free documents this month.</h3>
         <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
-          <div class="plan-r on"><span class="radio"></span><span style="flex:1"><strong>Monthly</strong><br><span class="caption">Cancel any time</span></span><strong class="tnum">£9</strong></div>
+          <div class="plan-r on"><span class="radio"></span><span style="flex:1"><strong>Monthly</strong><br><span class="caption">Incl. VAT · cancel any time</span></span><strong class="tnum">£9</strong></div>
           <div class="plan-r"><span class="radio"></span><span style="flex:1"><strong>Yearly</strong><br><span class="caption">£6.58 a month</span></span><strong class="tnum">£79</strong></div>
           <div class="plan-r"><span class="radio"></span><span style="flex:1"><strong>Founding Member</strong><br><span class="caption">Pro for life · 50 places</span></span><strong class="tnum">£49</strong></div>
         </div>
-        <p class="caption" style="margin:10px 0">You'll pay £9 today, then £9 every month. Cancel in one tap.</p>
+        <p class="caption" style="margin:10px 0">You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap.</p>
         <button class="btn btn-primary btn-block">Continue to checkout</button>
       </div>
     </div>
@@ -501,7 +503,7 @@ function lum(h){h=h.replace('#','');var c=[0,2,4].map(function(i){var x=parseInt
 document.getElementById('sw-grid').innerHTML=S.map(function(s){var v=cs.getPropertyValue('--pb-'+s[0]).trim();return '<div class="sw"><div class="c" style="background:'+v+';color:'+(lum(v)>0.3?'#14201A':'#F7F1DE')+'">Aa</div><div class="m"><b>'+s[0]+'</b>'+v.toUpperCase()+' · '+s[1]+'</div></div>';}).join('');
 var C=[['ink on bg','Body text',15.14,16.24],['ink on surface','Text in cards',16.78,14.84],['ink-2 on bg','Secondary text',7.38,10.20],['ink-2 on surface-2','Secondary on sunken',6.63,8.21],['ink-3 on surface','Placeholders',6.17,6.85],['line-strong on surface','Input border (UI)',4.06,4.19],['on-brand on brand','Cream on coach green',10.55,10.55],['on-accent on accent','Primary label',10.22,10.22],['on-accent on accent-pressed','Primary pressed',8.18,8.18],['accent on bg','Primary boundary',1.48,11.36],['accent on brand','Primary on green hero',7.26,7.26],['check-fg on check-bg','“Check this”',6.86,8.37],['check-line on surface','Dashed boundary (UI)',4.92,5.53],['danger-fg on danger-bg','Error / overdue',5.75,8.22],['ok-fg on ok-bg','Accepted chip',6.04,9.35],['sent-fg on sent-bg','Sent chip',8.13,8.77],['draft-fg on draft-bg','Draft chip',6.45,7.87],['bg on ink','Paid chip, toast',15.14,16.24],['focus on bg','Focus ring (UI)',7.08,9.76],['coachline on brand','Decorative pinstripe',3.77,5.94]];
 document.getElementById('ct-body').innerHTML=C.map(function(c){var res=c[0]==='accent on bg'?'Light: ink 2 px edge supplies the boundary (15.1:1)':(c[0]==='coachline on brand'?'Decorative only (≥ 3:1)':(Math.min(c[2],c[3])>=7?'AAA':(c[1].indexOf('UI')>-1?'AA non-text':'AA')));return '<tr><td>'+c[0]+'</td><td>'+c[1]+'</td><td class="n">'+c[2].toFixed(2)+'</td><td class="n">'+c[3].toFixed(2)+'</td><td>'+res+'</td></tr>';}).join('');
-var T=[['display','44 / 46 · Archivo 800','Quote any job in 60 seconds','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:44px;line-height:46px'],['h1','30 / 34 · Archivo 800','Paint calculator: how much paint do I need?','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:30px;line-height:34px'],['h2','24 / 28 · Archivo 750','Describe the job like you’d tell a mate.','font-family:var(--font-display);font-stretch:87.5%;font-weight:750;font-size:24px'],['title','20 / 26 · Archivo 700','Send Q-0012 to Mrs Patel','font-family:var(--font-display);font-stretch:87.5%;font-weight:700;font-size:20px'],['money-xl','36 / 40 · Archivo 800 tabular','£1,240.00','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:36px;font-variant-numeric:tabular-nums'],['body-lg','18 / 26 · System 400','Living room and hallway, two coats, magnolia.','font-size:18px;line-height:26px'],['body','16 / 24 · System 400/600','Fix any words we got wrong. We don’t keep the recording.','font-size:16px'],['caption','14 / 20 · System 500','Q-0012 · 14/10/2026 · meta only, never instructions','font-size:14px;font-weight:500;color:var(--pb-ink-2)']];
+var T=[['display','44 / 46 · Archivo 800','Room sizes in. Priced quote out.','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:44px;line-height:46px'],['h1','30 / 34 · Archivo 800','Paint calculator: how much paint do I need?','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:30px;line-height:34px'],['h2','24 / 28 · Archivo 750','Describe the job like you’d tell a mate.','font-family:var(--font-display);font-stretch:87.5%;font-weight:750;font-size:24px'],['title','20 / 26 · Archivo 700','Send Q-0012 to Mrs Patel','font-family:var(--font-display);font-stretch:87.5%;font-weight:700;font-size:20px'],['money-xl','36 / 40 · Archivo 800 tabular','£1,240.00','font-family:var(--font-display);font-stretch:87.5%;font-weight:800;font-size:36px;font-variant-numeric:tabular-nums'],['body-lg','18 / 26 · System 400','Living room and hallway, two coats, magnolia.','font-size:18px;line-height:26px'],['body','16 / 24 · System 400/600','Fix any words we got wrong. We don’t keep the recording.','font-size:16px'],['caption','14 / 20 · System 500','Q-0012 · 14/10/2026 · meta only, never instructions','font-size:14px;font-weight:500;color:var(--pb-ink-2)']];
 document.getElementById('type').innerHTML=T.map(function(t){return '<div class="typerow"><strong>'+t[0]+'</strong><span style="'+t[3]+'">'+t[2]+'</span><span class="caption">'+t[1]+'</span></div>';}).join('');
 document.getElementById('sp').innerHTML=[1,2,3,4,5,6,8,10,12,16].map(function(n){return '<span style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--pb-ink-2)"><div style="width:'+(n*4)+'px;height:'+(n*4)+'px"></div>'+n+' · '+(n*4)+'</span>';}).join('');
 var I=['mic','stop','type','eye','pencil','plus','trash','send','msg','mail','link','download','file','banknote','wifi-off','check-circle','alert','settings','search','list','back','chev','x','phone','copy','calc','lock','clock','sun','moon'];

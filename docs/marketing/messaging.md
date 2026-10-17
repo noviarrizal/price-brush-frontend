@@ -1,6 +1,8 @@
-# Messaging (v0.1)
+# Messaging (v0.2)
 
-Date: 17/10/2026 · Author: marketing lead · Status: **proposed; the founder decides** · Evidence and competitor checks: `answers-2026-10-17.md` (Q2), `../strategy/positioning.md`, `../strategy/competitors.md`
+Date: 17/10/2026 · Author: marketing lead · Status: **Accepted by the founder 17/10/2026** (`../ceo/decisions-2026-10-17.md` #2, #4, #6, #7, #9) · Evidence and competitor checks: `answers-2026-10-17.md` (Q2), `../strategy/positioning.md`, `../strategy/competitors.md`
+
+**Re-test planned (late Nov, once voice is live):** show this hero and "Say the rooms. Get a priced quote." to 5+ decorators (5-second test: "what does this do, and who is it for?"). Swap only if "Say the rooms" clearly wins. Until then the copy below is frozen.
 
 ## Who it's for (one line)
 
@@ -8,13 +10,15 @@ Solo or two-person UK painters and decorators who price by the room and the day,
 
 ## Headline + subheadline
 
-**Recommended (launch, 31 Oct)**
+**Accepted (live 31 Oct)**
 
 - Keyword line: **Quote and invoice app for UK painters and decorators**
 - **H1: Room sizes in. Priced quote out.**
 - **Sub: Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators.**
-- CTA (until the MVP is live): **Price a room free** · caption "No sign-up. Works on any phone or laptop."
+- CTA (until the MVP is live): **Price a room free** → `/paint-calculator` · caption "No sign-up. Works on any phone or laptop."
 - CTA (after the MVP): **Start a free quote** · caption "Free for 5 quotes or invoices a month. No card needed."
+- Calculator primary button: **Turn this into a quote** · result label: **Your price at your day rate**
+- Positioning line (PRD §1): "The UK decorator's quote app that does the maths: rooms to paint, days and price. No per-user fees. No sales calls. Cancel in one tap."
 
 **Alternatives**
 
@@ -31,7 +35,7 @@ Solo or two-person UK painters and decorators who price by the room and the day,
 |---|---|---|---|
 | 1 | **Maths you can check.** "See every coat, litre and day before you send it." | Free `/paint-calculator`: 4 × 4 m room → m² → 2 coats → litres → days → £ | 31/10 |
 | 2 | **Your day rate, your price.** "Labour worked out from *your* day rate, not an average." | Day-rate field in calculator and onboarding | 31/10 |
-| 3 | **New plaster priced properly.** "Tick new plaster and the mist coat goes on as its own line." | Mist-coat switch (memo 003) | 31/10 calculator / Nov app |
+| 3 | **New plaster priced properly.** "Tick new plaster and the mist coat goes on as its own line." | Mist-coat switch (memo 003) | Calculator 31/10 or the week after (cut-order item 6) / Nov app (required) |
 | 4 | **Send it on WhatsApp.** "A link your client opens on any phone. They tap Accept." | Send sheet + client page | Late Nov |
 | 5 | **When it's accepted, it's an invoice.** | Turn into invoice | Late Nov |
 | 6 | **Fair, flat price.** "£9 a month incl. VAT. No per-user fees. No sales calls." | `/pricing`, Polar checkout | Before checkout opens |
@@ -64,7 +68,12 @@ Solo or two-person UK painters and decorators who price by the room and the day,
 | quote, price, day rate, coats, mist coat, new plaster, litres, tins, job, rooms, walls and ceiling, woodwork, VAT registered, "Check this" | estimate (in headlines), AI-powered, revolutionary, all-in-one, platform, solution, free forever |
 | "When it's accepted, it's an invoice" | "one tap / one click to invoice" (QuoteRocket) |
 | "Send on WhatsApp", "Message Dave on WhatsApp" | WhatsApp as a verb ("WhatsApp it") |
-| "Cancel in one tap" **only if** Q7's Undo flow ships; otherwise "Cancel in two taps. No phone call." | Claims about cancelling that the flow doesn't match |
+| "Cancel in one tap" (accepted flow: 1 tap cancels at period end + Undo toast + "Resume Pro"). If the lead finds Undo costs > 1 h extra and keeps a confirmation, change **every** instance to "Cancel in two taps. No phone call." | Claims about cancelling that the flow doesn't match |
+| "No per-user fees" | "cheaper", "cheapest", "save £X" (Queezy is £8.99) |
+| Price comparisons only with Queezy included, dated and sourced | Any comparison table without a date and source |
+| "£9 a month, incl. VAT" · "£49 once, incl. VAT" | "£9 + VAT" |
+| Late payment stat, cited as: "Direct Line business insurance research, reported 15/01/2026 (sample size not published)" + Scottish Financial News link | The stat without that source line |
+| "The Decorators Forum UK" only as a factual source citation | "As seen on / recommended by The Decorators Forum" (their terms bar using their marks with a product without written consent: [thedecoratorsforum.com/terms](https://www.thedecoratorsforum.com/terms/)) |
 | "Made for UK decorators" plus proof | "built for painters & decorators" (Queezy) |
 
 ## Tone of voice

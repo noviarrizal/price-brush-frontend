@@ -1,6 +1,6 @@
-# PriceBrush — Design system (v0.2, direction "Coachline")
+# PriceBrush — Design system (v0.3, direction "Coachline")
 
-Date: 16/10/2026 · Status: **proposed, pending founder review** · Research: `research.md` · Screens: `screens.md` · Visual board: `design-system.html` (`images/design-system-*.png`)
+Date: 17/10/2026 · Status: **approved by the founder 17/10/2026** (`../ceo/decisions-2026-10-17.md` #5: the recognisable mark is the set — cream + gold coachline + yellow primary — not green alone; brand green stays off the WhatsApp button) · Research: `research.md` · Screens: `screens.md` · Visual board: `design-system.html` (`images/design-system-*.png`)
 
 Rules this system enforces (PRD §6): 360 px first, **desktop ≥ 1024 px is first-class** · targets ≥ 48 px · on phone the primary action is pinned at the bottom · **one primary action per screen; yellow is only for it** · body ≥ 16 px · WCAG 2.2 AA (we aim for 7:1 on body text) · light + dark · status always visible · UK English.
 
@@ -176,7 +176,23 @@ Inputs ≥ 16 px (no iOS zoom). The A4 preview thumbnail on desktop uses 10.5–
 
 Lucide (ISC), 24 px, stroke 2 (2.25 on the mic). Always with a text label, except back/close (with `aria-label`). Core set lives in `tools/pb-icons.svg`: mic, mic-off, stop, type, eye, pencil, plus, trash, send, message-circle (WhatsApp*), mail, link, download, file, banknote, wifi-off, check-circle, alert, settings, search, list, back, chevron, x, phone, copy, calculator, lock, clock, sun, moon, monitor, smartphone, grip.
 
-*WhatsApp:* Lucide has no brand logos; we use `message-circle` + the word "WhatsApp" (open question on official glyph).
+*WhatsApp:* Lucide has no brand logos; until the official glyph is in the repo we use `message-circle` + the word "WhatsApp" (rules in 6.1).
+
+### 6.1 WhatsApp logo rules (decision #9, accepted 17/10/2026)
+
+Source: Meta's WhatsApp brand page, read by the CEO advisor on 17/10/2026 ([meta.com](https://www.meta.com/brand/resources/whatsapp/whatsapp-brand/)). The brand pack itself has not been opened yet (**not verified**).
+
+| Rule | What it means for us |
+|---|---|
+| Official asset only | The founder downloads Meta's pack himself and stores it in the repo with source URL and date. No redrawn, traced or icon-font "WhatsApp" glyphs |
+| Unmodified | Never recolour, outline, re-stroke, crop or add effects. Size it to the label's text height (20–24 px) |
+| Word beside it | Always the word "WhatsApp" next to the glyph, in the same font size and style as the button label. Never the glyph alone |
+| Never a verb | "Send on WhatsApp", "Message Dave on WhatsApp". Never "WhatsApp it", "WhatsApp your client" |
+| No partner claim | No "partner", "powered by", "official", "integrated with". No `whatsapp` in our URLs, file names, product names or event names (use `wa_` / "chat") |
+| Not brand green | Keep `brand` coach green away from WhatsApp buttons (decision #5) |
+| Yellow primary ("Send on WhatsApp") | Use the official glyph **only if the pack has a variant that sits on `accent` unmodified and stays visible**. WhatsApp's widely published green `#25D366` (not verified against the pack) on `accent` is **1.21:1** — practically invisible. A dark one-colour variant, if the pack offers one, would give about 10:1 like `on-accent`. **Fallback (and current prototypes):** generic `message-circle` bubble in `on-accent` + the word "WhatsApp" |
+| Secondary buttons (client page "Message Dave on WhatsApp") | The full-colour glyph may sit on `surface`; the word carries the meaning, so the glyph is decorative (`aria-hidden`). Green on white is 1.98:1, on dark `bg` 9.41:1 |
+| If the pack terms forbid share buttons | Generic bubble everywhere. Zero trademark risk |
 
 ## 7. Motion
 
@@ -335,7 +351,7 @@ Desktop: a `kbd` hint may sit inside the primary ("Send quote  Ctrl ↵").
 ### 9.7 Navigation
 
 - **Phone bottom nav:** 64 px, Quotes · New quote · Settings, icon + 14/600 label; active = `ink` + 3 px top indicator (not colour alone). Hidden during recording and in task flows.
-- **Desktop sidebar:** `brand` green 232 px; items 48 px cream; active = cream pill with ink text; plan meter at the foot ("Free plan · 3 of 5 documents this month" + "Go Pro: £9/month").
+- **Desktop sidebar:** `brand` green 232 px; items 48 px cream; active = cream pill with ink text; plan meter at the foot ("Free plan · 3 of 5 documents this month" + "Go Pro: £9 a month, incl. VAT").
 
 ### 9.8 Bottom sheet / dialog
 
@@ -343,7 +359,7 @@ Phone: `surface`, `lg` top corners, `e2`, handle 36 × 4, title + 48 px close, m
 
 ### 9.9 Toast
 
-Inverted (`ink` fill, `bg` text), `md`, 16 px; action as underlined text ≥ 48 px; success 4 s, errors persist (`role="alert"`). Phone: above the pinned bar. Desktop: bottom-left of the work area.
+Inverted (`ink` fill, `bg` text), `md`, 16 px; action as underlined text ≥ 48 px; success 4 s, errors persist (`role="alert"`). Phone: above the pinned bar. Desktop: bottom-left of the work area. **Undo toasts for money** ("Cancelled. You keep Pro until 15/11/2026. [Undo]") stay 10 s or until dismissed; the same action stays available afterwards as "Resume Pro" in Settings (`screens.md` A11).
 
 ### 9.10 Empty state
 
@@ -351,7 +367,7 @@ No illustration. `h2` + one line + one button. "No quotes yet" / "Your first one
 
 ### 9.11 Paywall card
 
-Header "You've used 5 free documents this month." · compare by task (Documents a month 5 / Unlimited · PriceBrush mark Yes / None · Your logo — / Yes · Price book — / Yes) · radio cards 64 px (Monthly £9 · Yearly £79 "£6.58 a month · save £29" · Founding Member £49 once "37 of 50 left · ends 31/01/2027") · terms above the button ("You'll pay £9 today, then £9 every month. Cancel in one tap in Settings.") · primary "Continue to checkout" · ghost "Not now — stay on Free". States: loading, error, sold out, success.
+Header "You've used 5 free documents this month." · compare by task (Documents a month 5 / Unlimited · PriceBrush mark Yes / None · Your logo — / Yes · Price book — / Yes) · radio cards 64 px (Monthly £9 "£9 a month, incl. VAT · cancel any time" · Yearly £79 "£79 a year, incl. VAT · £6.58 a month · save £29" · Founding Member £49 once "£49 once, incl. VAT" "37 of 50 left · ends 31/01/2027") · terms above the button ("You'll pay £9 today (incl. VAT), then £9 every month. Cancel in one tap in Settings."; decision #6, Polar tax set to Inclusive) · primary "Continue to checkout" · ghost "Not now — stay on Free". States: loading, error, sold out, success.
 
 ### 9.12 Quote / invoice document (client page + PDF)
 
@@ -361,7 +377,9 @@ Header "You've used 5 free documents this month." · compare by task (Documents 
 4. **Lines:** description + detail · amount (phone); A4: Description · Amount (Qty/Rate columns only when used).
 5. **Totals:** Subtotal · Discount · VAT 20 % + VAT number (only if registered) · **Total**.
 6. **Notes / terms;** invoice: bank block (account name, sort code, account number, reference = invoice number) with copy buttons on the client page.
-7. **Action (client page):** "Accept quote" (P1) / "Copy bank details" (invoice).
+7. **Action (client page):** "Accept quote" (P1) / "Copy bank details" (invoice). **MVP: always `accent` yellow** (decision #8). Contact buttons: "Call Dave" · "Message Dave on WhatsApp" (secondary, stacked full width; 6.1).
+
+   **Contrast fallback (post-MVP Pro "your colours"):** the decorator's colour is used for the Accept button only if an automatic check passes: label (pick `#14201A` or `#FFFFFF`, whichever is higher) ≥ **4.5:1** on the fill, and fill ≥ **3:1** against the page `bg` in both themes, or the button keeps the 2 px `accent-edge`-style ink border (as yellow does in light). If the label check fails in either theme, the button falls back to `accent` yellow with `on-accent`. Tell the decorator in Settings: "This colour is too light for the button text, so clients will see yellow."
 8. **Footer:** "Made with PriceBrush" on Free only.
 
 GOV.UK must-haves for invoices are checked (research §1.6). PDF: Archivo headings/totals, Helvetica body 10–11 pt, ink on white, no fills except the decorator's logo.

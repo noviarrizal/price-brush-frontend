@@ -1,5 +1,42 @@
 # Design CHANGELOG
 
+## v0.3 — 17/10/2026
+
+Direction **"Coachline" — approved by the founder 17/10/2026** (`../ceo/decisions-2026-10-17.md` #5, all 10 decisions accepted). Only the memo's design edits were applied (#2, #3, #5, #7, #8, #9). Scope kept small on purpose.
+
+**What changed, and why**
+
+- **Landing, phone + desktop (#2):** H1 "Room sizes in. Priced quote out." with the memo's sub; primary "Price a room free" → `/paint-calculator` until the app is live, then "Start a free quote" (`screens.md` P1). Voice is not live until the MVP (1–21 Nov), so the hero only promises what works on 31 Oct. Demo section and steps now start from room sizes, not a voice note. Desktop hero phone mock shows the calculator instead of the mic screen.
+- **Removed claims:** every "60 seconds" (competitors QuoteRocket / TradeQuoteAI use it, memo #2) and every "one tap" quote → invoice line, replaced with "When it's accepted, it's an invoice." (landing, desktop landing, invoice template, calculator CTA, board type sample). "Cancel in one tap" stays because #7 makes it true.
+- **Paint calculator (#1, #3):** multi-room cards with "+ Add another room" and "Remove"; "Your day rate" card visible (not collapsed); "The working" lists one line per room and surface; **"Your price at your day rate"** box; per-room switch **"New plaster? Add a mist coat"** (own line, +1 coat, drying added to time on the job — drying rule is an *assumption* for the lead's spec); primary "Turn this into a quote" → quote template. Voice CTA removed.
+- **Cancel (#7):** `screens.md` A11 Settings — one tap, no confirm dialog, cancels at period end; toast "Cancelled. You keep Pro until 15/11/2026. [Undo]"; "Resume Pro" until that date; failure copy; FAQ answers updated. (The memo calls this "A12"; in `screens.md` cancel lives in A11 Settings, A12 is checkout return.) Board shows the Undo toast. No Settings prototype exists yet, so no new screen image.
+- **Client page (#9):** contact buttons stacked full width: "Call Dave" · "Message Dave on WhatsApp".
+- **`design-system.md` §6.1 WhatsApp rules (#9):** official asset only, unmodified, word beside it, never a verb, no partner claim, no `whatsapp` in our names. Contrast check: WhatsApp's widely published green `#25D366` (not verified against the pack) on yellow is 1.21:1, so on the yellow primary we keep the generic bubble unless the pack has a usable one-colour variant. Current prototypes use the generic bubble everywhere.
+- **`design-system.md` §9.12 Accept button (#8):** yellow for MVP; post-MVP decorator colour only if label ≥ 4.5:1 and fill ≥ 3:1 against `bg` (or ink border), otherwise fall back to yellow, with Settings copy.
+- Statuses marked approved in `design-system.md`, `screens.md` and the board.
+- **Prices incl. VAT (#6, coordinator 17/10):** "£9 a month, incl. VAT", "£79 a year, incl. VAT", "£49 once, incl. VAT" on the paywall (header, plan captions, terms "You'll pay £9 today (incl. VAT)…"), landing plan cards, desktop pricing, desktop editor sidebar ("Go Pro: £9 a month, incl. VAT"), board and specs. "(wording TBC)" / "(Assumption…)" removed.
+- **No sign-up buttons before the MVP (coordinator 17/10):** desktop header "Start free" and the plan-card buttons removed; `screens.md` says they appear after the MVP launch. Pre-MVP the only CTA is "Price a room free".
+- Overviews retitled v0.3 / approved and re-rendered.
+
+**Images re-rendered (all opened and checked: nothing cut right or bottom, £ and — render, dark is dark). Pixels at 2x.**
+
+| Image | Size |
+|---|---|
+| `images/landing-light.png` / `-dark.png` | 720 × 7172 |
+| `images/paint-calculator-light.png` / `-dark.png` | 720 × 6592 |
+| `images/client-quote-light.png` / `-dark.png` | 720 × 2788 |
+| `images/decorating-invoice-template-light.png` / `-dark.png` | 720 × 6586 |
+| `images/desktop-landing-light.png` / `-dark.png` | 2560 × 5386 |
+| `images/desktop-quote-editor-light.png` / `-dark.png` | 2560 × 2974 |
+| `images/paywall-light.png` / `-dark.png` | 720 × 2354 |
+| `images/design-system-light.png` / `-dark.png` | 2400 × 11502 |
+| `images/_overview-light.png` / `-dark.png` | 3200 × 5564 |
+| `images/_overview-desktop-light.png` / `-dark.png` | 3200 × 3694 |
+
+**Not re-rendered:** `_checkpoint*.png` (historic v0.2 cut). Other screens did not change.
+
+**Not done:** woodwork switch, desktop calculator, quote-template prototype with the pre-fill hand-over. WhatsApp glyph stays the generic bubble until the founder downloads Meta's pack.
+
 ## v0.2 — 16/10/2026
 
 Direction **"Coachline" — proposed, pending founder review** (not approved yet). Builds on v0.2-checkpoint below; scope trimmed at the founder's request to finish quickly.

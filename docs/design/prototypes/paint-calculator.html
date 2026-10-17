@@ -416,7 +416,7 @@ details.adv[open] summary::after{content:"\2212"}
         <div class="caption" style="font-weight:600;margin-top:16px">The working</div>
         <ul class="work" id="work"></ul>
         <dl class="rows">
-          <div><dt>Time on the job</dt><dd id="days">—</dd></div>
+          <div><dt id="days-l">Time on the job</dt><dd id="days">—</dd></div>
         </dl>
         <div class="yourprice">
           <div class="caption" style="font-weight:600;color:inherit">Your price at your day rate</div>
@@ -526,7 +526,7 @@ function calc(){
   document.getElementById('tins').textContent='Buy '+parts.join(' + ');
   document.getElementById('work').innerHTML=lines.map(function(l){return '<li><span><strong>'+esc(l.t)+'</strong><span class="m">'+l.m+'</span></span><b>£'+fmt(l.p,2)+'</b></li>';}).join('')+
     '<li><span><strong>Paint</strong><span class="m">'+parts.join(' + ')+' at £'+fmt(ppl,ppl%1?2:0)+' a litre</span></span><b>£'+fmt(paint,2)+'</b></li>';
-  document.getElementById('days').textContent='About '+dayStr(onjob)+(dry?', incl. drying':'');
+  document.getElementById('days').textContent='About '+dayStr(onjob);document.getElementById('days-l').textContent=dry?'Time on the job, incl. drying':'Time on the job';
   document.getElementById('price').textContent='£'+fmt(Math.round(labour+paint));
   document.getElementById('price-split').textContent='Labour £'+fmt(Math.round(labour))+' ('+dayStr(d1(days))+' at £'+fmt(rate)+' a day) + paint £'+fmt(Math.round(paint));
   rooms.forEach(function(r){if(num(r.l)>30||num(r.w)>30)toast("That's a big room — double-check the numbers.");});
