@@ -1,5 +1,80 @@
 # Marketing changelog
 
+## v0.6 — 18/10/2026
+
+Founder request: he's now willing to create a Facebook account. Is it worth it for UK decorator groups (free) and for Meta ads (≤ ~Rp400k, after payday)? Only `docs/marketing/` was touched. Nothing was posted, joined, signed up for, bought, sent or committed.
+
+**Added**
+
+- `facebook-check-2026-10-18.md`:
+  - A CEO summary at the top.
+  - UK decorator groups with sizes and rules seen from outside, Meta's gates for new members, Page vs profile, and a credibility check.
+  - A warm-up plan with minutes per week, exact join answers, admin message and post copy, and an honest results range.
+  - Meta ads facts from Meta's own help pages, the CPC band, money → clicks → sales maths, a payday-safe override setup with a stop rule, and a Meta vs Google comparison.
+  - The recommendation: **create a personal profile now, for groups only; no Page; £0 on Meta ads in 2026; one conditional group post on Thu 26/11; ≈ 3 h to 31/12.**
+
+**Changed**
+
+- `launch-plan.md` → v0.4.1: new section "Facebook groups (pending founder + CEO)" with dates, hours, ref tag `?ref=fb-<group>` and stop rules. Header note updated. Nothing else changed; the CEO's v0.5 edits are still unapplied.
+
+**New evidence (checked 17/10/2026)**
+
+- **Decorator Facebook audience:**
+  - The Decorators Forum UK Page has **122,501 followers** (Facebook public preview).
+  - Group sizes from Facebook sidebar snippets: Decorators Forum ~24–25K, Spraying Makes Sense ~15K, Trade Decorator Forum 7,851.
+  - Painter & Decorator's Community UK lists "software" as a topic.
+  - The DFUK main group: "No pricing posts". Decorator's Talk Group: "no advertising or selling". Trade Decorator Forum promotes "group sponsors". DFUK sells advertising.
+- **Facebook admin tools (Meta):** up to 3 join questions; request filters include Location and Request age; account-age and tenure restrictions (newsroom 2021); link auto-decline; per-member activity limits. Pages can join groups if admins allow. "Advertising, promoting" contact is a suspension reason.
+- **Meta ads (Meta):**
+  - Every advertiser needs a Page. Business verification is only for certain features.
+  - No published minimum-budget table. Daily spend can reach 175% of the daily budget, capped at 7× a week.
+  - Account spending limits exist, but not with prepaid.
+  - Indonesia accepts Visa/Mastercard/Amex, PayPal, and prepaid Doku/Flip/GoPay/OVO in IDR.
+  - **Advantage+ detailed targeting can't be switched off when optimising for link clicks or landing page views.**
+  - A profile restricted from advertising can disable ad accounts.
+- **Costs (third-party):** UK median CPC £1.18 (Superads, Jul 2025–Jul 2026). Traffic CPC $0.60–$0.70 (LocaliQ, scope not stated). UK 2% location fee from 01/07/2026 (press). Indonesian PPN PMSE 11% on Meta (DJP 2022).
+- **Account risk:** NYT 21/07/2026 on AI-driven wrongful bans; petition > 60,000.
+- **Competitor:** Paint Manager (launched 05/06/2026; "free for the first five quotes", £19.99–£39.99/month).
+
+**Not verified:** full group rules, promo days, most member counts; new-account phone verification; IDR minimum budget; card/GoPay acceptance for Arif; new ad-account spending limit; UK "Painter and decorator" job-title audience size; real CPC for this audience; Meta's own page for the UK location fee; 2026 Indonesian VAT on Meta ads.
+
+## v0.5 — 18/10/2026
+
+Founder decisions of 18/10 (PRD "Keputusan founder 18 Okt 2026"): no Facebook account, an ad allowance of ≤ Rp500,000, option (a). I re-planned the launch channels and judged the allowance. Only `docs/marketing/` was touched. Nothing was posted, signed up for, sent or committed.
+
+**Added**
+
+- `channels-and-ads-2026-10-18.md`: a CEO summary at the top, 15 channels ranked (who's there, link rules for a new account, hours, expected result, risk), the top 3 for launch week, the exact P&D News note and video copy, the ad platforms' minimums, the £20.79 maths, the domain comparison, and one recommendation: **£0 on ads; optionally ≤ Rp100k for pricebrush.co.uk by 08/11, with 3 conditions and a stop rule**.
+
+**Changed**
+
+- `launch-plan.md` → v0.4:
+  - All Facebook steps removed, along with the superseded earlier launch-week draft and its forum post. The UKBF launch post is dropped.
+  - New launch week: the "tell me" email (Sun), P&D News + listings (Mon), PH (Tue), video #3 (Wed), Screwfix answers only (Thu). Video #4 added in December. A PH account is created now so its onboarding is done before launch.
+  - Accepted CEO revenue edits applied: the 100% discount-code gate (#4), line D, and the single "tell me" email with address deletion (#8). The list is kept out of the December email.
+  - About 13 h over 11 weeks; ≤ 1.75 h in any build week.
+- `fast-revenue-2026-10-18.md`:
+  - Status set to Accepted with changes; Facebook rows struck.
+  - Q2 channel table re-estimated: 0–3 buyers, centre 0–1 (was 1–2).
+  - The 14-day checklist follows CEO #3, #4, #7 and #8. Line D copy now matches CEO #8 (quote template only, deletion line).
+- `funnel.md` → v0.3: the "tell me" step (≥ 10 emails by 22/11, CEO revenue). Ref tags `list`, `pdn`, `ph`, `yt`, `tt`, `dir-<name>` replace `fb-df` and `ukbf`.
+- `answers-2026-10-17.md` is left unchanged (dated record). Its Decorators Forum ideas are superseded.
+
+**New evidence (checked 17/10/2026)**
+
+- **Exchange rate:** ECB 16/10/2026, £1 = Rp24,045, so Rp500,000 = £20.79.
+- **Reddit:** r/uktrades doesn't exist (Arctic Shift). r/PaintingandDecorating has been dead since 2020. Archived rules for r/DIYUK, r/smallbusinessuk, r/Housepainting101 and r/Plastering.
+- **Screwfix Community:** Painters' Talk is live (~19 new threads 22/09–16/10). Its moderation policy bans promotion; relevant links are allowed.
+- **P&D News:** ran the PaintPilot launch on 05/10/2026 (a decorator-founded rival, Solo £14.99/month) and has a free "Submit News" form.
+- **YouTube:** UK decorator channels have real audiences (Decorators Forum UK 15.6k, Phil Beckwith 26.6k, Foxy The Decorator 22k). Shorts links have not been clickable since 2023.
+- **Product Hunt:** new accounts must finish onboarding before posting. The audience is global tech.
+- **Listings:** AlternativeTo's free queue "will not be looked at for a very long time". Capterra lists non-paying vendors. UKBF terms ban unsolicited promotion.
+- **Ad minimums:** TikTok $20/day per ad group; LinkedIn $10/day; Google has no minimum (2× daily, 30.4× monthly cap). Bing is 6.08% of UK search.
+- **Search demand:** Google UK autocomplete returns nothing for "decorator quote app", "decorator invoice app" or "app for painters and decorators".
+- **Domains:** pricebrush.com, pricebrush.co.uk and pricebrush.app are not registered (registry RDAP). Price mirror: .co.uk $5.30/yr, .com $10.46/yr.
+
+**Not verified:** TikTok bio-link rules; Instagram/TikTok decorator audience size; PDN readership and lead time; the Reddit Ads minimum (Reddit's help returned 404); the Microsoft Ads standard minimum; Indonesian cards on Google, Microsoft, Reddit and Cloudflare; Google promo credits for Indonesia; real CPCs (no Keyword Planner); Nominet checks for a non-UK individual; UK IPO trademark; the live r/DIYUK rules (403).
+
 ## v0.4 — 18/10/2026
 
 The founder accepted all decisions in `../ceo/decisions-2026-10-18.md`. I applied only the [marketing] edit. No other folders were touched and nothing was committed. `fast-revenue-2026-10-18.md` is unchanged and waits for the CEO's decision.

@@ -32,7 +32,7 @@ All public pages: header (wordmark → `/` · Paint calculator · Quote template
 
 Copy per `../ceo/decisions-2026-10-17.md` #2 (accepted 17/10/2026). Voice ships with the paid MVP (1–21 Nov), so the hero only promises what works on 31 Oct.
 
-- **Title:** PriceBrush: Quote & Invoice App for UK Decorators · keyword line above the H1: "Quote and invoice app for UK painters and decorators" · **H1:** "Room sizes in. Priced quote out."
+- **Title:** before the app is live "PriceBrush: Free Pricing Tools for UK Painters & Decorators"; after (~22/11) "PriceBrush: Quote & Invoice App for UK Decorators" (founder 18/10/2026, `../seo/keyword-map.md`) · keyword line above the H1: "Quote and invoice app for UK painters and decorators" · **H1:** "Room sizes in. Priced quote out."
 - **Sub:** "Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators."
 - **[Primary] until the MVP is live:** "Price a room free" → `/paint-calculator/` (calculator icon). Caption "No sign-up. No per-user fees. No sales calls."
 - **[Primary] after the MVP:** "Start a free quote" → sign-in / new quote. Caption "Free for 5 documents a month. No card needed."

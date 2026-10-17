@@ -31,8 +31,9 @@ Rules: one primary keyword per URL; a keyword listed as secondary on one page mu
 
 - **Primary:** quote app for painters and decorators
 - **Secondary:** quoting app for painters · app for painters and decorators · tradesman quote app · voice quote app · invoice app for decorators
-- **Title (49):** PriceBrush: Quote & Invoice App for UK Decorators
-  - *Open (17/10/2026, not changed):* by the same P1 truth rule, this title also names an app that doesn't exist until ~22/11. I've kept it because it names the product being built, the page says "The app is coming in late November" right under it, and it carries the home's primary keyword. If the founder wants the stricter reading, a pre-app title is "PriceBrush: Free Pricing Tools for UK Painters & Decorators" (59 chars, script-counted) — founder's call.
+- **Title before the app is live (59), founder decision 18/10/2026:** PriceBrush: Free Pricing Tools for UK Painters & Decorators
+- **Title after the app is live (49), from ~22/11:** PriceBrush: Quote & Invoice App for UK Decorators
+  - *Decided 18/10/2026 (founder chose the stricter pre-app title above). Earlier note:* by the same P1 truth rule, this title also names an app that doesn't exist until ~22/11. I've kept it because it names the product being built, the page says "The app is coming in late November" right under it, and it carries the home's primary keyword. If the founder wants the stricter reading, a pre-app title is "PriceBrush: Free Pricing Tools for UK Painters & Decorators" (59 chars, script-counted) — founder's call.
 - **Meta description, 31/10 until the app is live (142):** Coats, litres, days and labour worked out from your day rate, with every number shown. Made for UK painters and decorators. Price a room free.
 - **Meta description, once the MVP is live (~22/11) (154):** Coats, litres, days and labour worked out from your day rate, every number shown. Free for 5 quotes or invoices a month. No per-user fees. No sales calls.
 - **Keyword line (above the H1, small)** — two versions (decided by SEO 17/10/2026 at the UI/UX agent's request, applying CEO P1 "show only what works today"):

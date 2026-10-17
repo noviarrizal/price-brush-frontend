@@ -367,3 +367,25 @@ timeline
 - P7: urutan potong baru kalau telat: mock desktop → nav header desktop → T16 → opsi cancel → About → copy panjang. Must-fix, multi-room dan file SEO tidak boleh dipotong.
 - Q2: JSON-LD halaman depan `Organization` (tanpa logo) + `WebSite`; `SoftwareApplication` dengan `/pricing` mulai 21/11.
 - S: must-fix M1–M4 dan urutan plan diterima, plus budget first-load 130 KiB.
+
+**Keputusan founder 18 Okt 2026 (jawaban atas `docs/ceo/decisions-2026-10-18-revenue.md` + pertanyaan terbuka):**
+
+- Fokus: **opsi (a), tetap PriceBrush** 8–10 jam/minggu. Target uang di budget pribadi 2026 = Rp0; harapan realistis 1–3 Founding Member (~£35–105 bersih) di minggu launch 22/11.
+- Baris CEO 1–9 diterima (Founding £49 + Pro £9 jadi satu-satunya jalur uang pertama; akun Polar dibuat paling lambat 24/10 dan di-submit 01/11; tes checkout pakai kode diskon 100%; tanpa pre-sale, template pack, hapus-watermark, jasa, affiliate, AppSumo; cadangan license key diputuskan 07/11; baris email "kabari aku" setelah cek 31/10; cek Etsy opsional).
+- Baris 10 (grup Facebook) **batal**: founder tidak punya akun Facebook. Channel pengganti untuk minggu launch perlu direncanakan ulang oleh marketing.
+- **Budget iklan berbayar diizinkan, maksimal Rp500.000 total** (~£23). Dipakai hanya kalau marketing/CEO menunjukkan cara yang masuk akal.
+- Mailbox PriceBrush: **pricebrush.app@gmail.com** (About, Polar, Search Console, direktori).
+- Situs tetap **live 31 Okt** dengan tool gratis. Judul halaman depan sementara "PriceBrush: Free Pricing Tools for UK Painters & Decorators" sampai app live (~22/11).
+- Copy privasi tool gratis: "Nothing you type leaves this browser." (bukan "nothing stored", karena handover memakai localStorage).
+
+**Keputusan founder 18 Okt 2026 — channel, iklan, domain (jawaban atas `docs/ceo/decisions-2026-10-18-channels.md` + `docs/marketing/facebook-check-2026-10-18.md`):**
+
+- **Domain pricebrush.co.uk** dibeli dari jatah iklan (~Rp100rb). Cek UK IPO + beli **Jumat 23/10** (hari gajian), situs live langsung di domain itu 31/10. Kalau sampai 28/10 belum, pindah ke domain 08/11. Cek 18/10: domain .co.uk/.uk/.com masih kosong, tidak ada perusahaan bernama "PriceBrush" di Companies House.
+- **Tanpa iklan Meta/Google di 2026.** Sisa ~Rp400rb tidak dipakai.
+- **Facebook:** profil pribadi khusus grup decorator UK. Join 5 grup minggu 20–24/10, satu post bersyarat Kamis 26/11 (kalkulator gratis, tanpa jualan £49), tanya admin 15/11 kalau aturannya tidak jelas. Stop rules ada di `docs/marketing/facebook-check-2026-10-18.md`. Total ±3 jam sampai 31/12.
+- **YouTube:** channel tanpa wajah (pricebrush.app@gmail.com), dibuat paling lambat 08/11, satu video rekaman layar 25/11. Alamat situs ditulis sebagai teks saja (tanpa verifikasi ID). TikTok/Instagram tidak di 2026.
+- **Painting & Decorating News:** berita singkat soal kalkulator gratis di minggu 02/11, lalu berita launch 23/11. Product Hunt: akun dibuat paling lambat 24/10, launch Selasa 24/11.
+- Urutan minggu launch: email "kabari aku" 22/11 → P&D News + listing gratis 23/11 → Product Hunt 24/11 → YouTube 25/11 → grup Facebook 26/11.
+- Harapan realistis sampai 31/12: 0–3 Founding Member, paling mungkin 0–1. Checkpoint 15/12 dan review 30/04/2027 tetap.
+- Gajian founder: 23/10 bulan ini, lalu tiap tanggal 25. Tidak ada pengeluaran sebelum tanggal gajian.
+- Kompetitor baru: Paint Manager (launch 05/06/2026, gratis 5 quote pertama, £19,99–£39,99/bulan). Copy paket gratis kita selalu pakai "a month".

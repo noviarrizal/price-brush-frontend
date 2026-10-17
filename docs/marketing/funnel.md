@@ -1,6 +1,6 @@
-# Funnel (v0.2)
+# Funnel (v0.3)
 
-Date: 17/10/2026 · Author: marketing lead · Status: **targets Accepted 17/10/2026** (`../ceo/decisions-2026-10-17.md` #10) · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
+Date: 17/10/2026 · Updated 18/10/2026 (ref tags, "tell me" step) · Author: marketing lead · Status: **targets Accepted 17/10/2026** (`../ceo/decisions-2026-10-17.md` #10) · Events: `../seo/measurement.md` §1 (existing) plus 4 proposed below
 
 ## Goal and leading indicators to 31/12/2026 (accepted)
 
@@ -14,7 +14,7 @@ Date: 17/10/2026 · Author: marketing lead · Status: **targets Accepted 17/10/2
 
 **Checkpoint 15/12/2026:** replace every step estimate below with the real rate, then decide using "If it's not working" in `launch-plan.md`. The payment goal and the 30/04/2027 stop-or-pivot review do not move.
 
-The first payment will most likely come from launch week (22–30 Nov: listings, the forum post, Product Hunt) and the Founding Member offer, not from SEO alone.
+The first payment will most likely come from launch week (22–30 Nov: the "tell me" email, P&D News, listings, Product Hunt, video) and the Founding Member offer, not from SEO alone. The Facebook group post was cancelled on 18/10/2026 (the founder has no Facebook account), so launch week has no decorator-dense community post. See `channels-and-ads-2026-10-18.md`.
 
 All step targets below are **[estimates]** I set as starting guesses. There is no data yet and no benchmark source I could verify.
 
@@ -22,6 +22,7 @@ All step targets below are **[estimates]** I set as starting guesses. There is n
 
 | # | Step | Metric (source) | Target | Kill / rethink line |
 |---|---|---|---|---|
+| −1 | "Tell me when it opens" (quote template post-download card, CEO revenue #8) | emails received with "App", counted by hand in the local list | ≥ 10 by 22/11 | 0 emails by 20/11 with ≥ 300 tool uses → rewrite the line once |
 | 0 | Search → visit | GSC clicks ÷ impressions per P0 page | ≥ 1.5% CTR by 31/12 | < 0.5% after 200+ impressions → rewrite title/description (SEO agent) |
 | 1 | Visit → uses the tool | `calc_used` ÷ Cloudflare visits to `/paint-calculator` | ≥ 40% | < 20% → the tool is too far down or too slow |
 | 2 | Tool → "Turn this into a quote" | `quote_prefilled` ÷ `calc_used` | ≥ 5% | < 2% by 15/12 (memo 001) → move hours to templates and guides |
@@ -35,7 +36,7 @@ All step targets below are **[estimates]** I set as starting guesses. There is n
 
 ## Do the targets add up? (checked)
 
-[estimate] 500 tool uses × 3% sign-up click × 50% complete ≈ **7.5 accounts** from public pages. The other ~3 must come from direct launch-week visits (listings, forum post, Product Hunt), which skip the calculator. 10 accounts × 40% ≈ **4 activated**. Getting 1 payment from 4 activated users needs 25%, far above step 7's 5%. So **the Founding Member offer has to carry the first payment**. If tool uses hit 500 but Founding sales are 0 on 15/12, the problem is the offer or the audience, not traffic.
+[estimate] 500 tool uses × 3% sign-up click × 50% complete ≈ **7.5 accounts** from public pages. The other ~3 must come from direct launch-week visits (the "tell me" email, P&D News, listings, Product Hunt, video), which skip the calculator. 10 accounts × 40% ≈ **4 activated**. Getting 1 payment from 4 activated users needs 25%, far above step 7's 5%. So **the Founding Member offer has to carry the first payment**. If tool uses hit 500 but Founding sales are 0 on 15/12, the problem is the offer or the audience, not traffic.
 
 (The old PRD targets of 200 tool users → 30 accounts needed 15% sign-up. Replaced 17/10/2026.)
 
@@ -45,7 +46,7 @@ All step targets below are **[estimates]** I set as starting guesses. There is n
 - **Anonymous event counter** (Worker; no IP or user ID). Existing events: `calc_used`, `calc_room_added`, `pdf_downloaded`, `quote_prefilled`, `cta_signup_click`. **Proposed new events:** `paywall_shown`, `checkout_started`, `reminder_tapped`, `mist_coat_on`.
 - **Database:** account count by `signup_source` (first landing path, `sessionStorage`), `quote_sent`, `invoice_created`.
 - **Polar dashboard:** orders by plan (Monthly / Yearly / Founding). The Founding "X of 50 left" count comes from here, updated by hand, never estimated.
-- **Launch-week referrers:** add `?ref=ph`, `?ref=fb-df`, `?ref=pdn`, `?ref=ukbf`, `?ref=dir-<name>` to every link we place, so Cloudflare shows which channel worked. No personal data in the parameter.
+- **Launch-week referrers:** add `?ref=list` ("tell me" email), `?ref=pdn` (P&D News), `?ref=ph` (Product Hunt), `?ref=yt` (YouTube full-length description), `?ref=tt` (TikTok bio), `?ref=dir-<name>` (listings) to every link we place, so Cloudflare shows which channel worked. (`?ref=fb-df` and `?ref=ukbf` were dropped 18/10/2026.) Shorts links aren't clickable, so Shorts traffic shows up as channel-page or direct visits. No personal data in the parameter.
 - **Google Search Console:** impressions, CTR and position per page.
 - **Routine:** every Monday, 15 minutes. Copy the week's numbers into one local spreadsheet with one row per step and compare with the targets above. Nothing gets uploaded.
 

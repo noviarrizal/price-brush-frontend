@@ -1,6 +1,16 @@
 # Fast revenue: what can be sold first, to whom, and how fast (18/10/2026)
 
-Author: marketing lead · Status: **proposed; the founder decides** · Nothing here has been applied to the PRD, SEO, design, CEO or strategy docs, or to code.
+Author: marketing lead · Status: **Accepted with changes (CEO 18/10 revenue, rows 1–9 accepted by the founder 18/10/2026)** · Nothing here has been applied to the PRD, SEO, design, CEO or strategy docs, or to code.
+
+> **Update 18/10/2026 (marketing):**
+> - **Facebook is cancelled.** The founder has no Facebook account, so every Facebook-group step below is struck out. The replacement channels and the ad-budget answer are in `channels-and-ads-2026-10-18.md`.
+> - **CEO changes to this memo:**
+>   - "Early start" (C2) is rejected while the app is on track. It survives only as the Option C fallback, decided Sat 07/11 (CEO #7).
+>   - Polar: account and ID now, **Submit on 01/11** (CEO #3).
+>   - The checkout is tested with a **100% discount code**, not a real card (CEO #4).
+>   - Line D goes on the **quote template** post-download card only (the invoice template too from 14/11), with the deletion line (CEO #8).
+>
+> The current dated plan is `launch-plan.md` v0.4.
 
 Inputs read: `../PRD.md` §7, §9 and the decisions log (15 and 17 Oct, Founding with no refund guarantee), `../ceo/decisions-2026-10-18.md` (P1: no Founding card or "X of 50" before checkout works; P4: near-zero traffic in week 1; P7: hours only just fit), `messaging.md` v0.2, `funnel.md` v0.2, `launch-plan.md` v0.2, `../seo/keyword-map.md`, `../seo/data/quotes.csv`.
 
@@ -38,8 +48,8 @@ Net figures use the PRD's estimates of ~£37 per £49 sale and ~£6.50 per £9 m
 | A | Paid template pack on Etsy / Gumroad | ~25/10–07/11 | Decorators who search marketplaces | **No (not in 2026).** It needs buyers we can't reach, competes with our own free template, and Etsy may charge a setup fee (breaks £0) |
 | B | One-off "remove watermark / add your logo" on the free PDF | ~14/11 (same checkout work as Founding) | Decorators using the free template | **No as a separate product.** Fold it into Founding as a day-one benefit (C2) |
 | C1 | Founding Member **pre-sale** before anything paid works | Whenever Polar is approved | Keen decorators | **No.** Polar lists "Pre-orders and paid waitlists" as **restricted**. CEO P1 forbids it. And it means no-refund money for an app that doesn't exist yet |
-| C2 | **Founding Member, "early start"**: pay £49, get no watermark + your logo on the free templates at once, and the full app in late Nov | ~14/11 at the earliest, **only if** Polar is approved and the lead confirms ≤ 3 h of build | Decorators already using the free template | **Optional.** Gains ~8 days over the plan. Do it only if it costs no MVP time |
-| C3 | **Founding Member at launch** (accepted plan) | Sun 22/11 (launch-week gate) | Decorators from the FB group, listings, PH, the "tell me" list | **Yes. This is the main offer** |
+| C2 | **Founding Member, "early start"**: pay £49, get no watermark + your logo on the free templates at once, and the full app in late Nov | ~14/11 at the earliest, **only if** Polar is approved and the lead confirms ≤ 3 h of build | Decorators already using the free template | ~~Optional~~ **Rejected while the app is on track** (CEO #7). It is only the Option C fallback, decided 07/11 |
+| C3 | **Founding Member at launch** (accepted plan) | Sun 22/11 (launch-week gate) | Decorators from the "tell me" list, P&D News, listings, PH, videos (~~FB group~~ cancelled 18/10) | **Yes. This is the main offer** |
 | D | **"Tell me when it opens" mailto line** (not an offer: it builds a warm list for C3) | 31/10 | Decorators using the free tools | **Yes, the best new idea here.** £0, no backend, 0.25 h |
 
 ### A. Template pack (Etsy / Gumroad): checked, not recommended
@@ -96,9 +106,9 @@ Use the accepted copy in `launch-plan.md` ("Founding Member offer copy") unchang
 
 ### D. "Tell me when it opens" (new; the best £0 lever)
 
-Put it on the PDF-download success screen of both free tools, **not on the PDF itself**:
+Put it on the quote template's post-download card (and the invoice template's from 14/11), **not on the PDF itself and not on the calculator**. The calculator has no PDF download (CEO #8). Accepted copy (CEO #8):
 
-> **The full app opens in late November.** Want one email the day it opens, with the launch price? Email **{pricebrush mailbox}** with the word "App". One email, then I'll leave you alone. — Arif
+> **The full app opens in late November.** Want one email the day it opens, with the launch price? Email **pricebrush.app@gmail.com** with the word "App". I'll send that one email, then delete your address. — Arif
 
 - This is CEO P1-compliant: no Founding card, no "50 places", no countdown before checkout exists.
 - £0: it's a mailto link, with no form, no backend and no list tool. The founder keeps a plain local list.
@@ -113,15 +123,17 @@ All numbers are **[estimates]**. No benchmark is verified. They are starting gue
 
 | Channel | Fit | Visits, 31/10–31/12 | Decorator share | Buyers |
 |---|---|---|---|---|
-| **Facebook group post** (Wed 25/11, only if the rules or an admin allow) | Best: decorators gather there | 0 (if not allowed) – 300 | High | 0–3 |
+| ~~**Facebook group post**~~ | **Cancelled 18/10/2026: the founder has no Facebook account** | 0 | — | 0 |
 | **"Tell me" list (D)** | Warmest | 0–15 emails | Very high | 0–3 |
+| **P&D News note** (23/11) | Decorator trade press; it ran PaintPilot's launch on 05/10/2026 | 0–100 (traffic unknown) | High | 0–1 |
 | Product Hunt (24/11) | Weak: few UK decorators [opinion] | 50–300 | Low | 0–1 |
-| Free directories (23/11 →) | Slow, durable | 0–50 | Medium | 0–1 |
-| Faceless short video ×3 | Unpredictable for a new account | 0–60 | Medium | 0–1 |
+| Free directories (23/11 →) | Slow, durable; AlternativeTo's free queue may never be reviewed | 0–50 | Medium | 0–1 |
+| Faceless video ×4 (YouTube full-length + Short, TikTok) | Decorators watch YouTube; a new channel's reach is unknown | 0–100 | Medium | 0–1 |
+| Screwfix answers (no links) | UK DIY + trades; promotion banned | 0–20 | Low–medium | 0 |
 | Watermark `?ref=wm` | Seen mostly by **homeowners** (the decorator's clients) | 0–20 | Low | 0 |
 | SEO | Months, not weeks (CEO P4) | 0–100 | 20–40% | 0–1 |
 | Etsy / Gumroad Discover | Gumroad shows no buyer pool (above); Etsy **not verified** | — | — | 0 |
-| **Total** | | **~100–850** | | **0–5, centre ~1–2** |
+| **Total (updated 18/10)** | | **~50–800** | | **0–3, centre ~0–1** (was 1–2 with Facebook) |
 
 Conversion assumed for decorator visits to a live offer: **0.5–2% → a buyer** [estimate, no source].
 
@@ -160,7 +172,7 @@ Two prerequisites come first, because they are the real gate on any money:
 
 | When | Action | Founder h |
 |---|---|---|
-| **This week (by Sat 24/10)** | **Apply to Polar** with the new PriceBrush mailbox. Check that Stripe Connect Express in Indonesia accepts "individual" (PRD open question). Ask in writing whether a licence-key "early start" counts as a pre-order. Polar's review time is **not verified**, so starting now is the cheapest risk cut there is | 0.5 |
+| **This week (by Sat 24/10)** | **Polar** (as changed by CEO #3): create the organisation with pricebrush.app@gmail.com, set tax to Inclusive, do ID + payout as far as allowed, and write down whether "individual" is accepted. **Press Submit on Sun 01/11** once the site is live, asking in writing whether a licence-key Founding offer counts as a pre-order | 0.5 |
 | If Polar says no by 07/11 | Plan B: Lemon Squeezy (PRD) or Gumroad as merchant of record (Gumroad's MoR role is confirmed on [gumroad.com/pricing](https://gumroad.com/pricing); payouts to Indonesia **not verified**) | 0.5 |
 | **31/10, with the launch** | Add line D to the PDF-download success screen (ask the frontend agent; 1 line of copy). Keep the list in a local file | 0.25 |
 
@@ -168,21 +180,21 @@ Two prerequisites come first, because they are the real gate on any money:
 
 | Day | Action | h |
 |---|---|---|
-| Sun 15/11 | Decide C2 (early start): go only if Polar is approved and the lead says ≤ 3 h. Otherwise skip it, no regrets | 0.25 |
+| ~~Sun 15/11~~ | ~~Decide C2 (early start)~~. Replaced by the Sat 07/11 Option C fallback decision (CEO #7) | 0 |
 | Mon 16/11 | Founding copy on `/pricing` and the paywall, **hidden** until checkout works (CEO P1) | 0.5 |
 | Tue 17/11 | Listing text (50 / 160 / 500 words) and 4 screenshots | 1 |
 | Wed 18/11 | Video #3 script: "Room sizes to a WhatsApp quote", screen recording | 0.75 |
 | Thu 19/11 | Draft the reply to the "tell me" list (below) and the P&D News note | 0.5 |
-| Fri 20/11 | Check the FB group rules or admin answer (from 1–7 Nov): post yes or no | 0.25 |
+| ~~Fri 20/11~~ | ~~Check the FB group rules~~. Cancelled 18/10 (no Facebook account) | 0 |
 | Sat 21/11 | Pre-post checklist (`launch-plan.md`) | 0.25 |
-| **Sun 22/11** | **Gate:** real £49 test purchase + refund, VAT shown incl., Cancel + Undo work. Only then show the Founding card | 0.5 |
-| Sun 22/11 evening | Send the one promised email to everyone on the "tell me" list | 0.25 |
-| Mon 23/11 | Free listings batch 1 (`?ref=dir-<name>`) | 0.5 |
+| **Sun 22/11** | **Gate:** test checkout with a **100% discount code** (CEO #4, never a real card), then check webhooks, "X of 50", VAT shown incl., Cancel + Undo. Only then show the Founding card | 0.5 |
+| Sun 22/11 evening | Send the one promised email to everyone on the "tell me" list, then delete the list | 0.25 |
+| Mon 23/11 | P&D News note + free listings batch 1 (`?ref=pdn`, `?ref=dir-<name>`) | 0.75 |
 | Tue 24/11 | Product Hunt + maker comment; written replies | 0.75 |
-| Wed 25/11 | FB group post, only if allowed | 0.5 |
-| Thu 26/11 | P&D News note; publish video #3 | 0.25 |
+| Wed 25/11 | Video #3 live: YouTube full-length + Short, TikTok (`?ref=yt`, `?ref=tt`); replaces the cancelled FB post | 0.5 |
+| Thu 26/11 | Screwfix answers only (no launch post, no link) | 0.25 |
 | Fri 27/11 – Sat 28/11 | Replies only; tally by ref tag | 0.5 |
-| **Total** | | **~6.75 h** over 2 weeks (fits 8–10 h/week next to the MVP) |
+| **Total** | | **~6.5 h** over 2 weeks (fits 8–10 h/week next to the MVP) |
 
 **The reply to the "tell me" list (exact, plain text, one email per person):**
 
@@ -215,7 +227,7 @@ Two prerequisites come first, because they are the real gate on any money:
 
 ## Strongest argument against this recommendation
 
-A template pack is the **only** thing that could be on sale in October, it needs almost no code, and Etsy brings its own buyers. Our zero-authority site can't do that for months. Waiting for 22/11 bets everything on one launch week and on Polar approval. If Polar is slow or the FB group says no, December may arrive with nothing tested.
+A template pack is the **only** thing that could be on sale in October, it needs almost no code, and Etsy brings its own buyers. Our zero-authority site can't do that for months. Waiting for 22/11 bets everything on one launch week and on Polar approval. If Polar is slow, December may arrive with nothing tested. That risk is bigger now that the Facebook group is gone (18/10).
 
 **My answer:** the Gumroad data shows no buyer pool. Etsy is unverified and may cost a setup fee. The hours would come from a launch that CEO P7 says only just fits. And "tested willingness to pay £9 for a Word file" tells us little about paying for the app. Still, the Polar risk is real, which is why the Polar application is item 1 and Plan B is written down.
 

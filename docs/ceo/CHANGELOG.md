@@ -1,5 +1,17 @@
 # CEO CHANGELOG
 
+## 18/10/2026 — `decisions-2026-10-18-channels.md`
+
+Recommended (founder to sign off), on launch channels without Facebook and the Rp500,000 allowance (marketing memo `channels-and-ads-2026-10-18.md`):
+
+- (a) Launch channels: **Accept with changes.** New: an early P&D News note about the free calculator (02–06/11) to feed the "tell me" list. Launch week: list email (22/11) → P&D News + listings (23/11) → Product Hunt (24/11) → one YouTube video (25/11), ≈ 3.5 h. Videos #1–#2 cut and Screwfix moved to December, which frees ~2.4 h in the build weeks. PDN checked: free editorial, Submit News form, self-reported 13–17k page views/month, 17k emails, 9.5k Facebook followers; cheapest paid slot £400.
+- (b) **YouTube yes, one video** (channel by 08/11); **TikTok and Instagram no** in 2026. Checked: clickable description and channel links are YouTube "advanced features" (channel history or ID/video verification), so marketing's "links: yes" is wrong for a new channel.
+- (c) Product Hunt: **Accept.** Account + onboarding by 24/10, launch 24/11, ≤ 1 h.
+- (d) Ads: **£0** (Rp500k = £20.79 at ECB 16/10; Google states no minimum budget; no decorator placement under £400).
+- (e) Domain: **Accept with changes.** Buy pricebrush.co.uk (≤ Rp120k) **by 23/10** and launch on it 31/10 (no site move); fallback 08/11; otherwise after the first payment. The "first revenue buys the domain" rule changes for this item only. Checked: Nominet does not restrict who can register .co.uk (no UK address rule found), but it may ask for documents within 30 days; RDAP shows the name unregistered; Porkbun US$5.66 (official API), Cloudflare ~US$5.30 (third-party).
+- (f) Goal ≥ 1 payment by 31/12, the 15/12 checkpoint and the 30/04/2027 review: **unchanged.** Hope 0–2 Founding sales (centre 0–1). The 15/12 "FB group" fallback is replaced by SEO pages + a PDN data story.
+- `decisions-2026-10-18-revenue.md`: status note added (row 10 cancelled; 15/12 row superseded).
+
 ## 18/10/2026 — `decisions-2026-10-18-revenue.md`
 
 Recommended (founder to sign off), on "How can we get money FAST?" (strategy memo 005 + marketing fast-revenue memo):
@@ -49,3 +61,13 @@ Recommended (founder to sign off):
 8. Accept button: **Accept.** Yellow for MVP; colours later with contrast fallback.
 9. WhatsApp: **Accept with changes.** Official glyph, unmodified, per Meta's rules; fallback to generic bubble.
 10. PRD targets: **Accept with changes.** Keep ≥ 1 payment; 500 tool uses / 10 accounts / 4 activated; checkpoint 15/12.
+
+## 18/10/2026 — founder answers on `decisions-2026-10-18-revenue.md`
+
+- Rows 1–9 accepted. Row 10 (join the Facebook group) dropped: no Facebook account. Option (a): PriceBrush first.
+- New constraint: paid ads allowed up to Rp500,000 total (~£23); marketing to propose whether and where.
+- Mailbox: pricebrush.app@gmail.com. Home title: temporary pre-app title until the app is live. Copy: "Nothing you type leaves this browser."
+
+## 18/10/2026 — founder sign-off on `decisions-2026-10-18-channels.md`
+
+- Accepted: domain (Rp100k, buy 23/10), groups-only Facebook profile, no ads in 2026, one YouTube video 25/11 (no ID verification), early P&D News note in the week of 02/11, and an admin question on 15/11. Details are in the memo's "Founder sign-off" section.

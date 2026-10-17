@@ -2,6 +2,8 @@
 
 Author: CEO advisor · Status: **Recommended. The founder signs off.** Nothing below has been applied to the PRD, plan, SEO, design, strategy or marketing docs, or to code.
 
+> **Status update 18/10/2026:** the founder accepted rows 1–9 and chose option (a). **Row 10 (Facebook group) is cancelled**: the founder has no Facebook account. Channels are replaced in `./decisions-2026-10-18-channels.md`. In the kill/continue table, the 15/12 action "December hours go to the FB group and listings" is superseded by "SEO pages + one P&D News data story" (same memo, (f)). Row 6's "no ads" stands (channels memo (d)).
+
 Inputs read: `../strategy/decisions/005-fastest-path-to-revenue.md` (strategist), `../marketing/fast-revenue-2026-10-18.md` (marketing), `../PRD.md` §7, §9 and decisions 17 + 18 Oct, `./decisions-2026-10-17.md`, `./decisions-2026-10-18.md`, `../plan/2026-10-17-launch-31-oct.md`, `../marketing/launch-plan.md`. Code checked: `app/routes/decorating-quote-template.tsx:305-320` (the "Pricing the next job?" card shown after a PDF download).
 
 Labels: **[fact]** = sourced · **[estimate]** · **[opinion]** · **not verified**. Not legal or tax advice.
