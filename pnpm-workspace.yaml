@@ -1,0 +1,7 @@
+# Build-script approvals for `pnpm install` (https://pnpm.io/settings/build).
+# strictDepBuilds defaults to true, so an unreviewed build script fails the
+# install with ERR_PNPM_IGNORED_BUILDS (and with it any CI or Pages build).
+allowBuilds:
+  # esbuild's postinstall only checks its binary; the platform binary already
+  # comes from the @esbuild/* optional dependency, so builds pass without it.
+  esbuild: false

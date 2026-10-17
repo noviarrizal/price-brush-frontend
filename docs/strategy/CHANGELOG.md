@@ -1,5 +1,14 @@
 # Strategy changelog
 
+## v0.4 — 18/10/2026
+
+**Added**
+
+- `decisions/005-fastest-path-to-revenue.md` (**Proposed**): eight revenue options compared (A–H).
+  - Recommends A: keep Founding Member in launch week as the first-money path, start the Polar review now, replace the real-card test with a 100% discount code, and request Facebook group membership now.
+  - Also recommends C as a fallback, decided 07/11: Founding Member delivered on purchase through a Polar license key that unlocks logo and no watermark on the free templates.
+  - New facts: Polar restricts "Pre-orders and paid waitlists" and prohibits "Human services"; Polar may refund within 60 days at its own discretion; the license-key validate endpoint needs no authentication; there are payout fees ($2 a month, 0.25% + $0.25, 1% conversion); Etsy blocked our capture; autocomplete shows free-seeking template demand only.
+
 ## v0.3 — 17/10/2026
 
 Founder accepted all 10 CEO decisions (`../ceo/decisions-2026-10-17.md`). No new research.

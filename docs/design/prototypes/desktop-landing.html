@@ -256,6 +256,10 @@ section.band{padding:72px 0}
 .plan li{display:flex;gap:8px}
 .plan li .ico{width:20px;height:20px;color:var(--pb-ok-fg);margin-top:2px}
 .plan .btn{margin-top:auto}
+.tag{display:inline-flex;align-items:center;align-self:flex-start;min-height:28px;padding:0 10px;border-radius:6px;font-size:14px;font-weight:600;background:var(--pb-surface-2);color:var(--pb-ink)}
+.soon-strip{display:flex;gap:20px;align-items:flex-start;background:var(--pb-surface);border:2px solid var(--pb-ink);border-radius:16px;padding:24px}
+.soon-strip .ic{width:56px;height:56px;border-radius:12px;background:var(--pb-surface-2);display:grid;place-items:center;flex:none}
+.soon-strip p{margin-top:6px;color:var(--pb-ink-2);max-width:760px}
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin-top:28px}
 .faq details{background:var(--pb-surface);border:1px solid var(--pb-line);border-radius:14px;padding:4px 20px}
 .faq summary{min-height:56px;display:flex;align-items:center;font-weight:700;font-size:18px;cursor:pointer;list-style:none}
@@ -312,16 +316,14 @@ footer a{color:var(--pb-ink);font-weight:600}
 </svg>
 <!--pb-icons:end-->
 <div class="site">
-  <div class="proto-bar" role="region" aria-label="Prototype controls"><b>v0.3</b> Landing (desktop ≥ 1024 px) <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button></div>
+  <div class="proto-bar" role="region" aria-label="Prototype controls"><b>v0.3.2</b> Landing (desktop ≥ 1024 px, before the app, 31/10) <button type="button" onclick="pbTheme()">Theme: <span data-theme-label>Light</span></button></div>
   <header class="wrap nav">
     <a class="wordmark" href="#"><span class="tile"><span>£</span></span>PriceBrush</a>
     <span style="flex:1"></span>
-    <a class="l" href="paint-calculator.html" title="/paint-calculator">Paint calculator</a>
-    <a class="l" href="decorating-quote-template.html" title="/decorating-quote-template">Quote template</a>
-    <a class="l" href="decorating-invoice-template.html" title="/decorating-invoice-template">Invoice template</a>
+    <a class="l" href="paint-calculator.html" title="/paint-calculator/">Paint calculator</a>
+    <a class="l" href="decorating-quote-template.html" title="/decorating-quote-template/">Quote template</a>
     <a class="l" href="#pricing">Pricing</a>
-    <a class="l" href="#">Log in</a>
-    <!-- "Start free" (header) appears after the MVP launch; pre-MVP the only CTA is "Price a room free" -->
+    <!-- "Invoice template" joins the nav when it goes live (14/11). "Log in" and "Start free" appear when the app opens (late November); until then the only CTA is "Price a room free" -->
   </header>
 
   <section class="hero">
@@ -364,9 +366,9 @@ footer a{color:var(--pb-ink);font-weight:600}
     <div class="wrap">
       <h2 class="h1">Every number shown. Every line yours.</h2>
       <div class="steps">
-        <div class="step"><div class="n">1</div><h3 class="title">Put in the rooms</h3><p>Sizes, surfaces and coats. On site on your phone, or at home on the laptop.</p></div>
-        <div class="step"><div class="n">2</div><h3 class="title">Check the lines</h3><p>One line per room and surface, priced from your day rate, with the working shown. Anything we had to guess says “check this”.</p></div>
-        <div class="step"><div class="n">3</div><h3 class="title">Send it on WhatsApp</h3><p>Your client gets a tidy link with your name on it and can accept it there. When it's accepted, it's an invoice.</p></div>
+        <div class="step"><div class="n">1</div><h3 class="title">Put in the rooms</h3><p>Paint calculator: sizes, surfaces and coats. On site on your phone, or at home on the laptop.</p></div>
+        <div class="step"><div class="n">2</div><h3 class="title">Check the lines</h3><p>“Turn this into a quote” fills the quote template: one line per room and surface, priced from your day rate, with the working shown. Change any line.</p></div>
+        <div class="step"><div class="n">3</div><h3 class="title">Download the PDF</h3><p>A tidy quote with your name on it. Send it on WhatsApp or by email yourself.</p></div>
       </div>
     </div>
   </section>
@@ -375,8 +377,8 @@ footer a{color:var(--pb-ink);font-weight:600}
     <div class="wrap promises" aria-label="Our promises">
       <div><svg class="ico"><use href="#i-check-circle"/></svg>No per-user fees. Ever.</div>
       <div><svg class="ico"><use href="#i-check-circle"/></svg>No sales calls. No demos.</div>
-      <div><svg class="ico"><use href="#i-check-circle"/></svg>Cancel in one tap.</div>
-      <div><svg class="ico"><use href="#i-check-circle"/></svg>Export your data free.</div>
+      <div><svg class="ico"><use href="#i-check-circle"/></svg>No sign-up for the free tools.</div>
+      <div><svg class="ico"><use href="#i-check-circle"/></svg>Nothing you type leaves your browser.</div>
     </div>
   </section>
 
@@ -386,23 +388,30 @@ footer a{color:var(--pb-ink);font-weight:600}
       <div class="tools">
         <div class="tool"><div class="ic"><svg class="ico"><use href="#i-calc"/></svg></div><div><h3 class="title">Paint calculator</h3><p>How much paint do I need? Litres, tins and days, room by room. Rounds up to real tin sizes.</p><a class="btn btn-secondary" href="paint-calculator.html">Work out my paint</a></div></div>
         <div class="tool"><div class="ic"><svg class="ico"><use href="#i-file"/></svg></div><div><h3 class="title">Quote template (UK)</h3><p>Painting and decorating quote, filled in online. PDF with £, optional VAT and UK dates.</p><a class="btn btn-secondary" href="decorating-quote-template.html">Make a free quote</a></div></div>
-        <div class="tool"><div class="ic"><svg class="ico"><use href="#i-banknote"/></svg></div><div><h3 class="title">Invoice template (UK)</h3><p>Invoice number, due date and bank details done for you. Download a PDF.</p><a class="btn btn-secondary" href="decorating-invoice-template.html">Make a free invoice</a></div></div>
+        <div class="tool" aria-disabled="true"><div class="ic"><svg class="ico"><use href="#i-banknote"/></svg></div><div><h3 class="title">Invoice template (UK)</h3><p>Invoice number, due date and bank details done for you. Download a PDF.</p><span class="tag">Coming soon</span></div></div>
       </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-bottom:0">
+    <div class="wrap soon-strip">
+      <div class="ic"><svg class="ico"><use href="#i-clock"/></svg></div>
+      <div><h2 class="h2">The app is coming in late November</h2>
+      <p>Say the rooms instead of typing them, on site or on the laptop. Send your client a link they can accept. When it's accepted, it's an invoice. Until then, the tools above are free.</p></div>
     </div>
   </section>
 
   <section class="band" id="pricing">
     <div class="wrap">
       <h2 class="h1">One price. Not per person.</h2>
-      <div class="plans">
-        <div class="plan"><h3 class="title">Free</h3><div class="price">£0</div><span class="caption">no card needed</span>
+      <div class="plans" style="grid-template-columns:repeat(2,1fr);max-width:744px">
+        <div class="plan"><span class="tag">Coming late November</span><h3 class="title" style="margin-top:12px">Free</h3><div class="price">£0</div><span class="caption">no card needed</span>
           <ul><li><svg class="ico"><use href="#i-check"/></svg>5 quotes or invoices a month</li><li><svg class="ico"><use href="#i-check"/></svg>Voice quotes</li><li><svg class="ico"><use href="#i-check"/></svg>Small “Made with PriceBrush” mark</li></ul></div>
-        <div class="plan pro"><h3 class="title">Pro</h3><div class="price">£9<span style="font-size:20px"> a month</span></div><span class="caption">incl. VAT · or £79 a year incl. VAT (save £29)</span>
+        <div class="plan pro"><span class="tag">Coming late November</span><h3 class="title" style="margin-top:12px">Pro</h3><div class="price">£9<span style="font-size:20px"> a month</span></div><span class="caption">incl. VAT · or £79 a year incl. VAT (save £29)</span>
           <ul><li><svg class="ico"><use href="#i-check"/></svg>Unlimited quotes and invoices</li><li><svg class="ico"><use href="#i-check"/></svg>Your logo, no PriceBrush mark</li><li><svg class="ico"><use href="#i-check"/></svg>Price book: day rate, paint prices</li></ul></div>
-        <div class="plan"><h3 class="title">Founding Member</h3><div class="price">£49<span style="font-size:20px"> once</span></div><span class="caption">incl. VAT · Pro for as long as PriceBrush runs · 50 places · until 31/01/2027</span>
-          <ul><li><svg class="ico"><use href="#i-check"/></svg>Everything in Pro, no monthly fee</li><li><svg class="ico"><use href="#i-check"/></svg>Shape what we build next</li></ul></div>
+        <!-- No Founding Member card and no "X of 50" until checkout works (CEO 18/10/2026 P1) -->
       </div>
-      <p class="caption" style="margin-top:16px;font-size:16px">All prices include VAT. Secure checkout by Polar. Plans open with the app; until then every tool here is free.</p>
+      <p class="caption" style="margin-top:16px;font-size:16px">All prices include VAT. Plans open with the app in late November. Nothing to buy yet; every tool here is free.</p>
     </div>
   </section>
 
@@ -410,10 +419,10 @@ footer a{color:var(--pb-ink);font-weight:600}
     <div class="wrap">
       <h2 class="h1">Questions decorators ask</h2>
       <div class="faq">
-        <details open><summary>What if I've got no signal?</summary><p>Record or type anyway. It's saved on your phone and we'll build the quote as soon as you're back online.</p></details>
-        <details open><summary>Do I need to be VAT registered?</summary><p>No. Turn VAT on in Settings when you register and we'll add 20% and your VAT number.</p></details>
-        <details><summary>Can my client accept online?</summary><p>Yes. They open the link, tap “Accept quote” and type their name. You get told straight away.</p></details>
-        <details><summary>How do I cancel?</summary><p>Settings → Plan → Cancel plan. One tap, no phone call. You keep Pro until the end of the period you paid for, and you can undo it until then.</p></details>
+        <details open><summary>Is it really free?</summary><p>Yes. The paint calculator and the quote template are free, with no sign-up and no card.</p></details>
+        <details open><summary>Do you keep what I type?</summary><p>No. Both tools work in your browser. Nothing you type leaves it.</p></details>
+        <details><summary>Do I need to be VAT registered?</summary><p>No. Leave VAT off. If you are registered, turn VAT on in the quote template and we add 20%.</p></details>
+        <details><summary>Can I make an invoice?</summary><p>Not yet. The free invoice template is coming soon. The app, where an accepted quote becomes an invoice, comes in late November.</p></details>
       </div>
     </div>
   </section>

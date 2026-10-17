@@ -1,5 +1,17 @@
 # Design CHANGELOG
 
+## v0.3.2 — 18/10/2026
+
+Founder accepted all of `../ceo/decisions-2026-10-18.md` (18/10/2026). Only the edits marked [UI/UX] were applied.
+
+- **`screens.md` P1 + prototypes `landing.html`, `desktop-landing.html` (P1):** the pre-app home shows only what works on 31/10: calculator → quote template → PDF. Steps end "Download the PDF" (not "Send it on WhatsApp"). New strip "The app is coming in late November". Free + Pro cards tagged "Coming late November", no buttons. **Founding Member card and "Only 50 places" removed** until checkout works (fake urgency, marketing's own rule). Invoice template card "Coming soon" (not a link) and dropped from header/footer until 14/11. "Log in" removed (nothing to log in to). Phone demo no longer shows the AI "Check this — we guessed 3 doors" line (AI is not live). FAQs replaced with true-today answers; app FAQs (signal, client accept, cancel) and the promises "Cancel in one tap" / "Export your data free" move to the post-launch list in P1. P5 Pricing gets the same pre-checkout rule.
+- **`screens.md` P2 (P2/R2):** "No tape measure?" sentence now uses a `{calc:}` placeholder filled from `calculateJob`. The old "about 5 litres" was wrong; the plan's S1 check gives 6.5 L (1 × 5 L + 1 × 2.5 L) at the defaults. `paint-calculator.html` tip now reads "A 4 × 4 m room, 2.4 m high, with 1 door and 1 window needs about 6.5 litres for two coats on the walls (1 × 5 L + 1 × 2.5 L)." with an HTML comment that the value comes from `calculateJob` (coordinator, 18/10).
+- **`screens.md` P6 About (P2, P3, Q5):** "Arif Noviarrizal — independent developer building PriceBrush, based in Indonesia." Country only, no photo, no invented credentials, contact = PriceBrush mailbox (address TBD by founder). Short layout added.
+- **Trailing slashes:** public URLs in `screens.md` now end with `/` (`/paint-calculator/`); convention line added. Desktop landing nav `title` attributes updated.
+- **Re-rendered and checked (light + dark, nothing cut, £ and — fine, dark is dark):** `images/landing-light.png` / `-dark.png` (720 × 7360, 360 px at 2x), `images/desktop-landing-light.png` / `-dark.png` (2560 × 5880, 1280 px at 2x, same width as v0.3.1).
+- Also re-rendered and checked: `images/paint-calculator-light.png` / `-dark.png` (720 × 6780), `images/_overview-light.png` / `-dark.png` (3200 × 5560), `images/_overview-desktop-light.png` / `-dark.png` (3200 × 3880).
+- **Not re-rendered:** board and other screens (unchanged). The keyword line above the H1 stays as is until SEO decides whether to soften it before the app exists.
+
 ## v0.3.1 — 18/10/2026
 
 - Founding Member copy no longer promises "for life" / "for ever" / "lifetime" (founder: no refund guarantee, 17/10/2026; PRD §7): now "Pro for as long as PriceBrush runs" and "Everything in Pro, no monthly fee" (landing, desktop landing, paywall, board). Free plan caption "for ever" → "no card needed". Desktop Pro price "£9 /month" → "£9 a month".

@@ -1,4 +1,4 @@
-# Launch plan to the first payment, 31/12/2026 (v0.2)
+# Launch plan to the first payment, 31/12/2026 (v0.3)
 
 Date: 17/10/2026 · Author: marketing lead · Status: **proposed; the founder decides** (the inputs, CEO memo `../ceo/decisions-2026-10-17.md`, were accepted 17/10/2026) · Channels that fit an introverted solo founder with £0: SEO and free tools, free listings, honest founder posts where the rules allow, faceless screen-recorded videos, the watermark. No ads, cold outreach or calls.
 
@@ -17,10 +17,10 @@ Marketing hours are **on top of** the SEO content hours in `../seo/content-plan.
 | Dates | Phase | Marketing actions | Channel | Founder h | Done when |
 |---|---|---|---|---|---|
 | 18–24 Oct | Copy frozen | Messaging accepted (`messaging.md` v0.2) | — | 0.25 | Done |
-| 25–31 Oct | Free tools live **Sat 31 Oct** | Check the watermark text + `?ref=wm`, OG image, "Turn this into a quote" hand-over; submit the sitemap in GSC | SEO, watermark | 1 | Calculator + quote template live, events counting |
+| 25–31 Oct | Free tools live **Sat 31 Oct** | Check the watermark text + `?ref=wm`, OG image, "Turn this into a quote" hand-over; submit the sitemap in GSC. Page views counting (Cloudflare Web Analytics); events from 08/11 (counter Worker, CEO 18/10 P4). **No Founding Member copy anywhere on the site** (CEO 18/10 P1) | SEO, watermark | 1 | Calculator + quote template live, page views counting |
 | 1–7 Nov | MVP build | **Prepare the forum (no posting).** Ask to join the Facebook group and answer the membership questions honestly (see below). Read the rules; screenshot them to `docs/marketing/` locally only if he wants a record. If the rules mention promotion, ads, links or "ask an admin", send **one** message to an admin (text below). **Video #1** (30–45 s, screen recording + text overlay): "How much paint for a 4 × 4 m room, and what to charge at £200 a day" → YouTube Shorts + TikTok | Forum prep, video | 1.5 | Rules read; permission yes / no / not needed recorded |
 | 8–14 Nov | Invoice template **Sat 14 Nov** | **Video #2:** "Pricing a mist coat on new plaster" | Video | 1 | Video live |
-| 15–21 Nov | Checkout ready | Put the Founding copy (below) on `/pricing` and the paywall. Write one listing text (50 / 160 / 500 words) + 4 screenshots. Draft the P&D News note. Tick the pre-post checklist | — | 1.5 | Copy in place, checklist ticked |
+| 15–21 Nov | Checkout ready | Prepare the Founding copy (below) for `/pricing` and the paywall, **hidden until checkout works** (CEO 18/10 P1: it goes live only after the Sun 22 Nov gate test purchase). Write one listing text (50 / 160 / 500 words) + 4 screenshots. Draft the P&D News note. Tick the pre-post checklist | — | 1.5 | Copy in place, checklist ticked |
 | **22–30 Nov** | **Launch week** | See the day-by-day plan below | Listings, PH, forum, press | 3.25 | Every item logged in the link-building register |
 | 1–14 Dec | Founding offer | One plain-text email from the founder's Gmail to each sign-up (text below). **Check PECR soft opt-in first: not verified.** **Video #3:** "Room sizes to a WhatsApp quote", the real app | Email to sign-ups, video | 1.5 | Every sign-up emailed |
 | 15/12 | **Checkpoint** | Fill the KPI table in `funnel.md` with real rates; apply "If it's not working" | — | 0.5 | Decision written down |
@@ -136,12 +136,12 @@ Source: PRD §7 (decided 15/10/2026: £49 one-off, 50 places, ends 31 Jan 2027; 
 
 **When it's sold out:** "All 50 Founding places have gone. Thank you." **After 31/01/2027:** remove it everywhere.
 
-**Rules:** {n} always comes from real Polar orders, updated by hand. Never round it, start it below 50 or invent it. **Don't extend the deadline.** "Ends 31/01/2027" has to be true, or it is fake urgency. "Lifetime" is always written as "for as long as PriceBrush runs", because the PRD has a stop-or-pivot review on 30/04/2027.
+**Rules:** No Founding Member card, copy or "X of 50 places" on the site (home, pricing, paywall, banner) until checkout works and the 22 Nov test purchase has passed (CEO 18/10 P1, accepted). {n} always comes from real Polar orders, updated by hand. Never round it, start it below 50 or invent it. **Don't extend the deadline.** "Ends 31/01/2027" has to be true, or it is fake urgency. "Lifetime" is always written as "for as long as PriceBrush runs", because the PRD has a stop-or-pivot review on 30/04/2027.
 
 **Strongest argument against the offer:** "lifetime" plus a possible stop on 30/04/2027 could feel like a bait to the first 50 buyers. It also caps revenue from the keenest users at about £37 net each (CEO memo #6). **Mitigation:** the 60-day notice and CSV export line (F13 export exists in the PRD). **Founder decision (17/10/2026): no refund guarantee.** The "£49 back if PriceBrush closes before 31/01/2028" line is NOT used: net receipt is ~£37 per sale and Polar keeps its fee on refunds, so each full refund would cost the founder ~£12 out of pocket (worst case 50 × £49 = £2,450) while he has no funds. The promise stays: 60 days' notice + CSV export.
 **What would change my mind:** 0 Founding sales after launch week and the December email, with ≥ 4 activated users. That points to the offer or the audience, not the price. Ask the activated users what stops them before changing anything.
 
-## Launch week, 23–30 Nov (draft)
+## Launch week, 23–30 Nov (earlier draft — superseded by "Launch week, day by day" above; kept for the update-post text)
 
 Goal: get the first decorators into the app before checkout matters, and start the Founding Member clock. Everything is written in advance in the 15–22 Nov slot, so launch week is mostly posting and replying (about 3 h).
 
@@ -162,7 +162,7 @@ Goal: get the first decorators into the app before checkout matters, and start t
 >
 > The app is now live. You put in the rooms (or say them), it works out coats, litres and days from your own day rate, and you get a quote with one line per room and surface, with the working shown. You can change every line. You send it on WhatsApp as a link or a PDF, and when it's accepted, it's an invoice.
 >
-> Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT, the same for one decorator or five. No sales calls, cancel in one tap. The first 50 people can get Founding Member, £49 once for Pro for life.
+> Free for 5 quotes or invoices a month. Pro is £9 a month incl. VAT, the same for one decorator or five. No sales calls, cancel in one tap. The first 50 people can get Founding Member: £49 once, Pro for as long as PriceBrush runs.
 >
 > I'd really like to hear what doesn't fit how you price jobs. I'll answer everything here.
 

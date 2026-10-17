@@ -297,7 +297,7 @@ Ukuran sukses pertama: minimal 1 pembayaran sebelum 31 Desember 2026. Target lai
 | Metrik | Target 31 Des 2026 | Cara ukur |
 | --- | --- | --- |
 | Halaman terindeks Google | ≥ 10 | Search Console |
-| Pemakaian tool gratis (`calc_used` + `pdf_downloaded`) | ≥ 500 | Event counter anonim |
+| Pemakaian tool gratis (`calc_used` + `pdf_downloaded`) | ≥ 500 | Event counter anonim, **dihitung mulai 08/11/2026**; 31/10–08/11 pakai page views Cloudflare Web Analytics |
 | Akun terdaftar (dengan `signup_source`) | ≥ 10 | Database (Neon) |
 | Aktivasi: quote pertama terkirim dalam 24 jam | ≥ 4 akun (≈ 40%) | Event "quote_sent" |
 | Pembayaran (Founding/Pro) | ≥ 1 (ideal 5) | Dashboard Polar |
@@ -325,6 +325,7 @@ timeline
 - [ ] Cek di dashboard Polar: pembeli UK yang terdaftar VAT bisa dapat VAT invoice?
 - [ ] Cek saat daftar Polar: Stripe Connect Express Indonesia menerima tipe bisnis "individual"? (cadangan: Lemon Squeezy)
 - [ ] Tentukan auth Google + file storage (Neon tidak punya keduanya) — di system design Lead
+- [ ] Cek E-Commerce Regulations 2002 reg 6 (alamat geografis) untuk penyedia di luar UK — sebelum 21/11, bersama perwakilan UK GDPR (Art. 27)
 - [ ] Kapan perlu perwakilan UK GDPR (Article 27)? Cek setelah ada revenue
 
 **Keputusan 15 Okt 2026:**
@@ -350,3 +351,19 @@ timeline
 10. Target §9 diganti (≥ 500 pemakaian tool, ≥ 10 akun, ≥ 4 aktif, ≥ 1 pembayaran) dengan checkpoint 15 Des 2026.
 - Database: **Neon** (bukan Supabase); auth Google dan file storage masih harus dipilih.
 - Founding Member **tanpa jaminan refund** kalau PriceBrush tutup (founder, 17 Okt 2026): yang dijanjikan cuma pemberitahuan 60 hari + export CSV. Alasan: bersih ~£37 per penjualan dan fee Polar tidak kembali saat refund, jadi refund penuh = rugi ~£12 per orang (terburuk £2.450).
+
+**Keputusan 18 Okt 2026** (founder menyetujui semua rekomendasi CEO di `docs/ceo/decisions-2026-10-18.md`):
+
+- R1: nomor quote **naik +1** saat handover dari kalkulator (Q-0007 → Q-0008); Undo mengembalikan nomor lama.
+- R2: copy panjang halaman kalkulator (target 1.200–1.800 kata) **didraf agent SEO** paling lambat 20/10; semua angka diambil dari engine kalkulator, tidak diketik manual; founder cukup mereview.
+- R3: layout desktop "halaman = dokumen A4" untuk template quote **setelah 31 Okt**, bareng template invoice (14 Nov).
+- R4: opsi "Your right to cancel" memakai **teks resmi** Consumer Contracts Regulations 2013 (Schedule 3 Part A + formulir Part B), bukan paragraf karangan; satu kalimat FAQ diperbaiki sekarang (wajib). Opsinya sendiri nomor 4 di urutan potong.
+- P1: halaman depan sebelum app ada cuma menampilkan yang sudah jalan; fitur app dan paket berlabel "coming late November"; **tidak ada kartu Founding Member atau "X of 50"** sebelum checkout ada.
+- P2: About page menyebut **negara saja ("based in Indonesia")**, tanpa kota. Q5: tanpa foto.
+- P3: email kontak = **mailbox gratis khusus PriceBrush** (dibuat founder).
+- P4: penghitung event (Worker) jadi tugas backend pertama, **live 08/11**; sampai saat itu pakai page views Web Analytics.
+- P5: switch plafon + mist coat (T16) cuma kalau multi-room sudah merge 21/10; kalau tidak, copy disesuaikan (T17).
+- P6: tetap di **Cloudflare Pages**.
+- P7: urutan potong baru kalau telat: mock desktop → nav header desktop → T16 → opsi cancel → About → copy panjang. Must-fix, multi-room dan file SEO tidak boleh dipotong.
+- Q2: JSON-LD halaman depan `Organization` (tanpa logo) + `WebSite`; `SoftwareApplication` dengan `/pricing` mulai 21/11.
+- S: must-fix M1–M4 dan urutan plan diterima, plus budget first-load 130 KiB.

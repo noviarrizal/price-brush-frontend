@@ -23,7 +23,7 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 | Advanced (collapsed): coverage m²/L (default **12**, "check your tin"), spare % (default 10), door area (1.8 m²), window area (1.5 m²), **day rate** (£200), **painted m² per day** (default 40 — *assumption, validate with 5 decorators*; spec D4), paint £ per litre (£6 — *assumption*) | Trade inputs nobody else has; all editable = honest |
 | Output, live without reload: **"You need 9 litres"**, **tins to buy** using trade sizes 10 L, 5 L, 2.5 L, listed separately for walls, ceiling and mist coat (spec D2, D3), net wall area, ceiling area, **days**, **labour £ + paint £ = "Your price at your day rate"** | Litres + tins answers DIY; days + £ answers trade |
 | **Show the working** under the result ("32.7 m² walls × 2 coats ÷ 12 m²/L = 5.5 L, + 10% spare = 6.0 L") | Accuracy is a trust gap (Sleepless Tradesman's headline and breakdown disagree). Never show numbers that disagree |
-| **Copy result** and **Share** (Web Share API → WhatsApp) with a URL that encodes only the room numbers (`?r=4x3.5x2.4,d1,w1,c2`) | Decorators send it to clients/merchants = free distribution. Canonical stays `/paint-calculator` |
+| **Copy result** and **Share** (Web Share API → WhatsApp) with a URL that encodes only the room numbers (`?r=4x3.5x2.4,d1,w1,c2`) | Decorators send it to clients/merchants = free distribution. Canonical stays `/paint-calculator/` (slash form, see `../technical-seo.md` §2.1) |
 | **"Turn this into a quote"** button: hands the rooms and totals to `/decorating-quote-template` via `localStorage` (no server) and pre-fills lines | Converts a calculator user into a template user, then sign-up |
 | Empty/invalid states as in design `screens.md` | Avoids nonsense results |
 | Works with JS off: the prerendered HTML must contain the H1, intro, method, table and FAQs; the tool can hydrate | Google reads content without waiting; also LCP |
@@ -40,6 +40,8 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 **Worked example to show on the page (numbers must match the tool; spec test T1):** bedroom 4 m × 3.5 m × 2.4 m, 1 door, 1 window, 2 coats, walls + ceiling, 12 m²/L, 10% spare → walls 32.7 m², ceiling 14.0 m² → walls 32.7 × 2 ÷ 12 × 1.1 = 6.0 L, ceiling 14.0 × 2 ÷ 12 × 1.1 = 2.6 L → **8.6 L** → buy walls **1 × 5 L + 1 × 2.5 L**, ceiling **1 × 5 L** → walls 65.4 m² ÷ 40 = 1.6 days, ceiling 28 m² ÷ 40 = 0.7 days → 2.3 days at £200 = £460 labour + 12.5 L × £6 = £75 paint → **your price at your day rate: £535** (time on the job: about 2.5 days). (Day rate, speed and £/L are example defaults, not market claims.)
 
 ### 2.2 Sections below the tool (in this order)
+
+> **Copy is drafted (17/10/2026, CEO R2 accepted 18/10): `../drafts/paint-calculator-copy.md`.** The draft wins over the notes below wherever they differ. Every litre, tin, day and £ figure in it is a `{calc: …}` / `{default: …}` placeholder that the engineer fills from `calculateJob` in T6b — the numbers in italics below are background only and must not be copied onto the page. The coverage table now uses figures from named UK product pages (9 opened 17/10/2026, 1 from spec §9) instead of the ranges guessed here. Sections that only work with the ceiling / mist-coat switches (T16) are tagged, with T17 fallbacks.
 
 1. **How we work it out** — the 4 steps in plain words + the formula (H2 "How to work out how much paint you need"). ~200 words.
 2. **Paint coverage per litre (UK)** — table: matt emulsion ~12 m²/L, silk ~12–14, contract/trade matt ~10–12, ceiling emulsion ~10–12, water-based eggshell/satinwood ~12–14, gloss ~14–16 (*ranges from manufacturer data sheets — cite 2–3 real UK product pages when writing; never one brand only*). Note: "Fresh plaster, dark-to-light colour changes and rough surfaces use more." ~150 words.
@@ -69,7 +71,7 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 
 ## 3. Word count
 
-**1,200–1,800 words** of real copy below the tool (TradeCalculator ~1,100, Sleepless Tradesman ~2,000). Depth comes from the table, worked example and FAQs, not padding.
+**1,200–1,800 words** on the whole page, including the ~380 already there (CEO R2, accepted 18/10/2026; TradeCalculator ~1,100, Sleepless Tradesman ~2,000). Depth comes from the table, worked example and FAQs, not padding. The draft measures ≈ 1,790 words with T16, ≈ 1,730 with the T17 fallback (script count, draft header).
 
 ## 4. Schema (JSON-LD in the prerendered HTML)
 
@@ -99,7 +101,7 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 
 - **Show the method and defaults** with sources (manufacturer data sheets; the MSE/Decorators Forum rule for half days).
 - **"Last checked" date** for the defaults; update it when they change.
-- **About link** with the real founder — **Arif Noviarrizal, independent developer building PriceBrush** (decided 16/10/2026; no location, trade background or credentials until he provides them) — and why the defaults are what they are. No fake reviews or user counts.
+- **About link** with the real founder — **Arif Noviarrizal, independent developer building PriceBrush, based in Indonesia** (decided 16/10/2026; country added by CEO P2, accepted 18/10/2026 — country only, no city, no photo; no trade background or credentials until he provides them) — and why the defaults are what they are. Byline on this page: "By Arif Noviarrizal" linking to `/about/` (draft §2.8). No fake reviews or user counts.
 - Be **internally consistent** (one door size, one date, one price everywhere) — ukcalculator.com's contradictions are an easy way to look less trustworthy than us.
 - **Invite corrections:** "Decorator? Tell us if our m² per day is off" (mailto) — honest and gets us the validation the PRD asks for.
 - Once 5–10 decorators have validated the speed default, say so: "Default speed checked with N UK decorators (Oct–Nov 2026)" — only if true.
@@ -109,6 +111,8 @@ Benchmarks read (see `../keyword-research.md` §5): Dulux guide (~400 words, no 
 - [ ] Prerendered HTML contains H1, intro, all section text and FAQs (view-source check).
 - [ ] Title/meta/canonical/OG exactly as `keyword-map.md`.
 - [ ] Worked example numbers = tool output for the same inputs.
+- [ ] Long copy from `../drafts/paint-calculator-copy.md` in place; every placeholder rendered from `calculateJob`/`DEFAULT_SETTINGS`; assertions A1–A6 (draft §0.5) pass; no `{` left in the built HTML.
+- [ ] Canonical, `og:url`, JSON-LD `url` and breadcrumb `item` are `https://pricebrush.pages.dev/paint-calculator/` (with the slash).
 - [ ] Shareable URL restores the rooms; canonical has no parameters.
 - [ ] Lighthouse mobile ≥ 90 performance, LCP < 2.5 s on simulated 4G, CLS < 0.1.
 - [ ] "Turn this into a quote" pre-fills the quote template.

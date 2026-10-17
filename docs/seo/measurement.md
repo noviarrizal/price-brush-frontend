@@ -9,7 +9,7 @@ Date: 15/10/2026 · Updated 16/10/2026 · All tools free · No cookies, no perso
 - [ ] Add a **URL-prefix property** `https://pricebrush.pages.dev/` (a Domain property needs DNS access, which `pages.dev` doesn't give).
 - [ ] Verify with the **HTML tag** method: developer adds `<meta name="google-site-verification" content="…">` to `app/root.tsx` `<head>` (or the HTML-file method: file in `public/`).
 - [ ] Submit `https://pricebrush.pages.dev/sitemap.xml` (Indexing → Sitemaps).
-- [ ] URL Inspection → **Request indexing** for `/`, `/paint-calculator`, `/decorating-quote-template`, `/decorating-invoice-template`, `/about`.
+- [ ] URL Inspection → **Request indexing** for `/`, `/paint-calculator/`, `/decorating-quote-template/`, `/decorating-invoice-template/`, `/about/`.
 - [ ] Add a second owner/user (backup Google account) so access isn't lost.
 - [ ] Optional: **Bing Webmaster Tools** → "Import from Google Search Console" (2 minutes; also gives free keyword data).
 
@@ -20,7 +20,7 @@ Date: 15/10/2026 · Updated 16/10/2026 · All tools free · No cookies, no perso
 
 ### Anonymous event counter (to measure "tool users" and conversion)
 
-Cloudflare Web Analytics has no custom events, so add a tiny Cloudflare Worker endpoint (free tier), e.g. `POST /api/e` with body `{ "n": "calc_used", "p": "/paint-calculator" }`, storing **only** event name, page, date (daily counts in D1 or Workers Analytics Engine — check free-tier limits). No IP, no user ID, no form contents.
+Cloudflare Web Analytics has no custom events, so add a tiny Cloudflare Worker endpoint (free tier), e.g. `POST /api/e` with body `{ "n": "calc_used", "p": "/paint-calculator/" }`, storing **only** event name, page, date (daily counts in D1 or Workers Analytics Engine — check free-tier limits). No IP, no user ID, no form contents.
 
 | Event | Fires when |
 |---|---|
@@ -30,7 +30,7 @@ Cloudflare Web Analytics has no custom events, so add a tiny Cloudflare Worker e
 | `quote_prefilled` | "Turn this into a quote" used |
 | `cta_signup_click` | any sign-up CTA on a public page (`p` = page) |
 
-Sign-ups themselves: account count in the database (Neon; auth provider to be chosen). Attribution: store the **first landing path** in `sessionStorage` and send it with the sign-up (e.g. `signup_source=/paint-calculator`) — no cookie needed.
+Sign-ups themselves: account count in the database (Neon; auth provider to be chosen). Attribution: store the **first landing path** in `sessionStorage` and send it with the sign-up (e.g. `signup_source=/paint-calculator/`) — no cookie needed.
 
 ## 2. KPIs
 

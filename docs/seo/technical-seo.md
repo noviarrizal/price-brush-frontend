@@ -1,6 +1,6 @@
-# PriceBrush — Technical SEO spec (v0.2)
+# PriceBrush — Technical SEO spec (v0.3)
 
-Date: 15/10/2026 · Updated 16/10/2026 · For: developer · Stack checked in repo: React Router **8.4.0** framework mode, `ssr: false`, `prerender: ["/"]` (`react-router.config.ts`), `<html lang="en-GB">` already set in `app/root.tsx`, build currently emits `build/client/index.html` + `__spa-fallback.html`. Hosting: Cloudflare Pages, `pricebrush.pages.dev`.
+Date: 15/10/2026 · Updated 16/10/2026 · **Updated 17/10/2026** (CEO memo `../ceo/decisions-2026-10-18.md`, accepted 18/10: trailing-slash URLs everywhere per the lead's Pages spike, `_redirects` target without `.html`, JS budget 130 KiB) · For: developer · Stack checked in repo: React Router **8.4.0** framework mode, `ssr: false`, `prerender: ["/"]` (`react-router.config.ts`), `<html lang="en-GB">` already set in `app/root.tsx`, build currently emits `build/client/index.html` + `__spa-fallback.html`. Hosting: Cloudflare Pages, `pricebrush.pages.dev`.
 
 SEO writes specs only; nothing outside `docs/seo/` was changed. Items marked **verify** are behaviours to confirm on the first deploy with `curl -I`.
 
@@ -8,12 +8,12 @@ SEO writes specs only; nothing outside `docs/seo/` was changed. Items marked **v
 
 | Group | Paths | Rendering | Indexing |
 |---|---|---|---|
-| Public SEO pages | `/` · `/paint-calculator` · `/decorating-quote-template` · `/decorating-invoice-template` · `/pricing` · `/about` · `/privacy` · `/terms` · `/guides` · `/guides/<slug>` · later `/paint-calculator/<room>` | **Prerendered** to static HTML at build | index, follow; in sitemap |
+| Public SEO pages | `/` · `/paint-calculator/` · `/decorating-quote-template/` · `/decorating-invoice-template/` · `/pricing/` · `/about/` · `/privacy/` · `/terms/` · `/guides/` · `/guides/<slug>/` · later `/paint-calculator/<room>/` | **Prerendered** to static HTML at build | index, follow; in sitemap |
 | App (logged in) | `/login` · `/app/*` (quotes, new, review, invoice, settings) | SPA via `__spa-fallback.html` | `noindex` (header + meta); not in sitemap |
 | Client quote/invoice links | `/q/<token>` (long random token, PRD) | SPA | `noindex, nofollow` (header + meta) — these hold client names and addresses |
 | Errors | anything else | static `404.html` | real HTTP 404 |
 
-Rules: lowercase, hyphens, no file extensions, no query strings in canonical URLs, UK spelling. Put **all** app screens under `/app/` so one header rule covers them.
+Rules: lowercase, hyphens, no file extensions, no query strings in canonical URLs, UK spelling, and **every public page URL ends in `/`** (`/paint-calculator/`; home is `/`) — see §2.1. Put **all** app screens under `/app/` so one header rule covers them.
 
 ### Single source of truth
 
@@ -42,7 +42,7 @@ const SITE = "https://pricebrush.pages.dev"; // change once at domain move
 export function seo({ path, title, description, ogImage = "/og/default.png", noindex = false }: {
   path: string; title: string; description: string; ogImage?: string; noindex?: boolean;
 }) {
-  const url = SITE + path; // must equal the URL that returns 200 (see §2.1)
+  const url = canonicalUrl(path); // SITE + "/" for home, SITE + path + "/" for the rest — the URL that returns 200 (§2.1)
   return [
     { title },
     { name: "description", content: description },
@@ -61,6 +61,7 @@ export function seo({ path, title, description, ogImage = "/og/default.png", noi
   ];
 }
 // in a route: export const meta: Route.MetaFunction = () => seo({ path: "/paint-calculator", ...routeCopy });
+// The route list keeps paths without the slash (they are also the prerender paths); canonicalUrl() adds it (plan T7).
 ```
 
 - JSON-LD can go in the same array: `{ "script:ld+json": {...} }` (supported by RR 8's `MetaDescriptor`).
@@ -68,9 +69,17 @@ export function seo({ path, title, description, ogImage = "/og/default.png", noi
 - `<meta name="theme-color">` and the PWA manifest don't affect ranking; fine to add.
 - No `hreflang` (one language, one country). `lang="en-GB"` is already correct.
 
-### 2.1 Trailing slash — **verify**
+### 2.1 Trailing slash — **decided: slash form** (17/10/2026)
 
-The prerender writes `build/client/paint-calculator/index.html`. Cloudflare Pages serves directory indexes and may **redirect `/paint-calculator` → `/paint-calculator/`** (or the reverse, depending on the files present). On the first deploy run `curl -I https://pricebrush.pages.dev/paint-calculator` and `…/paint-calculator/`. Whichever returns **200** is the canonical form; use it for canonicals, sitemap and every internal link. Never let internal links hit a redirect.
+The prerender writes `build/client/paint-calculator/index.html`. The lead tested this in a local `wrangler pages dev` emulation (plan `../plan/2026-10-17-launch-31-oct.md`, spike table): **`GET /paint-calculator` → 308 → `/paint-calculator/`, which returns 200.** By this section's own rule (whichever returns 200 is canonical), the canonical form is the **slash form**:
+
+- canonical, `og:url`, JSON-LD `url`/`item`, sitemap `<loc>` and every internal `<Link>`/`href`: `https://pricebrush.pages.dev/paint-calculator/` (home: `https://pricebrush.pages.dev/`);
+- build them all with one helper, `canonicalUrl(path)` (plan T7), never by string-joining in a component;
+- never let an internal link hit the 308 — T7's acceptance `grep`s `build/client/**/*.html` for `href="/paint-calculator"` without the slash.
+
+Still **verify on the live site** (plan F2: `curl -sI https://pricebrush.pages.dev/paint-calculator` → `308`, `location: /paint-calculator/`), because the spike was an emulation. If production behaves differently, tell SEO before submitting the sitemap.
+
+All SEO docs written before 17/10 show paths without the slash for readability; the slash form is canonical wherever a real URL is output.
 
 ## 3. Cloudflare Pages files (`public/` → copied to build root)
 
@@ -82,12 +91,14 @@ Cloudflare Pages treats a project **without a top-level `404.html` as a single-p
 2. Route app paths to the SPA fallback explicitly:
 
 ```
-/login     /__spa-fallback.html  200
-/app/*     /__spa-fallback.html  200
-/q/*       /__spa-fallback.html  200
+/login     /__spa-fallback  200
+/app/*     /__spa-fallback  200
+/q/*       /__spa-fallback  200
 ```
 
-3. Old-URL redirects go here too, e.g. if design's `/free-quote-template` was ever shared: `/free-quote-template  /decorating-quote-template  301`.
+*(Changed 17/10/2026: the target has **no `.html`**. In the lead's Pages emulation, `/__spa-fallback.html` as a target answered 308 → `/__spa-fallback`, which changes the URL and breaks the app route; `/__spa-fallback` gives 200 with the SPA HTML and keeps the URL — plan T8.)*
+
+3. Old-URL redirects go here too, e.g. if design's `/free-quote-template` was ever shared: `/free-quote-template  /decorating-quote-template/  301`.
 
 **Verify:** `curl -I …/does-not-exist` → 404; `curl -I …/app/quotes` → 200 with SPA HTML.
 
@@ -101,6 +112,8 @@ Cloudflare Pages treats a project **without a top-level `404.html` as a single-p
 /q/*
   X-Robots-Tag: noindex, nofollow
   Referrer-Policy: no-referrer
+/__spa-fallback
+  X-Robots-Tag: noindex
 /__spa-fallback.html
   X-Robots-Tag: noindex
 https://:version.pricebrush.pages.dev/*
@@ -127,7 +140,16 @@ AI crawlers are allowed (being cited in AI answers for "how much paint do I need
 ### 3.4 `sitemap.xml`
 
 - Generate at build from `public-routes.ts` into `build/client/sitemap.xml` (small Node script run after `react-router build`, or a prerendered resource route `/sitemap.xml` — either is fine).
-- Only canonical, indexable, 200 URLs. `<lastmod>` = the page's real content date from the route list, **not** the build time (fake freshness is ignored and wastes trust).
+- Only canonical, indexable, 200 URLs — **slash form**, from `canonicalUrl()` (§2.1). On 31/10 that's 4 URLs (plan T8); add `/about/` only if T12 ships:
+
+```xml
+<url><loc>https://pricebrush.pages.dev/</loc><lastmod>2026-10-31</lastmod></url>
+<url><loc>https://pricebrush.pages.dev/paint-calculator/</loc><lastmod>…</lastmod></url>
+<url><loc>https://pricebrush.pages.dev/decorating-quote-template/</loc><lastmod>…</lastmod></url>
+<url><loc>https://pricebrush.pages.dev/about/</loc><lastmod>…</lastmod></url>
+```
+
+- `<lastmod>` = the page's real content date from the route list, **not** the build time (fake freshness is ignored and wastes trust). When the T6b long copy ships, update `/paint-calculator/`'s `lastmod`.
 - Submit in Search Console (see `measurement.md`).
 
 ## 4. Rendering and content rules for prerendered pages
@@ -158,22 +180,22 @@ Google status (be realistic): **FAQ rich results are limited to well-known gover
 ]
 ```
 
-**Tool pages** (`/paint-calculator`, `/decorating-quote-template`, `/decorating-invoice-template`):
+**Tool pages** (`/paint-calculator/`, `/decorating-quote-template/`, `/decorating-invoice-template/`):
 
 ```json
 [
-  {"@context":"https://schema.org","@type":"WebApplication","name":"PriceBrush Paint Calculator","url":"https://pricebrush.pages.dev/paint-calculator",
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PriceBrush Paint Calculator","url":"https://pricebrush.pages.dev/paint-calculator/",
    "applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":"en-GB","isAccessibleForFree":true,
    "offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}},
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
    {"@type":"ListItem","position":1,"name":"Home","item":"https://pricebrush.pages.dev/"},
-   {"@type":"ListItem","position":2,"name":"Paint calculator","item":"https://pricebrush.pages.dev/paint-calculator"}]}
+   {"@type":"ListItem","position":2,"name":"Paint calculator","item":"https://pricebrush.pages.dev/paint-calculator/"}]}
 ]
 ```
 
 (Quote/invoice pages: same shape, `applicationCategory: "BusinessApplication"`.)
 
-**Guides:** `Article` with `headline`, `datePublished`, `dateModified`, `inLanguage: en-GB`, `author: {"@type":"Person","name":"Arif Noviarrizal","jobTitle":"Independent developer","url":"https://pricebrush.pages.dev/about"}` (decided 16/10/2026 — add nothing else, e.g. no `address` or `knowsAbout`, until he provides it), `publisher: Organization`; plus `BreadcrumbList` (Home › Guides › Title). Real person only.
+**Guides:** `Article` with `headline`, `datePublished`, `dateModified`, `inLanguage: en-GB`, `author: {"@type":"Person","name":"Arif Noviarrizal","jobTitle":"Independent developer","url":"https://pricebrush.pages.dev/about/"}` (decided 16/10/2026 — add nothing else, e.g. no `address` or `knowsAbout`, until he provides it), `publisher: Organization`; plus `BreadcrumbList` (Home › Guides › Title). Real person only.
 
 Validate each page in Google's Rich Results Test and the Schema.org validator before launch. When the domain changes, all `url`/`item` values change with `SITE`.
 
@@ -182,7 +204,7 @@ Validate each page in Google's Rich Results Test and the Schema.org validator be
 Targets (field data, 75th percentile, mobile): **LCP < 2.5 s on 4G**, **CLS < 0.1**, **INP < 200 ms**. Lab gate before each release: Lighthouse mobile **Performance ≥ 90** (PRD) on the 3 P0 pages.
 
 - **LCP element** should be the H1/intro text (not an image). No hero image or video on tool pages.
-- **JS budget** for tool pages: ≤ 120 KB gzipped on first load. Load the PDF library (`react-pdf` or similar) **only when the user taps "Download PDF"** (dynamic `import()`), never in the initial bundle — it's the single biggest risk to LCP/INP.
+- **JS budget** for tool pages: **≤ 130 KiB gzipped on first load** (raised from 120 KB on 17/10/2026 — review S6 option (a), CEO memo 18/10 §S; the Lighthouse mobile Performance ≥ 90 gate is unchanged; both gates must pass). Load the PDF library (`react-pdf` or similar) **only when the user taps "Download PDF"** (dynamic `import()`), never in the initial bundle — it's the single biggest risk to LCP/INP.
 - **Fonts** (design system uses Archivo for display + system stack for body): self-host one variable `woff2`, subset to Latin, `font-display: swap`, `<link rel="preload" as="font" type="font/woff2" crossorigin>` for that one file only. No Google Fonts CSS request.
 - **CLS:** reserve space for the result card (fixed min-height) so typing doesn't shift the page; fonts with `size-adjust`/fallback metrics; images with `width`/`height`.
 - **Images:** AVIF/WebP with PNG fallback only where needed; `loading="lazy"` below the fold; example-quote image ≤ 120 KB; descriptive `alt` ("Example painting and decorating quote with four lines totalling £615").
@@ -204,7 +226,7 @@ See `measurement.md`. Developer needs to add: Cloudflare Web Analytics (enable i
 
 1. Buy the domain (after the UK IPO trademark check — PRD open question). Add it as a **custom domain** on the Pages project (Cloudflare DNS, free).
 2. Change `SITE` in `app/seo/meta.ts`, robots.txt `Sitemap:` line, JSON-LD URLs; rebuild. Canonicals now point to the new domain.
-3. **301 every `pricebrush.pages.dev/*` URL to the same path on the new domain** with Cloudflare **Bulk Redirects** (free; `_redirects` can't match on hostname). Preserve path and query string. Keep preview `*.pricebrush.pages.dev` noindexed.
+3. **301 every `pricebrush.pages.dev/*` URL to the same path on the new domain** with Cloudflare **Bulk Redirects** (free; `_redirects` can't match on hostname). Preserve path and query string, **including the trailing slash** (`/paint-calculator/` → `https://<domain>/paint-calculator/`, one hop — not via a second 308). Keep preview `*.pricebrush.pages.dev` noindexed.
 4. **Search Console:** verify the new domain as a **Domain property** (DNS TXT) and keep the old `https://pricebrush.pages.dev/` URL-prefix property. Use **Settings → Change of address** from the old property to the new one (**verify** GSC accepts a `pages.dev` URL-prefix property as the source; if not, rely on the 301s + new sitemap, which still works, just slower).
 5. Submit the new `sitemap.xml`; keep the old sitemap URL working (it will redirect).
 6. Update every profile you control: directory listings, Product Hunt, AlternativeTo, social bios, the "Made with PriceBrush" watermark link in PDFs (old PDFs keep working via 301).
@@ -227,8 +249,8 @@ The founder approved using **anonymised, aggregated quote data** for content and
 - [ ] 3 P0 pages + home + about prerendered; view-source shows full text.
 - [ ] Titles/descriptions/canonicals/OG from `keyword-map.md`; one H1 each.
 - [ ] `404.html` returns 404; `/app/*`, `/login`, `/q/*` return `X-Robots-Tag: noindex`.
-- [ ] Trailing-slash behaviour verified; internal links match canonicals.
+- [ ] Trailing slash: canonicals, sitemap, JSON-LD and internal links all in the slash form (§2.1); live `curl` shows `/paint-calculator` → 308 → `/paint-calculator/` (plan F2).
 - [ ] `robots.txt` and `sitemap.xml` live; sitemap submitted in GSC.
 - [ ] Rich Results Test passes (no errors) on tool pages.
-- [ ] Lighthouse mobile ≥ 90 on all 3 tools; PDF library lazy-loaded.
+- [ ] Lighthouse mobile ≥ 90 on the live tool pages; first-load JS ≤ 130 KiB gzip; PDF library lazy-loaded.
 - [ ] Cloudflare Web Analytics on; event counter works.

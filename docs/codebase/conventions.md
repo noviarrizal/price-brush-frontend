@@ -11,6 +11,8 @@ Conventions in use or agreed so far. Extend this file as real code establishes p
 - **Files:** UTF-8 everywhere. Pure logic in `app/lib/<area>/` with `*.test.ts` next to it; shared UI in `app/components/`, page-specific UI in `app/components/<page>/`; SEO meta via `seo()` in `app/seo/meta.ts`.
 - **Names:** full descriptive names (`litresNeeded`, `roomFields`), no single letters or abbreviations, even in callbacks.
 - **Money and maths:** money is whole pence (`number`); every shown value is rounded before the next step uses it (spec §4); decimal inputs are text fields with `inputMode="decimal"` and accept a comma.
+- **Number parsing:** `parseDecimal` (`app/lib/numbers.ts`) accepts a decimal comma and is right for metres. As of 17/10/2026 money also goes through it (`parsePoundsToPence`), which misreads "1,290". The review asks for a separate money parser; see `quality.md`.
+- **Browser storage:** keys are `pricebrush.<name>` (`pricebrush.quoteTemplate`, `pricebrush.calculatorHandover`). Stored JSON has a `version` field and is checked by a `looksLike…` guard before use. Storage helpers take a `Pick<Storage, …>` argument so tests can pass a fake, and they swallow storage exceptions (private mode). Anything browser-only (storage, today's date) is read in an effect after hydration, guarded by a ref against StrictMode's double run.
 - **Dependencies:** pnpm only; justify each new dependency (bundle size budget for Lighthouse ≥ 90 mobile); lazy-load heavy libraries (e.g. PDF).
 - **Git:** feature work on `feat/<slug>` branches; reviews in `docs/reviews/`; commits only when the founder asks.
 - **Tests:** Vitest (`pnpm test`).

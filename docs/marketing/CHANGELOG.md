@@ -1,5 +1,33 @@
 # Marketing changelog
 
+## v0.4 — 18/10/2026
+
+The founder accepted all decisions in `../ceo/decisions-2026-10-18.md`. I applied only the [marketing] edit. No other folders were touched and nothing was committed. `fast-revenue-2026-10-18.md` is unchanged and waits for the CEO's decision.
+
+**Changed**
+
+- `launch-plan.md` → v0.3:
+  - 25–31 Oct row: page views counting (Cloudflare Web Analytics); events from 08/11 (P4). "Done when" now says page views counting, not events.
+  - P1 rule: no Founding Member copy on the site before checkout works. Added to the 25–31 Oct row and the Founding "Rules". In the 15–21 Nov row the Founding copy is now prepared but hidden until the Sun 22 Nov gate test purchase passes.
+
+## v0.3 — 18/10/2026
+
+Founder question: "How can we get money FAST?" Proposed only. No other folders were touched and nothing was committed.
+
+**Added**
+
+- `fast-revenue-2026-10-18.md`: an honest answer. Quick cash isn't realistic; the best case by 31/12 is 1–5 Founding sales, about £37–£220 net [estimate]. Recommends one offer (Founding £49 at the 22/11 launch, with an optional "early start" licence unlock from ~14/11 if it costs ≤ 3 h), applying to Polar this week, and a £0 "tell me when it opens" mailto line from 31/10. Says no to an Etsy/Gumroad template pack, a £15 watermark removal and any homeowner offer in 2026. Includes the exact copy, channel estimates, a 14-day checklist (~6.75 h) and the risks: CCR reg 37, Polar's "pre-orders" restriction, MoR VAT.
+
+**New evidence (checked 18/10)**
+
+- Gumroad search: "painting quote template" 5 results (the one real match is $14 with 0 ratings), "decorator quote" 0. Fees are 10% + $0.50 direct and 30% on Discover. Gumroad has been MoR since 01/01/2025.
+- Polar acceptable use: "Pre-orders and paid waitlists" are restricted; templates and licence keys are allowed.
+- CCR 2013 reg 37 (digital content: express consent and acknowledgement).
+- Google UK autocomplete: template and price-list searches lean "free"; "remove watermark pdf" leans "free/online".
+- Spon's Finishings costs £68.99.
+
+**Not verified:** Etsy (403 on search and help pages), the Etsy setup fee, Etsy UK VAT on digital items, Polar review time and its pre-order judgement, Gumroad payouts to Indonesia, PECR for the mailto list.
+
 ## v0.2 — 17/10/2026
 
 The founder accepted all 10 decisions in `../ceo/decisions-2026-10-17.md`. I applied only the marketing edits. No other folders were touched and nothing was committed.

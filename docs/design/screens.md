@@ -1,8 +1,8 @@
-# PriceBrush — Screens (v0.3)
+# PriceBrush — Screens (v0.3.2)
 
 Date: 17/10/2026 · Direction "Coachline" (**approved by the founder 17/10/2026**, `../ceo/decisions-2026-10-17.md` #5) · Tokens/components: `design-system.md` · Prototypes: `prototypes/` · Images: `images/` · URLs, titles and H1s: `../seo/keyword-map.md` (founder decision 15/10/2026)
 
-Conventions: **[Primary]** = the one yellow button (phone: pinned bottom; desktop: top of the right rail). *(P1)* = PRD P1, designed now. **Desktop** = layout at ≥ 1024 px (PRD §6.1). Example data: Dave Holt, "Holt Decorating", Leeds, not VAT registered, day rate £200; client Mrs Anita Patel, 12 Oak Road. Host: `https://pricebrush.pages.dev` (no custom domain yet). Copy in quotes is final UK English unless marked *draft*.
+Conventions: **[Primary]** = the one yellow button (phone: pinned bottom; desktop: top of the right rail). *(P1)* = PRD P1, designed now. **Desktop** = layout at ≥ 1024 px (PRD §6.1). Example data: Dave Holt, "Holt Decorating", Leeds, not VAT registered, day rate £200; client Mrs Anita Patel, 12 Oak Road. Host: `https://pricebrush.pages.dev` (no custom domain yet). Public page URLs end with a slash (`/paint-calculator/`), app routes do not. Copy in quotes is final UK English unless marked *draft*.
 
 Global status (app bar right / desktop top bar): `Saved` · `Saving…` · `Offline — will sync` · `Couldn't save — tap to retry`.
 Global offline banner (after 5 s offline): "You're offline. Everything's saved on this phone and will sync when you're back."
@@ -26,7 +26,7 @@ Global offline banner (after 5 s offline): "You're offline. Everything's saved o
 
 ## Public SEO pages (no login)
 
-All public pages: header (wordmark → `/` · Paint calculator · Quote template · Invoice template · Pricing · Log in · secondary "Start free" **after the MVP launch only**; pre-MVP the header has no "Start free" and the only CTA is "Price a room free"). Plan-card buttons ("Start free", "Become a Founding Member") also appear only after the MVP, footer (Paint calculator · Quote template · Invoice template · Pricing · Guides · About · Privacy · Terms · "pricebrush.pages.dev · Made for UK decorators."). Lighthouse ≥ 90: one font file, no hero video, no carousel, no pop-ups.
+All public pages: header (wordmark → `/` · Paint calculator · Quote template · Invoice template · Pricing · Log in · secondary "Start free" **after the MVP launch only**; pre-MVP the header has no "Start free" and no "Log in", the Invoice template link appears from 14/11/2026, and the only CTA is "Price a room free"). Plan-card buttons ("Start free", "Become a Founding Member") also appear only after the MVP, footer (Paint calculator · Quote template · Invoice template · Pricing · Guides · About · Privacy · Terms · "pricebrush.pages.dev · Made for UK decorators."). Lighthouse ≥ 90: one font file, no hero video, no carousel, no pop-ups.
 
 ### P1 · Landing `/`
 
@@ -34,18 +34,20 @@ Copy per `../ceo/decisions-2026-10-17.md` #2 (accepted 17/10/2026). Voice ships 
 
 - **Title:** PriceBrush: Quote & Invoice App for UK Decorators · keyword line above the H1: "Quote and invoice app for UK painters and decorators" · **H1:** "Room sizes in. Priced quote out."
 - **Sub:** "Coats, litres, days and labour worked out from your day rate. Every number shown, every line yours to change. Made for UK decorators."
-- **[Primary] until the MVP is live:** "Price a room free" → `/paint-calculator` (calculator icon). Caption "No sign-up. No per-user fees. No sales calls."
+- **[Primary] until the MVP is live:** "Price a room free" → `/paint-calculator/` (calculator icon). Caption "No sign-up. No per-user fees. No sales calls."
 - **[Primary] after the MVP:** "Start a free quote" → sign-in / new quote. Caption "Free for 5 documents a month. No card needed."
 - **Never say:** "60 seconds" (competitors' titles use it) or "one tap" for quote → invoice. Use **"When it's accepted, it's an invoice."** ("Cancel in one tap" stays: it is true, see A11.)
 - **Purpose:** turn search/referral traffic into a first priced room, then a first quote.
-- **Phone layout:** header → green hero band (keyword line, H1, sub, primary, caption) → "Every number shown. Every line yours." (Dave's room sizes → lines with m², coats, days and one "check this": "Check this — we guessed 3 doors.") → How it works ("Put in the rooms" · "Check the lines" · "Send it on WhatsApp", ending "When it's accepted, it's an invoice.") → Free tools (3 cards) → Pricing (Free / Pro / Founding) → FAQ → footer. Primary repeats pinned at the bottom (same action).
-- **Desktop:** two-column hero on coach green (copy left; right: phone mock of the calculator — 2 rooms, "13.9 litres", "Your price at your day rate £865" (spec T5), "Turn this into a quote" — beside the A4 quote); 3 step cards; 4 promises strip ("No per-user fees. Ever." · "No sales calls. No demos." · "Cancel in one tap." · "Export your data free."); 3 tool cards; 3 plan cards (secondary buttons, so yellow stays the hero CTA); FAQ 2 × 2.
-- **FAQ "How do I cancel?":** "Settings → Plan → Cancel plan. One tap, no phone call. You keep Pro until the end of the period you paid for, and you can undo it until then."
+- **Truth rule (CEO 18/10/2026 P1, accepted):** before the app exists the home shows **only what works today**: paint calculator → quote template → PDF (invoice template from 14/11/2026). App features and plans are labelled **"Coming late November"**. **No Founding Member card and no "X of 50 places" until checkout works** (fake urgency otherwise). No "Log in", no "Start free", no plan buttons. If the MVP slips, change "late November" the same day. Prototypes: `landing.html`, `desktop-landing.html` (v0.3.2).
+- **Phone layout (pre-app, 31/10):** header (wordmark only) → green hero band (keyword line, H1, sub, primary, caption) → "Every number shown. Every line yours." (Dave's room sizes → calculator lines with m², coats, days; caption "Worked out by the free paint calculator at a £200 day rate. Every line is yours to change before you download the PDF.") → How it works ("Put in the rooms" · "Check the lines" · "Download the PDF" — "A tidy quote with your name on it. Send it on WhatsApp or by email yourself.") → Free tools (calculator, quote template live; invoice template card not a link, tag "Coming soon" until 14/11) → strip **"The app is coming in late November"** ("Say the rooms instead of typing them. Send your client a link they can accept. When it's accepted, it's an invoice. Until then, the tools above are free.") → Pricing: Free + Pro only, each tagged "Coming late November", caption "Plans open with the app. Nothing to buy yet." → FAQ (true answers only, below) → footer (no Invoice template link until 14/11). Primary repeats pinned at the bottom (same action).
+- **Desktop (pre-app):** two-column hero on coach green (copy left; right: phone mock of the calculator — 2 rooms, "13.9 litres", "Your price at your day rate £865" (spec T5), "Turn this into a quote" — beside the A4 quote); header links Paint calculator · Quote template · Pricing (Invoice template joins on 14/11); 3 step cards ending "Download the PDF"; 4 promises strip, all true today ("No per-user fees. Ever." · "No sales calls. No demos." · "No sign-up for the free tools." · "Nothing you type leaves your browser."); 3 tool cards (invoice "Coming soon"); "app is coming" strip; 2 plan cards without buttons, tagged "Coming late November"; FAQ 2 × 2.
+- **FAQ before the app (only true answers):** "Is it really free?" — "Yes. The paint calculator and the quote template are free, with no sign-up and no card." · "Do you keep what I type?" — "No. Both tools work in your browser. Nothing you type leaves it." · "Do I need to be VAT registered?" — "No. Leave VAT off. If you are registered, turn VAT on in the quote template and we add 20%." · "Can I make an invoice?" — "Not yet. The free invoice template is coming soon. The app, where an accepted quote becomes an invoice, comes in late November." (Change the invoice answer on 14/11.)
+- **After the app opens (late Nov):** add back "Log in" / "Start free", plan buttons, the Founding Member card (only once checkout works), the promises "Cancel in one tap." · "Export your data free.", and these FAQs: "Can my client accept online?", "What if I've got no signal?", **"How do I cancel?"** — "Settings → Plan → Cancel plan. One tap, no phone call. You keep Pro until the end of the period you paid for, and you can undo it until then."
 - **After the MVP (late Nov):** re-test the H1 against "Say the rooms. Get a priced quote." with a 5-second test (5+ decorators); swap only if it clearly wins.
 - **States:** signed-in visitor → primary "Open my quotes".
 - **Re-test (late Nov, once voice works):** 5-second test of this hero against "Say the rooms. Get a priced quote." with 5+ decorators; swap if that wins.
 
-### P2 · Paint calculator `/paint-calculator`
+### P2 · Paint calculator `/paint-calculator/`
 
 Per `../ceo/decisions-2026-10-17.md` #1 and #3 (accepted 17/10/2026). Prototype: `paint-calculator.html` (2 rooms, mist coat on in the hallway).
 
@@ -55,23 +57,23 @@ Per `../ceo/decisions-2026-10-17.md` #1 and #3 (accepted 17/10/2026). Prototype:
 - **"Your day rate" card:** Day rate £200 · m² a day 40 (*assumption*; hint "Each coat counts towards your m² a day. 40 is our starting guess — change it to yours.") · collapsed "Paint and spare": coverage 12 m²/L ("Coverage is on the tin — use that if it's different."), spare 10 %, paint £6/L (*assumption*).
 - **Output (live, no button — unlike Dulux, research #47):** "You need 14.0 litres" · "Buy: Walls 1 × 10 L · Ceiling 1 × 5 L · Mist coat 1 × 2.5 L" (tins per paint) · **"The working"**: one line per room and surface, e.g. "Living room walls · 2 coats · 37.0 m² · 1.9 days" (4.6 × 3.8 × 2.4 m, 1 door, 1 window) (a mist coat is its own line: "Hallway mist coat · new plaster · 1 coat + drying") · "Time on the job" (labour days + ½ day drying once per job if there's a mist coat, rounded up to ½ day; not charged) · **"Your price at your day rate"** £… with split "labour £… + paint £…" · secondary "Copy result".
 - **Maths (shared with the quote engine; `../specs/paint-calculator.md` is the source of truth, signed off 17/10/2026):** walls = 2 × (L + W) × H − 1.8 m² per door − 1.5 m² per window; ceiling = L × W; labour days per line = m² × coats ÷ m² a day (1 dp); litres per paint (walls / ceiling / mist coat) = coated m² ÷ coverage × (1 + spare), shown rounded up to 0.1 L, bought as 10 / 5 / 2.5 L tins (fewest tins within 1 L of the least spare); mist coat = 1 extra coat over the room's walls (+ ceiling), plus ½ day drying once per job on "Time on the job" that is **not** charged as labour (*assumption*).
-- **CTA card (green):** "Pricing a job like this?" / "We'll put every room on a quote, one line per surface, with the working shown. Change any line, then download the PDF." → [Primary] **"Turn this into a quote"** → `/decorating-quote-template`, pre-filled with the lines above (CEO #1). Caption "Free. No sign-up. Nothing you type leaves this browser."
-- **Below:** "How we work it out" (7 steps incl. the mist coat, SEO text), "No tape measure?" tip ("A 4 × 4 m room usually needs about 5 litres for two coats on the walls."), links to `/guides/how-to-price-a-painting-job`.
+- **CTA card (green):** "Pricing a job like this?" / "We'll put every room on a quote, one line per surface, with the working shown. Change any line, then download the PDF." → [Primary] **"Turn this into a quote"** → `/decorating-quote-template/`, pre-filled with the lines above (CEO #1). Caption "Free. No sign-up. Nothing you type leaves this browser."
+- **Below:** "How we work it out" (7 steps incl. the mist coat, SEO text), "No tape measure?" tip — **the number comes from the engine, never typed by hand** (CEO 18/10/2026 P2/R2): "A 4 × 4 m room, 2.4 m high, with 1 door and 1 window needs about {calc: 4×4 room, walls only, 2 coats} litres for two coats on the walls." The engineer fills `{calc:}` from `calculateJob` at the page defaults (`../specs/paint-calculator.md`). For reference only: the plan's S1 check gives **6.5 litres (1 × 5 L + 1 × 2.5 L)** at today's defaults; the old "about 5 litres" was wrong. Prototype `paint-calculator.html` shows the 6.5 L reference value (v0.3.2). Links to `/guides/how-to-price-a-painting-job/`.
 - **States:** empty ("Enter a room size to see litres"), invalid per room (field outlined + "Length must be more than 0, like 3.5."), very large (> 30 m: "That's a big room — double-check the numbers").
 - **31 Oct cut order (CEO #1):** single room + litres + days + price → quote template + PDF → pre-fill hand-over → multi-room → walls / ceiling / woodwork switches → mist coat. 1–4 must ship on 31 Oct. (Woodwork is in the cut order but not yet in the prototype.)
 - **Desktop (later):** inputs left, sticky result card right, SEO text full width below.
 
-### P3 · Quote template `/decorating-quote-template` (PRD F2)
+### P3 · Quote template `/decorating-quote-template/` (PRD F2)
 
 - **Title:** Free Painting & Decorating Quote Template UK | PriceBrush · **H1:** "Free painting and decorating quote template (UK)"
-- **Layout:** like P4 but quote fields: Your business · Client + job address · Quote number (Q-0001), date, "Valid for" chips 14 / 30 / 60 days · lines · VAT toggle · notes · **[Primary] "Download PDF"**. Links: "Work out the paint first" → `/paint-calculator`; "Job done? Make the invoice" → `/decorating-invoice-template`. SEO section: "What should a painting quote include?" + worked example (no pricing method — that's the guide's job, keyword map).
+- **Layout:** like P4 but quote fields: Your business · Client + job address · Quote number (Q-0001), date, "Valid for" chips 14 / 30 / 60 days · lines · VAT toggle · notes · **[Primary] "Download PDF"**. Links: "Work out the paint first" → `/paint-calculator/`; "Job done? Make the invoice" → `/decorating-invoice-template/`. SEO section: "What should a painting quote include?" + worked example (no pricing method — that's the guide's job, keyword map).
 - **Pre-filled from the calculator (CEO #1):** arriving from "Turn this into a quote" fills one line per room and surface with the working as the detail ("Living room walls · 2 coats · 37.0 m² · 1.9 days — £380.00"), plus one "Paint" line; banner "We brought over 2 rooms from the paint calculator. Check the lines, then add the client." Every line stays editable. Arriving directly: empty, one blank line.
 - **FAQ** adds "Should I ask for a deposit?" and "Do I need a mist coat on new plaster?" (`../seo/briefs/decorating-quote-template.md`).
 - **Never** uses the word "invoice" in title/H1 (cannibalisation rule).
 - **Prototype:** not built yet (the calculator already links to `decorating-quote-template.html`).
 - **Desktop:** the page *is* the document (research #45): editable A4 sheet centre, right rail with [Primary] Download PDF, "Nothing you type leaves this browser."
 
-### P4 · Invoice template `/decorating-invoice-template` (new in v0.2; live 14/11/2026, CEO #1)
+### P4 · Invoice template `/decorating-invoice-template/` (new in v0.2; live 14/11/2026, CEO #1)
 
 - **Title:** Free Painting & Decorating Invoice Template UK | PriceBrush · **H1:** "Free painting and decorating invoice template (UK)"
 - **Intro:** "Fill it in, download a PDF. Invoice number, due date, bank details and VAT if you're registered. No sign-up."
@@ -80,15 +82,17 @@ Per `../ceo/decisions-2026-10-17.md` #1 and #3 (accepted 17/10/2026). Prototype:
 - **States:** empty → primary disabled "Add at least one line"; missing sort code → "Add a sort code so your client can pay you"; making → "Making your PDF…"; done → toast "PDF downloaded."
 - **Desktop (later):** WYSIWYG A4 like P3.
 
-### P5 · Pricing `/pricing`
+### P5 · Pricing `/pricing/`
 
 - **Title:** PriceBrush Pricing: Free, Pro £9/month, No Per-User · **H1:** "Simple pricing. No per-user fees."
-- Same 3 plan cards as the landing; FAQ "How do I cancel?" (same answer as P1). Prices: "£9 a month, incl. VAT" · "£79 a year, incl. VAT" · "£49 once, incl. VAT" (decision #6, accepted 17/10/2026; Polar tax set to Inclusive). Plan buttons appear after the MVP launch. FAQ "Can I cancel Founding Member?": "It's a one-off payment, so there's nothing to cancel." Any price comparison includes Queezy, is dated and sourced, and says "No per-user fees", never "cheaper" (CEO #4).
+- Same 3 plan cards as the landing; FAQ "How do I cancel?" (same answer as P1). Prices: "£9 a month, incl. VAT" · "£79 a year, incl. VAT" · "£49 once, incl. VAT" (decision #6, accepted 17/10/2026; Polar tax set to Inclusive). Plan buttons appear after the MVP launch. **Before checkout works:** Free + Pro cards only, tagged "Coming late November"; no Founding Member card, no "X of 50" (CEO 18/10/2026 P1). FAQ "Can I cancel Founding Member?": "It's a one-off payment, so there's nothing to cancel." Any price comparison includes Queezy, is dated and sourced, and says "No per-user fees", never "cheaper" (CEO #4).
 
-### P6 · About `/about`
+### P6 · About `/about/`
 
 - **Title:** About PriceBrush: Who Builds It and Why · **H1:** "About PriceBrush"
-- Founder and guide author: **Arif Noviarrizal** (real name; photo optional; where he's based, stated truthfully; why he built it; how the calculator defaults were chosen; contact email). No invented decorator credentials. Guides show "By Arif Noviarrizal" + date.
+- Founder and guide author (CEO 18/10/2026 P2, P3, Q5, accepted): **"Arif Noviarrizal — independent developer building PriceBrush, based in Indonesia."** Country only, no city. **No photo.** Then: why he built it; how the calculator defaults were chosen. **No invented credentials** (he is not a decorator; never imply it). Contact: a PriceBrush mailbox — **address TBD by the founder**; never his personal email. Guides show "By Arif Noviarrizal" + date.
+- **Layout:** single text column (max 672 px on desktop), H1 → author line → "Why I built PriceBrush" → "How the calculator works out its numbers" (link `/paint-calculator/`) → "Contact" (mailbox). No hero image.
+- Until the page is live it stays out of the footer and sitemap (CEO P7 cut order #5).
 
 ---
 

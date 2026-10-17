@@ -1,9 +1,10 @@
 # Codebase changelog — price-brush-frontend
 
-| Date | Branch | Change |
+| Date | Branch / commit | Change |
 | --- | --- | --- |
-| 15/10/2026 | main (uncommitted) | Scaffold from `create-react-router` (v8.4): SSR off + prerender `/`, Docker/server files removed, Vite pinned to 7.3.7 with `vite-tsconfig-paths`, Google Fonts removed, `lang="en-GB"`, placeholder home page |
-| 16/10/2026 | main (uncommitted) | Initial `docs/codebase/` written from the current code |
-| 17/10/2026 | feat/paint-calculator (uncommitted) | Paint & labour engine `app/lib/paint/` per `docs/specs/paint-calculator.md` + 48 Vitest tests; `/paint-calculator` cut-order step 1 (one room, prerendered, SEO meta + JSON-LD); Coachline tokens in `app/app.css`; `seo()` helper; Vitest added |
-| 17/10/2026 | feat/paint-calculator (uncommitted) | `/decorating-quote-template` cut-order step 2: quote form, quick-add lines, VAT, supply-and-apply/labour-only, autosave + Clear (Undo), browser PDF via lazy-loaded `@react-pdf/renderer`, prerendered guide (~1,240 words) + JSON-LD; shared `app/lib/numbers.ts`; 65 tests |
-| 17/10/2026 | feat/paint-calculator (uncommitted) | Cut-order step 3: "Turn this into a quote" on `/paint-calculator` → pre-filled `/decorating-quote-template` (banner, earlier lines replaced with Undo, StrictMode-safe one-time read); `app/lib/paint/handover.ts`; 69 tests |
+| 15/10/2026 | `4832875` (main) | Scaffold from `create-react-router` (v8.4): SSR off + prerender `/`, Docker/server files removed, Vite pinned to 7.3.7 with `vite-tsconfig-paths`, Google Fonts removed, `lang="en-GB"`, placeholder home page |
+| 16/10/2026 | `dc638c7` (main) | Initial `docs/codebase/` written from the current code |
+| 17/10/2026 | `9acf84d` (main, via merge `70b6db6`) | Paint & labour engine `app/lib/paint/` per `docs/specs/paint-calculator.md`; `/paint-calculator` cut-order step 1 (one room, walls only, prerendered, SEO meta + JSON-LD); Coachline tokens in `app/app.css`; `seo()` helper; Vitest added. `/decorating-quote-template` cut-order step 2: quote form, quick-add lines, VAT, supply-and-apply/labour-only, autosave + Clear (Undo), browser PDF via lazy-loaded `@react-pdf/renderer`, prerendered guide + JSON-LD; shared `app/lib/numbers.ts` |
+| 17/10/2026 | `fc3c4cf` (main, via merge `70b6db6`) | Cut-order step 3: "Turn this into a quote" on `/paint-calculator` → pre-filled `/decorating-quote-template` (banner, earlier lines replaced with Undo, StrictMode-safe one-time read); `app/lib/paint/handover.ts`; 69 tests |
+| 17/10/2026 | main (review, docs only) | Lead review `docs/reviews/2026-10-17-main-paint-calculator-quote-template.md` (Request changes: money parsing, handover keeps the old client/date, dark-mode contrast in the example table, copy ahead of features). `docs/codebase/` refreshed: storage keys, bundle sizes, stack notes, quality checks |
+| 17/10/2026 | main (plan, docs only) | Lead plan `docs/plan/2026-10-17-launch-31-oct.md` for the 31/10 launch (review must-fixes, multi-room, home, about, Pages files, deploy + Search Console). Spike findings recorded in `stack-notes.md` (Pages trailing slash 308, `/__spa-fallback` rewrite target, `allowBuilds` fix verified, sitemap as a prerendered resource route), `architecture.md` (trailing slash), `decisions.md` (stay on Pages) |
