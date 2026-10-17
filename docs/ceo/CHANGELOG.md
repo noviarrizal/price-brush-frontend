@@ -1,5 +1,14 @@
 # CEO CHANGELOG
 
+## 18/10/2026 — `decisions-2026-10-18-t18.md`
+
+Recommended (founder to sign off), on the lead's T18 spec and the updated 31/10 plan:
+
+- 1 T18 cancellation option: **Accept the lead, with changes.** Nothing before 31/10, not even labour-only (the lead's "if Block D by 27/10" option is rejected because it lands in deploy week). 31/10 ships only the T4 FAQ fix + Schedule 3 link; no statutory text in `app/`. T18 live **by Sun 06/12** (earlier, with the invoice template on 14/11, only if the 08/11 MVP check allows). Spec v0.2 first. Supply-and-apply text only if an official source covers decorating; otherwise a link. Legal claim checked independently: regs 5, 27, 28(3)(c), 30, 36; BIS guidance A3–4, H2, H10; Business Companion; Herefordshire TS; Citizens Advice. Reg 27(3A) (DMCC s.279(6)) = subscription contracts only.
+- 2 Extras: priority **T6b, then T16; T18 out.** Founder load ≈ 18 h of 15–18 once this week's ~2.7 h of admin is counted. T6b moves to 02–06/11 if not started by 24/10.
+- 3 `screens.md` P1: pre-app keyword line = `keyword-map.md`'s; no Pricing link until 21/11. Routed to UI/UX (prompt U1).
+- 4 **Correction to my R4:** the services wording fits labour-only quotes only. "On by default" reopened, because Business Companion treats a quote left at the home and accepted later as on-premises (no statutory right). Slide rule: Polar setup and the PH account may move to 25/10. Founder proofread deferred to the T18 build week.
+
 ## 18/10/2026 — `decisions-2026-10-18-channels.md`
 
 Recommended (founder to sign off), on launch channels without Facebook and the Rp500,000 allowance (marketing memo `channels-and-ads-2026-10-18.md`):
